@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Simon Oppowa — Software Engineer</title>
+  <meta name="description" content="Simon Oppowa is a software engineer building iOS, Android, and web apps — creator of OpenNutriTracker and NightCityMap." />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="assets/favicon-32.png" sizes="32x32" type="image/png" />
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+  <meta name="theme-color" content="#5ea9f2" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <script>document.documentElement.className += " js";</script>
+  <style>
+    :root {
+      --navy: #0a1122;
+      --light-navy: #101c34;
+      --lightest-navy: #1d2d4d;
+      --navy-shadow: rgba(2, 6, 18, 0.7);
+      --slate: #8595b5;
+      --light-slate: #aab8d6;
+      --lightest-slate: #d6e2f8;
+      --white: #eef4ff;
+      --teal: #5ea9f2;
+      --teal-tint: rgba(94, 169, 242, 0.12);
+      --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      --font-display: "Space Grotesk", "Inter", sans-serif;
+      --font-mono: "Space Mono", "SF Mono", "Fira Code", monospace;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background-color: var(--navy);
+      color: var(--slate);
+      font-family: var(--font-sans);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    ::selection { background: var(--teal-tint); color: var(--lightest-slate); }
+
+    /* cursor spotlight */
+    #spotlight {
+      pointer-events: none;
+      position: fixed;
+      inset: 0;
+      z-index: 1;
+      transition: background 0.1s ease;
+      background: radial-gradient(
+        520px at var(--x, 50%) var(--y, 50%),
+        rgba(94, 169, 242, 0.22),
+        rgba(94, 169, 242, 0.06) 45%,
+        transparent 72%
+      );
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .container {
+      position: relative;
+      z-index: 2;
+      max-width: 1152px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    @media (min-width: 1024px) {
+      .layout { display: flex; gap: 24px; }
+      .sidebar {
+        align-self: flex-start;
+        min-height: 100vh;
+        width: 48%;
+        display: flex;
+        flex-direction: column;
+        padding: 64px 0;
+      }
+      .sidebar .socials { margin-top: 20px; }
+      .content { width: 52%; padding: 96px 0; }
+    }
+
+    @media (max-width: 1023px) {
+      .sidebar { padding: 64px 0 24px; }
+      .content { padding: 0 0 64px; }
+    }
+
+    /* ---------- sidebar / intro ---------- */
+    .intro h1 {
+      font-family: var(--font-display);
+      font-size: clamp(42px, 8vw, 52px);
+      font-weight: 700;
+      color: var(--lightest-slate);
+      letter-spacing: -0.03em;
+      line-height: 1.05;
+    }
+    .intro h2 {
+      margin-top: 14px;
+      font-family: var(--font-display);
+      font-size: clamp(18px, 4vw, 21px);
+      font-weight: 500;
+      color: var(--teal);
+    }
+    .status {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 20px;
+      font-family: var(--font-mono);
+      font-size: 12px;
+      letter-spacing: 0.03em;
+      color: var(--light-slate);
+    }
+    .status .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--teal);
+      box-shadow: 0 0 0 0 var(--teal);
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(94, 169, 242, 0.5); }
+      70% { box-shadow: 0 0 0 8px rgba(94, 169, 242, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(94, 169, 242, 0); }
+    }
+
+    .avatar {
+      width: clamp(160px, 55%, 200px);
+      aspect-ratio: 1;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 18px;
+      border: 1px solid var(--lightest-navy);
+      box-shadow: 0 8px 28px rgba(8, 6, 16, 0.55);
+    }
+
+    /* project + company logos */
+    .card-head { display: flex; align-items: center; gap: 12px; }
+    .logo {
+      width: 46px;
+      height: 46px;
+      flex: none;
+      border-radius: 10px;
+      background: var(--lightest-navy);
+      padding: 7px;
+      object-fit: contain;
+    }
+    .clogo {
+      width: 46px;
+      height: 46px;
+      flex: none;
+      border-radius: 10px;
+      background: var(--lightest-navy);
+      object-fit: cover;
+    }
+
+    /* featured project with screenshots */
+    .featured {
+      display: block;
+      padding: 24px;
+      margin: 0 -24px 8px;
+      border-radius: 12px;
+      border: 1px solid var(--lightest-navy);
+      border-left: 2px solid transparent;
+      transition: background 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease, border-color 0.2s ease;
+    }
+    .featured:hover {
+      background: rgba(42, 38, 64, 0.45);
+      box-shadow: 0 6px 28px rgba(8, 6, 16, 0.45);
+      transform: translateY(-2px);
+      border-left-color: var(--teal);
+    }
+    .featured:hover .card-title { color: var(--teal); }
+    .featured .card-title .arrow { display: inline-block; transition: transform 0.2s ease; }
+    .featured:hover .card-title .arrow { transform: translate(3px, -3px); }
+    .shots { display: flex; gap: 14px; margin-bottom: 20px; }
+    .phone {
+      flex: 1;
+      max-width: 150px;
+      padding: 5px;
+      background: #060c18;
+      border-radius: 20px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: 0 8px 26px rgba(8, 6, 16, 0.5);
+    }
+    .phone img { display: block; width: 100%; border-radius: 15px; }
+    .shot { flex: 1; max-width: 150px; }
+    .shot img {
+      display: block;
+      width: 100%;
+      border-radius: 10px;
+      border: 1px solid var(--lightest-navy);
+    }
+    .featured .period { display: inline-block; margin-bottom: 8px; }
+    .featured .card-head { margin-bottom: 4px; }
+    .meta-row { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 14px; margin-bottom: 10px; }
+    .meta-row .period { margin-bottom: 0; }
+    .rating {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: var(--lightest-slate);
+    }
+    .rating .star { color: #ffc857; font-size: 13px; }
+    .rating .rmuted { color: var(--slate); }
+    .dls {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: var(--slate);
+    }
+    .dls-hot {
+      color: var(--teal);
+      background: var(--teal-tint);
+      border: 1px solid rgba(94, 169, 242, 0.32);
+      padding: 3px 11px;
+      border-radius: 999px;
+      font-weight: 700;
+    }
+    .badge-dep {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.03em;
+      color: var(--slate);
+      border: 1px solid var(--lightest-navy);
+      padding: 2px 9px;
+      border-radius: 6px;
+      white-space: nowrap;
+    }
+    .intro p.tagline {
+      margin-top: 16px;
+      max-width: 340px;
+      font-size: 16px;
+      color: var(--slate);
+    }
+
+    nav.nav-links {
+      margin-top: 36px;
+      display: none;
+    }
+    @media (min-width: 1024px) { nav.nav-links { display: block; } }
+    nav.nav-links ul { list-style: none; }
+    nav.nav-links li { margin-bottom: 4px; }
+    nav.nav-links a {
+      display: inline-flex;
+      align-items: center;
+      font-family: var(--font-mono);
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--slate);
+      padding: 6px 0;
+      transition: color 0.2s ease;
+    }
+    nav.nav-links a .indicator {
+      display: inline-block;
+      height: 1px;
+      width: 32px;
+      margin-right: 16px;
+      background: var(--slate);
+      transition: width 0.2s ease, background 0.2s ease;
+    }
+    nav.nav-links a:hover,
+    nav.nav-links a.active { color: var(--lightest-slate); }
+    nav.nav-links a:hover .indicator,
+    nav.nav-links a.active .indicator { width: 64px; background: var(--lightest-slate); }
+
+    .socials {
+      margin-top: 32px;
+      display: flex;
+      gap: 20px;
+    }
+    .socials a {
+      color: var(--light-slate);
+      transition: color 0.2s ease, transform 0.2s ease;
+    }
+    .socials a:hover { color: var(--teal); transform: translateY(-3px); }
+    .socials svg { width: 22px; height: 22px; }
+
+    /* ---------- content sections ---------- */
+    section { margin-bottom: 96px; scroll-margin-top: 24px; }
+    section:last-of-type { margin-bottom: 48px; }
+
+    .section-heading {
+      display: block;
+      margin-bottom: 24px;
+      font-family: var(--font-display);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--lightest-slate);
+    }
+    .section-heading::after {
+      content: "";
+      display: inline-block;
+      width: 40px;
+      height: 1px;
+      margin-left: 16px;
+      vertical-align: middle;
+      background: var(--teal);
+      opacity: 0.5;
+    }
+    @media (max-width: 1023px) {
+      .section-heading {
+        position: sticky;
+        top: 0;
+        z-index: 3;
+        margin: 0 -24px 24px;
+        padding: 16px 24px;
+        background: rgba(10, 17, 34, 0.85);
+        backdrop-filter: blur(8px);
+      }
+      .section-heading::after { display: none; }
+    }
+
+    .prose p { margin-bottom: 16px; color: var(--slate); }
+    .prose a.inline {
+      color: var(--lightest-slate);
+      font-weight: 500;
+      transition: color 0.2s ease;
+    }
+    .prose a.inline:hover { color: var(--teal); }
+
+    /* experience + projects cards */
+    .card {
+      position: relative;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 8px;
+      padding: 24px;
+      margin: 0 -24px;
+      border-radius: 10px;
+      border-left: 2px solid transparent;
+      transition: background 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease, border-color 0.2s ease;
+    }
+    @media (min-width: 768px) {
+      .card { grid-template-columns: 140px 1fr; gap: 16px; }
+    }
+    .card:hover {
+      background: rgba(42, 38, 64, 0.45);
+      box-shadow: 0 6px 28px rgba(8, 6, 16, 0.45);
+      transform: translateY(-2px);
+      border-left-color: var(--teal);
+    }
+    .card:hover .card-title { color: var(--teal); }
+    .card .period {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--slate);
+      padding-top: 3px;
+    }
+    .card-title {
+      font-family: var(--font-display);
+      font-size: 17px;
+      font-weight: 600;
+      color: var(--lightest-slate);
+      transition: color 0.2s ease;
+    }
+    .card-title .arrow { display: inline-block; transition: transform 0.2s ease; }
+    .card:hover .card-title .arrow { transform: translate(3px, -3px); }
+    .card p.desc { font-size: 14px; margin: 8px 0 0; }
+
+    .tags { margin-top: 12px; display: flex; flex-wrap: wrap; gap: 8px; }
+    .tag {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: 0.02em;
+      color: var(--light-slate);
+      background: var(--teal-tint);
+      border: 1px solid rgba(94, 169, 242, 0.24);
+      padding: 4px 10px;
+      border-radius: 6px;
+    }
+
+    .more-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 24px;
+      font-weight: 600;
+      color: var(--lightest-slate);
+      transition: color 0.2s ease;
+    }
+    .more-link:hover { color: var(--teal); }
+    .more-link .arrow { transition: transform 0.2s ease; }
+    .more-link:hover .arrow { transform: translateX(4px); }
+
+    footer {
+      max-width: 540px;
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: var(--slate);
+      line-height: 1.5;
+    }
+    footer a { color: var(--light-slate); transition: color 0.2s ease; }
+    footer a:hover { color: var(--teal); }
+
+    /* --- entrance + scroll-reveal animations --- */
+    @media (prefers-reduced-motion: no-preference) {
+      html.js .reveal {
+        opacity: 0;
+        transform: translateY(22px);
+        transition: opacity 0.7s cubic-bezier(0.2, 0.6, 0.2, 1), transform 0.7s cubic-bezier(0.2, 0.6, 0.2, 1);
+      }
+      html.js .reveal.visible { opacity: 1; transform: none; }
+
+      html.js .intro > *,
+      html.js nav.nav-links,
+      html.js .socials {
+        opacity: 0;
+        animation: enter 0.7s cubic-bezier(0.2, 0.6, 0.2, 1) forwards;
+      }
+      html.js .avatar { animation-delay: 0.05s; }
+      html.js .intro h1 { animation-delay: 0.15s; }
+      html.js .intro h2 { animation-delay: 0.25s; }
+      html.js .intro .tagline { animation-delay: 0.35s; }
+      html.js .intro .status { animation-delay: 0.45s; }
+      html.js nav.nav-links { animation-delay: 0.55s; }
+      html.js .socials { animation-delay: 0.65s; }
+    }
+    @keyframes enter {
+      from { opacity: 0; transform: translateY(14px); }
+      to { opacity: 1; transform: none; }
+    }
+  </style>
+</head>
+<body>
+  <div id="spotlight"></div>
+
+  <div class="container">
+    <div class="layout">
+      <!-- ===================== SIDEBAR ===================== -->
+      <header class="sidebar">
+        <div>
+          <div class="intro">
+            <img class="avatar" src="assets/avatar.jpg" alt="Simon Oppowa" />
+            <h1><a href="/">Simon Oppowa</a></h1>
+            <h2>Software Engineer · Flutter · Android · iOS · Web</h2>
+            <p class="tagline">I build cross-platform mobile apps with a focus on clean code, solid performance, and thoughtful user experience.</p>
+            <span class="status"><span class="dot"></span>Working hybrid from Regensburg, Germany</span>
+          </div>
+
+          <nav class="nav-links" aria-label="In-page jump links">
+            <ul>
+              <li><a href="#about" class="active"><span class="indicator"></span>About</a></li>
+              <li><a href="#experience"><span class="indicator"></span>Experience</a></li>
+              <li><a href="#education"><span class="indicator"></span>Education</a></li>
+              <li><a href="#projects"><span class="indicator"></span>Projects</a></li>
+            </ul>
+          </nav>
+        </div>
+
+        <ul class="socials" style="list-style:none;">
+          <li><a href="https://github.com/simonoppowa" aria-label="GitHub" target="_blank" rel="noreferrer">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.58 2 12.26c0 4.5 2.87 8.32 6.84 9.67.5.1.68-.22.68-.49 0-.24-.01-.87-.01-1.71-2.78.62-3.37-1.37-3.37-1.37-.45-1.18-1.11-1.5-1.11-1.5-.91-.64.07-.62.07-.62 1 .07 1.53 1.06 1.53 1.06.89 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.37-2.22-.26-4.55-1.14-4.55-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.7 0 0 .84-.28 2.75 1.05a9.36 9.36 0 0 1 2.5-.34c.85 0 1.71.12 2.5.34 1.91-1.33 2.75-1.05 2.75-1.05.55 1.4.2 2.44.1 2.7.64.72 1.03 1.63 1.03 2.75 0 3.94-2.34 4.81-4.57 5.06.36.32.68.94.68 1.9 0 1.37-.01 2.47-.01 2.81 0 .27.18.6.69.49A10.02 10.02 0 0 0 22 12.26C22 6.58 17.52 2 12 2Z"/></svg>
+          </a></li>
+          <li><a href="https://www.linkedin.com/in/simon-oppowa" aria-label="LinkedIn" target="_blank" rel="noreferrer">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.36V9h3.41v1.56h.05c.48-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29ZM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12ZM7.12 20.45H3.56V9h3.56v11.45ZM22.22 0H1.77C.8 0 0 .78 0 1.75v20.5C0 23.22.8 24 1.77 24h20.45c.98 0 1.78-.78 1.78-1.75V1.75C24 .78 23.2 0 22.22 0Z"/></svg>
+          </a></li>
+          <li><a href="mailto:simon.oppowa-dev@proton.me" aria-label="Email">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+          </a></li>
+        </ul>
+      </header>
+
+      <!-- ===================== CONTENT ===================== -->
+      <main class="content">
+        <!-- ABOUT -->
+        <section id="about">
+          <h2 class="section-heading">About</h2>
+          <div class="prose reveal">
+            <p>
+              I'm a software engineer based in Regensburg, Germany, with around 10 years of
+              coding experience. I'm currently building cross-platform apps at
+              <a class="inline" href="https://krones.digital" target="_blank" rel="noreferrer">Krones.digital</a> (SYSKRON),
+              primarily with Flutter, and I care about clean code, solid performance, and interfaces
+              that feel effortless to use.
+            </p>
+            <p>
+              I like taking apps end-to-end — owning the whole journey from requirement engineering,
+              design, and conception through implementation and release, all the way to marketing and
+              monetization.
+            </p>
+            <p>
+              My journey started at
+              <a class="inline" href="https://www.oth-regensburg.de" target="_blank" rel="noreferrer">OTH Regensburg</a>, where I focused on software engineering.
+              Outside of work I'm an active open-source contributor — my main project is
+              <a class="inline" href="https://github.com/simonoppowa/OpenNutriTracker" target="_blank" rel="noreferrer">OpenNutriTracker</a>,
+              a free calorie tracker that's grown to over 2,000 stars on GitHub. These days I'm also experimenting a lot with AI.
+            </p>
+          </div>
+        </section>
+
+        <!-- EXPERIENCE -->
+        <section id="experience">
+          <h2 class="section-heading">Experience</h2>
+
+          <a class="card reveal" href="https://www.syskron.com" target="_blank" rel="noreferrer">
+            <div class="period">2023 — Present</div>
+            <div>
+              <div class="card-head">
+                <img class="clogo" src="assets/syskron-logo.png" alt="SYSKRON / Krones logo" loading="lazy" />
+                <h3 class="card-title">Software Engineer · SYSKRON (Krones.digital) <span class="arrow">↗</span></h3>
+              </div>
+              <p class="desc">
+                Building software for Krones.digital, part of the
+                Krones Group. Focused on clean architecture, performance, and a polished user
+                experience across several platforms.
+              </p>
+              <div class="tags">
+                <span class="tag">Flutter</span>
+                <span class="tag">Dart</span>
+                <span class="tag">UX Design</span>
+                <span class="tag">AWS</span>
+                <span class="tag">Angular</span>
+              </div>
+            </div>
+          </a>
+
+          <a class="card reveal" href="https://www.continental.com" target="_blank" rel="noreferrer">
+            <div class="period">2019 — 2020</div>
+            <div>
+              <div class="card-head">
+                <img class="clogo" src="assets/continental-logo.png" alt="Continental logo" loading="lazy" />
+                <h3 class="card-title">Mobile App Developer (Intern) · Continental <span class="arrow">↗</span></h3>
+              </div>
+              <p class="desc">
+                Interned on the mobile development team, developing native Android applications in
+                Kotlin and contributing to internal tooling for automotive projects.
+              </p>
+              <div class="tags">
+                <span class="tag">Kotlin</span>
+                <span class="tag">Android</span>
+                <span class="tag">Java</span>
+              </div>
+            </div>
+          </a>
+
+          <a class="more-link" href="https://www.linkedin.com/in/simon-oppowa" target="_blank" rel="noreferrer">View full profile on LinkedIn <span class="arrow">→</span></a>
+        </section>
+
+        <!-- EDUCATION -->
+        <section id="education">
+          <h2 class="section-heading">Education</h2>
+
+          <a class="card reveal" href="https://www.oth-regensburg.de" target="_blank" rel="noreferrer">
+            <div class="period">2021 — 2023</div>
+            <div>
+              <div class="card-head">
+                <img class="clogo" src="assets/oth-logo.png" alt="OTH Regensburg logo" loading="lazy" />
+                <h3 class="card-title">M.Sc. Computer Science · OTH Regensburg <span class="arrow">↗</span></h3>
+              </div>
+              <p class="desc">
+                Master of Science in Computer Science, with a focus on software engineering.
+              </p>
+              <div class="tags">
+                <span class="tag">UI/UX</span>
+                <span class="tag">Software Engineering</span>
+                <span class="tag">Algorithms</span>
+              </div>
+            </div>
+          </a>
+
+          <a class="card reveal" href="https://www.oth-regensburg.de" target="_blank" rel="noreferrer">
+            <div class="period">2016 — 2021</div>
+            <div>
+              <div class="card-head">
+                <img class="clogo" src="assets/oth-logo.png" alt="OTH Regensburg logo" loading="lazy" />
+                <h3 class="card-title">B.Sc. Computer Science · OTH Regensburg <span class="arrow">↗</span></h3>
+              </div>
+              <p class="desc">
+                Bachelor of Science in Computer Science, covering the foundations of software
+                engineering, algorithms, and software development.
+              </p>
+              <div class="tags">
+                <span class="tag">Software Engineering</span>
+                <span class="tag">Algorithms</span>
+              </div>
+            </div>
+          </a>
+        </section>
+
+        <!-- PROJECTS -->
+        <section id="projects">
+          <h2 class="section-heading">Projects</h2>
+
+          <a class="featured reveal" href="https://github.com/simonoppowa/OpenNutriTracker" target="_blank" rel="noreferrer">
+            <div class="shots">
+              <div class="phone"><img src="assets/ont-home-light.png" alt="OpenNutriTracker home screen, light theme" loading="lazy" /></div>
+              <div class="phone"><img src="assets/ont-home-dark.png" alt="OpenNutriTracker home screen, dark theme" loading="lazy" /></div>
+            </div>
+            <div class="meta-row">
+              <span class="period">Featured · 2,100+ GitHub stars</span>
+              <span class="rating"><span class="star">★</span> 4.5 <span class="rmuted">Google Play · 212 reviews</span></span>
+              <span class="dls">↓ 10K+ downloads</span>
+            </div>
+            <div class="card-head">
+              <img class="logo" src="assets/ont-logo.png" alt="OpenNutriTracker logo" loading="lazy" />
+              <h3 class="card-title">OpenNutriTracker <span class="arrow">↗</span></h3>
+            </div>
+            <p class="desc">
+              A free, open-source calorie and nutrition tracker built with Flutter, designed around
+              simplicity and privacy. Log meals, scan barcodes, and track macro- and micronutrients.
+            </p>
+            <div class="tags">
+              <span class="tag">Flutter</span>
+              <span class="tag">Dart</span>
+              <span class="tag">Hive</span>
+              <span class="tag">Supabase</span>
+            </div>
+          </a>
+
+          <a class="featured reveal" href="https://play.google.com/store/apps/details?id=de.simono.nightcitymap" target="_blank" rel="noreferrer">
+            <div class="shots">
+              <div class="shot"><img src="assets/nightcitymap-3.png" alt="NightCityMap interactive map of Night City" loading="lazy" /></div>
+              <div class="shot"><img src="assets/nightcitymap-2.png" alt="NightCityMap location detail view" loading="lazy" /></div>
+            </div>
+            <div class="meta-row">
+              <span class="period">Solo project · 100K+ downloads</span>
+              <span class="rating"><span class="star">★</span> 4.7 <span class="rmuted">Google Play · 651 reviews</span></span>
+            </div>
+            <div class="card-head">
+              <img class="clogo" src="assets/nightcitymap-logo.png" alt="NightCityMap logo" loading="lazy" />
+              <h3 class="card-title">NightCityMap <span class="arrow">↗</span></h3>
+            </div>
+            <p class="desc">
+              A solo-developed, unofficial offline map and game companion for Cyberpunk 2077. Explore
+              Night City to find missions, collectibles, iconic items, and gigs — and track your
+              progress. Published on Google Play.
+            </p>
+            <div class="tags">
+              <span class="tag">Android</span>
+              <span class="tag">Kotlin</span>
+              <span class="tag">Maps</span>
+            </div>
+          </a>
+
+          <a class="card reveal" href="https://play.google.com/store/apps/details?id=oth.oth_app" target="_blank" rel="noreferrer">
+            <div class="period">2021 — 2022</div>
+            <div>
+              <div class="card-head">
+                <img class="clogo" src="assets/oth-app-logo.png" alt="OTH App logo" loading="lazy" />
+                <h3 class="card-title">OTH App <span class="arrow">↗</span></h3>
+              </div>
+              <p class="desc">
+                The official mobile app of OTH Regensburg, built with Flutter for Android and iOS. It
+                gives students quick access to their timetable, canteen menus, campus navigation, bus
+                departures, and university news from a customizable dashboard.
+              </p>
+              <div class="tags">
+                <span class="tag">Flutter</span>
+                <span class="tag">Dart</span>
+                <span class="tag">Android</span>
+                <span class="tag">iOS</span>
+              </div>
+              <div class="meta-row" style="margin-top: 12px; margin-bottom: 0;">
+                <span class="rating"><span class="star">★</span> 3.9 <span class="rmuted">Google Play · 59 reviews</span></span>
+                <span class="dls">↓ 5K+ downloads</span>
+              </div>
+            </div>
+          </a>
+
+          <a class="card reveal" href="https://github.com/simonoppowa/OpenMedRTC-Android" target="_blank" rel="noreferrer">
+            <div class="period">Archived</div>
+            <div>
+              <div class="card-head">
+                <img class="logo" src="assets/openmedrtc-logo.png" alt="OpenMedRTC logo" loading="lazy" />
+                <h3 class="card-title">OpenMedRTC <span class="arrow">↗</span></h3>
+                <span class="badge-dep">Deprecated</span>
+              </div>
+              <p class="desc">
+                A telemedicine platform with a WebRTC-based Android client and a Kotlin signaling
+                backend for real-time video consultations between patients and doctors. Built as a
+                university project — no longer maintained.
+              </p>
+              <div class="tags">
+                <span class="tag">Kotlin</span>
+                <span class="tag">WebRTC</span>
+                <span class="tag">Android</span>
+              </div>
+            </div>
+          </a>
+
+          <a class="more-link" href="https://github.com/simonoppowa" target="_blank" rel="noreferrer">View more on GitHub <span class="arrow">→</span></a>
+        </section>
+
+        <footer>
+          <p>
+            Layout design inspired by the portfolio of
+            <a href="https://brittanychiang.com" target="_blank" rel="noreferrer">Brittany Chiang</a>.
+          </p>
+        </footer>
+      </main>
+    </div>
+  </div>
+
+  <script>
+    // cursor spotlight
+    const spotlight = document.getElementById("spotlight");
+    window.addEventListener("pointermove", (e) => {
+      spotlight.style.setProperty("--x", e.clientX + "px");
+      spotlight.style.setProperty("--y", e.clientY + "px");
+    });
+
+    // active nav link on scroll
+    const links = document.querySelectorAll("nav.nav-links a");
+    const sections = [...links].map((a) => document.querySelector(a.getAttribute("href")));
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const id = entry.target.id;
+            links.forEach((a) =>
+              a.classList.toggle("active", a.getAttribute("href") === "#" + id)
+            );
+          }
+        });
+      },
+      { rootMargin: "-40% 0px -55% 0px" }
+    );
+    sections.forEach((s) => s && observer.observe(s));
+
+    // scroll-reveal with a gentle per-section stagger
+    (function () {
+      var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      var reveals = document.querySelectorAll(".reveal");
+      if (reduce || !("IntersectionObserver" in window)) {
+        reveals.forEach(function (el) { el.classList.add("visible"); });
+        return;
+      }
+      document.querySelectorAll("section").forEach(function (sec) {
+        sec.querySelectorAll(".reveal").forEach(function (el, i) {
+          el.style.transitionDelay = Math.min(i * 80, 320) + "ms";
+        });
+      });
+      var revealObserver = new IntersectionObserver(
+        function (entries) {
+          entries.forEach(function (e) {
+            if (e.isIntersecting) {
+              e.target.classList.add("visible");
+              revealObserver.unobserve(e.target);
+            }
+          });
+        },
+        { rootMargin: "0px 0px -10% 0px", threshold: 0.1 }
+      );
+      reveals.forEach(function (el) { revealObserver.observe(el); });
+    })();
+  </script>
+</body>
+</html>
