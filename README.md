@@ -3,7 +3,7 @@
 My personal developer portfolio: a single-page site presenting who I am, my
 experience, education, and projects.
 
-**Live site:** _(add your GitHub Pages / Netlify / Vercel URL here)_
+**Live site:** https://simonoppowa.github.io
 
 ## Tech
 
