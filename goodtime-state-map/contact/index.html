@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- connect-src: keep in step with SUPABASE_URL in form.js. -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; font-src 'self'; img-src 'self'; connect-src https://cofwdrhodyyvnjjbdird.supabase.co; base-uri 'none'; form-action 'none'">
+  <meta name="referrer" content="no-referrer">
+  <title>Kontakt und Meldungen / Contact and reports · Goodtime State Map</title>
+  <meta name="description" content="Inhalte melden oder Kontakt aufnehmen. Report content or get in touch.">
+  <link rel="icon" href="../icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../style.css">
+  <script src="form.js" defer></script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="wrap header-row">
+      <a class="brand" href="../"><img src="../icon.svg" alt="" width="32" height="32"><span>Goodtime State Map</span></a>
+      <nav class="lang-switch" aria-label="Sprache / Language">
+        <a href="?lang=de" hreflang="de" data-setlang="de">Deutsch</a>
+        <a href="?lang=en" hreflang="en" lang="en" data-setlang="en">English</a>
+      </nav>
+    </div>
+  </header>
+
+  <!--
+    Web form spec: docs/legal/contact-points.md §5 (LEG-25).
+    The URL anchor #report or #contact selects the mode; without one the form
+    opens in Contact mode. ?lang=de or ?lang=en selects the language; without
+    it the browser language decides (German for de-*, otherwise English).
+    Without JavaScript the form stays hidden and the <noscript> text shows.
+    Text in .until-02 applies until crowdsourcing ships (0.2.0, contact-points.md
+    "0.1 variant"), text in .from-02 from the crowd release 0.2.1 on.
+  -->
+
+  <main class="wrap">
+    <h1><span data-lang="de">Kontakt und Meldungen</span><span data-nojs aria-hidden="true"> / </span><span data-lang="en" lang="en">Contact and reports</span></h1>
+
+    <p data-lang="de">Schreiben Sie uns oder melden Sie Inhalte aus der App. Sie erreichen uns auch per E-Mail an <a href="mailto:goodtimestatemap@protonmail.com">goodtimestatemap@protonmail.com</a>.</p>
+    <p data-lang="en" lang="en">Write to us or report content from the app. You can also email us at <a href="mailto:goodtimestatemap@protonmail.com">goodtimestatemap@protonmail.com</a>.</p>
+
+    <noscript>
+      <p class="hint">Für dieses Formular brauchen Sie JavaScript. Sie können uns auch an <a href="mailto:goodtimestatemap@protonmail.com">goodtimestatemap@protonmail.com</a> schreiben.</p>
+      <p class="hint" lang="en">This form needs JavaScript. You can also email us at <a href="mailto:goodtimestatemap@protonmail.com">goodtimestatemap@protonmail.com</a>.</p>
+    </noscript>
+
+    <div id="form-app" class="form-app" hidden>
+      <form id="gs-form" method="post" novalidate>
+        <fieldset class="segmented">
+          <legend class="visually-hidden"><span data-lang="de">Art der Nachricht</span><span data-lang="en" lang="en">Type of message</span></legend>
+          <input type="radio" name="mode" id="mode-report" value="report">
+          <label for="mode-report"><span data-lang="de">Inhalt melden</span><span data-lang="en" lang="en">Report content</span></label>
+          <input type="radio" name="mode" id="mode-contact" value="contact">
+          <label for="mode-contact"><span data-lang="de">Kontakt</span><span data-lang="en" lang="en">Contact</span></label>
+        </fieldset>
+
+        <div id="form-status" class="status" role="alert"></div>
+
+        <!-- Report content: reports table (§5.2) -->
+        <div data-mode="report">
+          <fieldset class="field" id="g-reason" aria-describedby="h-csam e-reason">
+            <legend><span data-lang="de">Grund</span><span data-lang="en" lang="en">Reason</span></legend>
+            <label class="choice"><input type="radio" name="reason" value="illegal"><span><span data-lang="de">Rechtswidriger Inhalt (z. B. Beleidigung, Bedrohung, Volksverhetzung)</span><span data-lang="en" lang="en">Illegal content (e.g. insults, threats, incitement to hatred)</span></span></label>
+            <label class="choice"><input type="radio" name="reason" value="csam"><span><span data-lang="de">Sexueller Missbrauch oder sexuelle Ausbeutung von Kindern, auch Missbrauchsdarstellungen und Cybergrooming</span><span data-lang="en" lang="en">Child sexual abuse or exploitation, including abuse material and grooming</span></span></label>
+            <label class="choice"><input type="radio" name="reason" value="copyright"><span><span data-lang="de">Urheberrecht oder anderes Schutzrecht</span><span data-lang="en" lang="en">Copyright or other intellectual property</span></span></label>
+            <label class="choice"><input type="radio" name="reason" value="personal_data"><span><span data-lang="de">Personenbezogene Daten</span><span data-lang="en" lang="en">Personal data</span></span></label>
+            <label class="choice"><input type="radio" name="reason" value="leak_spoiler"><span><span data-lang="de">Leak oder Spoiler</span><span data-lang="en" lang="en">Leak or spoiler</span></span></label>
+            <label class="choice"><input type="radio" name="reason" value="wrong_location"><span><span data-lang="de">Falsche Position</span><span data-lang="en" lang="en">Wrong location</span></span></label>
+            <label class="choice"><input type="radio" name="reason" value="other"><span><span data-lang="de">Sonstiges</span><span data-lang="en" lang="en">Other</span></span></label>
+            <p class="hint" id="h-csam" hidden><span data-lang="de">Bitte senden Sie keine Kopien oder Screenshots. Die Fundstelle genügt.</span><span data-lang="en" lang="en">Please do not send copies or screenshots. The location is enough.</span></p>
+            <p class="error" id="e-reason" hidden></p>
+          </fieldset>
+
+          <div class="field">
+            <label for="f-location"><span data-lang="de">Fundstelle</span><span data-lang="en" lang="en">Location of the content</span></label>
+            <textarea id="f-location" name="location_text" rows="2" aria-required="true" aria-describedby="h-location e-location"></textarea>
+            <p class="help" id="h-location"><span data-lang="de">Am besten die ID des Eintrags. Sonst Titel, Kategorie und Lage auf der Karte.</span><span data-lang="en" lang="en">The item's ID is best. Otherwise its title, category and place on the map.</span></p>
+            <p class="error" id="e-location" hidden></p>
+          </div>
+
+          <div class="field">
+            <label for="f-explanation"><span data-lang="de">Begründung</span><span data-lang="en" lang="en">Reasons</span></label>
+            <textarea id="f-explanation" name="explanation" rows="6" aria-required="true" aria-describedby="h-explanation e-explanation"></textarea>
+            <p class="help" id="h-explanation"><span data-lang="de">Warum ist der Inhalt rechtswidrig? Nennen Sie, wenn möglich, die verletzte Vorschrift oder das verletzte Recht.</span><span data-lang="en" lang="en">Why is the content illegal? If you can, name the law or right that is infringed.</span></p>
+            <p class="error" id="e-explanation" hidden></p>
+          </div>
+        </div>
+
+        <!-- Contact: contact_messages table (§5.3) -->
+        <p class="hint" data-mode="contact"><span data-lang="de">Rechtswidrige Inhalte melden Sie bitte im Modus <a href="#report">„Inhalt melden“</a>. Behörden schreiben bitte an <a href="mailto:goodtimestatemap@protonmail.com">goodtimestatemap@protonmail.com</a>.</span><span data-lang="en" lang="en">To report illegal content, please use <a href="#report">"Report content"</a>. Authorities, please email <a href="mailto:goodtimestatemap@protonmail.com">goodtimestatemap@protonmail.com</a>.</span></p>
+
+        <!-- Shared by both modes: kept when the mode changes -->
+        <div class="field">
+          <label for="f-name"><span data-lang="de">Ihr Name (freiwillig)</span><span data-lang="en" lang="en">Your name (optional)</span></label>
+          <input type="text" id="f-name" name="name" autocomplete="name" aria-describedby="h-contactinfo e-name">
+          <p class="error" id="e-name" hidden></p>
+        </div>
+
+        <div class="field">
+          <label for="f-email"><span data-lang="de" data-mode="report">Ihre E-Mail-Adresse (freiwillig)</span><span data-lang="en" data-mode="report" lang="en">Your email address (optional)</span><span data-lang="de" data-mode="contact">Ihre E-Mail-Adresse</span><span data-lang="en" data-mode="contact" lang="en">Your email address</span></label>
+          <input type="email" id="f-email" name="email" autocomplete="email" spellcheck="false" aria-describedby="h-contactinfo h-email e-email">
+          <p class="help" id="h-contactinfo" data-mode="report"><span data-lang="de">Damit wir Ihnen den Eingang bestätigen und unsere Entscheidung mitteilen können.</span><span data-lang="en" lang="en">So we can confirm receipt and tell you our decision.</span></p>
+          <p class="help" id="h-email" data-mode="contact"><span data-lang="de">Wir antworten an diese Adresse.</span><span data-lang="en" lang="en">We reply to this address.</span></p>
+          <p class="error" id="e-email" hidden></p>
+        </div>
+
+        <!-- Report content: good-faith statement (§5.4) -->
+        <div class="field" data-mode="report">
+          <label class="choice" for="f-goodfaith"><input type="checkbox" id="f-goodfaith" name="good_faith" aria-required="true" aria-describedby="e-goodfaith"><span><span data-lang="de">Ich bin in gutem Glauben davon überzeugt, dass die Angaben in dieser Meldung richtig und vollständig sind.</span><span data-lang="en" lang="en">I believe in good faith that the information and allegations in this report are accurate and complete.</span></span></label>
+          <p class="error" id="e-goodfaith" hidden></p>
+        </div>
+
+        <!-- Contact: message -->
+        <div class="field" data-mode="contact">
+          <label for="f-message"><span data-lang="de">Ihre Nachricht</span><span data-lang="en" lang="en">Your message</span></label>
+          <textarea id="f-message" name="message" rows="8" aria-required="true" aria-describedby="e-message"></textarea>
+          <p class="error" id="e-message" hidden></p>
+        </div>
+
+        <!-- Honeypot (§5.1): hidden from people and screen readers. If filled, the page confirms and sends nothing. -->
+        <div class="hp" aria-hidden="true">
+          <label for="f-website">Website</label>
+          <input type="text" id="f-website" name="website" tabindex="-1" autocomplete="off">
+        </div>
+
+        <!-- Privacy notes (§5.5) -->
+        <div class="privacy-note" data-mode="report" data-lang="de">
+          <p><strong>Datenschutz:</strong> Wir speichern Ihre Meldung mit allen Angaben aus diesem Formular bei unserem Auftragsverarbeiter Supabase (Server in Frankfurt, EU). Wir nutzen sie nur, um Ihre Meldung zu bearbeiten. <span>Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO. Unser berechtigtes Interesse ist, die Karte frei von rechtswidrigen und unzulässigen Einträgen zu halten.</span>  Wir löschen die Meldung 6 Monate nach unserer Entscheidung. Länger speichern wir sie nur, wenn eine Behörde das verlangt. Zum Schutz vor Missbrauch speichern wir Ihre IP-Adresse 24 Stunden lang für eine Mengenbegrenzung (Art. 6 Abs. 1 lit. f DSGVO). In den technischen Server-Protokollen von Supabase kann sie bis zu 7 Tage gespeichert sein. Ihren Namen und Ihre E-Mail-Adresse geben wir nicht an die Person weiter, deren Inhalt Sie melden. Das tun wir nur, wenn ein Gesetz uns dazu verpflichtet, etwa wenn Ihre Identität für die Begründung unserer Entscheidung unbedingt notwendig ist (Art. 17 Abs. 3 lit. b DSA). Besteht der Verdacht einer Straftat, die das Leben oder die Sicherheit von Personen gefährdet, geben wir die Meldung an Strafverfolgungsbehörden weiter (Art. 18 DSA). Mehr in unserer <a href="../privacy/#de">Datenschutzerklärung</a>.</p>
+        </div>
+        <div class="privacy-note" data-mode="report" data-lang="en" lang="en">
+          <p><strong>Privacy:</strong> We store your report and everything you enter in this form with our processor Supabase (servers in Frankfurt, EU). We use it only to handle your report. <span>The legal basis is Art. 6(1)(f) GDPR. Our legitimate interest is keeping the map free of illegal and prohibited entries.</span>  We delete the report 6 months after our decision, and keep it longer only if an authority requires it. To prevent abuse, we store your IP address for 24 hours for a rate limit (Art. 6(1)(f) GDPR). Supabase's technical server logs may hold it for up to 7 days. We do not pass your name or email address to the person whose content you report, unless the law requires us to, for example where your identity is strictly necessary to explain our decision (Art. 17(3)(b) DSA). If we suspect a criminal offence that threatens the life or safety of a person, we pass the report to law enforcement authorities (Art. 18 DSA). More in our <a href="../privacy/#en">privacy policy</a>.</p>
+        </div>
+        <div class="privacy-note" data-mode="contact" data-lang="de">
+          <p><strong>Datenschutz:</strong> Wir speichern Ihre Nachricht, Ihre E-Mail-Adresse und, falls angegeben, Ihren Namen bei unserem Auftragsverarbeiter Supabase (Server in Frankfurt, EU), um Ihre Anfrage zu beantworten. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO. Unser berechtigtes Interesse ist, Anfragen zu beantworten.  Wir löschen die Nachricht 6 Monate nach Abschluss Ihrer Anfrage. Zum Schutz vor Missbrauch speichern wir Ihre IP-Adresse 24 Stunden lang für eine Mengenbegrenzung (Art. 6 Abs. 1 lit. f DSGVO). In den technischen Server-Protokollen von Supabase kann sie bis zu 7 Tage gespeichert sein. Mehr in unserer <a href="../privacy/#de">Datenschutzerklärung</a>.</p>
+        </div>
+        <div class="privacy-note" data-mode="contact" data-lang="en" lang="en">
+          <p><strong>Privacy:</strong> We store your message, your email address and, if given, your name with our processor Supabase (servers in Frankfurt, EU) to answer your enquiry. The legal basis is Art. 6(1)(f) GDPR. Our legitimate interest is answering enquiries.  We delete the message 6 months after your enquiry is closed. To prevent abuse, we store your IP address for 24 hours for a rate limit (Art. 6(1)(f) GDPR). Supabase's technical server logs may hold it for up to 7 days. More in our <a href="../privacy/#en">privacy policy</a>.</p>
+        </div>
+
+        <div class="btn-row">
+          <button type="submit" class="btn-filled" id="f-send"><span data-lang="de">Senden</span><span data-lang="en" lang="en">Send</span></button>
+        </div>
+      </form>
+
+      <!-- Confirmation (§5.6): replaces the form -->
+      <div id="form-confirm" class="confirm" tabindex="-1" hidden>
+        <p id="confirm-text"></p>
+        <div class="btn-row">
+          <button type="button" class="btn-tonal" id="f-again"></button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Block 3 of docs/legal/contact-points.md: Art. 16 DSA notice text -->
+    <section class="lang-section" data-lang="de" aria-labelledby="de-report-title">
+      <h2 id="de-report-title">Rechtswidrige Inhalte melden (Art. 16 DSA)</h2>
+      <p>Sie können uns Inhalte aus der App melden, die Sie für rechtswidrig halten. Dafür brauchen Sie kein Konto.</p>
+      <p>So melden Sie:</p>
+      <ul>
+        <li><strong>Im Webformular:</strong> <a href="#report">Inhalt melden</a>. Das Formular steht allen offen, auch ohne die App.</li>
+        <li><strong>Per E-Mail:</strong> an <a href="mailto:goodtimestatemap@protonmail.com">goodtimestatemap@protonmail.com</a>, mit den Angaben unten.</li>
+      </ul>
+      <p>Meldungen nehmen wir auf Deutsch und Englisch entgegen.</p>
+      <p>Eine vollständige Meldung enthält:</p>
+      <ol>
+        <li><strong>Begründung:</strong> Warum halten Sie den Inhalt für rechtswidrig? Nennen Sie, wenn möglich, die verletzte Vorschrift oder das verletzte Recht.</li>
+        <li><strong>Fundstelle:</strong> Wo genau steht der Inhalt? Am besten die ID des Eintrags, falls Sie sie haben. Sonst Titel, Kategorie und Lage auf der Karte.</li>
+        <li><strong>Ihr Name und Ihre E-Mail-Adresse.</strong></li>
+        <li><strong>Erklärung:</strong> dass Sie in gutem Glauben davon überzeugt sind, dass die Angaben in Ihrer Meldung richtig und vollständig sind.</li>
+      </ol>
+      <p>Name und E-Mail-Adresse sind freiwillig. Ohne E-Mail-Adresse können wir Ihnen aber weder den Eingang bestätigen noch unsere Entscheidung mitteilen.</p>
+      <p>Bitte senden Sie uns keine Kopien oder Screenshots von Inhalten, die sexuellen Missbrauch von Kindern zeigen. Die Fundstelle genügt.</p>
+
+      <h3>Was dann passiert</h3>
+      <ul>
+        <li>Haben Sie eine E-Mail-Adresse angegeben, bestätigen wir Ihnen den Eingang.</li>
+        <li>Ein Mensch prüft jede Meldung und entscheidet darüber. Wir setzen dafür keine automatisierten Mittel ein.</li>
+        <li>Wir bearbeiten Meldungen zeitnah, sorgfältig, frei von Willkür und objektiv.</li>
+        <li>Unsere Entscheidung teilen wir Ihnen per E-Mail mit. Dabei nennen wir Ihnen Ihre Möglichkeiten, dagegen vorzugehen.</li>
+      </ul>
+
+      <h3>Wenn Sie mit unserer Entscheidung nicht einverstanden sind</h3>
+      <ul>
+        <li>Antworten Sie auf unsere E-Mail. Wir prüfen den Fall dann erneut.</li>
+        <li>Wenn Sie meinen, dass wir gegen den DSA verstoßen, können Sie sich beim Koordinator für digitale Dienste des Mitgliedstaats beschweren, in dem Sie sich aufhalten oder niedergelassen sind (Art. 53 DSA). In Deutschland ist das die Bundesnetzagentur: www.dsc.bund.de.</li>
+        <li>Sie können Ihre Rechte vor Gericht geltend machen.</li>
+      </ul>
+
+      <h3>Straftaten und akute Gefahr</h3>
+      <p>Besteht der Verdacht einer Straftat, die das Leben oder die Sicherheit von Personen gefährdet, informieren wir die Strafverfolgungsbehörden (Art. 18 DSA). Bei akuter Gefahr wählen Sie bitte sofort den Notruf: 110 (Polizei in Deutschland) oder 112 (in der ganzen EU).</p>
+    </section>
+
+    <section class="lang-section" data-lang="en" lang="en" aria-labelledby="en-report-title">
+      <h2 id="en-report-title">Report illegal content (Art. 16 DSA)</h2>
+      <p>You can report content from the app that you believe is illegal. You do not need an account.</p>
+      <p>How to report:</p>
+      <ul>
+        <li><strong>Web form:</strong> <a href="#report">Report content</a>. Anyone can use it, with or without the app.</li>
+        <li><strong>By email:</strong> to <a href="mailto:goodtimestatemap@protonmail.com">goodtimestatemap@protonmail.com</a>, with the details below.</li>
+      </ul>
+      <p>We accept reports in German and English.</p>
+      <p>A complete report contains:</p>
+      <ol>
+        <li><strong>Reasons:</strong> Why do you believe the content is illegal? If you can, name the law or right that is infringed.</li>
+        <li><strong>Location:</strong> Where exactly is the content? The item's ID is best, if you have it. Otherwise give its title, category and place on the map.</li>
+        <li><strong>Your name and email address.</strong></li>
+        <li><strong>Statement:</strong> that you believe in good faith that the information in your report is accurate and complete.</li>
+      </ol>
+      <p>Your name and email address are optional. Without an email address, however, we cannot confirm receipt or tell you our decision.</p>
+      <p>Please do not send us copies or screenshots of content that shows child sexual abuse. The location is enough.</p>
+
+      <h3>What happens next</h3>
+      <ul>
+        <li>If you gave an email address, we confirm that we received your report.</li>
+        <li>A person reviews and decides every report. We use no automated means for this.</li>
+        <li>We handle reports in a timely, diligent, non-arbitrary and objective manner.</li>
+        <li>We email you our decision and tell you how you can challenge it.</li>
+      </ul>
+
+      <h3>If you disagree with our decision</h3>
+      <ul>
+        <li>Reply to our email, and we will review the case again.</li>
+        <li>If you believe we breach the DSA, you can complain to the Digital Services Coordinator of the Member State where you are located or established (Art. 53 DSA). In Germany, this is the Bundesnetzagentur: www.dsc.bund.de.</li>
+        <li>You can take the matter to court.</li>
+      </ul>
+
+      <h3>Crimes and immediate danger</h3>
+      <p>If we suspect a criminal offence that threatens the life or safety of a person, we inform law enforcement authorities (Art. 18 DSA). In an emergency, call the emergency number right away: 110 (police in Germany) or 112 (anywhere in the EU).</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <nav aria-label="Rechtliches / Legal">
+        <ul class="footer-links">
+          <li><a href="../privacy/">Datenschutz / <span lang="en">Privacy policy</span></a></li>
+          <li><a href="../impressum/">Impressum / <span lang="en">Legal notice</span></a></li>
+          <li><a href="../contact/">Kontakt und Meldungen / <span lang="en">Contact and reports</span></a></li>
+        </ul>
+      </nav>
+      <p class="disclaimer" lang="en">Unofficial fan-made app. Not affiliated with, endorsed or sponsored by Rockstar Games or Take-Two Interactive. Grand Theft Auto, GTA, Grand Theft Auto VI and Vice City are marks of Take-Two Interactive Software, Inc. All game names and content belong to their respective owners.</p>
+      <p class="disclaimer" lang="de">Inoffizielle Fan-App. Nicht verbunden mit, unterstützt oder gesponsert von Rockstar Games oder Take-Two Interactive. Grand Theft Auto, GTA, Grand Theft Auto VI und Vice City sind Marken der Take-Two Interactive Software, Inc. Alle Spielnamen und -inhalte gehören ihren jeweiligen Inhabern.</p>
+    </div>
+  </footer>
+</body>
+</html>

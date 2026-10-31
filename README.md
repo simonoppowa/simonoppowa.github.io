@@ -8,7 +8,7 @@ experience, education, and projects.
 ## Tech
 
 - Plain HTML, CSS, and a little vanilla JavaScript — no build step, no frameworks.
-- Fonts: Inter, Space Grotesk, and Space Mono (via Google Fonts).
+- Fonts: Inter, Space Grotesk, and Space Mono, self-hosted in `assets/fonts/` (SIL OFL 1.1).
 - Fully self-contained: all images and icons live in `assets/`.
 
 ## Features
