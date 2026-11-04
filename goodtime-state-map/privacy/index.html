@@ -23,6 +23,10 @@
         <a href="#pl" hreflang="pl" lang="pl">Polski</a>
         <a href="#ru" hreflang="ru" lang="ru">Русский</a>
         <a href="#pt-br" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a>
+        <a href="#it" hreflang="it" lang="it">Italiano</a>
+        <a href="#tr" hreflang="tr" lang="tr">Türkçe</a>
+        <a href="#ja" hreflang="ja" lang="ja">日本語</a>
+        <a href="#zh-hant" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a>
       </nav>
     </div>
   </header>
@@ -32,23 +36,26 @@
 
     <!--
       The text for the crowd-free 0.2.0 first, then the crowdsourcing additions of
-      0.2.1 in a marked section per language (the old "0.1" and "0.2" markers:
-      v02 and .from-02 now mean 0.2.1, .until-02 means 0.2.0).
-      Seven languages (LEG-04, OI-70): German and English are binding; the FR, ES,
-      PL, RU and PT-BR sections are agent translations of the English text and
-      need the back-translation check before publication. The app opens the
-      section of its language (#de, #en, #fr, #es, #pl, #ru, #pt-br).
+      0.2.5 in a marked section per language (the old "0.1" and "0.2" markers:
+      v02 and .from-02 now mean 0.2.5, .until-02 means 0.2.0).
+      Eleven languages (LEG-04, OI-70): German and English are binding; the FR, ES,
+      PL, RU, PT-BR, IT, TR, JA and ZH-HANT sections are agent translations of the
+      English text and need the back-translation check before publication. The app
+      opens the section of its language (#de, #en, #fr, #es, #pl, #ru, #pt-br, #it,
+      #tr, #ja, #zh-hant). The JA section alone adds a paragraph for Japan's APPI,
+      and the ZH-HANT section alone one for Taiwan's PDPA and Hong Kong's PDPO
+      (both marked).
       Publishing 0.2.0: delete every <section class="v02"> block and every .from-02 element.
-      Publishing 0.2.1: fold the v02 sections into the main text and delete .until-02 elements.
+      Publishing 0.2.5: fold the v02 sections into the main text and delete .until-02 elements.
       Every <mark class="todo"> is a placeholder or an open item (docs/web/README.md).
       Any change to the DE or EN text needs the same change, translated and
-      checked, in the five other sections.
+      checked, in the nine other sections.
     -->
 
     <section class="lang-section" id="de" aria-labelledby="de-title">
       <h2 id="de-title">Datenschutzerklärung</h2>
-      <p class="meta">Stand: 31. Oktober 2026. Gilt für die App Goodtime State Map ab Version 0.2.0 und für diese Webseiten.</p>
-      <p class="meta">Diese Erklärung gibt es auch auf Französisch, Spanisch, Polnisch, Russisch und brasilianischem Portugiesisch. Verbindlich sind die deutsche und die englische Fassung.</p>
+      <p class="meta">Stand: 4. November 2026. Gilt für die App Goodtime State Map ab Version 0.2.0 und für diese Webseiten.</p>
+      <p class="meta">Diese Erklärung gibt es auch auf Französisch, Spanisch, Polnisch, Russisch, brasilianischem Portugiesisch, Italienisch, Türkisch, Japanisch und traditionellem Chinesisch. Verbindlich sind die deutsche und die englische Fassung.</p>
 
       <h3>1. Verantwortlicher</h3>
       <p>Verantwortlich für die Verarbeitung Ihrer Daten ist:</p>
@@ -149,8 +156,8 @@
 
     <section class="lang-section" id="en" lang="en" aria-labelledby="en-title">
       <h2 id="en-title">Privacy policy</h2>
-      <p class="meta">Last updated: 31 October 2026. Covers the Goodtime State Map app from version 0.2.0 and these web pages.</p>
-      <p class="meta">This policy is also available in French, Spanish, Polish, Russian and Brazilian Portuguese. The German and English versions are binding.</p>
+      <p class="meta">Last updated: 4 November 2026. Covers the Goodtime State Map app from version 0.2.0 and these web pages.</p>
+      <p class="meta">This policy is also available in French, Spanish, Polish, Russian, Brazilian Portuguese, Italian, Turkish, Japanese and Traditional Chinese. The German and English versions are binding.</p>
 
       <h3>1. Controller</h3>
       <p>The controller responsible for processing your data is:</p>
@@ -250,7 +257,7 @@
 
     <section class="lang-section" id="fr" lang="fr" aria-labelledby="fr-title">
       <h2 id="fr-title">Politique de confidentialité</h2>
-      <p class="meta">Dernière mise à jour : 31 octobre 2026. S'applique à l'application Goodtime State Map à partir de la version 0.2.0 et à ces pages web.</p>
+      <p class="meta">Dernière mise à jour : 4 novembre 2026. S'applique à l'application Goodtime State Map à partir de la version 0.2.0 et à ces pages web.</p>
       <p class="meta">Traduction de la version anglaise. Seules les versions allemande et anglaise font foi.</p>
 
       <h3>1. Responsable du traitement</h3>
@@ -294,7 +301,8 @@
       <p>Si vous avez moins de 16 ans, n'autorisez les rapports de plantage qu'avec l'accord d'un parent.</p>
 
       <h3>5. Ce qui reste sur votre appareil</h3>
-      <p>L'application stocke uniquement sur votre appareil ce que vous marquez comme vu, vos filtres, votre langue, votre choix concernant les rapports de plantage et le nombre de lieux vus (5, 25 ou 75) auquel elle a demandé une évaluation pour la dernière fois (section 9). Elle n'envoie à personne vos marqueurs vus, vos filtres, votre choix concernant les rapports de plantage ni ce nombre. Pour afficher les textes dans votre langue, l'application demande à Supabase les textes dans cette langue et en anglais (section 3) ; Supabase voit donc quelle langue est demandée. Ce stockage est nécessaire aux fonctions que vous utilisez (§ 25, al. 2, n° 2 TDDDG).</p>
+      <!-- Wording pass 2026-11-04 (docs/records/legal-texts.md): §5's first sentence revised by an agent and back-translated (docs/records/back-translations/2026-11-04-privacy-wording-fr.md) and approved by the developer on 2026-11-04 (docs/records/legal-texts.md). -->
+      <p>L'application stocke les données suivantes uniquement sur votre appareil : ce que vous marquez comme vu, vos filtres, votre langue, votre choix concernant les rapports de plantage et le nombre de lieux vus (5, 25 ou 75) auquel l'application vous a demandé une évaluation la dernière fois (section 9). Elle n'envoie à personne vos marqueurs vus, vos filtres, votre choix concernant les rapports de plantage ni ce nombre. Pour afficher les textes dans votre langue, l'application demande à Supabase les textes dans cette langue et en anglais (section 3) ; Supabase voit donc quelle langue est demandée. Ce stockage est nécessaire aux fonctions que vous utilisez (§ 25, al. 2, n° 2 TDDDG).</p>
 
       <h3>6. Ces pages web (GitHub Pages)</h3>
       <p>Ces pages web sont hébergées sur GitHub Pages, un service de GitHub, Inc. (États-Unis). Lorsque vous ouvrez une page, GitHub reçoit votre adresse IP et des informations techniques sur la requête, comme l'heure, la page et votre navigateur, et en a besoin pour livrer les pages. GitHub enregistre aussi les adresses IP des visiteurs pour ses propres besoins de sécurité. Pour ces journaux, GitHub est un responsable du traitement distinct. GitHub ne propose pas d'accord de traitement des données pour GitHub Pages. GitHub participe au Data Privacy Framework UE-États-Unis et ne publie aucune durée de conservation pour ces journaux. Pour en savoir plus, consultez la <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" hreflang="en">déclaration de confidentialité de GitHub</a> (en anglais). La base juridique est l'article 6, paragraphe 1, point f) du RGPD. Notre intérêt légitime est de mettre ces pages à disposition.</p>
@@ -351,7 +359,7 @@
 
     <section class="lang-section" id="es" lang="es" aria-labelledby="es-title">
       <h2 id="es-title">Política de privacidad</h2>
-      <p class="meta">Última actualización: 31 de octubre de 2026. Se aplica a la app Goodtime State Map a partir de la versión 0.2.0 y a estas páginas web.</p>
+      <p class="meta">Última actualización: 4 de noviembre de 2026. Se aplica a la app Goodtime State Map a partir de la versión 0.2.0 y a estas páginas web.</p>
       <p class="meta">Traducción de la versión inglesa. Solo las versiones alemana e inglesa son vinculantes.</p>
 
       <h3>1. Responsable del tratamiento</h3>
@@ -388,14 +396,15 @@
         <li><strong>Datos:</strong> modelo del dispositivo, sistema operativo, versión de la app, traza del error y un identificador de instalación aleatorio. La app también envía, para cada sesión, incluidas las sesiones sin fallos, su inicio, su fin y si terminó con un fallo (datos de sesión). Con ello, Sentry cuenta cuántas sesiones terminan sin fallos. Cada informe contiene además datos técnicos del dispositivo y de la app, como el tamaño de la pantalla, la memoria, el idioma, la zona horaria y los ajustes de accesibilidad (por ejemplo, si las animaciones están reducidas).</li>
         <li><strong>Destinatario:</strong> Sentry, como nuestro encargado del tratamiento. Sentry guarda los informes en su región de la UE en Fráncfort del Meno. Para las transferencias a EE. UU., Sentry se basa en el Marco de Privacidad de Datos UE-EE. UU. (Data Privacy Framework) y, de forma subsidiaria, en las cláusulas contractuales tipo de la UE.</li>
         <li><strong>Dirección IP:</strong> al enviar un informe, Sentry recibe técnicamente su dirección IP. Hemos configurado Sentry para que no la guarde.</li>
-        <li><strong>Base jurídica:</strong> su consentimiento (art. 6.1.a) del RGPD; para el identificador de instalación en su dispositivo, § 25.1 TDDDG, la ley alemana de protección de datos en telecomunicaciones y servicios digitales).</li>
+        <li><strong>Base jurídica:</strong> su consentimiento (art. 6.1.a) del RGPD; para el identificador de instalación en su dispositivo, § 25, apartado 1, de la TDDDG, la ley alemana de protección de datos en telecomunicaciones y servicios digitales).</li>
         <li><strong>Conservación:</strong> Sentry borra los informes a los 30 días. Si nos lo pide por correo electrónico, los borramos antes.</li>
       </ul>
       <p><strong>Retirar el consentimiento:</strong> puede retirar su consentimiento en cualquier momento. En la app, vaya a «Ajustes» y desactive «Enviar informes de fallos». A partir de ese momento, la app no envía nada más a Sentry. La retirada surte efecto para el futuro. Puede volver a activar la opción en el mismo lugar.</p>
       <p>Si tiene menos de 16 años, permita los informes de fallos solo con el permiso de sus padres.</p>
 
       <h3>5. Lo que se queda en su dispositivo</h3>
-      <p>La app guarda solo en su dispositivo lo que marca como visto, sus filtros, su idioma, su elección sobre los informes de fallos y el número de lugares vistos (5, 25 o 75) con el que pidió una valoración por última vez (sección 9). No envía a nadie sus marcadores vistos, sus filtros, su elección sobre los informes de fallos ni ese número. Para mostrar los textos en su idioma, la app pide a Supabase los textos en ese idioma y en inglés (sección 3), por lo que Supabase ve qué idioma se solicita. Este almacenamiento es necesario para las funciones que usted utiliza (§ 25.2, n.º 2 TDDDG).</p>
+      <!-- Wording pass 2026-11-04 (docs/records/legal-texts.md): §4's TDDDG reference and §5's first sentence and TDDDG reference revised by an agent and back-translated (docs/records/back-translations/2026-11-04-privacy-wording-es.md) and approved by the developer on 2026-11-04 (docs/records/legal-texts.md). -->
+      <p>La app guarda los siguientes datos únicamente en su dispositivo: lo que usted marca como visto, sus filtros, su idioma, su elección sobre los informes de fallos y el número de lugares vistos (5, 25 o 75) en el que la app le pidió una valoración la última vez (sección 9). No envía a nadie sus marcadores vistos, sus filtros, su elección sobre los informes de fallos ni ese número. Para mostrar los textos en su idioma, la app pide a Supabase los textos en ese idioma y en inglés (sección 3), por lo que Supabase ve qué idioma se solicita. Este almacenamiento es necesario para las funciones que usted utiliza (§ 25, apartado 2, n.º 2, de la TDDDG).</p>
 
       <h3>6. Estas páginas web (GitHub Pages)</h3>
       <p>Estas páginas web están alojadas en GitHub Pages, un servicio de GitHub, Inc. (EE. UU.). Cuando abre una página, GitHub recibe su dirección IP y datos técnicos de la solicitud, como la hora, la página y su navegador, y los necesita para entregar las páginas. GitHub también registra las direcciones IP de los visitantes para sus propios fines de seguridad. Para estos registros, GitHub es un responsable del tratamiento independiente. GitHub no ofrece un acuerdo de tratamiento de datos para GitHub Pages. GitHub participa en el Data Privacy Framework UE-EE. UU. y no publica ningún plazo de conservación para estos registros. Encontrará más información en la <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" hreflang="en">declaración de privacidad de GitHub</a> (en inglés). La base jurídica es el art. 6.1.f) del RGPD. Nuestro interés legítimo es ofrecer estas páginas.</p>
@@ -452,7 +461,7 @@
 
     <section class="lang-section" id="pl" lang="pl" aria-labelledby="pl-title">
       <h2 id="pl-title">Polityka prywatności</h2>
-      <p class="meta">Ostatnia aktualizacja: 31 października 2026. Dotyczy aplikacji Goodtime State Map od wersji 0.2.0 oraz tych stron internetowych.</p>
+      <p class="meta">Ostatnia aktualizacja: 4 listopada 2026. Dotyczy aplikacji Goodtime State Map od wersji 0.2.0 oraz tych stron internetowych.</p>
       <p class="meta">Tłumaczenie wersji angielskiej. Wiążące są wyłącznie wersja niemiecka i angielska.</p>
 
       <h3>1. Administrator</h3>
@@ -553,7 +562,7 @@
 
     <section class="lang-section" id="ru" lang="ru" aria-labelledby="ru-title">
       <h2 id="ru-title">Политика конфиденциальности</h2>
-      <p class="meta">Последнее обновление: 31 октября 2026 г. Действует для приложения Goodtime State Map начиная с версии 0.2.0 и для этих веб-страниц.</p>
+      <p class="meta">Последнее обновление: 4 ноября 2026 г. Действует для приложения Goodtime State Map начиная с версии 0.2.0 и для этих веб-страниц.</p>
       <p class="meta">Перевод английской версии. Обязательную силу имеют только немецкая и английская версии.</p>
 
       <h3>1. Ответственное лицо</h3>
@@ -654,7 +663,7 @@
 
     <section class="lang-section" id="pt-br" lang="pt-BR" aria-labelledby="pt-br-title">
       <h2 id="pt-br-title">Política de privacidade</h2>
-      <p class="meta">Última atualização: 31 de outubro de 2026. Vale para o app Goodtime State Map a partir da versão 0.2.0 e para estas páginas web.</p>
+      <p class="meta">Última atualização: 4 de novembro de 2026. Vale para o app Goodtime State Map a partir da versão 0.2.0 e para estas páginas web.</p>
       <p class="meta">Tradução da versão em inglês. Somente as versões em alemão e em inglês são vinculativas.</p>
 
       <h3>1. Controlador</h3>
@@ -750,6 +759,417 @@
 
       <h3>12. Alterações</h3>
       <p>Quando o app muda, atualizamos esta política de privacidade.</p>
+
+    </section>
+
+    <section class="lang-section" id="it" lang="it" aria-labelledby="it-title">
+      <h2 id="it-title">Informativa sulla privacy</h2>
+      <p class="meta">Ultimo aggiornamento: 4 novembre 2026. Si applica all'app Goodtime State Map a partire dalla versione 0.2.0 e a queste pagine web.</p>
+      <p class="meta">Traduzione della versione inglese. Fanno fede solo le versioni tedesca e inglese.</p>
+
+      <h3>1. Titolare del trattamento</h3>
+      <p>Il titolare del trattamento dei tuoi dati è:</p>
+      <address>
+        Simon Oppowa<br>
+        Edith-Stein-Straße 56<br>
+        93055 Regensburg<br>
+        Germania<br>
+        E-mail: <a href="mailto:goodtimestatemap@protonmail.com">goodtimestatemap@protonmail.com</a>
+      </address>
+      <p>Per domande sulla privacy, usa questo indirizzo e-mail o il <a href="../contact/?lang=en#contact">modulo di contatto</a> (in inglese o in tedesco).</p>
+
+      <h3>2. In breve</h3>
+      <ul>
+        <li>L'app non contiene pubblicità, tracciamento né strumenti di analisi che osservano come la usi.</li>
+        <li>L'app carica la mappa e i suoi contenuti da Supabase, nell'UE.</li>
+        <li>L'app invia rapporti sugli arresti anomali e dati di sessione solo se lo consenti.</li>
+        <li>Ciò che segni come visto, i tuoi filtri e le tue impostazioni restano sul tuo dispositivo. Supabase vede solo in quale lingua l'app richiede i contenuti.</li>
+        <li>Queste pagine web non impostano cookie e non caricano nulla da altri server.</li>
+      </ul>
+
+      <h3>3. Mappa e contenuti (Supabase)</h3>
+      <p>L'app carica da Supabase i riquadri della mappa (tile), la descrizione della mappa (manifest) e i contenuti dei segnaposto. Supabase è il nostro responsabile del trattamento. I dati si trovano su server a Francoforte sul Meno (UE).</p>
+      <p>L'app carica da Supabase anche immagini, come screenshot e miniature dei video. Per queste vale lo stesso che per la mappa.</p>
+      <p>A ogni richiesta, Supabase riceve il tuo indirizzo IP e dati tecnici della richiesta, come l'ora e il file richiesto. L'app non effettua alcun accesso e non invia alcun identificativo del tuo dispositivo. I log tecnici di Supabase (log dell'API e del database) possono conservare il tuo indirizzo IP fino a 7 giorni. Supabase esegue ogni giorno un backup del database e conserva ogni backup per 7 giorni; i dati cancellati possono quindi restare nei backup fino a 7 giorni.</p>
+      <p>La finalità è mostrarti la mappa e i suoi contenuti. La base giuridica è l'art. 6, par. 1, lett. f), del Regolamento generale sulla protezione dei dati (GDPR). Il nostro legittimo interesse è poter gestire l'app.</p>
+      <p>Secondo l'accordo sul trattamento dei dati di Supabase, la nostra controparte contrattuale è Supabase Pte. Ltd., a Singapore. Supabase può utilizzare log, backup e sub-responsabili del trattamento al di fuori dell'UE. I trasferimenti verso paesi terzi sono coperti dalle clausole contrattuali tipo dell'UE (decisione di esecuzione (UE) 2021/914 della Commissione, art. 46, par. 2, lett. c), del GDPR). Su richiesta te ne inviamo una copia.</p>
+
+      <h3>4. Rapporti sugli arresti anomali (Sentry), solo con il tuo consenso</h3>
+      <p>Al primo avvio, l'app chiede sulla mappa se può inviare rapporti sugli arresti anomali. Puoi scegliere “Consenti” o “No, grazie”. Chiudere la domanda equivale a “no”. L'app avvia Sentry solo dopo “Consenti”. Gli errori che si verificano prima vengono scartati. Non vengono inviati in seguito.</p>
+      <ul>
+        <li><strong>Finalità:</strong> individuare e correggere arresti anomali ed errori.</li>
+        <li><strong>Dati:</strong> modello del dispositivo, sistema operativo, versione dell'app, traccia dell'errore e un ID di installazione casuale. Per ogni sessione, comprese quelle senza arresto anomalo, l'app invia anche l'inizio, la fine e se si è conclusa con un arresto anomalo (dati di sessione). Da questi dati Sentry conta quante sessioni terminano senza arresto anomalo. Ogni rapporto contiene inoltre dati tecnici sul dispositivo e sull'app, come dimensioni dello schermo, memoria, lingua, fuso orario e impostazioni di accessibilità (per esempio, se le animazioni sono ridotte).</li>
+        <li><strong>Destinatario:</strong> Sentry, in qualità di nostro responsabile del trattamento. Sentry conserva i rapporti nella sua regione UE a Francoforte sul Meno. Per i trasferimenti verso gli Stati Uniti, Sentry si basa sul quadro UE-USA per la protezione dei dati personali (Data Privacy Framework) e, in subordine, sulle clausole contrattuali tipo dell'UE.</li>
+        <li><strong>Indirizzo IP:</strong> per motivi tecnici, Sentry riceve il tuo indirizzo IP quando viene inviato un rapporto. Abbiamo impostato Sentry in modo che non lo conservi.</li>
+        <li><strong>Base giuridica:</strong> il tuo consenso (art. 6, par. 1, lett. a), del GDPR; per l'ID di installazione sul tuo dispositivo, § 25, comma 1, TDDDG, la legge tedesca sulla protezione dei dati nelle telecomunicazioni e nei servizi digitali).</li>
+        <li><strong>Conservazione:</strong> Sentry cancella i rapporti dopo 30 giorni. Se ce lo chiedi via e-mail, li cancelliamo prima.</li>
+      </ul>
+      <p><strong>Revoca del consenso:</strong> puoi revocare il tuo consenso in qualsiasi momento. Nell'app, apri “Impostazioni” e disattiva “Invia segnalazioni di arresti anomali”. Da quel momento l'app non invia più nulla a Sentry. La revoca vale per il futuro. Puoi riattivare l'opzione nello stesso punto.</p>
+      <p>Se hai meno di 16 anni, consenti i rapporti sugli arresti anomali solo con l'autorizzazione di un genitore.</p>
+
+      <h3>5. Cosa resta sul tuo dispositivo</h3>
+      <p>L'app conserva solo sul tuo dispositivo ciò che segni come visto, i tuoi filtri, la tua lingua, la tua scelta sui rapporti sugli arresti anomali e il numero di luoghi visti (5, 25 o 75) al quale ti ha chiesto l'ultima volta una valutazione (sezione 9). Non invia a nessuno i segnaposto che hai segnato come visti, i tuoi filtri, la tua scelta sui rapporti sugli arresti anomali né questo numero. Per mostrare i testi nella tua lingua, l'app chiede a Supabase i testi in quella lingua e in inglese (sezione 3); Supabase vede quindi quale lingua viene richiesta. Questa memorizzazione è necessaria per le funzioni che usi (§ 25, comma 2, n. 2, TDDDG).</p>
+
+      <h3>6. Queste pagine web (GitHub Pages)</h3>
+      <p>Queste pagine web sono ospitate su GitHub Pages, un servizio di GitHub, Inc. (USA). Quando apri una pagina, GitHub riceve il tuo indirizzo IP e dati tecnici della richiesta, come l'ora, la pagina e il tuo browser, e ne ha bisogno per fornire le pagine. GitHub registra inoltre gli indirizzi IP dei visitatori per i propri scopi di sicurezza. Per questi log, GitHub è un titolare autonomo del trattamento. GitHub non offre un accordo sul trattamento dei dati per GitHub Pages. GitHub aderisce al Data Privacy Framework UE-USA e non pubblica alcun periodo di conservazione per questi log. Per maggiori dettagli, consulta l'<a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" hreflang="en">informativa sulla privacy di GitHub</a> (in inglese). La base giuridica è l'art. 6, par. 1, lett. f), del GDPR. Il nostro legittimo interesse è mettere a disposizione queste pagine.</p>
+      <p>Queste pagine non impostano cookie e non usano né archiviazione locale né strumenti di analisi. I caratteri e le immagini provengono dallo stesso server. Il tuo browser si collega a Supabase solo quando tocchi “Send” nel modulo di contatto (sezione 7).</p>
+
+      <h3>7. Modulo di contatto e segnalazioni</h3>
+      <p>Con il <a href="../contact/?lang=en#contact">modulo web</a> (in inglese o in tedesco) puoi scriverci o segnalare contenuti. Conserviamo ciò che inserisci presso Supabase (server a Francoforte sul Meno, UE):</p>
+      <ul>
+        <li><strong>Segnalare un contenuto (“Report content”):</strong> motivo, posizione del contenuto, motivazione, la tua dichiarazione di buona fede e, se li indichi, il tuo nome e il tuo indirizzo e-mail.</li>
+        <li><strong>Contatto (“Contact”):</strong> il tuo messaggio, il tuo indirizzo e-mail e, se lo indichi, il tuo nome.</li>
+      </ul>
+      <p>In una segnalazione, nome e indirizzo e-mail sono facoltativi. Senza indirizzo e-mail, però, non possiamo confermarti la ricezione né comunicarti la nostra decisione. Per un messaggio, ci serve il tuo indirizzo e-mail per risponderti.</p>
+      <p>Conserviamo anche la lingua del modulo e l'ora. Usiamo queste informazioni solo per gestire la tua segnalazione o richiesta. La base giuridica è l'art. 6, par. 1, lett. f), del GDPR. Il nostro legittimo interesse è rispondere alle richieste e mantenere la mappa libera da voci illegali e vietate. </p>
+      <p>Per prevenire abusi, conserviamo il tuo indirizzo IP per 24 ore per limitare il numero di invii (art. 6, par. 1, lett. f), del GDPR). I log tecnici di Supabase possono conservarlo fino a 7 giorni.</p>
+      <p>Possiamo ricevere una notifica sul telefono per ogni nuova segnalazione e ogni nuovo messaggio. Quando questa funzione è attiva, usiamo a tale scopo un canale privato su Discord (Discord Inc., USA). Discord riceve solo un numero di riferimento interno, come “report:” seguito da un identificativo casuale. Discord non riceve alcun testo, alcun nome e alcun indirizzo e-mail. Discord aderisce al Data Privacy Framework UE-USA. La base giuridica è l'art. 6, par. 1, lett. f), del GDPR. Il nostro legittimo interesse è gestire rapidamente le segnalazioni.</p>
+      <p>Cancelliamo le segnalazioni 6 mesi dopo la nostra decisione e le conserviamo più a lungo solo se un'autorità lo richiede. Cancelliamo i messaggi 6 mesi dopo la chiusura della tua richiesta. Non cancelliamo automaticamente le segnalazioni su cui non abbiamo ancora deciso né le richieste ancora aperte. Una funzione di cancellazione nel database applica questi termini ogni ora.</p>
+      <p>Non trasmettiamo il tuo nome né il tuo indirizzo e-mail alla persona di cui segnali il contenuto, a meno che la legge non ci obblighi a farlo (art. 17, par. 3, lett. b), del DSA). Se sospettiamo un reato che minaccia la vita o la sicurezza di una persona, trasmettiamo la segnalazione alle autorità di contrasto (art. 18 del DSA).</p>
+
+      <h3>8. E-mail</h3>
+      <p>Se ci scrivi a <a href="mailto:goodtimestatemap@protonmail.com">goodtimestatemap@protonmail.com</a>, trattiamo il tuo indirizzo e-mail, il tuo messaggio e il tuo nome, se lo indichi, per risponderti. La casella di posta è ospitata da Proton AG (Svizzera). La Commissione europea ha riconosciuto che la Svizzera garantisce un livello adeguato di protezione dei dati. La base giuridica è l'art. 6, par. 1, lett. f), del GDPR. Il nostro legittimo interesse è rispondere alle richieste. Trattiamo le segnalazioni inviate via e-mail come quelle del modulo web. Cancelliamo le e-mail 6 mesi dopo la chiusura della pratica, salvo che la legge ci obblighi a conservarle più a lungo.</p>
+
+      <h3>9. Link ad altri servizi e store di app</h3>
+      <p>Alcuni segnaposto mostrano schede video con link a video su YouTube, TikTok o Instagram, come i trailer. L'app non carica nulla da questi servizi prima che tu tocchi una di queste schede. L'app carica la miniatura da Supabase (sezione 3). Il link si apre fuori dall'app, nell'app del servizio o nel tuo browser. Lì si applica l'informativa sulla privacy del servizio.</p>
+      <p>Ogni scheda video indica la persona che ha pubblicato il video, con il nome o il nome utente che usa sul servizio. La miniatura, se presente, proviene dal servizio, da quella persona o da noi. La base giuridica è l'art. 6, par. 1, lett. f), del GDPR. Il nostro legittimo interesse è citare gli autori e rimandare ai loro video. Se hai realizzato uno di questi video e non vuoi che il tuo nome venga indicato, o non vuoi una scheda per il tuo video, scrivici e rimuoveremo la scheda.</p>
+      <p>Ricaviamo nomi, nomi utente e link ai video da ciò che è pubblico su YouTube, TikTok o Instagram, oppure li riceviamo dagli autori stessi. Prima che una scheda venga pubblicata per la prima volta, informiamo l'interessato di questo trattamento. Ciò vale anche quando le informazioni sono pubbliche. Le uniche eccezioni sono i casi previsti dall'art. 14, par. 5, del GDPR, e solo se li abbiamo documentati.</p>
+      <p>La scheda e l'indicazione dell'autore restano pubbliche finché non rimuoviamo la scheda. A quel punto cancelliamo anche il nome e il link al video dal registro pubblico; resta solo una nota tecnica affinché l'app rimuova la scheda da tutti i dispositivi.</p>
+      <p>Separatamente, per poter dimostrare quali diritti avevamo e come abbiamo gestito i reclami, conserviamo documenti a cui solo noi possiamo accedere: il nome o nome utente, il link al video, un'eventuale autorizzazione, la prova di aver informato la persona, cosa abbiamo fatto e quando, e la relativa corrispondenza. Cancelliamo questi documenti alla fine del terzo anno civile successivo alla rimozione della scheda o alla nostra ultima azione al riguardo, a seconda di quale delle due date sia posteriore. Cancelliamo ogni voce del registro privato delle modifiche del nostro database (presso Supabase, sezione 3) alla fine del terzo anno civile successivo a quella modifica. La base giuridica è l'art. 6, par. 1, lett. f), del GDPR.</p>
+      <p>Se qualcuno si oppone al collegamento ai propri video, inseriamo la piattaforma e il suo nome o nome utente in un elenco di blocco, per non collegare di nuovo i suoi video (art. 6, par. 1, lett. f), del GDPR). Conserviamo la voce finché colleghiamo video e l'opposizione resta valida, e verifichiamo l'elenco ogni anno.</p>
+      <p>L'app può chiederti una valutazione tramite la finestra di valutazione di Google Play o dell'App Store, e solo quando hai segnato 5, 25 o 75 luoghi come visti. Questa finestra è mostrata dal tuo sistema operativo, che decide anche se compare. L'app non pone alcuna domanda propria. Si applicano le norme sulla privacy di Google o di Apple.</p>
+      <p>Quando scarichi l'app da Google Play o dall'App Store, Google o Apple trattano dati a tal fine secondo le proprie norme sulla privacy. Da loro riceviamo solo dati aggregati, come il numero di installazioni.</p>
+
+      <h3>10. Sicurezza</h3>
+      <p>L'app e queste pagine web cifrano tutti i dati in transito (HTTPS).</p>
+
+      <h3>11. I tuoi diritti</h3>
+      <p>Hai diritto:</p>
+      <ul>
+        <li>di accedere ai tuoi dati (art. 15 del GDPR)</li>
+        <li>alla rettifica (art. 16 del GDPR)</li>
+        <li>alla cancellazione (art. 17 del GDPR)</li>
+        <li>alla limitazione del trattamento (art. 18 del GDPR)</li>
+        <li>alla portabilità dei dati (art. 20 del GDPR)</li>
+        <li>di revocare un consenso con effetto per il futuro (art. 7, par. 3, del GDPR)</li>
+      </ul>
+      <p><strong>Diritto di opposizione (art. 21 del GDPR):</strong> puoi opporti in qualsiasi momento, per motivi connessi alla tua situazione particolare, ai trattamenti basati sull'art. 6, par. 1, lett. f), del GDPR. In tal caso interrompiamo quel trattamento, salvo che dimostriamo l'esistenza di motivi legittimi cogenti che prevalgono sui tuoi interessi, diritti e libertà, oppure che il trattamento serva all'accertamento, all'esercizio o alla difesa di un diritto in sede giudiziaria.</p>
+      <p>Non adottiamo decisioni individuali automatizzate ai sensi dell'art. 22 del GDPR.</p>
+      <p>Per esercitare questi diritti, scrivici a <a href="mailto:goodtimestatemap@protonmail.com">goodtimestatemap@protonmail.com</a>.</p>
+      <p>Puoi anche proporre reclamo a un'autorità di controllo per la protezione dei dati (art. 77 del GDPR). L'autorità competente per noi è: Bayerisches Landesamt für Datenschutzaufsicht (BayLDA), Postfach 1349, 91504 Ansbach, Germania, <a href="https://www.lda.bayern.de/">www.lda.bayern.de</a>.</p>
+
+      <h3>12. Modifiche</h3>
+      <p>Quando l'app cambia, aggiorniamo questa informativa sulla privacy.</p>
+
+    </section>
+
+    <section class="lang-section" id="tr" lang="tr" aria-labelledby="tr-title">
+      <h2 id="tr-title">Gizlilik politikası</h2>
+      <p class="meta">Son güncelleme: 4 Kasım 2026. Goodtime State Map uygulaması için 0.2.0 sürümünden itibaren ve bu web sayfaları için geçerlidir.</p>
+      <p class="meta">İngilizce sürümün çevirisidir. Yalnızca Almanca ve İngilizce sürümler bağlayıcıdır.</p>
+
+      <h3>1. Veri sorumlusu</h3>
+      <p>Verilerinizin işlenmesinden sorumlu olan veri sorumlusu:</p>
+      <address>
+        Simon Oppowa<br>
+        Edith-Stein-Straße 56<br>
+        93055 Regensburg<br>
+        Almanya<br>
+        E-posta: <a href="mailto:goodtimestatemap@protonmail.com">goodtimestatemap@protonmail.com</a>
+      </address>
+      <p>Gizlilikle ilgili sorularınız için lütfen bu e-posta adresini veya <a href="../contact/?lang=en#contact">iletişim formunu</a> (İngilizce veya Almanca) kullanın.</p>
+
+      <h3>2. Kısaca</h3>
+      <ul>
+        <li>Uygulamada reklam, izleme ve uygulamayı nasıl kullandığınızı inceleyen analiz araçları yoktur.</li>
+        <li>Uygulama, haritayı ve içeriğini AB'deki Supabase'den yükler.</li>
+        <li>Uygulama, çökme raporlarını ve oturum verilerini yalnızca siz izin verirseniz gönderir.</li>
+        <li>Görüldü olarak işaretledikleriniz, filtreleriniz ve ayarlarınız cihazınızda kalır. Supabase yalnızca uygulamanın içeriği hangi dilde istediğini görür.</li>
+        <li>Bu web sayfaları çerez yerleştirmez ve başka sunuculardan hiçbir şey yüklemez.</li>
+      </ul>
+
+      <h3>3. Harita ve içerik (Supabase)</h3>
+      <p>Uygulama, harita karolarını, harita açıklamasını (manifest) ve işaretçilerin içeriğini Supabase'den yükler. Supabase bizim veri işleyenimizdir. Veriler Frankfurt am Main'deki (AB) sunucularda bulunur.</p>
+      <p>Uygulama ayrıca Supabase'den ekran görüntüleri ve video küçük resimleri gibi görseller yükler. Bunlar için de harita için geçerli olanlar geçerlidir.</p>
+      <p>Supabase her istekte IP adresinizi ve isteğe ilişkin zaman ve istenen dosya gibi teknik bilgileri alır. Uygulama bu sırada oturum açmaz ve cihazınıza ait hiçbir tanımlayıcı göndermez. Supabase'in teknik kayıtları (API ve veritabanı kayıtları) IP adresinizi 7 güne kadar tutabilir. Supabase veritabanını her gün yedekler ve her yedeği 7 gün saklar; bu nedenle silinen veriler yedeklerde 7 güne kadar kalabilir.</p>
+      <p>Amaç, size haritayı ve içeriğini göstermektir. Hukuki dayanak: Genel Veri Koruma Tüzüğü (GDPR) m. 6/1-f. Meşru menfaatimiz, uygulamayı işletebilmektir.</p>
+      <p>Supabase'in veri işleme sözleşmesine göre sözleşme tarafımız Singapur'daki Supabase Pte. Ltd. şirketidir. Supabase, kayıtları, yedekleri ve alt veri işleyenleri AB dışında da kullanabilir. Üçüncü ülkelere aktarımlar AB standart sözleşme maddelerine (Komisyonun (AB) 2021/914 sayılı Uygulama Kararı, GDPR m. 46/2-c) dayanır. Talep etmeniz hâlinde size bir kopyasını göndeririz.</p>
+
+      <h3>4. Çökme raporları (Sentry), yalnızca rızanızla</h3>
+      <p>Uygulama ilk açılışta harita üzerinde çökme raporu gönderip gönderemeyeceğini sorar. “İzin ver” veya “Hayır, teşekkürler” seçeneğini seçebilirsiniz. Soruyu kapatmanız “hayır” sayılır. Uygulama Sentry'yi yalnızca “İzin ver” seçildikten sonra başlatır. Bundan önce oluşan hataları atar. Bunlar sonradan gönderilmez.</p>
+      <ul>
+        <li><strong>Amaç:</strong> çökmeleri ve hataları bulmak ve düzeltmek.</li>
+        <li><strong>Veriler:</strong> cihaz modeli, işletim sistemi, uygulama sürümü, hata izi ve rastgele bir kurulum kimliği. Uygulama ayrıca, çökme olmayan oturumlar dâhil her oturum için oturumun başlangıcını, bitişini ve çökmeyle bitip bitmediğini (oturum verileri) gönderir. Sentry bunlardan kaç oturumun çökmeden sona erdiğini sayar. Ayrıca her rapor, cihaz ve uygulamaya ilişkin ekran boyutu, bellek, dil, saat dilimi ve erişilebilirlik ayarları (örneğin animasyonların azaltılıp azaltılmadığı) gibi teknik bilgiler içerir.</li>
+        <li><strong>Alıcı:</strong> veri işleyenimiz olarak Sentry. Sentry raporları Frankfurt am Main'deki AB bölgesinde saklar. ABD'ye aktarımlar için Sentry, AB-ABD Veri Gizliliği Çerçevesi'ne (Data Privacy Framework) ve bunun yedeği olarak AB standart sözleşme maddelerine dayanır.</li>
+        <li><strong>IP adresi:</strong> Sentry, bir rapor gönderildiğinde teknik olarak IP adresinizi alır. Sentry'yi bu adresi saklamayacak şekilde ayarladık.</li>
+        <li><strong>Hukuki dayanak:</strong> rızanız (GDPR m. 6/1-a; cihazınızdaki kurulum kimliği için TDDDG § 25/1, Almanya'nın Telekomünikasyon ve Dijital Hizmetlerde Veri Koruma Kanunu).</li>
+        <li><strong>Saklama süresi:</strong> Sentry raporları 30 gün sonra siler. Bizden e-postayla isterseniz daha erken sileriz.</li>
+      </ul>
+      <p><strong>Rızanın geri alınması:</strong> Rızanızı istediğiniz zaman geri alabilirsiniz. Bunun için uygulamada “Ayarlar” bölümüne gidin ve “Çökme raporları gönder” seçeneğini kapatın. Uygulama bundan sonra Sentry'ye hiçbir şey göndermez. Geri alma ileriye dönük olarak geçerlidir. Seçeneği aynı yerden yeniden açabilirsiniz.</p>
+      <p>16 yaşından küçükseniz lütfen çökme raporlarına yalnızca ebeveyninizin onayıyla izin verin.</p>
+
+      <h3>5. Cihazınızda kalanlar</h3>
+      <!-- Wording pass 2026-11-04 (docs/records/legal-texts.md): §5's first sentence revised by an agent and back-translated (docs/records/back-translations/2026-11-04-privacy-wording-tr.md) and approved by the developer on 2026-11-04 (docs/records/legal-texts.md). -->
+      <p>Uygulama; görüldü olarak işaretlediklerinizi, filtrelerinizi, dilinizi, çökme raporlarıyla ilgili tercihinizi ve uygulamanın sizden en son değerlendirme istediği andaki görülen yer sayısını (5, 25 veya 75; bölüm 9) yalnızca cihazınızda saklar. Görüldü işaretlerinizi, filtrelerinizi, çökme raporlarıyla ilgili tercihinizi ve bu sayıyı kimseye göndermez. Metinleri sizin dilinizde göstermek için uygulama Supabase'den metinleri bu dilde ve İngilizce olarak ister (bölüm 3); bu nedenle Supabase hangi dilin istendiğini görür. Bu saklama, kullandığınız işlevler için gereklidir (TDDDG § 25/2 no. 2).</p>
+
+      <h3>6. Bu web sayfaları (GitHub Pages)</h3>
+      <p>Bu web sayfaları, GitHub, Inc. (ABD) şirketinin bir hizmeti olan GitHub Pages'te barındırılır. Bir sayfayı açtığınızda GitHub, IP adresinizi ve isteğe ilişkin zaman, sayfa ve tarayıcınız gibi teknik bilgileri alır ve sayfaları sunmak için bunlara ihtiyaç duyar. GitHub ayrıca ziyaretçilerin IP adreslerini kendi güvenlik amaçları için kaydeder. Bu kayıtlar bakımından GitHub ayrı bir veri sorumlusudur. GitHub, GitHub Pages için veri işleme sözleşmesi sunmaz. GitHub, AB-ABD Veri Gizliliği Çerçevesi'ne katılmaktadır ve bu kayıtlar için bir saklama süresi yayımlamaz. Ayrıntılar için <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" hreflang="en">GitHub'ın gizlilik bildirimine</a> (İngilizce) bakın. Hukuki dayanak: GDPR m. 6/1-f. Meşru menfaatimiz, bu sayfaları sunmaktır.</p>
+      <p>Bu sayfalar çerez yerleştirmez; yerel depolama ve analiz araçları kullanmaz. Yazı tipleri ve görseller aynı sunucudan gelir. Tarayıcınız yalnızca iletişim formunda “Send” düğmesine dokunduğunuzda Supabase'e bağlanır (bölüm 7).</p>
+
+      <h3>7. İletişim formu ve bildirimler</h3>
+      <p><a href="../contact/?lang=en#contact">Web formu</a> (İngilizce veya Almanca) ile bize yazabilir veya içerik bildirebilirsiniz. Girdiğiniz bilgileri Supabase'de (Frankfurt am Main'deki sunucular, AB) saklarız:</p>
+      <ul>
+        <li><strong>İçerik bildirme (“Report content”):</strong> neden, içeriğin bulunduğu yer, gerekçe, iyi niyetle hareket ettiğinize dair beyanınız ve verirseniz adınız ve e-posta adresiniz.</li>
+        <li><strong>İletişim (“Contact”):</strong> mesajınız, e-posta adresiniz ve verirseniz adınız.</li>
+      </ul>
+      <p>Bir bildirimde adınızı ve e-posta adresinizi vermek isteğe bağlıdır. Ancak e-posta adresi olmadan ne bildirimin alındığını teyit edebilir ne de kararımızı size iletebiliriz. Bir mesaja yanıt verebilmek için e-posta adresinize ihtiyacımız vardır.</p>
+      <p>Ayrıca formun dilini ve zamanı saklarız. Bu bilgileri yalnızca bildiriminizi veya talebinizi işlemek için kullanırız. Hukuki dayanak: GDPR m. 6/1-f. Meşru menfaatimiz, taleplere yanıt vermek ve haritayı hukuka aykırı ve yasaklanmış girdilerden arınmış tutmaktır. </p>
+      <p>Kötüye kullanımı önlemek için gönderim sayısını sınırlamak amacıyla IP adresinizi 24 saat saklarız (GDPR m. 6/1-f). Supabase'in teknik kayıtları bu adresi 7 güne kadar tutabilir.</p>
+      <p>Her yeni bildirim ve mesaj için telefonumuza bir uyarı gönderilmesini sağlayabiliriz. Bu işlev açıksa bunun için Discord'da (Discord Inc., ABD) özel bir kanal kullanırız. Discord yalnızca “report:” ve ardından gelen rastgele bir tanımlayıcı gibi dahili bir referans numarası alır. Discord hiçbir metin, ad veya e-posta adresi almaz. Discord, AB-ABD Veri Gizliliği Çerçevesi'ne katılmaktadır. Hukuki dayanak: GDPR m. 6/1-f. Meşru menfaatimiz, bildirimleri hızlı bir şekilde işlemektir.</p>
+      <p>Bildirimleri kararımızdan 6 ay sonra sileriz; yalnızca bir makam talep ederse daha uzun saklarız. Mesajları talebiniz kapandıktan 6 ay sonra sileriz. Henüz karar vermediğimiz bildirimleri ve açık talepleri otomatik olarak silmeyiz. Veritabanındaki bir silme işlevi bu süreleri her saat uygular.</p>
+      <p>Yasa bizi zorunlu kılmadıkça (DSA m. 17/3-b) adınızı veya e-posta adresinizi, içeriğini bildirdiğiniz kişiye iletmeyiz. Bir kişinin hayatını veya güvenliğini tehdit eden bir suçtan şüphelenirsek bildirimi kolluk makamlarına iletiriz (DSA m. 18).</p>
+
+      <h3>8. E-posta</h3>
+      <p>Bize <a href="mailto:goodtimestatemap@protonmail.com">goodtimestatemap@protonmail.com</a> adresine e-posta gönderirseniz, yanıt verebilmek için e-posta adresinizi, mesajınızı ve verirseniz adınızı işleriz. Posta kutusu Proton AG'de (İsviçre) barındırılmaktadır. Avrupa Komisyonu, İsviçre'nin yeterli düzeyde veri koruması sağladığını tespit etmiştir. Hukuki dayanak: GDPR m. 6/1-f. Meşru menfaatimiz, taleplere yanıt vermektir. E-postayla gönderilen bildirimleri web formundan gelen bildirimler gibi ele alırız. Yasa bizi daha uzun saklamaya zorunlu kılmadıkça e-postaları konu kapandıktan 6 ay sonra sileriz.</p>
+
+      <h3>9. Diğer hizmetlere ve uygulama mağazalarına bağlantılar</h3>
+      <p>Bazı işaretçiler, YouTube, TikTok veya Instagram'daki videolara, örneğin fragmanlara bağlantı veren video kartları gösterir. Siz böyle bir karta dokunmadan önce uygulama bu hizmetlerden hiçbir şey yüklemez. Uygulama küçük resmi Supabase'den yükler (bölüm 3). Bağlantı uygulamanın dışında, hizmetin uygulamasında veya tarayıcınızda açılır. Orada ilgili hizmetin kendi gizlilik politikası geçerlidir.</p>
+      <p>Her video kartı, videoyu yayımlayan kişiyi o hizmette kullandığı ad veya kullanıcı adıyla belirtir. Varsa küçük resim hizmetten, bu kişiden veya bizden gelir. Hukuki dayanak: GDPR m. 6/1-f. Meşru menfaatimiz, içerik üreticilerini belirtmek ve videolarına yönlendirmektir. Böyle bir video yaptıysanız ve adınızın belirtilmesini veya videonuz için bir kart istemiyorsanız bize yazın; kartı kaldırırız.</p>
+      <p>Adları, kullanıcı adlarını ve video bağlantılarını YouTube, TikTok veya Instagram'da herkese açık olan bilgilerden alırız ya da doğrudan içerik üreticilerinden ediniriz. Bir kart ilk kez yayımlanmadan önce ilgili kişiyi bu işleme hakkında bilgilendiririz. Bu, bilgiler herkese açık olsa bile geçerlidir. Tek istisnalar GDPR m. 14/5'te sayılan durumlardır ve bunlar da yalnızca belgelemişsek geçerlidir.</p>
+      <p>Kart ve ad belirtme, kartı kaldırana kadar herkese açık kalır. Ardından adı ve video bağlantısını herkese açık kayıttan da sileriz; yalnızca uygulamanın kartı tüm cihazlardan kaldırması için teknik bir not kalır.</p>
+      <p>Bundan ayrı olarak, hangi haklara sahip olduğumuzu ve şikâyetleri nasıl ele aldığımızı gösterebilmek için yalnızca bizim erişebildiğimiz belgeler saklarız: ad veya kullanıcı adı, video bağlantısı, varsa izin, kişiyi bilgilendirdiğimizin kanıtı, ne zaman ne yaptığımız ve ilgili yazışmalar. Bu belgeleri, kartın kaldırılmasından veya bununla ilgili son işlemimizden (hangisi daha sonraysa) sonraki üçüncü takvim yılının sonunda sileriz. Veritabanımızın özel değişiklik kaydındaki (Supabase'de, bölüm 3) her girdiyi, ilgili değişiklikten sonraki üçüncü takvim yılının sonunda sileriz. Hukuki dayanak: GDPR m. 6/1-f.</p>
+      <p>Biri videolarına bağlantı verilmesine itiraz ederse, videolarına yeniden bağlantı vermemek için platformu ve kişinin adını veya kullanıcı adını bir engelleme listesine ekleriz (GDPR m. 6/1-f). Bu kaydı, video bağlantısı verdiğimiz ve itiraz geçerli olduğu sürece saklarız ve listeyi her yıl gözden geçiririz.</p>
+      <p>Uygulama, Google Play veya App Store değerlendirme penceresi aracılığıyla sizden değerlendirme isteyebilir; bunu yalnızca 5, 25 veya 75 yeri görüldü olarak işaretlediğinizde yapar. Bu pencereyi işletim sisteminiz gösterir ve görünüp görünmeyeceğine de o karar verir. Uygulama kendi sorusunu sormaz. Google'ın veya Apple'ın gizlilik koşulları geçerlidir.</p>
+      <p>Uygulamayı Google Play'den veya App Store'dan indirdiğinizde Google veya Apple bunun için verileri kendi gizlilik koşullarına göre işler. Onlardan yalnızca kurulum sayıları gibi toplu rakamlar alırız.</p>
+
+      <h3>10. Güvenlik</h3>
+      <p>Uygulama ve bu web sayfaları, aktarılan tüm verileri şifreler (HTTPS).</p>
+
+      <h3>11. Haklarınız</h3>
+      <p>Şu haklara sahipsiniz:</p>
+      <ul>
+        <li>verilerinize erişim (GDPR m. 15)</li>
+        <li>düzeltme (GDPR m. 16)</li>
+        <li>silme (GDPR m. 17)</li>
+        <li>işlemenin kısıtlanması (GDPR m. 18)</li>
+        <li>veri taşınabilirliği (GDPR m. 20)</li>
+        <li>bir rızayı ileriye dönük olarak geri alma (GDPR m. 7/3)</li>
+      </ul>
+      <p><strong>İtiraz hakkı (GDPR m. 21):</strong> GDPR m. 6/1-f'ye dayanan işlemelere, özel durumunuzdan kaynaklanan nedenlerle her zaman itiraz edebilirsiniz. Bu durumda, sizin menfaatlerinizin, haklarınızın ve özgürlüklerinizin önüne geçen zorlayıcı meşru gerekçeler ortaya koyamadıkça veya işleme hukuki taleplerin tesisi, kullanılması ya da savunulması amacına hizmet etmedikçe bu işlemeyi durdururuz.</p>
+      <p>GDPR m. 22 anlamında otomatik bireysel karar almayız.</p>
+      <p>Bu haklarınızı kullanmak için bize <a href="mailto:goodtimestatemap@protonmail.com">goodtimestatemap@protonmail.com</a> adresine yazın.</p>
+      <p>Ayrıca bir veri koruma denetim makamına şikâyette bulunabilirsiniz (GDPR m. 77). Bizim için yetkili makam: Bayerisches Landesamt für Datenschutzaufsicht (BayLDA), Postfach 1349, 91504 Ansbach, Almanya, <a href="https://www.lda.bayern.de/">www.lda.bayern.de</a>.</p>
+
+      <h3>12. Değişiklikler</h3>
+      <p>Uygulama değiştiğinde bu gizlilik politikasını güncelleriz.</p>
+
+    </section>
+
+    <section class="lang-section" id="ja" lang="ja" aria-labelledby="ja-title">
+      <h2 id="ja-title">プライバシーポリシー</h2>
+      <p class="meta">最終更新日：2026年11月4日。Goodtime State Mapアプリのバージョン0.2.0以降と、これらのウェブページに適用されます。</p>
+      <p class="meta">本ポリシーは英語版を翻訳したものです。拘束力を持つのはドイツ語版と英語版のみです。</p>
+
+      <h3>1. 管理者</h3>
+      <p>あなたのデータの処理について責任を負う管理者は次のとおりです。</p>
+      <address>
+        Simon Oppowa<br>
+        Edith-Stein-Straße 56<br>
+        93055 Regensburg<br>
+        ドイツ<br>
+        メール：<a href="mailto:goodtimestatemap@protonmail.com">goodtimestatemap@protonmail.com</a>
+      </address>
+      <p>プライバシーに関するご質問は、このメールアドレスまたは<a href="../contact/?lang=en#contact">お問い合わせフォーム</a>（英語またはドイツ語）をご利用ください。</p>
+
+      <h3>2. 概要</h3>
+      <ul>
+        <li>本アプリには、広告、トラッキング、アプリの使い方を分析する解析ツールのいずれもありません。</li>
+        <li>本アプリは、マップとそのコンテンツをEUのSupabaseから読み込みます。</li>
+        <li>本アプリがクラッシュレポートとセッションデータを送信するのは、あなたが許可した場合だけです。</li>
+        <li>確認済みにしたもの、フィルター、設定はあなたの端末にとどまります。Supabaseにわかるのは、アプリがどの言語でコンテンツを要求しているかだけです。</li>
+        <li>これらのウェブページはCookieを設定せず、ほかのサーバーから何も読み込みません。</li>
+      </ul>
+
+      <h3>3. マップとコンテンツ（Supabase）</h3>
+      <p>本アプリは、マップタイル、マップの説明（マニフェスト）、マーカーのコンテンツをSupabaseから読み込みます。Supabaseは当方の処理者です。データはフランクフルト・アム・マイン（EU）のサーバーにあります。</p>
+      <p>本アプリは、スクリーンショットや動画のサムネイルなどの画像もSupabaseから読み込みます。これらにもマップと同じことが当てはまります。</p>
+      <p>リクエストのたびに、SupabaseはあなたのIPアドレスと、時刻や要求されたファイルなど、リクエストに関する技術情報を受け取ります。その際、本アプリはサインインせず、端末の識別子も送信しません。Supabaseの技術ログ（APIログとデータベースログ）には、あなたのIPアドレスが最大7日間保存されることがあります。Supabaseはデータベースを毎日バックアップし、各バックアップを7日間保管します。そのため、削除したデータがバックアップに最大7日間残ることがあります。</p>
+      <p>目的は、マップとそのコンテンツをあなたに表示することです。法的根拠はGDPR第6条第1項(f)です。当方の正当な利益は、本アプリを運営できることです。</p>
+      <p>Supabaseのデータ処理契約によると、当方の契約当事者はシンガポールのSupabase Pte. Ltd.です。Supabaseは、ログ、バックアップ、再処理者をEU域外で利用することがあります。第三国への移転には、EU標準契約条項（欧州委員会実施決定(EU) 2021/914、GDPR第46条第2項(c)）が適用されます。ご請求があれば写しをお送りします。</p>
+
+      <h3>4. クラッシュレポート（Sentry）：同意がある場合のみ</h3>
+      <p>初回起動時、本アプリはマップ上で、クラッシュレポートを送信してよいかを尋ねます。「許可」または「許可しない」を選べます。質問を閉じると「いいえ」とみなされます。本アプリがSentryを開始するのは「許可」の後だけです。それより前に発生したエラーは破棄します。後から送信されることはありません。</p>
+      <ul>
+        <li><strong>目的：</strong>クラッシュやエラーを見つけて修正すること。</li>
+        <li><strong>データ：</strong>端末のモデル、OS、アプリのバージョン、エラーの経過（トレース）、ランダムなインストールID。さらに本アプリは、クラッシュしなかったセッションも含めたすべてのセッションについて、その開始、終了、クラッシュしたかどうか（セッションデータ）を送信します。Sentryはこれをもとに、クラッシュせずに終了したセッションの数を数えます。また、各レポートには、画面サイズ、メモリ、言語、タイムゾーン、アクセシビリティ設定（たとえば、アニメーションを減らしているかどうか）など、端末とアプリに関する技術情報が含まれます。</li>
+        <li><strong>受信者：</strong>当方の処理者としてのSentry。Sentryはレポートをフランクフルト・アム・マインのEUリージョンに保存します。米国への移転について、SentryはEU-米国データプライバシーフレームワークに依拠し、補助的にEU標準契約条項に依拠しています。</li>
+        <li><strong>IPアドレス：</strong>レポートの送信時、Sentryは技術上あなたのIPアドレスを受け取ります。当方は、SentryがIPアドレスを保存しないように設定しています。</li>
+        <li><strong>法的根拠：</strong>あなたの同意（GDPR第6条第1項(a)。端末上のインストールIDについては、ドイツの電気通信デジタルサービスデータ保護法（TDDDG）第25条第1項）。</li>
+        <li><strong>保存期間：</strong>Sentryはレポートを30日後に削除します。メールでご依頼いただければ、それより早く削除します。</li>
+      </ul>
+      <p><strong>同意の撤回：</strong>同意はいつでも撤回できます。アプリの「設定」で「クラッシュレポートを送信」をオフにしてください。その後、本アプリはSentryに何も送信しません。撤回は将来に向かって効力を持ちます。同じ場所でこのオプションを再びオンにできます。</p>
+      <p>16歳未満の方は、保護者の了承を得た場合にのみクラッシュレポートを許可してください。</p>
+
+      <h3>5. 端末に残るもの</h3>
+      <!-- Wording pass 2026-11-04 (docs/records/legal-texts.md): §5's first sentence and every cross-reference to a section of this policy (第N項 to 第N節) revised by an agent and back-translated (docs/records/back-translations/2026-11-04-privacy-wording-ja.md) and approved by the developer on 2026-11-04 (docs/records/legal-texts.md). -->
+      <p>本アプリは、確認済みにしたもの、フィルター、言語、クラッシュレポートについての選択、そして本アプリが前回あなたに評価をお願いしたときの確認済みの場所の数（5、25、75のいずれか。第9節参照）を、あなたの端末にのみ保存します。確認済みのマーカー、フィルター、クラッシュレポートについての選択、この数は、誰にも送信しません。あなたの言語でテキストを表示するため、本アプリはSupabaseに、その言語と英語のテキストを要求します（第3節）。そのため、Supabaseにはどの言語が要求されたかがわかります。この保存は、あなたが使う機能に必要なものです（TDDDG第25条第2項第2号）。</p>
+
+      <h3>6. これらのウェブページ（GitHub Pages）</h3>
+      <p>これらのウェブページは、GitHub, Inc.（米国）のサービスであるGitHub Pagesでホストされています。ページを開くと、GitHubはあなたのIPアドレスと、時刻、ページ、ブラウザなど、リクエストに関する技術情報を受け取り、ページを配信するためにそれらを必要とします。GitHubは、自社のセキュリティ目的のためにも訪問者のIPアドレスを記録します。これらのログについては、GitHubが独立した管理者です。GitHubは、GitHub Pagesについてデータ処理契約を提供していません。GitHubはEU-米国データプライバシーフレームワークに参加しており、これらのログの保存期間を公表していません。詳しくは<a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" hreflang="en">GitHubのプライバシーステートメント</a>（英語）をご覧ください。法的根拠はGDPR第6条第1項(f)です。当方の正当な利益は、これらのページを提供することです。</p>
+      <p>これらのページはCookieを設定せず、ローカルストレージも解析ツールも使いません。フォントと画像は同じサーバーから読み込まれます。ブラウザがSupabaseに接続するのは、お問い合わせフォームで「Send」をタップしたときだけです（第7節）。</p>
+
+      <h3>7. お問い合わせフォームと通報</h3>
+      <p><a href="../contact/?lang=en#contact">ウェブフォーム</a>（英語またはドイツ語）から、当方へのご連絡やコンテンツの通報ができます。入力された内容は、Supabase（フランクフルト・アム・マインのサーバー、EU）に保存します。</p>
+      <ul>
+        <li><strong>コンテンツの通報（「Report content」）：</strong>理由、コンテンツの場所、根拠、善意で行動しているというあなたの申告、および入力した場合はあなたの名前とメールアドレス。</li>
+        <li><strong>お問い合わせ（「Contact」）：</strong>あなたのメッセージ、メールアドレス、および入力した場合はあなたの名前。</li>
+      </ul>
+      <p>通報では、名前とメールアドレスの入力は任意です。ただし、メールアドレスがないと、受領の確認も当方の決定のお知らせもできません。メッセージについては、返信するためにメールアドレスが必要です。</p>
+      <p>あわせて、フォームの言語と時刻を保存します。これらの情報は、あなたの通報またはお問い合わせへの対応にのみ使います。法的根拠はGDPR第6条第1項(f)です。当方の正当な利益は、お問い合わせに回答し、マップを違法なエントリーや禁止されたエントリーのない状態に保つことです。</p>
+      <p>不正利用を防ぐため、送信回数の制限を目的として、あなたのIPアドレスを24時間保存します（GDPR第6条第1項(f)）。Supabaseの技術ログには最大7日間保存されることがあります。</p>
+      <p>新しい通報とメッセージが届くたびに、当方のスマートフォンに通知が送られるようにすることができます。この機能が有効な場合、そのためにDiscord（Discord Inc.、米国）の非公開チャンネルを使います。Discordが受け取るのは、「report:」とランダムな識別子からなるものなどの内部参照番号だけです。Discordは、テキスト、名前、メールアドレスを一切受け取りません。DiscordはEU-米国データプライバシーフレームワークに参加しています。法的根拠はGDPR第6条第1項(f)です。当方の正当な利益は、通報に迅速に対応することです。</p>
+      <p>通報は当方の決定から6か月後に削除し、当局が求める場合に限りそれより長く保存します。メッセージは、お問い合わせが終了してから6か月後に削除します。まだ決定していない通報と未解決のお問い合わせは、自動では削除しません。データベースの削除機能が、これらの期間を1時間ごとに適用します。</p>
+      <p>法律で義務付けられている場合を除き（DSA第17条第3項(b)）、あなたの名前やメールアドレスを、あなたが通報したコンテンツの投稿者に伝えることはありません。人の生命または安全を脅かす犯罪の疑いがある場合は、通報を法執行機関に伝えます（DSA第18条）。</p>
+
+      <h3>8. メール</h3>
+      <p><a href="mailto:goodtimestatemap@protonmail.com">goodtimestatemap@protonmail.com</a>宛てにメールをいただいた場合、返信のために、あなたのメールアドレス、メッセージ、および記載があれば名前を処理します。メールボックスはProton AG（スイス）がホストしています。欧州委員会は、スイスが十分なレベルのデータ保護を提供していると認定しています。法的根拠はGDPR第6条第1項(f)です。当方の正当な利益は、お問い合わせに回答することです。メールで届いた通報は、ウェブフォームからの通報と同じように扱います。メールは、案件が終了してから6か月後に削除します。ただし、法律でより長い保管が義務付けられている場合を除きます。</p>
+
+      <h3>9. ほかのサービスやアプリストアへのリンク</h3>
+      <p>一部のマーカーには、トレーラーなど、YouTube、TikTok、Instagramの動画にリンクする動画カードが表示されます。あなたがそのようなカードをタップするまで、本アプリはこれらのサービスから何も読み込みません。本アプリはサムネイルをSupabaseから読み込みます（第3節）。リンクはアプリの外、つまりそのサービスのアプリまたはブラウザで開きます。そこでは、そのサービス自身のプライバシーポリシーが適用されます。</p>
+      <p>各動画カードには、その動画を公開した人が、そのサービス上で使っている名前またはハンドルで表示されます。サムネイルがある場合、それはそのサービス、その人、または当方によるものです。法的根拠はGDPR第6条第1項(f)です。当方の正当な利益は、クリエイターを明記し、その動画を紹介することです。あなたがそのような動画を作成し、名前を表示されたくない場合や、自分の動画のカードを望まない場合は、ご連絡ください。カードを削除します。</p>
+      <p>名前、ハンドル、動画のリンクは、YouTube、TikTok、Instagramで公開されている情報から取得するか、クリエイター本人から受け取ります。カードを初めて公開する前に、当方はご本人にこの処理についてお知らせします。これは、情報が公開されている場合にも当てはまります。例外はGDPR第14条第5項に定める場合だけであり、それも当方がその旨を記録している場合に限ります。</p>
+      <p>カードとクレジット表示は、当方がカードを削除するまで公開されたままです。削除の際は、公開記録からも名前と動画のリンクを削除します。すべての端末でアプリがカードを削除できるよう、技術的な記録だけが残ります。</p>
+      <p>これとは別に、当方がどのような権利を持っていたか、また苦情にどう対応したかを示せるよう、当方だけがアクセスできる記録を保管します。名前またはハンドル、動画のリンク、許諾（ある場合）、ご本人にお知らせしたことの証拠、当方がいつ何をしたか、および関連するやり取りです。これらの記録は、カードを削除した年、またはそれに関する当方の最後の対応の年のいずれか遅いほうの翌年から数えて3年目の年末に削除します。データベースの非公開の変更履歴（Supabase上、第3節）の各記録は、その変更の年の翌年から数えて3年目の年末に削除します。法的根拠はGDPR第6条第1項(f)です。</p>
+      <p>リンクされることに異議を申し立てた人がいる場合、その人の動画を再びリンクしないよう、プラットフォームとその人の名前またはハンドルをブロックリストに登録します（GDPR第6条第1項(f)）。この登録は、当方が動画をリンクしていて、かつ異議が有効である間は保持します。リストは毎年見直します。</p>
+      <p>本アプリは、Google PlayまたはApp Storeの評価ダイアログを通じて評価をお願いすることがあります。それは、あなたが5か所、25か所、または75か所を確認済みにしたときだけです。このダイアログはOSが表示し、表示するかどうかもOSが決めます。本アプリが独自に質問することはありません。GoogleまたはAppleのプライバシー条件が適用されます。</p>
+      <p>Google PlayまたはApp Storeから本アプリをダウンロードすると、GoogleまたはAppleが、そのために独自のプライバシー条件に従ってデータを処理します。当方がこれらの会社から受け取るのは、インストール数などの集計された数値だけです。</p>
+
+      <h3>10. セキュリティ</h3>
+      <p>本アプリとこれらのウェブページは、送信するすべてのデータを暗号化します（HTTPS）。</p>
+
+      <h3>11. あなたの権利</h3>
+      <p>あなたには次の権利があります。</p>
+      <ul>
+        <li>自分のデータへのアクセス（GDPR第15条）</li>
+        <li>訂正（GDPR第16条）</li>
+        <li>消去（GDPR第17条）</li>
+        <li>処理の制限（GDPR第18条）</li>
+        <li>データポータビリティ（GDPR第20条）</li>
+        <li>将来に向けた同意の撤回（GDPR第7条第3項）</li>
+      </ul>
+      <p><strong>異議を申し立てる権利（GDPR第21条）：</strong>GDPR第6条第1項(f)に基づく処理に対しては、あなたの特別な状況に関する理由により、いつでも異議を申し立てることができます。その場合、当方はその処理を中止します。ただし、あなたの利益、権利および自由に優越するやむを得ない正当な理由を当方が示せる場合、または処理が法的請求の立証、行使もしくは防御のためのものである場合を除きます。</p>
+      <p>当方は、GDPR第22条の意味における、個人に関する自動化された意思決定を行いません。</p>
+      <p>これらの権利を行使するには、<a href="mailto:goodtimestatemap@protonmail.com">goodtimestatemap@protonmail.com</a>宛てにメールでご連絡ください。</p>
+      <p>また、データ保護監督機関に苦情を申し立てることもできます（GDPR第77条）。当方を管轄する機関は、Bayerisches Landesamt für Datenschutzaufsicht（BayLDA、バイエルン州データ保護監督庁）、Postfach 1349, 91504 Ansbach、ドイツ、<a href="https://www.lda.bayern.de/">www.lda.bayern.de</a>です。</p>
+      <!-- APPI note, ja only, D206: review -->
+      <p><strong>日本の個人情報保護法について：</strong>個人情報の保護に関する法律第28条に関して、外国にある事業者がデータを受け取る場合について説明します。当方（管理者）はドイツに所在します。ドイツを含むEUは、日本と同等の水準にある個人情報保護制度を有するものとして、個人情報保護委員会が認めた地域です。このほか、本ポリシーに記載のとおり、米国ではSentry（米国への移転、第4節）、GitHub, Inc.（第6節）、Discord Inc.（第7節）がデータを受け取ることがあります。Supabaseの契約当事者はシンガポールのSupabase Pte. Ltd.です（第3節）。メールの受信箱はスイスのProton AGが管理しています（第8節）。米国、シンガポール、スイスはこの認定を受けておらず、これらの国の個人情報保護制度は日本の制度と異なります。SupabaseとSentryは当方の処理者として当方との契約に拘束されており、EU域外への移転にはEU標準契約条項が適用されます（Sentryについては補助的に）。GitHubは自らのログについて独立した管理者であり（第6節）、Discordが受け取るのは内部参照番号だけです（第7節）。</p>
+
+      <h3>12. 変更</h3>
+      <p>本アプリが変わった場合は、このプライバシーポリシーを更新します。</p>
+
+    </section>
+
+    <section class="lang-section" id="zh-hant" lang="zh-Hant" aria-labelledby="zh-hant-title">
+      <h2 id="zh-hant-title">隱私權政策</h2>
+      <p class="meta">最後更新：2026年11月4日。適用於 Goodtime State Map 應用程式 0.2.0 版起的各版本，以及這些網頁。</p>
+      <p class="meta">本政策譯自英文版。僅德文版與英文版具有約束力。</p>
+
+      <h3>1. 控管者</h3>
+      <p>負責處理您資料的控管者為：</p>
+      <address>
+        Simon Oppowa<br>
+        Edith-Stein-Straße 56<br>
+        93055 Regensburg<br>
+        德國<br>
+        電子郵件：<a href="mailto:goodtimestatemap@protonmail.com">goodtimestatemap@protonmail.com</a>
+      </address>
+      <p>如有隱私相關問題，請使用此電子郵件地址或<a href="../contact/?lang=en#contact">聯絡表單</a>（英文或德文）。</p>
+
+      <h3>2. 摘要</h3>
+      <ul>
+        <li>本應用程式沒有廣告、沒有追蹤，也沒有分析您使用方式的分析工具。</li>
+        <li>本應用程式從位於歐盟的 Supabase 載入地圖及其內容。</li>
+        <li>本應用程式只有在您允許時，才會傳送當機報告與工作階段資料。</li>
+        <li>您標為已看過的項目、篩選條件與設定都會留在您的裝置上。Supabase 只會得知本應用程式以哪種語言請求內容。</li>
+        <li>這些網頁不設定 Cookie，也不從其他伺服器載入任何內容。</li>
+      </ul>
+
+      <h3>3. 地圖與內容（Supabase）</h3>
+      <p>本應用程式從 Supabase 載入地圖圖磚、地圖說明（manifest）與標記內容。Supabase 是我們的受託處理者。資料存放於美因河畔法蘭克福（歐盟）的伺服器。</p>
+      <p>本應用程式也會從 Supabase 載入圖片，例如截圖與影片縮圖。這些圖片適用與地圖相同的說明。</p>
+      <p>每次請求時，Supabase 都會收到您的 IP 位址及請求的技術資訊，例如時間與所請求的檔案。本應用程式不會登入，也不會傳送任何您裝置的識別碼。Supabase 的技術日誌（API 日誌與資料庫日誌）可能會保存您的 IP 位址最多 7 天。Supabase 每天備份資料庫，每份備份保留 7 天，因此已刪除的資料可能在備份中最多保留 7 天。</p>
+      <p>目的是向您顯示地圖及其內容。法律依據為一般資料保護規則（GDPR）第 6 條第 1 項第 f 款。我們的正當利益是能夠營運本應用程式。</p>
+      <p>根據 Supabase 的資料處理協議，我們的契約相對人是 Supabase Pte. Ltd.，位於新加坡。Supabase 可能在歐盟以外使用日誌、備份與再受託處理者。傳輸至第三國的情形，以歐盟標準契約條款為依據（歐盟執行委員會執行決定 (EU) 2021/914，GDPR 第 46 條第 2 項第 c 款）。如您提出請求，我們會寄送一份副本給您。</p>
+
+      <h3>4. 當機報告（Sentry），僅在您同意時</h3>
+      <p>首次啟動時，本應用程式會在地圖上詢問是否可以傳送當機報告。您可以選擇「允許」或「不用了」。關閉此詢問視同選擇「不」。本應用程式只有在您選擇「允許」後才會啟動 Sentry。在此之前發生的錯誤會被捨棄，之後也不會再傳送。</p>
+      <ul>
+        <li><strong>目的：</strong>找出並修正當機與錯誤。</li>
+        <li><strong>資料：</strong>裝置型號、作業系統、應用程式版本、錯誤追蹤記錄（trace）及隨機的安裝 ID。本應用程式也會針對每個工作階段（包括未當機的工作階段）傳送其開始、結束及是否當機（工作階段資料）。Sentry 據此計算有多少工作階段在未當機的情況下結束。此外，每份報告都包含裝置與應用程式的技術資訊，例如螢幕尺寸、記憶體、語言、時區及無障礙設定（例如是否減少動畫）。</li>
+        <li><strong>接收者：</strong>Sentry，作為我們的受託處理者。Sentry 將報告儲存於其位於美因河畔法蘭克福的歐盟區域。對於傳輸至美國的情形，Sentry 以歐盟－美國資料隱私框架（EU-US Data Privacy Framework）為依據，並以歐盟標準契約條款作為備援。</li>
+        <li><strong>IP 位址：</strong>傳送報告時，Sentry 在技術上會收到您的 IP 位址。我們已將 Sentry 設定為不儲存該位址。</li>
+        <li><strong>法律依據：</strong>您的同意（GDPR 第 6 條第 1 項第 a 款；關於您裝置上的安裝 ID，為德國電信數位服務資料保護法（TDDDG）第 25 條第 1 項）。</li>
+        <li><strong>保存期間：</strong>Sentry 會在 30 天後刪除報告。如您以電子郵件要求，我們會提早刪除。</li>
+      </ul>
+      <p><strong>撤回同意：</strong>您可以隨時撤回同意。請在本應用程式中前往「設定」，關閉「傳送當機報告」。之後本應用程式不會再傳送任何資料給 Sentry。撤回自撤回時起對未來生效。您可以在同一處重新開啟此選項。</p>
+      <p>如您未滿 16 歲，請僅在取得父母同意後允許傳送當機報告。</p>
+
+      <h3>5. 留在您裝置上的資料</h3>
+      <!-- Wording pass 2026-11-04 (docs/records/legal-texts.md): §5's first sentence revised by an agent and back-translated (docs/records/back-translations/2026-11-04-privacy-wording-zh-hant.md) and approved by the developer on 2026-11-04 (docs/records/legal-texts.md). -->
+      <p>本應用程式會將您標為已看過的標記、篩選條件、語言、您對當機報告的選擇，以及上次請您評分時已看過的地點數（5、25 或 75，見第 9 節）都只儲存在您的裝置上。本應用程式不會將您已看過的標記、篩選條件、您對當機報告的選擇及此數字傳送給任何人。為了以您的語言顯示文字，本應用程式會向 Supabase 請求該語言及英文的文字（第 3 節），因此 Supabase 會得知所請求的語言。此儲存是您所使用的功能所必需（TDDDG 第 25 條第 2 項第 2 款）。</p>
+
+      <h3>6. 這些網頁（GitHub Pages）</h3>
+      <p>這些網頁由 GitHub Pages 代管，這是 GitHub, Inc.（美國）的服務。當您開啟網頁時，GitHub 會收到您的 IP 位址及請求的技術資訊，例如時間、網頁及您的瀏覽器，並需要這些資訊才能提供網頁。GitHub 也會為其自身的安全目的記錄訪客的 IP 位址。就這些日誌而言，GitHub 是獨立的控管者。GitHub 未就 GitHub Pages 提供資料處理協議。GitHub 參與歐盟－美國資料隱私框架，且未公布這些日誌的保存期間。詳情請參閱 <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" hreflang="en">GitHub 的隱私權聲明</a>（英文）。法律依據為 GDPR 第 6 條第 1 項第 f 款。我們的正當利益是提供這些網頁。</p>
+      <p>這些網頁不設定 Cookie，也不使用本機儲存空間或分析工具。字型與圖片來自同一台伺服器。只有當您在聯絡表單中點按「Send」時，您的瀏覽器才會連線至 Supabase（第 7 節）。</p>
+
+      <h3>7. 聯絡表單與檢舉</h3>
+      <p>您可以透過<a href="../contact/?lang=en#contact">網頁表單</a>（英文或德文）與我們聯絡或檢舉內容。我們會將您輸入的內容儲存於 Supabase（伺服器位於美因河畔法蘭克福，歐盟）：</p>
+      <ul>
+        <li><strong>檢舉內容（「Report content」）：</strong>檢舉原因、內容所在位置、具體理由、您出於善意的聲明，以及您提供時的姓名與電子郵件地址。</li>
+        <li><strong>聯絡（「Contact」）：</strong>您的訊息、您的電子郵件地址，以及您提供時的姓名。</li>
+      </ul>
+      <p>檢舉時，姓名與電子郵件地址為選填。但若沒有電子郵件地址，我們就無法確認已收到檢舉，也無法通知您我們的決定。若是訊息，我們需要您的電子郵件地址才能回覆。</p>
+      <p>我們也會儲存表單的語言與時間。我們僅將這些資訊用於處理您的檢舉或詢問。法律依據為 GDPR 第 6 條第 1 項第 f 款。我們的正當利益是回覆詢問，並讓地圖不含違法與被禁止的項目。</p>
+      <p>為防止濫用，我們會為了頻率限制而將您的 IP 位址儲存 24 小時（GDPR 第 6 條第 1 項第 f 款）。Supabase 的技術日誌可能會保存該位址最多 7 天。</p>
+      <p>我們可以讓每則新的檢舉與訊息傳送通知到我們的手機。啟用此功能時，我們會為此使用 Discord（Discord Inc.，美國）上的私人頻道。Discord 只會收到內部參考編號，例如「report:」加上隨機識別碼。Discord 不會收到任何文字、姓名或電子郵件地址。Discord 參與歐盟－美國資料隱私框架。法律依據為 GDPR 第 6 條第 1 項第 f 款。我們的正當利益是迅速處理檢舉。</p>
+      <p>我們會在作出決定 6 個月後刪除檢舉，只有在主管機關要求時才保存更久。我們會在您的詢問結案 6 個月後刪除訊息。尚未決定的檢舉與未結案的詢問不會自動刪除。資料庫中的刪除功能每小時執行一次這些期限。</p>
+      <p>除非法律要求（DSA 第 17 條第 3 項第 b 款），否則我們不會將您的姓名或電子郵件地址提供給您所檢舉內容的發布者。若我們懷疑有威脅他人生命或安全的刑事犯罪，我們會將檢舉轉交執法機關（DSA 第 18 條）。</p>
+
+      <h3>8. 電子郵件</h3>
+      <p>如您寄電子郵件至 <a href="mailto:goodtimestatemap@protonmail.com">goodtimestatemap@protonmail.com</a>，我們會為了回覆而處理您的電子郵件地址、訊息，以及您提供時的姓名。此信箱由 Proton AG（瑞士）代管。歐盟執行委員會已認定瑞士提供適足的資料保護水準。法律依據為 GDPR 第 6 條第 1 項第 f 款。我們的正當利益是回覆詢問。以電子郵件寄來的檢舉，我們會比照網頁表單的檢舉處理。我們會在事項結案 6 個月後刪除電子郵件，除非法律要求我們保存更久。</p>
+
+      <h3>9. 連結至其他服務與應用程式商店</h3>
+      <p>部分標記會顯示影片卡片，連結至 YouTube、TikTok 或 Instagram 上的影片，例如預告片。在您點按此類卡片之前，本應用程式不會從這些服務載入任何內容。本應用程式從 Supabase 載入縮圖（第 3 節）。連結會在本應用程式外開啟，也就是在該服務的應用程式或您的瀏覽器中開啟。在該處適用該服務本身的隱私權政策。</p>
+      <p>每張影片卡片都會以發布影片者在該服務上使用的名稱或帳號代稱（handle）標示此人。縮圖（如有）來自該服務、該發布者或我們。法律依據為 GDPR 第 6 條第 1 項第 f 款。我們的正當利益是標明創作者並介紹其影片。如果您製作了此類影片，且不希望被標示名稱，或不希望您的影片有卡片，請與我們聯絡，我們會移除該卡片。</p>
+      <p>我們從 YouTube、TikTok 或 Instagram 上公開的資訊取得名稱、帳號代稱與影片連結，或直接從創作者本人取得。在卡片首次發布前，我們會告知當事人此項處理。即使資訊已公開，亦同。唯一的例外是 GDPR 第 14 條第 5 項所列的情形，且僅限於我們已記錄這些情形時。</p>
+      <p>卡片與署名會保持公開，直到我們移除該卡片為止。屆時我們也會從公開紀錄中刪除名稱與影片連結；只會留下一則技術註記，讓本應用程式在所有裝置上移除該卡片。</p>
+      <p>此外，為了能夠證明我們擁有哪些權利以及如何處理申訴，我們會保存只有我們能存取的紀錄：名稱或帳號代稱、影片連結、任何授權、我們已告知當事人的證明、我們在何時做了什麼，以及相關往來信件。我們會在卡片移除後或我們對其採取最後一次行動後（以較晚者為準）的第三個日曆年年底刪除這些紀錄。我們資料庫的非公開變更紀錄（位於 Supabase，第 3 節）中的每筆項目，會在該次變更後的第三個日曆年年底刪除。法律依據為 GDPR 第 6 條第 1 項第 f 款。</p>
+      <p>若有人反對被連結，我們會將平台及其名稱或帳號代稱列入封鎖清單，以免再次連結其影片（GDPR 第 6 條第 1 項第 f 款）。只要我們仍在連結影片且該反對仍然有效，我們就會保留此項目，並每年檢視此清單。</p>
+      <p>本應用程式可能會透過 Google Play 或 App Store 的評分對話框請您評分，且僅在您將 5、25 或 75 個地點標為已看過時才會這樣做。此對話框由您的作業系統顯示，並由作業系統決定是否出現。本應用程式不會自行提出任何詢問。適用 Google 或 Apple 的隱私權條款。</p>
+      <p>當您從 Google Play 或 App Store 下載本應用程式時，Google 或 Apple 會依其自身的隱私權條款處理相關資料。我們只會從他們那裡取得彙總數據，例如安裝次數。</p>
+
+      <h3>10. 安全性</h3>
+      <p>本應用程式與這些網頁會將所有傳輸中的資料加密（HTTPS）。</p>
+
+      <h3>11. 您的權利</h3>
+      <p>您有權：</p>
+      <ul>
+        <li>存取您的資料（GDPR 第 15 條）</li>
+        <li>更正（GDPR 第 16 條）</li>
+        <li>刪除（GDPR 第 17 條）</li>
+        <li>限制處理（GDPR 第 18 條）</li>
+        <li>資料可攜（GDPR 第 20 條）</li>
+        <li>撤回同意，自撤回時起對未來生效（GDPR 第 7 條第 3 項）</li>
+      </ul>
+      <p><strong>反對權（GDPR 第 21 條）：</strong>您可以隨時基於與您特殊情況相關的理由，反對依 GDPR 第 6 條第 1 項第 f 款所進行的處理。屆時我們會停止該處理，除非我們能證明有優先於您的利益、權利與自由的重大正當理由，或該處理是為了確立、行使或防禦法律上的請求。</p>
+      <p>我們不會作出 GDPR 第 22 條所指的自動化個人決策。</p>
+      <p>如要行使這些權利，請寄電子郵件至 <a href="mailto:goodtimestatemap@protonmail.com">goodtimestatemap@protonmail.com</a>。</p>
+      <p>您也可以向資料保護監督機關提出申訴（GDPR 第 77 條）。對我們有管轄權的機關為：Bayerisches Landesamt für Datenschutzaufsicht（BayLDA，巴伐利亞邦資料保護監督局），Postfach 1349, 91504 Ansbach，德國，<a href="https://www.lda.bayern.de/">www.lda.bayern.de</a>。</p>
+      <!-- PDPA/PDPO note, zh-hant only, D220: review -->
+      <p><strong>台灣與香港使用者須知：</strong>依本政策所述，下列接收者會取得資料：控管者位於德國（第 1 節）；Supabase 的伺服器位於歐盟的美因河畔法蘭克福，契約相對人為新加坡的 Supabase Pte. Ltd.（第 3 節）；Sentry 將報告儲存於其歐盟區域，並可能將資料傳輸至美國（第 4 節）；美國的 GitHub, Inc.（第 6 節）；美國的 Discord Inc.，僅收到內部參考編號（第 7 節）；以及代管電子郵件信箱的瑞士 Proton AG（第 8 節）。依台灣個人資料保護法第 3 條，您可以就您的個人資料請求查詢或請求閱覽、請求製給複製本、請求補充或更正、請求停止蒐集、處理或利用，以及請求刪除。這些請求請寄至本政策所列的聯絡地址（第 1 節及第 11 節）。依香港個人資料（私隱）條例提出的查閱資料要求及改正資料要求，請寄至該地址，由第 1 節所列的控管者處理。</p>
+
+      <h3>12. 變更</h3>
+      <p>本應用程式有所變更時，我們會更新本隱私權政策。</p>
 
     </section>
   </main>

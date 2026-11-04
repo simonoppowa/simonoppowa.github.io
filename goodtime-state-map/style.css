@@ -284,7 +284,7 @@ mark.todo {
 }
 
 .from-02::before {
-  content: "ab 0.2.1 · from 0.2.1";
+  content: "ab 0.2.5 · from 0.2.5";
   background: var(--success-container);
   color: var(--on-success-container);
 }
