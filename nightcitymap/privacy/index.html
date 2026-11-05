@@ -100,8 +100,8 @@
 
       <h3>7. Werbung (Google AdMob)</h3>
       <p>Die App finanziert sich durch Werbung von Google AdMob. Sie zeigt Vollbild-Werbung nach einigen Aktionen, höchstens alle drei Minuten, und kann Werbung beim Zurückkehren in die App, Werbebanner und Werbung in den Markerdetails zeigen. Welche dieser Formate laufen, schalten wir aus der Ferne (Abschnitt 5).</p>
-      <p><strong>Werbung ausschalten:</strong> Ist der Schalter „App unterstützen“ im Menü aus, lädt und zeigt die App keine Werbung mehr und verwirft bereits geladene Werbung. <mark class="todo">Das Werbe-SDK von Google wird beim Start trotzdem initialisiert und überträgt dabei technische Angaben (siehe „Daten“) an Google.</mark></p>
-      <p><strong>Einwilligung:</strong> In der Einwilligungsabfrage (Abschnitt 6) entscheiden Sie, ob Google und seine Werbepartner Informationen auf Ihrem Gerät speichern und auslesen und Ihre Daten für personalisierte Werbung, Messung und verwandte Zwecke nutzen dürfen. Die Abfrage nennt alle Partner und Zwecke. Willigen Sie nicht ein, zeigt die App nur nicht personalisierte oder eingeschränkte Werbung. Auch dafür verarbeitet Google Ihre IP-Adresse und Angaben zum Gerät.</p>
+      <p><strong>Werbung ausschalten:</strong> Ist der Schalter „App unterstützen“ im Menü aus, lädt und zeigt die App keine Werbung mehr und verwirft bereits geladene Werbung. Ist der Schalter beim Start der App aus, startet die App das Werbe-SDK von Google gar nicht erst.</p>
+      <p><strong>Einwilligung:</strong> In der Einwilligungsabfrage (Abschnitt 6) entscheiden Sie, ob Google und seine Werbepartner Informationen auf Ihrem Gerät speichern und auslesen und Ihre Daten für personalisierte Werbung, Messung und verwandte Zwecke nutzen dürfen. Die Abfrage nennt alle Partner und Zwecke. Willigen Sie nicht ein, zeigt die App nur nicht personalisierte oder eingeschränkte Werbung. Auch dafür verarbeitet Google Ihre IP-Adresse und Angaben zum Gerät. Ändern Sie Ihre Wahl unter „Datenschutzoptionen“, verwirft die App bereits geladene Werbung und lädt neue nach Ihrer neuen Wahl.</p>
       <p><strong>Daten:</strong> Werbe-ID Ihres Geräts (wenn erlaubt), App-Set-ID, IP-Adresse, Angaben zu Gerät und App, ein aus der IP-Adresse abgeleiteter ungefährer Standort, Ihre Interaktionen mit der Werbung und technische Angaben des SDK zu Startzeit und Leistung der App. Auf neueren Android-Versionen kann Google außerdem Android-Schnittstellen zur Werbemessung nutzen. Die Werbe-ID steuern Sie unter <em>Android-Einstellungen → Datenschutz → Werbung</em> (der Name des Menüs kann je nach Gerät abweichen).</p>
       <p><strong>Profilbildung:</strong> Mit Ihrer Einwilligung kann Werbung auf Ihre Interessen zugeschnitten werden. Daraus folgen für Sie keine Entscheidungen mit rechtlicher Wirkung oder ähnlich erheblicher Beeinträchtigung (Art. 22 DSGVO).</p>
       <p><strong>Rechtsgrundlage:</strong> Ihre Einwilligung (Art. 6 Abs. 1 lit. a DSGVO, § 25 Abs. 1 TDDDG). Für nicht personalisierte und eingeschränkte Werbung Art. 6 Abs. 1 lit. f DSGVO. Unser berechtigtes Interesse ist, die kostenlose App zu finanzieren.</p>
@@ -148,7 +148,7 @@
       <p>Die App richtet sich nicht an Kinder unter 16 Jahren. Wenn Sie jünger als 16 sind, willigen Sie in der Einwilligungsabfrage bitte nicht ein und tippen Sie bei „Absturzberichte und Statistik“ auf „Nein danke“; die App zeigt dann nur nicht personalisierte Werbung.</p>
 
       <h3>16. Sicherheit</h3>
-      <p>Die App und diese Webseite übertragen Daten verschlüsselt (HTTPS). <mark class="todo">Erst wenn der Browser-Link zu YouTube in der App https nutzt.</mark> Die App fragt nach keiner Berechtigung, die Android Ihnen zur Bestätigung anzeigt. Sie greift nicht auf Ihren genauen Standort, Ihre Kontakte, Fotos, Kamera oder Ihr Mikrofon zu.</p>
+      <p>Die App und diese Webseite übertragen Daten verschlüsselt (HTTPS).Die App fragt nach keiner Berechtigung, die Android Ihnen zur Bestätigung anzeigt. Sie greift nicht auf Ihren genauen Standort, Ihre Kontakte, Fotos, Kamera oder Ihr Mikrofon zu.</p>
 
       <h3>17. Ihre Rechte</h3>
       <p>Sie haben das Recht auf:</p>
@@ -245,8 +245,8 @@
 
       <h3>7. Ads (Google AdMob)</h3>
       <p>The app is financed by ads from Google AdMob. It shows full-screen ads after a few actions, at most every three minutes, and may show ads when you return to the app, banner ads and ads in the marker details. We switch these formats on and off remotely (section 5).</p>
-      <p><strong>Switching ads off:</strong> while the "Support Development" switch in the menu is off, the app loads and shows no ads and discards ads already loaded. <mark class="todo">Google's ads SDK is still initialised at start and sends technical details (see "Data") to Google.</mark></p>
-      <p><strong>Consent:</strong> in the consent form (section 6), you decide whether Google and its ad partners may store and read information on your device and use your data for personalised ads, measurement and related purposes. The form lists every partner and purpose. If you do not consent, the app only shows non-personalised or limited ads. For these too, Google processes your IP address and device details.</p>
+      <p><strong>Switching ads off:</strong> while the "Support Development" switch in the menu is off, the app loads and shows no ads and discards ads already loaded. If the switch is off when the app starts, the app doesn't start Google's ads SDK at all.</p>
+      <p><strong>Consent:</strong> in the consent form (section 6), you decide whether Google and its ad partners may store and read information on your device and use your data for personalised ads, measurement and related purposes. The form lists every partner and purpose. If you do not consent, the app only shows non-personalised or limited ads. For these too, Google processes your IP address and device details. If you change your choice under "Privacy Settings", the app discards ads already loaded and loads new ones based on your new choice.</p>
       <p><strong>Data:</strong> your device's advertising ID (if allowed), the app set ID, IP address, device and app details, an approximate location derived from the IP address, your interactions with ads, and technical data from the SDK on the app's launch time and performance. On newer Android versions, Google may also use Android interfaces for ad measurement. You control the advertising ID in <em>Android Settings → Privacy → Ads</em> (the menu name may differ by device).</p>
       <p><strong>Profiling:</strong> with your consent, ads can be tailored to your interests. This does not lead to decisions with legal or similarly significant effects on you (Art. 22 GDPR).</p>
       <p><strong>Legal basis:</strong> your consent (Art. 6(1)(a) GDPR, § 25(1) TDDDG). For non-personalised and limited ads, Art. 6(1)(f) GDPR. Our legitimate interest is financing the free app.</p>
@@ -293,7 +293,7 @@
       <p>The app is not directed at children under 16. If you are under 16, please do not consent in the consent form and tap "No thanks" in "Crash reports and statistics"; the app then shows only non-personalised ads.</p>
 
       <h3>16. Security</h3>
-      <p>The app and this web page encrypt data in transit (HTTPS). <mark class="todo">Only once the app's browser link to YouTube uses https.</mark> The app asks for no permission that Android shows you for confirmation. It does not access your precise location, contacts, photos, camera or microphone.</p>
+      <p>The app and this web page encrypt data in transit (HTTPS).The app asks for no permission that Android shows you for confirmation. It does not access your precise location, contacts, photos, camera or microphone.</p>
 
       <h3>17. Your rights</h3>
       <p>You have the right to:</p>
