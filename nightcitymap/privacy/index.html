@@ -65,7 +65,7 @@
             <tr><td>Fernkonfiguration (Abschnitt 5)</td><td>Google</td><td>Art. 6 Abs. 1 lit. f DSGVO</td><td>Installations-ID bis zur Löschung, dann höchstens 180 Tage</td></tr>
             <tr><td>Einwilligungsabfrage (Abschnitt 6)</td><td>Google</td><td>Art. 6 Abs. 1 lit. c DSGVO</td><td>auf dem Gerät, bis Sie die App-Daten löschen</td></tr>
             <tr><td>Werbung (Abschnitt 7)</td><td>Google und Werbepartner</td><td>Einwilligung; ohne Einwilligung Art. 6 Abs. 1 lit. f DSGVO</td><td>siehe Abschnitt 7</td></tr>
-            <tr><td>Nutzungsstatistik (Abschnitt 8)</td><td>Google</td><td>Einwilligung</td><td><mark class="todo">2 oder 14</mark> Monate</td></tr>
+            <tr><td>Nutzungsstatistik (Abschnitt 8)</td><td>Google</td><td>Einwilligung</td><td>Ereignisse 2 Monate, Nutzerdaten 14 Monate</td></tr>
             <tr><td>Absturzberichte (Abschnitt 9)</td><td>Google</td><td>Einwilligung</td><td>90 Tage</td></tr>
             <tr><td>E-Mail an uns (Abschnitt 10)</td><td>Proton (Schweiz)</td><td>Art. 6 Abs. 1 lit. f DSGVO</td><td>6 Monate nach Abschluss</td></tr>
           </tbody>
@@ -85,7 +85,7 @@
       <h3>4. Bilder und Vorschaubilder</h3>
       <p>Wenn Sie einen Marker öffnen, lädt die App das Bild dazu von Cloud Storage for Firebase, einem Dienst von Google. Hat der Marker ein Video, lädt die App gleich beim Öffnen auch das Vorschaubild von YouTube (img.youtube.com, ebenfalls Google). Dabei erhält Google Ihre IP-Adresse und technische Angaben zur Anfrage, etwa den Zeitpunkt und die abgerufene Datei. Die App meldet sich dabei nicht an.</p>
       <p>Zweck ist, Ihnen die Bilder zu den Markern anzuzeigen. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO. Unser berechtigtes Interesse ist, die App mit ihren Inhalten betreiben zu können.</p>
-      <p>Für Cloud Storage ist Google unser Auftragsverarbeiter. Zugriffsprotokolle werten wir nicht aus. <mark class="todo">Prüfen: Datenzugriffs-Protokolle für Cloud Storage im Projekt ausgeschaltet</mark>. Für die Übermittlung an YouTube sind wir gemeinsam mit Google verantwortlich; für die weitere Verarbeitung, auch die Speicherdauer, ist Google allein verantwortlich (<a href="https://policies.google.com/technologies/retention?hl=de">So lange bewahrt Google Daten auf</a>).</p>
+      <p>Für Cloud Storage ist Google unser Auftragsverarbeiter. Protokolle über einzelne Abrufe (Datenzugriffs-Protokolle) sind in unserem Projekt ausgeschaltet. Für die Übermittlung an YouTube sind wir gemeinsam mit Google verantwortlich; für die weitere Verarbeitung, auch die Speicherdauer, ist Google allein verantwortlich (<a href="https://policies.google.com/technologies/retention?hl=de">So lange bewahrt Google Daten auf</a>).</p>
       <p>Tippen Sie auf ein Video, öffnet es sich außerhalb der App in der YouTube-App oder im Browser. Dort gilt die <a href="https://policies.google.com/privacy?hl=de">Datenschutzerklärung von Google</a>.</p>
 
       <h3>5. Fernkonfiguration (Firebase Remote Config)</h3>
@@ -117,7 +117,7 @@
       <p><strong>In den Ländern mit Einwilligungsabfrage</strong> sendet die App Nutzungsstatistik nur, wenn Sie in der Frage „Absturzberichte und Statistik“ auf „Erlauben“ tippen (Abschnitt 6). Rechtsgrundlage ist Ihre Einwilligung (Art. 6 Abs. 1 lit. a DSGVO, § 25 Abs. 1 TDDDG). Tippen Sie auf „Nein danke“ oder schließen Sie die Frage, bleibt die Nutzungsstatistik aus. Ihre Antworten in der Abfrage von Google schalten sie nicht ein.</p>
       <p><strong>In allen anderen Ländern</strong> ist die Nutzungsstatistik eingeschaltet. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO. Unser berechtigtes Interesse ist, die App zu verbessern.</p>
       <p><strong>Abschalten:</strong> Bevor feststeht, ob für Sie die Abfrage gilt, sendet die App keine Nutzungsstatistik. Mit dem Schalter „Diagnosedaten“ im Menü schalten Sie sie jederzeit ab oder wieder ein, zusammen mit den Absturzberichten (Abschnitt 9). Das wirkt sofort. Solange der Schalter aus ist, sendet die App keinerlei Nutzungsstatistik, auch keine Ereignisse ohne Kennungen.</p>
-      <p>Google ist unser Auftragsverarbeiter. <mark class="todo">Nur wenn Datenfreigabe und Google Signals in Analytics ausgeschaltet sind.</mark> Ereignis- und Nutzerdaten löscht Google nach <mark class="todo">2 oder 14</mark> Monaten; zusammengefasste Berichte bleiben erhalten.</p>
+      <p>Google ist unser Auftragsverarbeiter. <mark class="todo">Erst wenn die Datenverarbeitungsbedingungen in Analytics akzeptiert sind.</mark> Die Datenfreigabe an Google für eigene Zwecke und Google Signals sind ausgeschaltet. Ereignisdaten löscht Google nach 2 Monaten, Nutzerdaten wie die App-Instanz-ID 14 Monate nach Ihrer letzten Nutzung der App; zusammengefasste Berichte bleiben erhalten.</p>
 
       <h3>9. Absturzberichte (Firebase Crashlytics)</h3>
       <p>Stürzt die App ab oder reagiert sie nicht mehr, sendet sie über Firebase Crashlytics (Google) einen Absturzbericht. Er enthält den Fehlerverlauf, die App-Version, Gerätemodell, Betriebssystemversion, freien Arbeitsspeicher und Speicherplatz, ob das Gerät gerootet ist, eine Crashlytics-Installations-ID und eine Firebase-Installations-ID sowie die letzten Ereignisse aus der Nutzungsstatistik vor dem Absturz (Abschnitt 8). Außerdem sendet die App für jede Sitzung deren Beginn mit einer zufälligen Sitzungs-ID, damit Crashlytics berechnen kann, wie viele Sitzungen ohne Absturz enden.</p>
@@ -210,7 +210,7 @@
             <tr><td>Remote configuration (section 5)</td><td>Google</td><td>Art. 6(1)(f) GDPR</td><td>installation ID until deleted, then at most 180 days</td></tr>
             <tr><td>Consent form (section 6)</td><td>Google</td><td>Art. 6(1)(c) GDPR</td><td>on the device, until you clear the app data</td></tr>
             <tr><td>Ads (section 7)</td><td>Google and ad partners</td><td>consent; without consent Art. 6(1)(f) GDPR</td><td>see section 7</td></tr>
-            <tr><td>Usage statistics (section 8)</td><td>Google</td><td>consent</td><td><mark class="todo">2 or 14</mark> months</td></tr>
+            <tr><td>Usage statistics (section 8)</td><td>Google</td><td>consent</td><td>events 2 months, user data 14 months</td></tr>
             <tr><td>Crash reports (section 9)</td><td>Google</td><td>consent</td><td>90 days</td></tr>
             <tr><td>Email to us (section 10)</td><td>Proton (Switzerland)</td><td>Art. 6(1)(f) GDPR</td><td>6 months after the matter is closed</td></tr>
           </tbody>
@@ -230,7 +230,7 @@
       <h3>4. Images and thumbnails</h3>
       <p>When you open a marker, the app loads its image from Cloud Storage for Firebase, a Google service. If the marker has a video, the app also loads the thumbnail from YouTube (img.youtube.com, also Google) as soon as the marker opens. Google receives your IP address and technical details of the request, such as the time and the file requested. The app does not sign in.</p>
       <p>The purpose is to show you the images for the markers. The legal basis is Art. 6(1)(f) GDPR. Our legitimate interest is being able to run the app with its content.</p>
-      <p>For Cloud Storage, Google is our processor. We don't analyse access logs. <mark class="todo">Check: Data Access audit logs for Cloud Storage are off in the project</mark>. For the transmission to YouTube, we are jointly responsible with Google; Google alone is responsible for any further processing, including how long it keeps the data (<a href="https://policies.google.com/technologies/retention?hl=en">How Google retains data</a>).</p>
+      <p>For Cloud Storage, Google is our processor. Logs of individual requests (Data Access audit logs) are switched off in our project. For the transmission to YouTube, we are jointly responsible with Google; Google alone is responsible for any further processing, including how long it keeps the data (<a href="https://policies.google.com/technologies/retention?hl=en">How Google retains data</a>).</p>
       <p>If you tap a video, it opens outside the app, in the YouTube app or your browser. There, <a href="https://policies.google.com/privacy?hl=en">Google's privacy policy</a> applies.</p>
 
       <h3>5. Remote configuration (Firebase Remote Config)</h3>
@@ -262,7 +262,7 @@
       <p><strong>In the countries with a consent form,</strong> the app sends usage statistics only if you tap "Allow" in the "Crash reports and statistics" question (section 6). The legal basis is your consent (Art. 6(1)(a) GDPR, § 25(1) TDDDG). If you tap "No thanks" or close the question, usage statistics stay off. Your answers in Google's form do not turn them on.</p>
       <p><strong>In all other countries,</strong> usage statistics are on. The legal basis is Art. 6(1)(f) GDPR. Our legitimate interest is improving the app.</p>
       <p><strong>Turning them off:</strong> until it is clear whether the form applies to you, the app sends no usage statistics. With the "Diagnostics" switch in the menu, you turn them off or back on at any time, together with crash reports (section 9). This takes effect immediately. While the switch is off, the app sends no usage statistics at all, not even events without identifiers.</p>
-      <p>Google is our processor. <mark class="todo">Only if data sharing settings and Google signals are off in Analytics.</mark> Google deletes event and user data after <mark class="todo">2 or 14</mark> months; aggregated reports are kept.</p>
+      <p>Google is our processor. <mark class="todo">Only once the data processing terms are accepted in Analytics.</mark> Data sharing with Google for its own purposes and Google signals are switched off. Google deletes event data after 2 months, and user data such as the app instance ID 14 months after you last used the app; aggregated reports are kept.</p>
 
       <h3>9. Crash reports (Firebase Crashlytics)</h3>
       <p>If the app crashes or stops responding, it sends a crash report through Firebase Crashlytics (Google). It contains the error trace, the app version, device model, operating system version, free memory and storage, whether the device is rooted, a Crashlytics installation ID and a Firebase installation ID, and the last usage statistics events before the crash (section 8). The app also sends the start of each session with a random session ID, so that Crashlytics can work out how many sessions end without a crash.</p>
