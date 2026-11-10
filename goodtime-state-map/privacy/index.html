@@ -46,6 +46,13 @@
       and the ZH-HANT section alone one for Taiwan's PDPA and Hong Kong's PDPO
       (both marked).
       Publishing 0.2.0: delete every <section class="v02"> block and every .from-02 element.
+      Account sync (0.2.2, MRK-17) sits in a <section class="v023"> block per language,
+      after the v02 block; it holds "Account and sync" (#<lang>-account), the session
+      log and the deletion part (#<lang>-delete), in all eleven sections (DE and EN
+      reviewed 2026-11-08; the nine others agent translations with back-translations).
+      Publishing before 0.2.2: also delete every v023 block.
+      Publishing 0.2.2: delete every v02 block and every .from-02 element (also those
+      inside v023), and remove the v023 class but keep the block and its headings.
       Publishing 0.2.5: fold the v02 sections into the main text and delete .until-02 elements.
       Every <mark class="todo"> is a placeholder or an open item (docs/web/README.md).
       Any change to the DE or EN text needs the same change, translated and
@@ -54,7 +61,7 @@
 
     <section class="lang-section" id="de" aria-labelledby="de-title">
       <h2 id="de-title">Datenschutzerklärung</h2>
-      <p class="meta">Stand: 7. November 2026. Gilt für die App Goodtime State Map ab Version 0.2.0 und für diese Webseiten.</p>
+      <p class="meta">Stand: 10. November 2026. Gilt für die App Goodtime State Map ab Version 0.2.0 und für diese Webseiten.</p>
       <p class="meta">Diese Erklärung gibt es auch auf Französisch, Spanisch, Polnisch, Russisch, brasilianischem Portugiesisch, Italienisch, Türkisch, Japanisch und traditionellem Chinesisch. Verbindlich sind die deutsche und die englische Fassung.</p>
 
       <h3>1. Verantwortlicher</h3>
@@ -73,14 +80,15 @@
         <li>Die App hat keine Werbung, kein Tracking und keine Analyse-Tools, die auswerten, wie Sie die App nutzen.</li>
         <li>Die App lädt die Karte und ihre Inhalte von Supabase in der EU.</li>
         <li>Absturzberichte und Sitzungsdaten sendet die App nur, wenn Sie das erlauben.</li>
-        <li>Was Sie als gesehen markieren, Ihre Filter und Ihre Einstellungen bleiben auf Ihrem Gerät, außer Sie exportieren Ihre Gesehen-Markierungen selbst. Supabase sieht nur, in welcher Sprache die App Inhalte abfragt.</li>
+        <li>Was Sie als gesehen markieren, Ihre Filter und Ihre Einstellungen bleiben auf Ihrem Gerät, außer Sie exportieren Ihre Gesehen-Markierungen selbst oder melden sich an, um sie zu synchronisieren. Ohne Anmeldung sieht Supabase nur, in welcher Sprache die App Inhalte abfragt.</li>
+        <li>Die Anmeldung mit Apple oder Google ist freiwillig. Die App funktioniert auch ohne sie.</li>
         <li>Diese Webseiten setzen keine Cookies und laden nichts von fremden Servern.</li>
       </ul>
 
       <h3>3. Karte und Inhalte (Supabase)</h3>
       <p>Die App lädt die Kartenkacheln, die Kartenbeschreibung (Manifest) und die Inhalte der Markierungen von Supabase. Supabase ist unser Auftragsverarbeiter. Die Daten liegen auf Servern in Frankfurt am Main (EU).</p>
       <p>Die App lädt von Supabase außerdem Bilder, etwa Screenshots und Vorschaubilder von Videos. Für sie gilt dasselbe wie für die Karte.</p>
-      <p>Bei jeder Anfrage erhält Supabase Ihre IP-Adresse und technische Angaben zur Anfrage, etwa den Zeitpunkt und die abgerufene Datei. Die App meldet sich dabei nicht an und sendet keine Kennung Ihres Geräts. In den technischen Protokollen von Supabase (API- und Datenbankprotokolle) kann Ihre IP-Adresse bis zu 7 Tage gespeichert sein. Supabase sichert die Datenbank täglich und bewahrt jede Sicherung 7 Tage auf. Gelöschte Daten können daher bis zu 7 Tage in den Sicherungen enthalten sein.</p>
+      <p>Bei jeder Anfrage erhält Supabase Ihre IP-Adresse und technische Angaben zur Anfrage, etwa den Zeitpunkt und die abgerufene Datei. Um die Karte und ihre Inhalte zu laden, meldet sich die App nicht an und sendet keine Kennung Ihres Geräts, auch dann nicht, wenn Sie bei einem Konto angemeldet sind (siehe „Konto und Synchronisierung“). In den technischen Protokollen von Supabase (API- und Datenbankprotokolle) kann Ihre IP-Adresse bis zu 7 Tage gespeichert sein. Supabase sichert die Datenbank täglich und bewahrt jede Sicherung 7 Tage auf. Gelöschte Daten können daher bis zu 7 Tage in den Sicherungen enthalten sein.</p>
       <p>Zweck ist, Ihnen die Karte und ihre Inhalte anzuzeigen. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO. Unser berechtigtes Interesse ist, die App betreiben zu können.</p>
       <p>Laut dem Auftragsverarbeitungsvertrag von Supabase ist unser Vertragspartner die Supabase Pte. Ltd. in Singapur. Supabase kann Protokolle, Sicherungen und Unterauftragsverarbeiter auch außerhalb der EU einsetzen. Für Übermittlungen in Drittländer gelten die EU-Standardvertragsklauseln (Durchführungsbeschluss (EU) 2021/914 der Kommission, Art. 46 Abs. 2 lit. c DSGVO). Eine Kopie schicken wir Ihnen auf Anfrage.</p>
       <!-- REVIEW: research 05 §10 and open question 8. Check the contracting entity and the subprocessor list in the Supabase DPA before publishing. -->
@@ -99,7 +107,7 @@
       <p>Wenn Sie jünger als 16 Jahre sind, erlauben Sie Absturzberichte bitte nur mit dem Einverständnis Ihrer Eltern.</p>
 
       <h3>5. Was auf Ihrem Gerät bleibt</h3>
-      <p>Ihre Gesehen-Markierungen, Ihre Filter, Ihre Sprache, Ihre Wahl zu Absturzberichten und die Zahl gesehener Orte (5, 25 oder 75), bei der die App zuletzt um eine Bewertung gebeten hat (Abschnitt 9), speichert die App nur auf Ihrem Gerät. Die App selbst sendet Gesehen-Markierungen, Filter, Ihre Wahl zu Absturzberichten und diese Zahl an niemanden. Damit die Texte in Ihrer Sprache erscheinen, fragt die App bei Supabase die Texte in dieser Sprache und auf Englisch ab (Abschnitt 3). Supabase sieht daher, welche Sprache angefragt wird. Diese Speicherung ist für die Funktionen nötig, die Sie nutzen (§ 25 Abs. 2 Nr. 2 TDDDG).</p>
+      <p>Ihre Gesehen-Markierungen, Ihre Filter, Ihre Sprache, Ihre Wahl zu Absturzberichten und die Zahl gesehener Orte (5, 25 oder 75), bei der die App zuletzt um eine Bewertung gebeten hat (Abschnitt 9), speichert die App auf Ihrem Gerät. Die App selbst sendet Filter, Ihre Wahl zu Absturzberichten und diese Zahl an niemanden und Gesehen-Markierungen nur an das Konto, das auf dem Gerät angemeldet ist, wenn Sie sich anmelden („Konto und Synchronisierung“). Damit die Texte in Ihrer Sprache erscheinen, fragt die App bei Supabase die Texte in dieser Sprache und auf Englisch ab (Abschnitt 3). Supabase sieht daher, welche Sprache angefragt wird. Diese Speicherung ist für die Funktionen nötig, die Sie nutzen (§ 25 Abs. 2 Nr. 2 TDDDG).</p>
       <p><strong>Export und Import (ab Version 0.2.1).</strong> Sie können Ihre Gesehen-Markierungen in eine Datei exportieren und auf einem anderen Gerät importieren. Der Export enthält nur, welche Marker Sie wann als gesehen oder als nicht gesehen markiert haben, und den Zeitpunkt des Exports, ohne eine ID von Ihnen oder Ihrem Gerät. Die App sendet ihn an niemanden: Sie entscheiden, wohin er geht, zum Beispiel in eine andere App, in Dateien, in einen Cloud-Speicher oder in eine E-Mail, und es gelten die Bedingungen und die Datenschutzerklärung dieses Dienstes. Der Import liest nur die Datei, die Sie auswählen, und speichert das Ergebnis auf Ihrem Gerät. Das Schreiben und Lesen dieser Datei ist für die Funktion nötig, die Sie angefordert haben (§ 25 Abs. 2 Nr. 2 TDDDG).</p>
 
       <h3>6. Diese Webseiten (GitHub Pages)</h3>
@@ -147,17 +155,45 @@
       </ul>
       <p><strong>Widerspruchsrecht (Art. 21 DSGVO):</strong> Verarbeitungen, die auf Art. 6 Abs. 1 lit. f DSGVO beruhen, können Sie jederzeit aus Gründen widersprechen, die sich aus Ihrer besonderen Situation ergeben. Wir verarbeiten Ihre Daten dann nicht mehr dafür, außer wir können zwingende schutzwürdige Gründe nachweisen, die Ihre Interessen, Rechte und Freiheiten überwiegen, oder die Verarbeitung dient der Geltendmachung, Ausübung oder Verteidigung von Rechtsansprüchen.</p>
       <p>Automatisierte Entscheidungen im Einzelfall im Sinne von Art. 22 DSGVO treffen wir nicht.</p>
-      <p>Schreiben Sie uns dazu an <a href="mailto:goodtimestatemap@protonmail.com">goodtimestatemap@protonmail.com</a>.</p>
+      <p>Schreiben Sie uns dazu an <a href="mailto:goodtimestatemap@protonmail.com">goodtimestatemap@protonmail.com</a>. Wenn Sie sich angemeldet haben, löscht „Konto und Daten löschen“ in der App Ihr Konto sofort, und wir finden Ihr Konto über seine E-Mail-Adresse; um eine Anfrage zu bestätigen, können wir Ihnen an diese Adresse schreiben (Art. 12 Abs. 6 DSGVO).</p>
       <p>Sie können sich außerdem bei einer Datenschutz-Aufsichtsbehörde beschweren (Art. 77 DSGVO). Für uns zuständig ist: Bayerisches Landesamt für Datenschutzaufsicht (BayLDA), Postfach 1349, 91504 Ansbach, Deutschland, <a href="https://www.lda.bayern.de/">www.lda.bayern.de</a>.</p>
 
       <h3>12. Änderungen</h3>
       <p>Wenn sich die App ändert, passen wir diese Datenschutzerklärung an.</p>
 
+
+      <section aria-labelledby="de-v023">
+        <h3 id="de-v023">Ab Version 0.2.2 / <span lang="en">From version 0.2.2</span></h3>
+
+        <h4 id="de-account">Konto und Synchronisierung</h4>
+        <p>Ab Version 0.2.2 können Sie sich unter „Einstellungen“, „Dein Fortschritt“ mit Apple oder Google anmelden, damit Ihre Gesehen-Markierungen auf Ihren Geräten gleich sind. Die Anmeldung ist freiwillig. Sie beginnt erst, wenn Sie auf „Mit Apple fortfahren“ oder „Weiter mit Google“ tippen, und die App funktioniert auch ohne sie.</p>
+        <ul>
+          <li><strong>Daten:</strong> die E-Mail-Adresse, die Apple oder Google uns übermittelt (bei Apple kann das eine Weiterleitungsadresse von Apple sein), eine Konto-ID, die ID Ihrer Apple- oder Google-Identität, Ihre Gesehen-Markierungen (für jeden Marker: seine ID, ob er gesehen ist und wann Sie ihn zuletzt geändert haben), die Version unserer Nutzungsbedingungen, die Sie akzeptiert haben, und wann, sowie die Sitzung (Abschnitt „Sitzungs- und Anmeldeprotokoll“). </li>
+          <li><strong>Zweck:</strong> Sie anmelden und Ihre Gesehen-Markierungen Ihrem Konto zuordnen. Die App sendet keine E-Mails. Wir sehen uns die Gesehen-Markierungen einer Person nur an, um eine Anfrage dieser Person zu beantworten. Andere Spielerinnen und Spieler sehen weder sie noch Ihre E-Mail-Adresse.</li>
+          <li><strong>Apple und Google:</strong> Apple oder Google zeigt eine eigene Anmeldung und ist dafür eigenständig verantwortlich. Es gelten deren Datenschutzbestimmungen. Die App verbindet sich erst mit Apple oder Google, wenn Sie auf deren Schaltfläche tippen.</li>
+          <li><strong>Empfänger:</strong> Supabase speichert Ihr Konto als unser Auftragsverarbeiter (Abschnitt 3). Löschen Sie ein Konto, das Apple nutzt, in der App auf einem iPhone, erhält Apple unsere Aufforderung, den Zugriff der App auf Ihre Apple-ID zu beenden. Diese Aufforderung erhält Apple Inc. in den USA. Apple ist nicht nach dem EU-US Data Privacy Framework zertifiziert; die Übermittlung stützt sich deshalb auf Art. 49 Abs. 1 lit. b DSGVO, weil sie nötig ist, um die von Ihnen verlangte Löschung auszuführen.</li>
+          <li><strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. b DSGVO, unsere <a href="../terms/#de-account">Nutzungsbedingungen („Ihr Konto“)</a>, die Sie vor der Anmeldung akzeptieren. Missbrauchsgrenzen und das Anmeldeprotokoll: Art. 6 Abs. 1 lit. f DSGVO; unser Interesse ist, den Dienst sicher zu betreiben. Das Speichern der Sitzung auf Ihrem Gerät: § 25 Abs. 2 Nr. 2 TDDDG.</li>
+          <li><strong>Was synchronisiert wird:</strong> nur Ihre Gesehen-Markierungen, und nur solange die App geöffnet ist. Ihre Filter, Ihre Einstellungen, Ihre Wahl zu Absturzberichten und die Zahl für die Bewertung (Abschnitt 5) bleiben auf Ihrem Gerät.</li>
+          <li><strong>Abmelden:</strong> Ihr Konto und seine Gesehen-Markierungen bleiben bei uns, und Ihre Gesehen-Markierungen bleiben auf dem Gerät. Meldet sich danach jemand anderes auf diesem Gerät an, kommen die Gesehen-Markierungen dieses Geräts in das Konto dieser Person.</li>
+          <li><strong>Löschen:</strong> „Konto und Daten löschen“ unter „Einstellungen“, „Dein Fortschritt“ löscht sofort Ihr Konto und seine Gesehen-Markierungen auf dem Server. Ihre Gesehen-Markierungen bleiben auf Ihrem Gerät. Haben Sie sich mit Apple angemeldet und löschen Sie in der App auf einem iPhone, bestätigen Sie noch einmal bei Apple, und wir bitten Apple, den Zugriff der App auf Ihre Apple-ID zu beenden. Haben Sie sich mit Apple angemeldet, beendet eine Löschung per E-Mail oder Webformular oder in der App auf Android den Zugriff der App auf Ihre Apple-ID nicht. Das können Sie selbst in den Einstellungen „Mit Apple anmelden“ Ihrer Apple-ID tun. Weitere Wege zum Löschen stehen unter „Ihre Daten löschen“.</li>
+          <li><strong>Speicherdauer:</strong> solange Ihr Konto besteht. Nach 24 Monaten ohne Anmeldung, Aktualisierung der Sitzung oder Synchronisierung löschen wir ein Konto. </li>
+          <li><strong>Ihre Kopie:</strong> „Gesehen-Markierungen exportieren“ unter „Dein Fortschritt“ gibt Ihnen Ihre Gesehen-Markierungen jederzeit als Datei (Art. 20 DSGVO). Sie können uns auch per E-Mail um eine Kopie aller Daten Ihres Kontos bitten (Art. 15 und 20 DSGVO).</li>
+        </ul>
+
+        <h4>Sitzungs- und Anmeldeprotokoll</h4>
+        <p>Solange Sie angemeldet sind, speichert Supabase zusammen mit der Sitzung in unserer Datenbank die IP-Adresse und den User-Agent Ihres Geräts aus Ihrer letzten Anmeldung oder Aktualisierung der Sitzung. Diese Angaben werden gelöscht, wenn Sie sich auf diesem Gerät abmelden, wenn Ihr Konto gelöscht wird oder nach 24 Monaten ohne Aktivität. Das Anmeldeprotokoll von Supabase bewahrt Anmeldungen in den technischen Protokollen von Supabase bis zu 7 Tage auf; in unserer Datenbank wird es nicht gespeichert.</p>
+
+        <h4 id="de-delete">Ihre Daten löschen</h4>
+        <p>Dieser Abschnitt erklärt, wie Sie Ihre Daten aus der App Goodtime State Map löschen.</p>
+        <p><strong>Mit einem Konto (ab Version 0.2.2):</strong> Solange Sie angemeldet sind, löscht „Konto und Daten löschen“ unter „Einstellungen“, „Dein Fortschritt“ sofort Ihr Konto und seine synchronisierten Gesehen-Markierungen auf dem Server. Haben Sie sich mit Apple angemeldet und löschen Sie auf einem iPhone, bestätigen Sie noch einmal bei Apple, und wir bitten Apple, den Zugriff der App auf Ihre Apple-ID zu beenden. Ihre Gesehen-Markierungen bleiben auf Ihrem Gerät.</p>
+        <p><strong>Per E-Mail oder Webformular:</strong> Ihr Konto und seine Daten oder andere Daten, etwa Name und E-Mail-Adresse aus einer Meldung, Nachrichten an uns oder Absturzberichte, löschen wir auf Ihre Bitte an <a href="mailto:goodtimestatemap@protonmail.com">goodtimestatemap@protonmail.com</a> oder über „Kontakt“ im <a href="../contact/?lang=de#contact">Webformular</a> innerhalb eines Monats (Art. 12 Abs. 3 DSGVO). Nennen Sie für ein Konto die E-Mail-Adresse, die es nutzt; wir bestätigen die Anfrage vorher, indem wir an diese Adresse schreiben (Art. 12 Abs. 6 DSGVO).  Haben Sie sich mit Apple angemeldet, beendet eine Löschung per E-Mail oder Webformular oder in der App auf Android den Zugriff der App auf Ihre Apple-ID nicht. Das können Sie selbst in den Einstellungen „Mit Apple anmelden“ Ihrer Apple-ID tun.</p>
+        <p>Gelöschte Daten können bis zu 7 Tage in den Protokollen und Sicherungen von Supabase verbleiben.</p>
+      </section>
     </section>
 
     <section class="lang-section" id="en" lang="en" aria-labelledby="en-title">
       <h2 id="en-title">Privacy policy</h2>
-      <p class="meta">Last updated: 7 November 2026. Covers the Goodtime State Map app from version 0.2.0 and these web pages.</p>
+      <p class="meta">Last updated: 10 November 2026. Covers the Goodtime State Map app from version 0.2.0 and these web pages.</p>
       <p class="meta">This policy is also available in French, Spanish, Polish, Russian, Brazilian Portuguese, Italian, Turkish, Japanese and Traditional Chinese. The German and English versions are binding.</p>
 
       <h3>1. Controller</h3>
@@ -176,14 +212,15 @@
         <li>The app has no ads, no tracking and no analytics that look at how you use it.</li>
         <li>The app loads the map and its content from Supabase in the EU.</li>
         <li>The app sends crash reports and session data only if you allow it.</li>
-        <li>What you mark as seen, your filters and your settings stay on your device, unless you export your seen markers yourself. Supabase only sees which language the app requests content in.</li>
+        <li>What you mark as seen, your filters and your settings stay on your device, unless you export your seen markers yourself or sign in to sync them. Without a sign-in, Supabase only sees which language the app requests content in.</li>
+        <li>Signing in with Apple or Google is optional. The app works without it.</li>
         <li>These web pages set no cookies and load nothing from other servers.</li>
       </ul>
 
       <h3>3. Map and content (Supabase)</h3>
       <p>The app loads the map tiles, the map description (manifest) and the marker content from Supabase. Supabase is our processor. The data sits on servers in Frankfurt am Main (EU).</p>
       <p>The app also loads images from Supabase, such as screenshots and video thumbnails. The same applies to them as to the map.</p>
-      <p>With each request, Supabase receives your IP address and technical details of the request, such as the time and the file requested. The app does not sign in and sends no identifier of your device. Supabase's technical logs (API and database logs) may hold your IP address for up to 7 days. Supabase backs up the database daily and keeps each backup for 7 days, so deleted data can remain in the backups for up to 7 days.</p>
+      <p>With each request, Supabase receives your IP address and technical details of the request, such as the time and the file requested. To load the map and its content, the app does not sign in and sends no identifier of your device, also when you are signed in to an account (see "Account and sync"). Supabase's technical logs (API and database logs) may hold your IP address for up to 7 days. Supabase backs up the database daily and keeps each backup for 7 days, so deleted data can remain in the backups for up to 7 days.</p>
       <p>The purpose is to show you the map and its content. The legal basis is Art. 6(1)(f) GDPR. Our legitimate interest is being able to run the app.</p>
       <p>According to Supabase's data processing agreement, our contracting party is Supabase Pte. Ltd. in Singapore. Supabase may use logs, backups and subprocessors outside the EU. Transfers to third countries are covered by the EU standard contractual clauses (Commission Implementing Decision (EU) 2021/914, Art. 46(2)(c) GDPR). We will send you a copy on request.</p>
 
@@ -201,7 +238,7 @@
       <p>If you are under 16, please only allow crash reports with a parent's OK.</p>
 
       <h3>5. What stays on your device</h3>
-      <p>The app stores what you mark as seen, your filters, your language, your crash-report choice and the number of seen places (5, 25 or 75) at which it last asked for a rating (section 9) only on your device. The app itself sends your seen markers, your filters, your crash-report choice and this number to no one. To show texts in your language, the app asks Supabase for the texts in that language and in English (section 3), so Supabase sees which language is requested. This storage is needed for the features you use (§ 25(2) no. 2 TDDDG).</p>
+      <p>The app stores what you mark as seen, your filters, your language, your crash-report choice and the number of seen places (5, 25 or 75) at which it last asked for a rating (section 9) on your device. The app itself sends your filters, your crash-report choice and this number to no one, and your seen markers only to the account signed in on the device, if you sign in ("Account and sync"). To show texts in your language, the app asks Supabase for the texts in that language and in English (section 3), so Supabase sees which language is requested. This storage is needed for the features you use (§ 25(2) no. 2 TDDDG).</p>
       <p><strong>Export and import (from version 0.2.1).</strong> You can export your seen markers to a file and import them on another device. The export holds only which markers you marked or unmarked as seen and when, and the time of the export, with no ID of you or your device. The app sends it to no one: you choose where it goes, for example another app, Files, a cloud drive or an email, and that service's terms and privacy policy apply. Import reads only the file you pick and keeps the result on your device. Writing and reading this file is needed for the feature you asked for (§ 25(2) no. 2 TDDDG).</p>
 
       <h3>6. These web pages (GitHub Pages)</h3>
@@ -249,17 +286,45 @@
       </ul>
       <p><strong>Right to object (Art. 21 GDPR):</strong> you can object at any time, on grounds relating to your particular situation, to processing based on Art. 6(1)(f) GDPR. We then stop that processing unless we can show compelling legitimate grounds that override your interests, rights and freedoms, or the processing serves to establish, exercise or defend legal claims.</p>
       <p>We make no automated individual decisions within the meaning of Art. 22 GDPR.</p>
-      <p>To use these rights, email us at <a href="mailto:goodtimestatemap@protonmail.com">goodtimestatemap@protonmail.com</a>.</p>
+      <p>To use these rights, email us at <a href="mailto:goodtimestatemap@protonmail.com">goodtimestatemap@protonmail.com</a>. If you signed in, "Delete account and data" in the app deletes your account at once, and we find your account by its email address; to confirm a request, we may write to that address (Art. 12(6) GDPR).</p>
       <p>You can also complain to a data protection supervisory authority (Art. 77 GDPR). The authority responsible for us is: Bayerisches Landesamt für Datenschutzaufsicht (BayLDA), Postfach 1349, 91504 Ansbach, Germany, <a href="https://www.lda.bayern.de/">www.lda.bayern.de</a>.</p>
 
       <h3>12. Changes</h3>
       <p>When the app changes, we update this privacy policy.</p>
 
+
+      <section aria-labelledby="en-v023">
+        <h3 id="en-v023"><span lang="de">Ab Version 0.2.2</span> / From version 0.2.2</h3>
+
+        <h4 id="en-account">Account and sync</h4>
+        <p>From version 0.2.2, you can sign in with Apple or Google under "Settings", "Your progress", so that your seen markers are the same on your devices. Signing in is optional. It starts only when you tap "Continue with Apple" or "Continue with Google", and the app works without it.</p>
+        <ul>
+          <li><strong>Data:</strong> the email address that Apple or Google gives us (with Apple, this can be a relay address from Apple), an account ID, the ID of your Apple or Google identity, your seen markers (for each marker: its ID, whether it is seen, and when you last changed it), the version of our terms of use you accepted, and when, and the session (section "Session and sign-in log"). </li>
+          <li><strong>Purpose:</strong> signing you in and keeping your seen markers with your account. The app sends no email. We look at no one's seen markers except to answer that person's request, and other players never see them or your email address.</li>
+          <li><strong>Apple and Google:</strong> Apple or Google shows its own sign-in and is a separate controller for it. Their privacy terms apply. The app contacts Apple or Google only after you tap their button.</li>
+          <li><strong>Recipients:</strong> Supabase hosts your account as our processor (section 3). When you delete an account that uses Apple in the app on an iPhone, Apple receives our request to end the app's access to your Apple ID. Apple Inc. in the USA receives this request. Apple isn't certified under the EU-US Data Privacy Framework, so the transfer rests on Art. 49(1)(b) GDPR: it is needed to carry out the deletion you asked for.</li>
+          <li><strong>Legal basis:</strong> Art. 6(1)(b) GDPR, our <a href="../terms/#en-account">terms of use ("Your account")</a>, which you accept before you sign in. Abuse limits and the sign-in audit log: Art. 6(1)(f) GDPR, our interest being to run the service securely. Storing the session on your device: § 25(2) no. 2 TDDDG.</li>
+          <li><strong>What syncs:</strong> only your seen markers, and only while the app is open. Your filters, settings, crash-report choice and the rating number (section 5) stay on your device.</li>
+          <li><strong>Signing out:</strong> your account and its seen markers stay with us, and your seen markers stay on the device. If someone else signs in on this device afterwards, its seen markers join their account.</li>
+          <li><strong>Deleting:</strong> "Delete account and data" in "Settings", "Your progress" deletes your account and its seen markers on the server at once. Your seen markers stay on your device. If you signed in with Apple and delete in the app on an iPhone, you confirm once more with Apple, and we ask Apple to end the app's access to your Apple ID. If you signed in with Apple, deleting by email or web form, or in the app on Android, doesn't end the app's access to your Apple ID. You can do that yourself in your Apple ID's "Sign in with Apple" settings. Other ways to delete are in "Deleting your data".</li>
+          <li><strong>Retention:</strong> as long as your account exists. We delete an account after 24 months without a sign-in, session refresh or sync. </li>
+          <li><strong>Your copy:</strong> "Export seen markers" in "Your progress" gives you your seen markers as a file at any time (Art. 20 GDPR). You can also ask us by email for a copy of all data of your account (Art. 15 and 20 GDPR).</li>
+        </ul>
+
+        <h4>Session and sign-in log</h4>
+        <p>While you are signed in, Supabase keeps the IP address and your device's user agent of your latest sign-in or session refresh with the session in our database. They are deleted when you sign out on that device, when your account is deleted, or after 24 months without activity. Supabase's auth audit log keeps sign-ins in its technical logs for up to 7 days; it isn't stored in our database.</p>
+
+        <h4 id="en-delete">Deleting your data</h4>
+        <p>This section explains how to delete your data from the Goodtime State Map app.</p>
+        <p><strong>With an account (from version 0.2.2):</strong> while you are signed in, "Delete account and data" in "Settings", "Your progress" deletes your account and its synced seen markers on the server at once. If you signed in with Apple and delete on an iPhone, you confirm once more with Apple, and we ask Apple to end the app's access to your Apple ID. Your seen markers stay on your device.</p>
+        <p><strong>By email or web form:</strong> we delete your account and its data, or any other data, such as the name and email address from a report, messages to us or crash reports, within one month when you ask at <a href="mailto:goodtimestatemap@protonmail.com">goodtimestatemap@protonmail.com</a> or through "Contact" in the <a href="../contact/?lang=en#contact">web form</a> (Art. 12(3) GDPR). For an account, name the email address it uses; we confirm the request by writing to that address first (Art. 12(6) GDPR).  If you signed in with Apple, deleting by email or web form, or in the app on Android, doesn't end the app's access to your Apple ID. You can do that yourself in your Apple ID's "Sign in with Apple" settings.</p>
+        <p>Deleted data can remain in Supabase's logs and backups for up to 7 days.</p>
+      </section>
     </section>
 
     <section class="lang-section" id="fr" lang="fr" aria-labelledby="fr-title">
       <h2 id="fr-title">Politique de confidentialité</h2>
-      <p class="meta">Dernière mise à jour : 7 novembre 2026. S'applique à l'application Goodtime State Map à partir de la version 0.2.0 et à ces pages web.</p>
+      <p class="meta">Dernière mise à jour : 10 novembre 2026. S'applique à l'application Goodtime State Map à partir de la version 0.2.0 et à ces pages web.</p>
       <p class="meta">Traduction de la version anglaise. Seules les versions allemande et anglaise font foi.</p>
 
       <h3>1. Responsable du traitement</h3>
@@ -278,14 +343,15 @@
         <li>L'application n'a ni publicité, ni pistage, ni outil d'analyse de votre utilisation.</li>
         <li>L'application charge la carte et son contenu depuis Supabase, dans l'UE.</li>
         <li>L'application n'envoie des rapports de plantage et des données de session que si vous l'autorisez.</li>
-        <li>Ce que vous marquez comme vu, vos filtres et vos paramètres restent sur votre appareil, sauf si vous exportez vous-même vos marqueurs vus. Supabase voit seulement dans quelle langue l'application demande le contenu.</li>
+        <li>Ce que vous marquez comme vu, vos filtres et vos paramètres restent sur votre appareil, sauf si vous exportez vous-même vos marqueurs vus ou si vous vous connectez pour les synchroniser. Sans connexion, Supabase voit seulement dans quelle langue l'application demande le contenu.</li>
+        <li>La connexion avec Apple ou Google est facultative. L'application fonctionne aussi sans elle.</li>
         <li>Ces pages web ne déposent aucun cookie et ne chargent rien depuis d'autres serveurs.</li>
       </ul>
 
       <h3>3. Carte et contenu (Supabase)</h3>
       <p>L'application charge les tuiles de la carte, la description de la carte (manifeste) et le contenu des marqueurs depuis Supabase. Supabase est notre sous-traitant. Les données se trouvent sur des serveurs à Francfort-sur-le-Main (UE).</p>
       <p>L'application charge aussi des images depuis Supabase, comme des captures d'écran et des miniatures de vidéos. Les mêmes règles que pour la carte s'appliquent à ces images.</p>
-      <p>À chaque requête, Supabase reçoit votre adresse IP et des informations techniques sur la requête, comme l'heure et le fichier demandé. L'application ne se connecte à aucun compte et n'envoie aucun identifiant de votre appareil. Les journaux techniques de Supabase (journaux de l'API et de la base de données) peuvent conserver votre adresse IP jusqu'à 7 jours. Supabase sauvegarde la base de données chaque jour et conserve chaque sauvegarde 7 jours ; des données supprimées peuvent donc rester jusqu'à 7 jours dans les sauvegardes.</p>
+      <p>À chaque requête, Supabase reçoit votre adresse IP et des informations techniques sur la requête, comme l'heure et le fichier demandé. Pour charger la carte et son contenu, l'application ne se connecte à aucun compte et n'envoie aucun identifiant de votre appareil, même lorsque vous êtes connecté à un compte (voir « Compte et synchronisation »). Les journaux techniques de Supabase (journaux de l'API et de la base de données) peuvent conserver votre adresse IP jusqu'à 7 jours. Supabase sauvegarde la base de données chaque jour et conserve chaque sauvegarde 7 jours ; des données supprimées peuvent donc rester jusqu'à 7 jours dans les sauvegardes.</p>
       <p>La finalité est de vous afficher la carte et son contenu. La base juridique est l'article 6, paragraphe 1, point f) du RGPD. Notre intérêt légitime est de pouvoir faire fonctionner l'application.</p>
       <p>Selon l'accord de traitement des données de Supabase, notre cocontractant est Supabase Pte. Ltd., à Singapour. Supabase peut utiliser des journaux, des sauvegardes et des sous-traitants hors de l'UE. Les transferts vers des pays tiers sont encadrés par les clauses contractuelles types de l'UE (décision d'exécution (UE) 2021/914 de la Commission, article 46, paragraphe 2, point c) du RGPD). Nous vous en envoyons une copie sur demande.</p>
 
@@ -304,7 +370,7 @@
 
       <h3>5. Ce qui reste sur votre appareil</h3>
       <!-- Wording pass 2026-11-04 (docs/records/legal-texts.md): §5's first sentence revised by an agent and back-translated (docs/records/back-translations/2026-11-04-privacy-wording-fr.md) and approved by the developer on 2026-11-04 (docs/records/legal-texts.md). -->
-      <p>L'application stocke les données suivantes uniquement sur votre appareil : ce que vous marquez comme vu, vos filtres, votre langue, votre choix concernant les rapports de plantage et le nombre de lieux vus (5, 25 ou 75) auquel l'application vous a demandé une évaluation la dernière fois (section 9). L'application elle-même n'envoie à personne vos marqueurs vus, vos filtres, votre choix concernant les rapports de plantage ni ce nombre. Pour afficher les textes dans votre langue, l'application demande à Supabase les textes dans cette langue et en anglais (section 3) ; Supabase voit donc quelle langue est demandée. Ce stockage est nécessaire aux fonctions que vous utilisez (§ 25, al. 2, n° 2 TDDDG).</p>
+      <p>L'application stocke les données suivantes sur votre appareil : ce que vous marquez comme vu, vos filtres, votre langue, votre choix concernant les rapports de plantage et le nombre de lieux vus (5, 25 ou 75) auquel l'application vous a demandé une évaluation la dernière fois (section 9). L'application elle-même n'envoie à personne vos filtres, votre choix concernant les rapports de plantage ni ce nombre, et n'envoie vos marqueurs vus qu'au compte connecté sur l'appareil, si vous vous connectez (« Compte et synchronisation »). Pour afficher les textes dans votre langue, l'application demande à Supabase les textes dans cette langue et en anglais (section 3) ; Supabase voit donc quelle langue est demandée. Ce stockage est nécessaire aux fonctions que vous utilisez (§ 25, al. 2, n° 2 TDDDG).</p>
       <p><strong>Export et import (à partir de la version 0.2.1).</strong> Vous pouvez exporter vos marqueurs vus dans un fichier et les importer sur un autre appareil. L'export contient uniquement les marqueurs que vous avez marqués comme vus ou non vus et à quel moment, ainsi que le moment de l'export, sans aucun identifiant vous concernant ou concernant votre appareil. L'application ne l'envoie à personne : vous choisissez où il va, par exemple vers une autre application, Fichiers, un stockage cloud ou un e-mail, et les conditions et la politique de confidentialité de ce service s'appliquent. L'import lit uniquement le fichier que vous choisissez et conserve le résultat sur votre appareil. L'écriture et la lecture de ce fichier sont nécessaires à la fonction que vous avez demandée (§ 25, al. 2, n° 2 TDDDG).</p>
 
       <h3>6. Ces pages web (GitHub Pages)</h3>
@@ -352,17 +418,45 @@
       </ul>
       <p><strong>Droit d'opposition (article 21 du RGPD) :</strong> vous pouvez vous opposer à tout moment, pour des raisons tenant à votre situation particulière, aux traitements fondés sur l'article 6, paragraphe 1, point f) du RGPD. Nous cessons alors ce traitement, sauf si nous démontrons des motifs légitimes et impérieux qui prévalent sur vos intérêts, droits et libertés, ou si le traitement sert à la constatation, à l'exercice ou à la défense de droits en justice.</p>
       <p>Nous ne prenons aucune décision individuelle automatisée au sens de l'article 22 du RGPD.</p>
-      <p>Pour exercer ces droits, écrivez-nous à <a href="mailto:goodtimestatemap@protonmail.com">goodtimestatemap@protonmail.com</a>.</p>
+      <p>Pour exercer ces droits, écrivez-nous à <a href="mailto:goodtimestatemap@protonmail.com">goodtimestatemap@protonmail.com</a>. Si vous vous êtes connecté, « Supprimer le compte et les données » dans l'application supprime immédiatement votre compte, et nous retrouvons votre compte grâce à son adresse e-mail ; pour confirmer une demande, nous pouvons vous écrire à cette adresse (article 12, paragraphe 6 du RGPD).</p>
       <p>Vous pouvez aussi introduire une réclamation auprès d'une autorité de contrôle de la protection des données (article 77 du RGPD). L'autorité compétente pour nous est : Bayerisches Landesamt für Datenschutzaufsicht (BayLDA), Postfach 1349, 91504 Ansbach, Allemagne, <a href="https://www.lda.bayern.de/">www.lda.bayern.de</a>.</p>
 
       <h3>12. Modifications</h3>
       <p>Lorsque l'application change, nous mettons à jour cette politique de confidentialité.</p>
 
+
+      <section aria-labelledby="fr-v023">
+        <h3 id="fr-v023">À partir de la version 0.2.2</h3>
+
+        <h4 id="fr-account">Compte et synchronisation</h4>
+        <p>À partir de la version 0.2.2, vous pouvez vous connecter avec Apple ou Google dans « Paramètres », « Votre progression », afin que vos marqueurs vus soient les mêmes sur vos appareils. La connexion est facultative. Elle ne commence que lorsque vous appuyez sur « Continuer avec Apple » ou « Continuer avec Google », et l'application fonctionne aussi sans elle.</p>
+        <ul>
+          <li><strong>Données :</strong> l'adresse e-mail qu'Apple ou Google nous transmet (avec Apple, il peut s'agir d'une adresse de relais d'Apple), un identifiant de compte, l'identifiant de votre identité Apple ou Google, vos marqueurs vus (pour chaque marqueur : son identifiant, s'il est vu ou non et quand vous l'avez modifié pour la dernière fois), la version de nos conditions d'utilisation que vous avez acceptée et la date de cette acceptation, ainsi que la session (paragraphe « Session et journal de connexion »). </li>
+          <li><strong>Finalité :</strong> vous connecter et rattacher vos marqueurs vus à votre compte. L'application n'envoie aucun e-mail. Nous ne consultons les marqueurs vus d'une personne que pour répondre à une demande de cette personne, et les autres joueurs ne voient jamais ni ces marqueurs ni votre adresse e-mail.</li>
+          <li><strong>Apple et Google :</strong> Apple ou Google affiche sa propre connexion et agit pour celle-ci en tant que responsable du traitement distinct. Leurs règles de confidentialité s'appliquent. L'application ne contacte Apple ou Google qu'après que vous avez appuyé sur leur bouton.</li>
+          <li><strong>Destinataires :</strong> Supabase héberge votre compte en tant que notre sous-traitant (section 3). Lorsque vous supprimez dans l'application, sur un iPhone, un compte qui utilise Apple, Apple reçoit notre demande de mettre fin à l'accès de l'application à votre identifiant Apple. Cette demande est reçue par Apple Inc., aux États-Unis. Apple n'est pas certifiée au titre du Data Privacy Framework UE-États-Unis ; le transfert repose donc sur l'article 49, paragraphe 1, point b) du RGPD, car il est nécessaire pour effectuer la suppression que vous avez demandée.</li>
+          <li><strong>Base juridique :</strong> article 6, paragraphe 1, point b) du RGPD, nos <a href="../terms/#fr-account">conditions d'utilisation (« Votre compte »)</a>, que vous acceptez avant de vous connecter. Limites contre les abus et journal d'audit des connexions : article 6, paragraphe 1, point f) du RGPD ; notre intérêt est d'exploiter le service en toute sécurité. Stockage de la session sur votre appareil : § 25, al. 2, n° 2 TDDDG.</li>
+          <li><strong>Ce qui est synchronisé :</strong> uniquement vos marqueurs vus, et uniquement tant que l'application est ouverte. Vos filtres, vos paramètres, votre choix concernant les rapports de plantage et le nombre lié à la demande d'évaluation (section 5) restent sur votre appareil.</li>
+          <li><strong>Déconnexion :</strong> votre compte et ses marqueurs vus restent chez nous, et vos marqueurs vus restent sur l'appareil. Si quelqu'un d'autre se connecte ensuite sur cet appareil, les marqueurs vus de cet appareil rejoignent son compte.</li>
+          <li><strong>Suppression :</strong> « Supprimer le compte et les données » dans « Paramètres », « Votre progression » supprime immédiatement sur le serveur votre compte et ses marqueurs vus. Vos marqueurs vus restent sur votre appareil. Si vous vous êtes connecté avec Apple et que vous supprimez dans l'application sur un iPhone, vous confirmez une dernière fois auprès d'Apple, et nous demandons à Apple de mettre fin à l'accès de l'application à votre identifiant Apple. Si vous vous êtes connecté avec Apple, une suppression par e-mail, par le formulaire web ou dans l'application sur Android ne met pas fin à l'accès de l'application à votre identifiant Apple. Vous pouvez le faire vous-même dans les réglages « Se connecter avec Apple » de votre identifiant Apple. Les autres moyens de suppression figurent dans « Supprimer vos données ».</li>
+          <li><strong>Durée de conservation :</strong> tant que votre compte existe. Nous supprimons un compte après 24 mois sans connexion, sans renouvellement de session et sans synchronisation. </li>
+          <li><strong>Votre copie :</strong> « Exporter les marqueurs vus » dans « Votre progression » vous donne à tout moment vos marqueurs vus sous forme de fichier (article 20 du RGPD). Vous pouvez aussi nous demander par e-mail une copie de toutes les données de votre compte (articles 15 et 20 du RGPD).</li>
+        </ul>
+
+        <h4>Session et journal de connexion</h4>
+        <p>Tant que vous êtes connecté, Supabase conserve l'adresse IP et l'agent utilisateur de votre appareil relevés lors de votre dernière connexion ou du dernier renouvellement de session, avec la session, dans notre base de données. Ils sont supprimés lorsque vous vous déconnectez sur cet appareil, lorsque votre compte est supprimé ou après 24 mois sans activité. Le journal d'audit des connexions de Supabase conserve les connexions jusqu'à 7 jours dans les journaux techniques de Supabase ; il n'est pas enregistré dans notre base de données.</p>
+
+        <h4 id="fr-delete">Supprimer vos données</h4>
+        <p>Cette section explique comment supprimer vos données de l'application Goodtime State Map.</p>
+        <p><strong>Avec un compte (à partir de la version 0.2.2) :</strong> tant que vous êtes connecté, « Supprimer le compte et les données » dans « Paramètres », « Votre progression » supprime immédiatement sur le serveur votre compte et ses marqueurs vus synchronisés. Si vous vous êtes connecté avec Apple et que vous supprimez sur un iPhone, vous confirmez une dernière fois auprès d'Apple, et nous demandons à Apple de mettre fin à l'accès de l'application à votre identifiant Apple. Vos marqueurs vus restent sur votre appareil.</p>
+        <p><strong>Par e-mail ou par le formulaire web :</strong> nous supprimons votre compte et ses données, ou toute autre donnée, comme le nom et l'adresse e-mail d'un signalement, les messages qui nous sont adressés ou les rapports de plantage, dans un délai d'un mois si vous en faites la demande à <a href="mailto:goodtimestatemap@protonmail.com">goodtimestatemap@protonmail.com</a> ou via « Contact » dans le <a href="../contact/?lang=en#contact">formulaire web</a> (article 12, paragraphe 3 du RGPD). Pour un compte, indiquez l'adresse e-mail qu'il utilise ; nous confirmons d'abord la demande en écrivant à cette adresse (article 12, paragraphe 6 du RGPD).  Si vous vous êtes connecté avec Apple, une suppression par e-mail, par le formulaire web ou dans l'application sur Android ne met pas fin à l'accès de l'application à votre identifiant Apple. Vous pouvez le faire vous-même dans les réglages « Se connecter avec Apple » de votre identifiant Apple.</p>
+        <p>Les données supprimées peuvent rester jusqu'à 7 jours dans les journaux et les sauvegardes de Supabase.</p>
+      </section>
     </section>
 
     <section class="lang-section" id="es" lang="es" aria-labelledby="es-title">
       <h2 id="es-title">Política de privacidad</h2>
-      <p class="meta">Última actualización: 7 de noviembre de 2026. Se aplica a la app Goodtime State Map a partir de la versión 0.2.0 y a estas páginas web.</p>
+      <p class="meta">Última actualización: 10 de noviembre de 2026. Se aplica a la app Goodtime State Map a partir de la versión 0.2.0 y a estas páginas web.</p>
       <p class="meta">Traducción de la versión inglesa. Solo las versiones alemana e inglesa son vinculantes.</p>
 
       <h3>1. Responsable del tratamiento</h3>
@@ -381,14 +475,15 @@
         <li>La app no tiene publicidad, ni seguimiento, ni herramientas que analicen cómo la usa.</li>
         <li>La app carga el mapa y su contenido desde Supabase, en la UE.</li>
         <li>La app solo envía informes de fallos y datos de sesión si usted lo permite.</li>
-        <li>Lo que marca como visto, sus filtros y sus ajustes se quedan en su dispositivo, salvo que exporte por su cuenta sus marcadores vistos. Supabase solo ve en qué idioma pide la app el contenido.</li>
+        <li>Lo que marca como visto, sus filtros y sus ajustes se quedan en su dispositivo, salvo que exporte por su cuenta sus marcadores vistos o inicie sesión para sincronizarlos. Sin inicio de sesión, Supabase solo ve en qué idioma pide la app el contenido.</li>
+        <li>Iniciar sesión con Apple o Google es opcional. La app funciona también sin ello.</li>
         <li>Estas páginas web no usan cookies y no cargan nada desde otros servidores.</li>
       </ul>
 
       <h3>3. Mapa y contenido (Supabase)</h3>
       <p>La app carga las teselas del mapa, la descripción del mapa (manifiesto) y el contenido de los marcadores desde Supabase. Supabase es nuestro encargado del tratamiento. Los datos se encuentran en servidores en Fráncfort del Meno (UE).</p>
       <p>La app también carga imágenes desde Supabase, como capturas de pantalla y miniaturas de vídeos. A ellas se les aplica lo mismo que al mapa.</p>
-      <p>Con cada solicitud, Supabase recibe su dirección IP y datos técnicos de la solicitud, como la hora y el archivo solicitado. La app no inicia sesión y no envía ningún identificador de su dispositivo. Los registros técnicos de Supabase (registros de la API y de la base de datos) pueden guardar su dirección IP hasta 7 días. Supabase hace una copia de seguridad de la base de datos cada día y guarda cada copia 7 días, por lo que los datos borrados pueden permanecer hasta 7 días en las copias de seguridad.</p>
+      <p>Con cada solicitud, Supabase recibe su dirección IP y datos técnicos de la solicitud, como la hora y el archivo solicitado. Para cargar el mapa y su contenido, la app no inicia sesión y no envía ningún identificador de su dispositivo, tampoco cuando usted ha iniciado sesión en una cuenta (véase «Cuenta y sincronización»). Los registros técnicos de Supabase (registros de la API y de la base de datos) pueden guardar su dirección IP hasta 7 días. Supabase hace una copia de seguridad de la base de datos cada día y guarda cada copia 7 días, por lo que los datos borrados pueden permanecer hasta 7 días en las copias de seguridad.</p>
       <p>La finalidad es mostrarle el mapa y su contenido. La base jurídica es el art. 6.1.f) del RGPD. Nuestro interés legítimo es poder hacer funcionar la app.</p>
       <p>Según el acuerdo de tratamiento de datos de Supabase, nuestra contraparte contractual es Supabase Pte. Ltd., en Singapur. Supabase puede utilizar registros, copias de seguridad y subencargados fuera de la UE. Las transferencias a terceros países están cubiertas por las cláusulas contractuales tipo de la UE (Decisión de Ejecución (UE) 2021/914 de la Comisión, art. 46.2.c) del RGPD). Le enviamos una copia si la solicita.</p>
 
@@ -407,7 +502,7 @@
 
       <h3>5. Lo que se queda en su dispositivo</h3>
       <!-- Wording pass 2026-11-04 (docs/records/legal-texts.md): §4's TDDDG reference and §5's first sentence and TDDDG reference revised by an agent and back-translated (docs/records/back-translations/2026-11-04-privacy-wording-es.md) and approved by the developer on 2026-11-04 (docs/records/legal-texts.md). -->
-      <p>La app guarda los siguientes datos únicamente en su dispositivo: lo que usted marca como visto, sus filtros, su idioma, su elección sobre los informes de fallos y el número de lugares vistos (5, 25 o 75) en el que la app le pidió una valoración la última vez (sección 9). La app en sí no envía a nadie sus marcadores vistos, sus filtros, su elección sobre los informes de fallos ni ese número. Para mostrar los textos en su idioma, la app pide a Supabase los textos en ese idioma y en inglés (sección 3), por lo que Supabase ve qué idioma se solicita. Este almacenamiento es necesario para las funciones que usted utiliza (§ 25, apartado 2, n.º 2, de la TDDDG).</p>
+      <p>La app guarda los siguientes datos en su dispositivo: lo que usted marca como visto, sus filtros, su idioma, su elección sobre los informes de fallos y el número de lugares vistos (5, 25 o 75) en el que la app le pidió una valoración la última vez (sección 9). La app en sí no envía a nadie sus filtros, su elección sobre los informes de fallos ni ese número, y sus marcadores vistos solo los envía a la cuenta con la sesión iniciada en el dispositivo, si usted inicia sesión («Cuenta y sincronización»). Para mostrar los textos en su idioma, la app pide a Supabase los textos en ese idioma y en inglés (sección 3), por lo que Supabase ve qué idioma se solicita. Este almacenamiento es necesario para las funciones que usted utiliza (§ 25, apartado 2, n.º 2, de la TDDDG).</p>
       <p><strong>Exportación e importación (a partir de la versión 0.2.1).</strong> Puede exportar sus marcadores vistos a un archivo e importarlos en otro dispositivo. La exportación contiene solo qué marcadores marcó como vistos o como no vistos y cuándo, y el momento de la exportación, sin ningún identificador suyo ni de su dispositivo. La app no la envía a nadie: usted decide adónde va, por ejemplo a otra app, a Archivos, a un almacenamiento en la nube o a un correo electrónico, y se aplican las condiciones y la política de privacidad de ese servicio. La importación solo lee el archivo que usted elige y guarda el resultado en su dispositivo. Escribir y leer este archivo es necesario para la función que usted ha solicitado (§ 25, apartado 2, n.º 2, de la TDDDG).</p>
 
       <h3>6. Estas páginas web (GitHub Pages)</h3>
@@ -455,17 +550,45 @@
       </ul>
       <p><strong>Derecho de oposición (art. 21 del RGPD):</strong> puede oponerse en cualquier momento, por motivos relacionados con su situación particular, a los tratamientos basados en el art. 6.1.f) del RGPD. Entonces dejamos de realizar ese tratamiento, salvo que acreditemos motivos legítimos imperiosos que prevalezcan sobre sus intereses, derechos y libertades, o que el tratamiento sirva para la formulación, el ejercicio o la defensa de reclamaciones.</p>
       <p>No tomamos decisiones individuales automatizadas en el sentido del art. 22 del RGPD.</p>
-      <p>Para ejercer estos derechos, escríbanos a <a href="mailto:goodtimestatemap@protonmail.com">goodtimestatemap@protonmail.com</a>.</p>
+      <p>Para ejercer estos derechos, escríbanos a <a href="mailto:goodtimestatemap@protonmail.com">goodtimestatemap@protonmail.com</a>. Si ha iniciado sesión, «Borrar cuenta y datos» en la app borra su cuenta de inmediato, y encontramos su cuenta por su dirección de correo electrónico; para confirmar una solicitud, podemos escribirle a esa dirección (art. 12.6 del RGPD).</p>
       <p>También puede presentar una reclamación ante una autoridad de control de protección de datos (art. 77 del RGPD). La autoridad competente para nosotros es: Bayerisches Landesamt für Datenschutzaufsicht (BayLDA), Postfach 1349, 91504 Ansbach, Alemania, <a href="https://www.lda.bayern.de/">www.lda.bayern.de</a>.</p>
 
       <h3>12. Cambios</h3>
       <p>Cuando la app cambia, actualizamos esta política de privacidad.</p>
 
+
+      <section aria-labelledby="es-v023">
+        <h3 id="es-v023">A partir de la versión 0.2.2</h3>
+
+        <h4 id="es-account">Cuenta y sincronización</h4>
+        <p>A partir de la versión 0.2.2, puede iniciar sesión con Apple o Google en «Ajustes», «Tu progreso», para que sus marcadores vistos sean los mismos en sus dispositivos. Iniciar sesión es opcional. Solo empieza cuando toca «Continuar con Apple» o «Continuar con Google», y la app funciona también sin ello.</p>
+        <ul>
+          <li><strong>Datos:</strong> la dirección de correo electrónico que Apple o Google nos transmite (con Apple, puede ser una dirección de reenvío de Apple), un identificador de cuenta, el identificador de su identidad de Apple o Google, sus marcadores vistos (para cada marcador: su identificador, si está visto y cuándo lo cambió por última vez), la versión de nuestras condiciones de uso que aceptó y cuándo, y la sesión (apartado «Sesión y registro de inicio de sesión»). </li>
+          <li><strong>Finalidad:</strong> iniciar su sesión y vincular sus marcadores vistos a su cuenta. La app no envía correos electrónicos. Solo miramos los marcadores vistos de una persona para responder a una solicitud de esa persona, y los demás jugadores nunca ven ni esos marcadores ni su dirección de correo electrónico.</li>
+          <li><strong>Apple y Google:</strong> Apple o Google muestra su propio inicio de sesión y actúa en él como responsable del tratamiento independiente. Se aplican sus normas de privacidad. La app solo se conecta con Apple o Google después de que usted toque su botón.</li>
+          <li><strong>Destinatarios:</strong> Supabase aloja su cuenta como nuestro encargado del tratamiento (sección 3). Si borra en la app, en un iPhone, una cuenta que usa Apple, Apple recibe nuestra solicitud de poner fin al acceso de la app a su ID de Apple. Esta solicitud la recibe Apple Inc., en EE. UU. Apple no está certificada en el Data Privacy Framework UE-EE. UU., por lo que la transferencia se basa en el art. 49.1.b) del RGPD: es necesaria para llevar a cabo el borrado que usted ha pedido.</li>
+          <li><strong>Base jurídica:</strong> art. 6.1.b) del RGPD, nuestras <a href="../terms/#es-account">condiciones de uso («Su cuenta»)</a>, que usted acepta antes de iniciar sesión. Límites contra abusos y el registro de auditoría de inicios de sesión: art. 6.1.f) del RGPD; nuestro interés es operar el servicio de forma segura. Guardar la sesión en su dispositivo: § 25, apartado 2, n.º 2, de la TDDDG.</li>
+          <li><strong>Qué se sincroniza:</strong> solo sus marcadores vistos, y solo mientras la app está abierta. Sus filtros, sus ajustes, su elección sobre los informes de fallos y el número para la valoración (sección 5) se quedan en su dispositivo.</li>
+          <li><strong>Cerrar sesión:</strong> su cuenta y sus marcadores vistos se quedan con nosotros, y sus marcadores vistos se quedan en el dispositivo. Si después otra persona inicia sesión en este dispositivo, los marcadores vistos de este dispositivo pasan a la cuenta de esa persona.</li>
+          <li><strong>Borrar:</strong> «Borrar cuenta y datos» en «Ajustes», «Tu progreso» borra de inmediato en el servidor su cuenta y sus marcadores vistos. Sus marcadores vistos se quedan en su dispositivo. Si inició sesión con Apple y borra en la app en un iPhone, confirma una vez más con Apple, y pedimos a Apple que ponga fin al acceso de la app a su ID de Apple. Si inició sesión con Apple, borrar por correo electrónico o mediante el formulario web, o en la app en Android, no pone fin al acceso de la app a su ID de Apple. Puede hacerlo usted mismo en los ajustes de «Iniciar sesión con Apple» de su ID de Apple. Otras formas de borrar figuran en «Borrar sus datos».</li>
+          <li><strong>Plazo de conservación:</strong> mientras exista su cuenta. Borramos una cuenta tras 24 meses sin inicio de sesión, renovación de la sesión ni sincronización. </li>
+          <li><strong>Su copia:</strong> «Exportar marcadores vistos» en «Tu progreso» le da sus marcadores vistos como archivo en cualquier momento (art. 20 del RGPD). También puede pedirnos por correo electrónico una copia de todos los datos de su cuenta (arts. 15 y 20 del RGPD).</li>
+        </ul>
+
+        <h4>Sesión y registro de inicio de sesión</h4>
+        <p>Mientras tenga la sesión iniciada, Supabase guarda junto con la sesión, en nuestra base de datos, la dirección IP y el agente de usuario de su dispositivo correspondientes a su último inicio de sesión o a la última renovación de la sesión. Se borran cuando cierra la sesión en ese dispositivo, cuando se borra su cuenta o tras 24 meses sin actividad. El registro de auditoría de inicios de sesión de Supabase guarda los inicios de sesión hasta 7 días en los registros técnicos de Supabase; no se guarda en nuestra base de datos.</p>
+
+        <h4 id="es-delete">Borrar sus datos</h4>
+        <p>Este apartado explica cómo borrar sus datos de la app Goodtime State Map.</p>
+        <p><strong>Con una cuenta (a partir de la versión 0.2.2):</strong> mientras tenga la sesión iniciada, «Borrar cuenta y datos» en «Ajustes», «Tu progreso» borra de inmediato en el servidor su cuenta y sus marcadores vistos sincronizados. Si inició sesión con Apple y borra en un iPhone, confirma una vez más con Apple, y pedimos a Apple que ponga fin al acceso de la app a su ID de Apple. Sus marcadores vistos se quedan en su dispositivo.</p>
+        <p><strong>Por correo electrónico o mediante el formulario web:</strong> borramos su cuenta y sus datos, o cualquier otro dato, como el nombre y la dirección de correo electrónico de una denuncia, los mensajes que nos envía o los informes de fallos, en el plazo de un mes si lo solicita en <a href="mailto:goodtimestatemap@protonmail.com">goodtimestatemap@protonmail.com</a> o a través de «Contact» en el <a href="../contact/?lang=en#contact">formulario web</a> (art. 12.3 del RGPD). Para una cuenta, indique la dirección de correo electrónico que usa; antes confirmamos la solicitud escribiendo a esa dirección (art. 12.6 del RGPD).  Si inició sesión con Apple, borrar por correo electrónico o mediante el formulario web, o en la app en Android, no pone fin al acceso de la app a su ID de Apple. Puede hacerlo usted mismo en los ajustes de «Iniciar sesión con Apple» de su ID de Apple.</p>
+        <p>Los datos borrados pueden permanecer hasta 7 días en los registros y las copias de seguridad de Supabase.</p>
+      </section>
     </section>
 
     <section class="lang-section" id="pl" lang="pl" aria-labelledby="pl-title">
       <h2 id="pl-title">Polityka prywatności</h2>
-      <p class="meta">Ostatnia aktualizacja: 7 listopada 2026. Dotyczy aplikacji Goodtime State Map od wersji 0.2.0 oraz tych stron internetowych.</p>
+      <p class="meta">Ostatnia aktualizacja: 10 listopada 2026. Dotyczy aplikacji Goodtime State Map od wersji 0.2.0 oraz tych stron internetowych.</p>
       <p class="meta">Tłumaczenie wersji angielskiej. Wiążące są wyłącznie wersja niemiecka i angielska.</p>
 
       <h3>1. Administrator</h3>
@@ -484,14 +607,15 @@
         <li>Aplikacja nie ma reklam, śledzenia ani narzędzi analizujących, jak z niej korzystasz.</li>
         <li>Aplikacja pobiera mapę i jej treści z Supabase w UE.</li>
         <li>Aplikacja wysyła raporty o awariach i dane sesji tylko wtedy, gdy na to zezwolisz.</li>
-        <li>To, co oznaczysz jako zobaczone, Twoje filtry i ustawienia zostają na Twoim urządzeniu, chyba że samodzielnie wyeksportujesz zobaczone znaczniki. Supabase widzi tylko, w jakim języku aplikacja pobiera treści.</li>
+        <li>To, co oznaczysz jako odwiedzone, Twoje filtry i ustawienia zostają na Twoim urządzeniu, chyba że samodzielnie wyeksportujesz odwiedzone znaczniki albo zalogujesz się, aby je synchronizować. Bez logowania Supabase widzi tylko, w jakim języku aplikacja pobiera treści.</li>
+        <li>Logowanie przez Apple lub Google jest dobrowolne. Aplikacja działa także bez niego.</li>
         <li>Te strony internetowe nie zapisują plików cookie i niczego nie pobierają z innych serwerów.</li>
       </ul>
 
       <h3>3. Mapa i treści (Supabase)</h3>
       <p>Aplikacja pobiera z Supabase kafelki mapy, opis mapy (manifest) i treści znaczników. Supabase jest naszym podmiotem przetwarzającym. Dane znajdują się na serwerach we Frankfurcie nad Menem (UE).</p>
       <p>Aplikacja pobiera z Supabase także obrazy, takie jak zrzuty ekranu i miniatury filmów. Dotyczy ich to samo co mapy.</p>
-      <p>Przy każdym żądaniu Supabase otrzymuje Twój adres IP i dane techniczne żądania, takie jak czas i pobrany plik. Aplikacja nie loguje się i nie wysyła żadnego identyfikatora Twojego urządzenia. Techniczne logi Supabase (logi API i bazy danych) mogą przechowywać Twój adres IP do 7 dni. Supabase codziennie tworzy kopię zapasową bazy danych i przechowuje każdą kopię 7 dni, więc usunięte dane mogą pozostawać w kopiach zapasowych do 7 dni.</p>
+      <p>Przy każdym żądaniu Supabase otrzymuje Twój adres IP i dane techniczne żądania, takie jak czas i pobrany plik. Aby pobrać mapę i jej treści, aplikacja nie loguje się i nie wysyła żadnego identyfikatora Twojego urządzenia, także wtedy, gdy jesteś zalogowany(-a) na konto (zob. „Konto i synchronizacja”). Techniczne logi Supabase (logi API i bazy danych) mogą przechowywać Twój adres IP do 7 dni. Supabase codziennie tworzy kopię zapasową bazy danych i przechowuje każdą kopię 7 dni, więc usunięte dane mogą pozostawać w kopiach zapasowych do 7 dni.</p>
       <p>Celem jest wyświetlenie Ci mapy i jej treści. Podstawą prawną jest art. 6 ust. 1 lit. f RODO. Naszym prawnie uzasadnionym interesem jest możliwość prowadzenia aplikacji.</p>
       <p>Zgodnie z umową powierzenia przetwarzania danych Supabase naszym kontrahentem jest Supabase Pte. Ltd. z Singapuru. Supabase może korzystać z logów, kopii zapasowych i podprzetwarzających poza UE. Przekazywanie danych do państw trzecich odbywa się na podstawie standardowych klauzul umownych UE (decyzja wykonawcza Komisji (UE) 2021/914, art. 46 ust. 2 lit. c RODO). Na życzenie prześlemy Ci ich kopię.</p>
 
@@ -509,8 +633,8 @@
       <p>Jeśli masz mniej niż 16 lat, zezwalaj na raporty o awariach tylko za zgodą rodzica.</p>
 
       <h3>5. Co zostaje na Twoim urządzeniu</h3>
-      <p>Aplikacja przechowuje wyłącznie na Twoim urządzeniu to, co oznaczysz jako zobaczone, Twoje filtry, Twój język, Twój wybór dotyczący raportów o awariach oraz liczbę zobaczonych miejsc (5, 25 lub 75), przy której ostatnio poprosiła o ocenę (sekcja 9). Sama aplikacja nie wysyła nikomu zobaczonych znaczników, filtrów, wyboru dotyczącego raportów o awariach ani tej liczby. Aby wyświetlić teksty w Twoim języku, aplikacja pobiera z Supabase teksty w tym języku i po angielsku (sekcja 3), więc Supabase widzi, o jaki język chodzi. To przechowywanie jest niezbędne do funkcji, z których korzystasz (§ 25 ust. 2 pkt 2 TDDDG).</p>
-      <p><strong>Eksport i import (od wersji 0.2.1).</strong> Możesz wyeksportować zobaczone znaczniki do pliku i zaimportować je na innym urządzeniu. Eksport zawiera tylko informację, które znaczniki i kiedy oznaczono jako zobaczone lub niezobaczone, oraz czas eksportu, bez żadnego identyfikatora, który wskazywałby Ciebie lub Twoje urządzenie. Aplikacja nikomu go nie wysyła: to Ty decydujesz, dokąd trafi, na przykład do innej aplikacji, do Plików, do chmury lub do wiadomości e-mail, a zastosowanie mają warunki i polityka prywatności tej usługi. Import odczytuje tylko wybrany przez Ciebie plik i zapisuje wynik na Twoim urządzeniu. Zapis i odczyt tego pliku są niezbędne do żądanej przez Ciebie funkcji (§ 25 ust. 2 pkt 2 TDDDG).</p>
+      <p>Aplikacja przechowuje na Twoim urządzeniu to, co oznaczysz jako odwiedzone, Twoje filtry, Twój język, Twój wybór dotyczący raportów o awariach oraz liczbę odwiedzonych miejsc (5, 25 lub 75), przy której ostatnio poprosiła o ocenę (sekcja 9). Sama aplikacja nie wysyła nikomu filtrów, wyboru dotyczącego raportów o awariach ani tej liczby, a odwiedzone znaczniki wysyła tylko na konto zalogowane na urządzeniu, jeśli się zalogujesz („Konto i synchronizacja”). Aby wyświetlić teksty w Twoim języku, aplikacja pobiera z Supabase teksty w tym języku i po angielsku (sekcja 3), więc Supabase widzi, o jaki język chodzi. To przechowywanie jest niezbędne do funkcji, z których korzystasz (§ 25 ust. 2 pkt 2 TDDDG).</p>
+      <p><strong>Eksport i import (od wersji 0.2.1).</strong> Możesz wyeksportować odwiedzone znaczniki do pliku i zaimportować je na innym urządzeniu. Eksport zawiera tylko informację, które znaczniki i kiedy oznaczono jako odwiedzone lub nieodwiedzone, oraz czas eksportu, bez żadnego identyfikatora, który wskazywałby Ciebie lub Twoje urządzenie. Aplikacja nikomu go nie wysyła: to Ty decydujesz, dokąd trafi, na przykład do innej aplikacji, do Plików, do chmury lub do wiadomości e-mail, a zastosowanie mają warunki i polityka prywatności tej usługi. Import odczytuje tylko wybrany przez Ciebie plik i zapisuje wynik na Twoim urządzeniu. Zapis i odczyt tego pliku są niezbędne do żądanej przez Ciebie funkcji (§ 25 ust. 2 pkt 2 TDDDG).</p>
 
       <h3>6. Te strony internetowe (GitHub Pages)</h3>
       <p>Te strony internetowe są udostępniane przez GitHub Pages, usługę GitHub, Inc. (USA). Gdy otwierasz stronę, GitHub otrzymuje Twój adres IP i dane techniczne żądania, takie jak czas, strona i Twoja przeglądarka, i potrzebuje ich, aby dostarczyć strony. GitHub zapisuje też adresy IP odwiedzających do własnych celów bezpieczeństwa. W odniesieniu do tych logów GitHub jest odrębnym administratorem. GitHub nie oferuje umowy powierzenia przetwarzania danych dla GitHub Pages. GitHub uczestniczy w Ramach ochrony danych UE–USA i nie podaje okresu przechowywania tych logów. Więcej informacji znajdziesz w <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" hreflang="en">oświadczeniu o prywatności GitHub</a> (po angielsku). Podstawą prawną jest art. 6 ust. 1 lit. f RODO. Naszym prawnie uzasadnionym interesem jest udostępnianie tych stron.</p>
@@ -539,7 +663,7 @@
       <p>Karta i oznaczenie autora pozostają publiczne, dopóki nie usuniemy karty. Wtedy usuwamy też nazwę i link do filmu z publicznego rekordu; zostaje tylko techniczna notatka, dzięki której aplikacja usuwa kartę ze wszystkich urządzeń.</p>
       <p>Oddzielnie, aby móc wykazać, jakie mieliśmy prawa i jak rozpatrywaliśmy skargi, przechowujemy dokumenty, do których dostęp mamy tylko my: nazwę lub pseudonim, link do filmu, ewentualne pozwolenie, dowód, że poinformowaliśmy daną osobę, co i kiedy zrobiliśmy, oraz powiązaną korespondencję. Usuwamy je z końcem trzeciego roku kalendarzowego po usunięciu karty lub po naszym ostatnim działaniu w tej sprawie, w zależności od tego, co nastąpi później. Każdy wpis w prywatnym dzienniku zmian naszej bazy danych (w Supabase, sekcja 3) usuwamy z końcem trzeciego roku kalendarzowego po tej zmianie. Podstawą prawną jest art. 6 ust. 1 lit. f RODO.</p>
       <p>Jeśli ktoś sprzeciwi się linkowaniu swoich filmów, wpisujemy platformę i jego nazwę lub pseudonim na listę blokad, aby nie linkować ich ponownie (art. 6 ust. 1 lit. f RODO). Wpis przechowujemy, dopóki linkujemy filmy i sprzeciw obowiązuje, a listę sprawdzamy raz w roku.</p>
-      <p>Aplikacja może poprosić Cię o ocenę za pomocą okna oceny Google Play lub App Store, i to tylko wtedy, gdy oznaczysz jako zobaczone 5, 25 lub 75 miejsc. To okno wyświetla Twój system operacyjny, który decyduje też, czy się pojawi. Aplikacja nie zadaje własnych pytań. Obowiązują zasady prywatności Google lub Apple.</p>
+      <p>Aplikacja może poprosić Cię o ocenę za pomocą okna oceny Google Play lub App Store, i to tylko wtedy, gdy oznaczysz jako odwiedzone 5, 25 lub 75 miejsc. To okno wyświetla Twój system operacyjny, który decyduje też, czy się pojawi. Aplikacja nie zadaje własnych pytań. Obowiązują zasady prywatności Google lub Apple.</p>
       <p>Gdy pobierasz aplikację z Google Play lub App Store, Google lub Apple przetwarzają w tym celu dane według własnych zasad prywatności. Otrzymujemy od nich tylko zbiorcze liczby, np. liczbę instalacji.</p>
 
       <h3>10. Bezpieczeństwo</h3>
@@ -557,17 +681,45 @@
       </ul>
       <p><strong>Prawo sprzeciwu (art. 21 RODO):</strong> w każdej chwili możesz wnieść sprzeciw – z przyczyn związanych z Twoją szczególną sytuacją – wobec przetwarzania opartego na art. 6 ust. 1 lit. f RODO. Wtedy zaprzestajemy tego przetwarzania, chyba że wykażemy ważne prawnie uzasadnione podstawy, które są nadrzędne wobec Twoich interesów, praw i wolności, albo przetwarzanie służy ustaleniu, dochodzeniu lub obronie roszczeń.</p>
       <p>Nie podejmujemy zautomatyzowanych decyzji w indywidualnych przypadkach w rozumieniu art. 22 RODO.</p>
-      <p>Aby skorzystać z tych praw, napisz do nas na <a href="mailto:goodtimestatemap@protonmail.com">goodtimestatemap@protonmail.com</a>.</p>
+      <p>Aby skorzystać z tych praw, napisz do nas na <a href="mailto:goodtimestatemap@protonmail.com">goodtimestatemap@protonmail.com</a>. Jeśli się zalogowałeś(-aś), opcja „Usuń konto i dane” w aplikacji od razu usuwa Twoje konto, a my znajdujemy Twoje konto po jego adresie e-mail; aby potwierdzić żądanie, możemy napisać do Ciebie na ten adres (art. 12 ust. 6 RODO).</p>
       <p>Możesz też złożyć skargę do organu nadzorczego ds. ochrony danych (art. 77 RODO). Organem właściwym dla nas jest: Bayerisches Landesamt für Datenschutzaufsicht (BayLDA), Postfach 1349, 91504 Ansbach, Niemcy, <a href="https://www.lda.bayern.de/">www.lda.bayern.de</a>.</p>
 
       <h3>12. Zmiany</h3>
       <p>Gdy aplikacja się zmienia, aktualizujemy tę politykę prywatności.</p>
 
+
+      <section aria-labelledby="pl-v023">
+        <h3 id="pl-v023">Od wersji 0.2.2</h3>
+
+        <h4 id="pl-account">Konto i synchronizacja</h4>
+        <p>Od wersji 0.2.2 możesz zalogować się przez Apple lub Google w „Ustawieniach”, w sekcji „Twój postęp”, aby Twoje odwiedzone znaczniki były takie same na Twoich urządzeniach. Logowanie jest dobrowolne. Zaczyna się dopiero wtedy, gdy dotkniesz „Kontynuuj z Apple” lub „Kontynuuj przez Google”, a aplikacja działa także bez niego.</p>
+        <ul>
+          <li><strong>Dane:</strong> adres e-mail, który przekazuje nam Apple lub Google (w przypadku Apple może to być adres przekierowujący Apple), identyfikator konta, identyfikator Twojej tożsamości w Apple lub Google, Twoje odwiedzone znaczniki (dla każdego znacznika: jego identyfikator, czy jest odwiedzony i kiedy ostatnio go zmieniłeś(-aś)), wersja naszych warunków korzystania, którą zaakceptowałeś(-aś), i kiedy to nastąpiło, a także sesja (część „Log sesji i logowania”). </li>
+          <li><strong>Cel:</strong> zalogowanie Cię i przypisanie Twoich odwiedzonych znaczników do Twojego konta. Aplikacja nie wysyła e-maili. Odwiedzone znaczniki danej osoby oglądamy tylko po to, aby odpowiedzieć na żądanie tej osoby, a inni gracze nigdy nie widzą ani ich, ani Twojego adresu e-mail.</li>
+          <li><strong>Apple i Google:</strong> Apple lub Google wyświetla własne logowanie i jest za nie odrębnym administratorem. Obowiązują ich zasady prywatności. Aplikacja łączy się z Apple lub Google dopiero po dotknięciu ich przycisku.</li>
+          <li><strong>Odbiorcy:</strong> Supabase przechowuje Twoje konto jako nasz podmiot przetwarzający (sekcja 3). Gdy usuniesz w aplikacji na iPhonie konto, które korzysta z Apple, Apple otrzymuje naszą prośbę o zakończenie dostępu aplikacji do Twojego Apple ID. Prośbę tę otrzymuje Apple Inc. w USA. Apple nie ma certyfikacji w Ramach ochrony danych UE–USA, dlatego przekazanie opiera się na art. 49 ust. 1 lit. b RODO: jest niezbędne do wykonania usunięcia, o które prosisz.</li>
+          <li><strong>Podstawa prawna:</strong> art. 6 ust. 1 lit. b RODO, nasze <a href="../terms/#pl-account">warunki korzystania („Twoje konto”)</a>, które akceptujesz przed zalogowaniem. Limity przeciw nadużyciom i log audytu logowań: art. 6 ust. 1 lit. f RODO; naszym interesem jest bezpieczne prowadzenie usługi. Przechowywanie sesji na Twoim urządzeniu: § 25 ust. 2 pkt 2 TDDDG.</li>
+          <li><strong>Co jest synchronizowane:</strong> tylko Twoje odwiedzone znaczniki i tylko wtedy, gdy aplikacja jest otwarta. Twoje filtry, ustawienia, wybór dotyczący raportów o awariach i liczba związana z prośbą o ocenę (sekcja 5) zostają na Twoim urządzeniu.</li>
+          <li><strong>Wylogowanie:</strong> Twoje konto i jego odwiedzone znaczniki pozostają u nas, a Twoje odwiedzone znaczniki pozostają na urządzeniu. Jeśli potem na tym urządzeniu zaloguje się ktoś inny, odwiedzone znaczniki z tego urządzenia trafią na jego konto.</li>
+          <li><strong>Usuwanie:</strong> opcja „Usuń konto i dane” w „Ustawieniach”, w sekcji „Twój postęp” od razu usuwa na serwerze Twoje konto i jego odwiedzone znaczniki. Twoje odwiedzone znaczniki pozostają na Twoim urządzeniu. Jeśli zalogowałeś(-aś) się przez Apple i usuwasz konto w aplikacji na iPhonie, potwierdzasz to jeszcze raz w Apple, a my prosimy Apple o zakończenie dostępu aplikacji do Twojego Apple ID. Jeśli zalogowałeś(-aś) się przez Apple, usunięcie e-mailem, przez formularz internetowy lub w aplikacji na Androidzie nie kończy dostępu aplikacji do Twojego Apple ID. Możesz to zrobić samodzielnie w ustawieniach „Zaloguj się przez Apple” swojego Apple ID. Inne sposoby usuwania opisuje część „Usuwanie Twoich danych”.</li>
+          <li><strong>Okres przechowywania:</strong> dopóki istnieje Twoje konto. Usuwamy konto po 24 miesiącach bez logowania, odświeżenia sesji i synchronizacji. </li>
+          <li><strong>Twoja kopia:</strong> opcja „Eksportuj odwiedzone znaczniki” w sekcji „Twój postęp” w każdej chwili daje Ci Twoje odwiedzone znaczniki w postaci pliku (art. 20 RODO). Możesz też poprosić nas e-mailem o kopię wszystkich danych Twojego konta (art. 15 i 20 RODO).</li>
+        </ul>
+
+        <h4>Log sesji i logowania</h4>
+        <p>Dopóki jesteś zalogowany(-a), Supabase przechowuje w naszej bazie danych, razem z sesją, adres IP i identyfikator klienta (user agent) Twojego urządzenia z Twojego ostatniego logowania lub odświeżenia sesji. Są one usuwane, gdy wylogujesz się na tym urządzeniu, gdy Twoje konto zostanie usunięte lub po 24 miesiącach bez aktywności. Log audytu logowań Supabase przechowuje logowania w logach technicznych Supabase do 7 dni; nie jest on zapisywany w naszej bazie danych.</p>
+
+        <h4 id="pl-delete">Usuwanie Twoich danych</h4>
+        <p>Ta część wyjaśnia, jak usunąć Twoje dane z aplikacji Goodtime State Map.</p>
+        <p><strong>Z kontem (od wersji 0.2.2):</strong> dopóki jesteś zalogowany(-a), opcja „Usuń konto i dane” w „Ustawieniach”, w sekcji „Twój postęp” od razu usuwa na serwerze Twoje konto i jego zsynchronizowane odwiedzone znaczniki. Jeśli zalogowałeś(-aś) się przez Apple i usuwasz konto na iPhonie, potwierdzasz to jeszcze raz w Apple, a my prosimy Apple o zakończenie dostępu aplikacji do Twojego Apple ID. Twoje odwiedzone znaczniki pozostają na Twoim urządzeniu.</p>
+        <p><strong>E-mailem lub przez formularz internetowy:</strong> Twoje konto i jego dane lub inne dane, takie jak imię oraz adres e-mail ze zgłoszenia, wiadomości do nas lub raporty o awariach, usuwamy w ciągu miesiąca na Twoją prośbę wysłaną na <a href="mailto:goodtimestatemap@protonmail.com">goodtimestatemap@protonmail.com</a> lub przez „Contact” w <a href="../contact/?lang=en#contact">formularzu internetowym</a> (art. 12 ust. 3 RODO). W przypadku konta podaj adres e-mail, którego ono używa; najpierw potwierdzamy żądanie, pisząc na ten adres (art. 12 ust. 6 RODO).  Jeśli zalogowałeś(-aś) się przez Apple, usunięcie e-mailem, przez formularz internetowy lub w aplikacji na Androidzie nie kończy dostępu aplikacji do Twojego Apple ID. Możesz to zrobić samodzielnie w ustawieniach „Zaloguj się przez Apple” swojego Apple ID.</p>
+        <p>Usunięte dane mogą pozostawać w logach i kopiach zapasowych Supabase do 7 dni.</p>
+      </section>
     </section>
 
     <section class="lang-section" id="ru" lang="ru" aria-labelledby="ru-title">
       <h2 id="ru-title">Политика конфиденциальности</h2>
-      <p class="meta">Последнее обновление: 7 ноября 2026 г. Действует для приложения Goodtime State Map начиная с версии 0.2.0 и для этих веб-страниц.</p>
+      <p class="meta">Последнее обновление: 10 ноября 2026 г. Действует для приложения Goodtime State Map начиная с версии 0.2.0 и для этих веб-страниц.</p>
       <p class="meta">Перевод английской версии. Обязательную силу имеют только немецкая и английская версии.</p>
 
       <h3>1. Ответственное лицо</h3>
@@ -586,14 +738,15 @@
         <li>В приложении нет рекламы, отслеживания и аналитики того, как вы им пользуетесь.</li>
         <li>Приложение загружает карту и её содержимое из Supabase в ЕС.</li>
         <li>Отчёты о сбоях и данные сеансов приложение отправляет, только если вы это разрешите.</li>
-        <li>То, что вы отмечаете как просмотренное, ваши фильтры и настройки остаются на вашем устройстве, если только вы сами не экспортируете свои просмотренные метки. Supabase видит только, на каком языке приложение запрашивает содержимое.</li>
+        <li>То, что вы отмечаете как просмотренное, ваши фильтры и настройки остаются на вашем устройстве, если только вы сами не экспортируете свои отметки или не войдёте в аккаунт, чтобы их синхронизировать. Без входа Supabase видит только, на каком языке приложение запрашивает содержимое.</li>
+        <li>Вход через Apple или Google необязателен. Приложение работает и без него.</li>
         <li>Эти веб-страницы не используют cookie и ничего не загружают с других серверов.</li>
       </ul>
 
       <h3>3. Карта и содержимое (Supabase)</h3>
       <p>Приложение загружает из Supabase фрагменты карты (тайлы), описание карты (манифест) и содержимое меток. Supabase обрабатывает данные по нашему поручению. Данные хранятся на серверах во Франкфурте-на-Майне (ЕС).</p>
       <p>Приложение также загружает из Supabase изображения, например скриншоты и миниатюры видео. Для них действует то же, что и для карты.</p>
-      <p>При каждом запросе Supabase получает ваш IP-адрес и технические данные запроса, например время и запрошенный файл. Приложение не выполняет вход и не отправляет идентификатор вашего устройства. Технические журналы Supabase (журналы API и базы данных) могут хранить ваш IP-адрес до 7 дней. Supabase ежедневно создаёт резервную копию базы данных и хранит каждую копию 7 дней, поэтому удалённые данные могут оставаться в резервных копиях до 7 дней.</p>
+      <p>При каждом запросе Supabase получает ваш IP-адрес и технические данные запроса, например время и запрошенный файл. Чтобы загрузить карту и её содержимое, приложение не выполняет вход и не отправляет идентификатор вашего устройства, даже если вы вошли в аккаунт (см. «Аккаунт и синхронизация»). Технические журналы Supabase (журналы API и базы данных) могут хранить ваш IP-адрес до 7 дней. Supabase ежедневно создаёт резервную копию базы данных и хранит каждую копию 7 дней, поэтому удалённые данные могут оставаться в резервных копиях до 7 дней.</p>
       <p>Цель — показать вам карту и её содержимое. Правовое основание — ст. 6(1)(f) Общего регламента ЕС по защите данных (GDPR). Наш законный интерес — возможность работы приложения.</p>
       <p>Согласно договору об обработке данных Supabase, нашим контрагентом является Supabase Pte. Ltd. (Сингапур). Supabase может использовать журналы, резервные копии и субподрядчиков за пределами ЕС. Передача данных в третьи страны осуществляется на основе стандартных договорных условий ЕС (Исполнительное решение Комиссии (ЕС) 2021/914, ст. 46(2)(c) GDPR). По запросу мы пришлём вам их копию.</p>
 
@@ -611,8 +764,8 @@
       <p>Если вам меньше 16 лет, разрешайте отправку отчётов о сбоях только с согласия родителей.</p>
 
       <h3>5. Что остаётся на вашем устройстве</h3>
-      <p>Приложение хранит только на вашем устройстве то, что вы отметили как просмотренное, ваши фильтры, ваш язык, ваш выбор насчёт отчётов о сбоях и число просмотренных мест (5, 25 или 75), при котором оно в последний раз просило оценку (раздел 9). Просмотренные метки, фильтры, выбор насчёт отчётов о сбоях и это число само приложение никому не отправляет. Чтобы показывать тексты на вашем языке, приложение запрашивает у Supabase тексты на этом языке и на английском (раздел 3), поэтому Supabase видит, какой язык запрашивается. Это хранение необходимо для функций, которыми вы пользуетесь (§ 25(2) п. 2 TDDDG).</p>
-      <p><strong>Экспорт и импорт (начиная с версии 0.2.1).</strong> Вы можете экспортировать просмотренные метки в файл и импортировать их на другом устройстве. Экспорт содержит только то, какие метки и когда вы отметили как просмотренные или сняли с них эту отметку, а также время экспорта, без какого-либо идентификатора, который указывал бы на вас или ваше устройство. Приложение никому его не отправляет: вы сами решаете, куда он попадёт, например в другое приложение, в «Файлы», в облачное хранилище или в электронное письмо, и тогда действуют условия и политика конфиденциальности этого сервиса. Импорт читает только выбранный вами файл и сохраняет результат на вашем устройстве. Запись и чтение этого файла необходимы для функции, которую вы запросили (§ 25(2) п. 2 TDDDG).</p>
+      <p>Приложение хранит на вашем устройстве то, что вы отметили как просмотренное, ваши фильтры, ваш язык, ваш выбор насчёт отчётов о сбоях и число просмотренных мест (5, 25 или 75), при котором оно в последний раз просило оценку (раздел 9). Фильтры, выбор насчёт отчётов о сбоях и это число само приложение никому не отправляет, а ваши отметки отправляет только в аккаунт, в который выполнен вход на устройстве, если вы входите («Аккаунт и синхронизация»). Чтобы показывать тексты на вашем языке, приложение запрашивает у Supabase тексты на этом языке и на английском (раздел 3), поэтому Supabase видит, какой язык запрашивается. Это хранение необходимо для функций, которыми вы пользуетесь (§ 25(2) п. 2 TDDDG).</p>
+      <p><strong>Экспорт и импорт (начиная с версии 0.2.1).</strong> Вы можете экспортировать свои отметки в файл и импортировать их на другом устройстве. Экспорт содержит только то, какие метки и когда вы отметили как просмотренные или сняли с них эту отметку, а также время экспорта, без какого-либо идентификатора, который указывал бы на вас или ваше устройство. Приложение никому его не отправляет: вы сами решаете, куда он попадёт, например в другое приложение, в «Файлы», в облачное хранилище или в электронное письмо, и тогда действуют условия и политика конфиденциальности этого сервиса. Импорт читает только выбранный вами файл и сохраняет результат на вашем устройстве. Запись и чтение этого файла необходимы для функции, которую вы запросили (§ 25(2) п. 2 TDDDG).</p>
 
       <h3>6. Эти веб-страницы (GitHub Pages)</h3>
       <p>Эти веб-страницы размещены на GitHub Pages — сервисе GitHub, Inc. (США). Когда вы открываете страницу, GitHub получает ваш IP-адрес и технические данные запроса, например время, страницу и ваш браузер, и они нужны ему, чтобы доставлять страницы. Кроме того, GitHub записывает IP-адреса посетителей в собственных целях безопасности. В отношении этих журналов GitHub является самостоятельным ответственным лицом. Договор об обработке данных для GitHub Pages GitHub не предлагает. GitHub участвует в Рамочном соглашении ЕС–США о защите данных и не публикует срок хранения этих журналов. Подробнее — в <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" hreflang="en">заявлении GitHub о конфиденциальности</a> (на английском). Правовое основание — ст. 6(1)(f) GDPR. Наш законный интерес — предоставлять эти страницы.</p>
@@ -659,17 +812,45 @@
       </ul>
       <p><strong>Право на возражение (ст. 21 GDPR):</strong> вы можете в любое время по причинам, связанным с вашей особой ситуацией, возразить против обработки на основании ст. 6(1)(f) GDPR. Тогда мы прекращаем эту обработку, кроме случаев, когда мы докажем веские законные основания для неё, которые перевешивают ваши интересы, права и свободы, или когда обработка необходима для предъявления, осуществления или защиты правовых требований.</p>
       <p>Мы не принимаем автоматизированных индивидуальных решений в смысле ст. 22 GDPR.</p>
-      <p>Чтобы воспользоваться этими правами, напишите нам на <a href="mailto:goodtimestatemap@protonmail.com">goodtimestatemap@protonmail.com</a>.</p>
+      <p>Чтобы воспользоваться этими правами, напишите нам на <a href="mailto:goodtimestatemap@protonmail.com">goodtimestatemap@protonmail.com</a>. Если вы вошли в аккаунт, пункт «Удалить аккаунт и данные» в приложении сразу удаляет ваш аккаунт, а найти ваш аккаунт мы можем по его адресу электронной почты; чтобы подтвердить запрос, мы можем написать вам на этот адрес (ст. 12(6) GDPR).</p>
       <p>Вы также можете подать жалобу в надзорный орган по защите данных (ст. 77 GDPR). Компетентный для нас орган: Bayerisches Landesamt für Datenschutzaufsicht (BayLDA), Postfach 1349, 91504 Ansbach, Германия, <a href="https://www.lda.bayern.de/">www.lda.bayern.de</a>.</p>
 
       <h3>12. Изменения</h3>
       <p>Когда приложение меняется, мы обновляем эту политику конфиденциальности.</p>
 
+
+      <section aria-labelledby="ru-v023">
+        <h3 id="ru-v023">Начиная с версии 0.2.2</h3>
+
+        <h4 id="ru-account">Аккаунт и синхронизация</h4>
+        <p>Начиная с версии 0.2.2 вы можете войти через Apple или Google в разделе «Настройки», «Ваш прогресс», чтобы ваши отметки были одинаковыми на ваших устройствах. Вход необязателен. Он начинается, только когда вы нажимаете «Продолжить с Apple» или «Продолжить с Google», и приложение работает и без него.</p>
+        <ul>
+          <li><strong>Данные:</strong> адрес электронной почты, который нам передаёт Apple или Google (у Apple это может быть адрес для пересылки от Apple), идентификатор аккаунта, идентификатор вашей учётной записи Apple или Google, ваши отметки (для каждой метки: её идентификатор, просмотрена ли она и когда вы в последний раз её изменили), версия наших условий использования, которую вы приняли, и когда, а также сеанс (раздел «Сеанс и журнал входа»). </li>
+          <li><strong>Цель:</strong> выполнить ваш вход и связать ваши отметки с вашим аккаунтом. Приложение не отправляет электронных писем. Мы смотрим отметки человека только для того, чтобы ответить на запрос этого человека, а другие игроки никогда не видят ни их, ни ваш адрес электронной почты.</li>
+          <li><strong>Apple и Google:</strong> Apple или Google показывает собственный вход и является для него самостоятельным ответственным лицом. Действуют их правила конфиденциальности. Приложение связывается с Apple или Google только после того, как вы нажмёте их кнопку.</li>
+          <li><strong>Получатели:</strong> Supabase хранит ваш аккаунт по нашему поручению (раздел 3). Если вы удаляете в приложении на iPhone аккаунт, который использует Apple, Apple получает наш запрос прекратить доступ приложения к вашему Apple ID. Этот запрос получает Apple Inc. в США. Apple не сертифицирована по Рамочному соглашению ЕС–США о защите данных, поэтому передача основана на ст. 49(1)(b) GDPR: она необходима, чтобы выполнить удаление, о котором вы попросили.</li>
+          <li><strong>Правовое основание:</strong> ст. 6(1)(b) GDPR, наши <a href="../terms/#ru-account">условия использования («Ваш аккаунт»)</a>, которые вы принимаете перед входом. Ограничения против злоупотреблений и журнал аудита входов: ст. 6(1)(f) GDPR; наш интерес — безопасно поддерживать работу сервиса. Хранение сеанса на вашем устройстве: § 25(2) п. 2 TDDDG.</li>
+          <li><strong>Что синхронизируется:</strong> только ваши отметки и только пока приложение открыто. Ваши фильтры, настройки, выбор насчёт отчётов о сбоях и число для запроса оценки (раздел 5) остаются на вашем устройстве.</li>
+          <li><strong>Выход:</strong> ваш аккаунт и его отметки остаются у нас, а ваши отметки остаются на устройстве. Если после этого на этом устройстве войдёт кто-то другой, отметки с этого устройства добавятся в его аккаунт.</li>
+          <li><strong>Удаление:</strong> пункт «Удалить аккаунт и данные» в разделе «Настройки», «Ваш прогресс» сразу удаляет на сервере ваш аккаунт и его отметки. Ваши отметки остаются на вашем устройстве. Если вы вошли через Apple и удаляете аккаунт в приложении на iPhone, вы ещё раз подтверждаете это в Apple, и мы просим Apple прекратить доступ приложения к вашему Apple ID. Если вы вошли через Apple, удаление по электронной почте, через веб-форму или в приложении на Android не прекращает доступ приложения к вашему Apple ID. Это можно сделать самостоятельно в настройках «Вход с Apple» вашего Apple ID. Другие способы удаления описаны в разделе «Удаление ваших данных».</li>
+          <li><strong>Срок хранения:</strong> пока существует ваш аккаунт. Мы удаляем аккаунт через 24 месяца без входа, обновления сеанса и синхронизации. </li>
+          <li><strong>Ваша копия:</strong> пункт «Экспортировать отметки» в разделе «Ваш прогресс» в любой момент выдаёт вам ваши отметки в виде файла (ст. 20 GDPR). Вы также можете попросить нас по электронной почте прислать копию всех данных вашего аккаунта (ст. 15 и 20 GDPR).</li>
+        </ul>
+
+        <h4>Сеанс и журнал входа</h4>
+        <p>Пока вы вошли в аккаунт, Supabase хранит IP-адрес и user agent вашего устройства, полученные при вашем последнем входе или обновлении сеанса, вместе с сеансом в нашей базе данных. Они удаляются, когда вы выходите на этом устройстве, когда ваш аккаунт удаляется или через 24 месяца без активности. Журнал аудита входов Supabase хранит входы в технических журналах Supabase до 7 дней; в нашей базе данных он не сохраняется.</p>
+
+        <h4 id="ru-delete">Удаление ваших данных</h4>
+        <p>В этом разделе объясняется, как удалить ваши данные из приложения Goodtime State Map.</p>
+        <p><strong>С аккаунтом (начиная с версии 0.2.2):</strong> пока вы вошли в аккаунт, пункт «Удалить аккаунт и данные» в разделе «Настройки», «Ваш прогресс» сразу удаляет на сервере ваш аккаунт и его синхронизированные отметки. Если вы вошли через Apple и удаляете аккаунт на iPhone, вы ещё раз подтверждаете это в Apple, и мы просим Apple прекратить доступ приложения к вашему Apple ID. Ваши отметки остаются на вашем устройстве.</p>
+        <p><strong>По электронной почте или через веб-форму:</strong> ваш аккаунт и его данные или любые другие данные, например имя и адрес электронной почты из жалобы, сообщения нам или отчёты о сбоях, мы удаляем в течение месяца по вашей просьбе на <a href="mailto:goodtimestatemap@protonmail.com">goodtimestatemap@protonmail.com</a> или через «Contact» в <a href="../contact/?lang=en#contact">веб-форме</a> (ст. 12(3) GDPR). Для аккаунта укажите адрес электронной почты, который он использует; сначала мы подтверждаем запрос, написав на этот адрес (ст. 12(6) GDPR).  Если вы вошли через Apple, удаление по электронной почте, через веб-форму или в приложении на Android не прекращает доступ приложения к вашему Apple ID. Это можно сделать самостоятельно в настройках «Вход с Apple» вашего Apple ID.</p>
+        <p>Удалённые данные могут оставаться в журналах и резервных копиях Supabase до 7 дней.</p>
+      </section>
     </section>
 
     <section class="lang-section" id="pt-br" lang="pt-BR" aria-labelledby="pt-br-title">
       <h2 id="pt-br-title">Política de privacidade</h2>
-      <p class="meta">Última atualização: 7 de novembro de 2026. Vale para o app Goodtime State Map a partir da versão 0.2.0 e para estas páginas web.</p>
+      <p class="meta">Última atualização: 10 de novembro de 2026. Vale para o app Goodtime State Map a partir da versão 0.2.0 e para estas páginas web.</p>
       <p class="meta">Tradução da versão em inglês. Somente as versões em alemão e em inglês são vinculativas.</p>
 
       <h3>1. Controlador</h3>
@@ -688,14 +869,15 @@
         <li>O app não tem anúncios, nem rastreamento, nem ferramentas que analisem como você o usa.</li>
         <li>O app carrega o mapa e seu conteúdo do Supabase, na UE.</li>
         <li>O app só envia relatórios de falhas e dados de sessão se você permitir.</li>
-        <li>O que você marca como visto, seus filtros e suas configurações ficam no seu dispositivo, a menos que você exporte por conta própria seus marcadores vistos. O Supabase só vê em qual idioma o app pede o conteúdo.</li>
+        <li>O que você marca como visto, seus filtros e suas configurações ficam no seu dispositivo, a menos que você exporte por conta própria seus marcadores vistos ou faça login para sincronizá-los. Sem login, o Supabase só vê em qual idioma o app pede o conteúdo.</li>
+        <li>Fazer login com a Apple ou o Google é opcional. O app funciona também sem login.</li>
         <li>Estas páginas web não usam cookies e não carregam nada de outros servidores.</li>
       </ul>
 
       <h3>3. Mapa e conteúdo (Supabase)</h3>
       <p>O app carrega do Supabase os blocos do mapa, a descrição do mapa (manifesto) e o conteúdo dos marcadores. O Supabase é nosso operador. Os dados ficam em servidores em Frankfurt am Main (UE).</p>
       <p>O app também carrega imagens do Supabase, como capturas de tela e miniaturas de vídeos. Para elas vale o mesmo que para o mapa.</p>
-      <p>A cada solicitação, o Supabase recebe o seu endereço IP e dados técnicos da solicitação, como o horário e o arquivo solicitado. O app não faz login e não envia nenhum identificador do seu dispositivo. Os registros técnicos do Supabase (registros da API e do banco de dados) podem guardar o seu endereço IP por até 7 dias. O Supabase faz um backup do banco de dados todos os dias e guarda cada backup por 7 dias; por isso, dados excluídos podem permanecer nos backups por até 7 dias.</p>
+      <p>A cada solicitação, o Supabase recebe o seu endereço IP e dados técnicos da solicitação, como o horário e o arquivo solicitado. Para carregar o mapa e o conteúdo dele, o app não faz login e não envia nenhum identificador do seu dispositivo, mesmo quando você está conectado a uma conta (veja "Conta e sincronização"). Os registros técnicos do Supabase (registros da API e do banco de dados) podem guardar o seu endereço IP por até 7 dias. O Supabase faz um backup do banco de dados todos os dias e guarda cada backup por 7 dias; por isso, dados excluídos podem permanecer nos backups por até 7 dias.</p>
       <p>A finalidade é mostrar a você o mapa e seu conteúdo. A base legal é o art. 6(1)(f) do RGPD (Regulamento Geral sobre a Proteção de Dados da UE). Nosso interesse legítimo é poder operar o app.</p>
       <p>Segundo o contrato de tratamento de dados do Supabase, nossa contraparte é a Supabase Pte. Ltd., em Singapura. O Supabase pode usar registros, backups e suboperadores fora da UE. As transferências para países terceiros são cobertas pelas cláusulas contratuais-padrão da UE (Decisão de Execução (UE) 2021/914 da Comissão, art. 46(2)(c) do RGPD). Enviamos uma cópia mediante solicitação.</p>
 
@@ -713,7 +895,7 @@
       <p>Se você tiver menos de 16 anos, só permita os relatórios de falhas com a autorização dos seus pais.</p>
 
       <h3>5. O que fica no seu dispositivo</h3>
-      <p>O app guarda somente no seu dispositivo o que você marca como visto, seus filtros, seu idioma, sua escolha sobre os relatórios de falhas e o número de lugares vistos (5, 25 ou 75) com o qual pediu uma avaliação pela última vez (seção 9). O próprio app não envia a ninguém seus marcadores vistos, seus filtros, sua escolha sobre os relatórios de falhas nem esse número. Para mostrar os textos no seu idioma, o app pede ao Supabase os textos nesse idioma e em inglês (seção 3); por isso, o Supabase vê qual idioma é solicitado. Esse armazenamento é necessário para as funções que você usa (§ 25(2) n.º 2 TDDDG).</p>
+      <p>O app guarda no seu dispositivo o que você marca como visto, seus filtros, seu idioma, sua escolha sobre os relatórios de falhas e o número de lugares vistos (5, 25 ou 75) com o qual pediu uma avaliação pela última vez (seção 9). O próprio app não envia a ninguém seus filtros, sua escolha sobre os relatórios de falhas nem esse número, e envia seus marcadores vistos somente para a conta conectada no dispositivo, se você fizer login ("Conta e sincronização"). Para mostrar os textos no seu idioma, o app pede ao Supabase os textos nesse idioma e em inglês (seção 3); por isso, o Supabase vê qual idioma é solicitado. Esse armazenamento é necessário para as funções que você usa (§ 25(2) n.º 2 TDDDG).</p>
       <p><strong>Exportação e importação (a partir da versão 0.2.1).</strong> Você pode exportar seus marcadores vistos para um arquivo e importá-los em outro dispositivo. A exportação contém somente quais marcadores você marcou como vistos ou como não vistos e quando, e o momento da exportação, sem nenhum ID seu ou do seu dispositivo. O app não a envia a ninguém: você escolhe para onde ela vai, por exemplo outro app, o Arquivos, um armazenamento em nuvem ou um e-mail, e valem os termos e a política de privacidade desse serviço. A importação lê somente o arquivo que você escolhe e guarda o resultado no seu dispositivo. Gravar e ler esse arquivo é necessário para a função que você pediu (§ 25(2) n.º 2 TDDDG).</p>
 
       <h3>6. Estas páginas web (GitHub Pages)</h3>
@@ -761,17 +943,45 @@
       </ul>
       <p><strong>Direito de oposição (art. 21 do RGPD):</strong> você pode se opor a qualquer momento, por motivos relacionados à sua situação particular, aos tratamentos baseados no art. 6(1)(f) do RGPD. Nesse caso, deixamos de realizar esse tratamento, salvo se demonstrarmos motivos legítimos imperiosos que prevaleçam sobre os seus interesses, direitos e liberdades, ou se o tratamento servir para a declaração, o exercício ou a defesa de direitos em processo judicial.</p>
       <p>Não tomamos decisões individuais automatizadas no sentido do art. 22 do RGPD.</p>
-      <p>Para exercer esses direitos, escreva para <a href="mailto:goodtimestatemap@protonmail.com">goodtimestatemap@protonmail.com</a>.</p>
+      <p>Para exercer esses direitos, escreva para <a href="mailto:goodtimestatemap@protonmail.com">goodtimestatemap@protonmail.com</a>. Se você fez login, "Excluir conta e dados" no app exclui a sua conta imediatamente, e encontramos a sua conta pelo endereço de e-mail dela; para confirmar um pedido, podemos escrever para você nesse endereço (art. 12(6) do RGPD).</p>
       <p>Você também pode apresentar uma reclamação a uma autoridade de controle de proteção de dados (art. 77 do RGPD). A autoridade competente para nós é: Bayerisches Landesamt für Datenschutzaufsicht (BayLDA), Postfach 1349, 91504 Ansbach, Alemanha, <a href="https://www.lda.bayern.de/">www.lda.bayern.de</a>.</p>
 
       <h3>12. Alterações</h3>
       <p>Quando o app muda, atualizamos esta política de privacidade.</p>
 
+
+      <section aria-labelledby="pt-br-v023">
+        <h3 id="pt-br-v023">A partir da versão 0.2.2</h3>
+
+        <h4 id="pt-br-account">Conta e sincronização</h4>
+        <p>A partir da versão 0.2.2, você pode fazer login com a Apple ou o Google em "Configurações", "Seu progresso", para que os seus marcadores vistos sejam os mesmos nos seus dispositivos. O login é opcional. Ele só começa quando você toca em "Continuar com a Apple" ou "Continuar com o Google", e o app funciona também sem ele.</p>
+        <ul>
+          <li><strong>Dados:</strong> o endereço de e-mail que a Apple ou o Google nos passa (no caso da Apple, pode ser um endereço de retransmissão da Apple), um ID de conta, o ID da sua identidade na Apple ou no Google, os seus marcadores vistos (para cada marcador: o ID dele, se está visto e quando você o alterou pela última vez), a versão dos nossos termos de uso que você aceitou e quando, e a sessão (seção "Registro de sessão e de login"). </li>
+          <li><strong>Finalidade:</strong> fazer o seu login e vincular os seus marcadores vistos à sua conta. O app não envia e-mails. Só olhamos os marcadores vistos de uma pessoa para responder a um pedido dessa pessoa, e outros jogadores nunca veem esses marcadores nem o seu endereço de e-mail.</li>
+          <li><strong>Apple e Google:</strong> a Apple ou o Google mostra o próprio login e é controlador independente dele. Valem as regras de privacidade deles. O app só se conecta à Apple ou ao Google depois que você toca no botão deles.</li>
+          <li><strong>Destinatários:</strong> o Supabase hospeda a sua conta como nosso operador (seção 3). Quando você exclui no app, em um iPhone, uma conta que usa a Apple, a Apple recebe o nosso pedido para encerrar o acesso do app ao seu ID Apple. Quem recebe esse pedido é a Apple Inc., nos EUA. A Apple não tem certificação no Data Privacy Framework UE-EUA, por isso a transferência se baseia no art. 49(1)(b) do RGPD: ela é necessária para realizar a exclusão que você pediu.</li>
+          <li><strong>Base legal:</strong> art. 6(1)(b) do RGPD, os nossos <a href="../terms/#pt-br-account">termos de uso ("Sua conta")</a>, que você aceita antes de fazer login. Limites contra abusos e o registro de auditoria de login: art. 6(1)(f) do RGPD; nosso interesse é operar o serviço com segurança. Guardar a sessão no seu dispositivo: § 25(2) n.º 2 TDDDG.</li>
+          <li><strong>O que é sincronizado:</strong> só os seus marcadores vistos, e só enquanto o app está aberto. Os seus filtros, as suas configurações, a sua escolha sobre os relatórios de falhas e o número usado para o pedido de avaliação (seção 5) ficam no seu dispositivo.</li>
+          <li><strong>Sair:</strong> a sua conta e os marcadores vistos dela ficam conosco, e os seus marcadores vistos ficam no dispositivo. Se depois outra pessoa fizer login neste dispositivo, os marcadores vistos deste dispositivo passam para a conta dessa pessoa.</li>
+          <li><strong>Excluir:</strong> "Excluir conta e dados" em "Configurações", "Seu progresso" exclui imediatamente no servidor a sua conta e os marcadores vistos dela. Os seus marcadores vistos ficam no seu dispositivo. Se você fez login com a Apple e exclui no app em um iPhone, você confirma mais uma vez com a Apple, e pedimos à Apple que encerre o acesso do app ao seu ID Apple. Se você fez login com a Apple, a exclusão por e-mail, pelo formulário web ou no app no Android não encerra o acesso do app ao seu ID Apple. Você mesmo pode fazer isso nos ajustes de "Iniciar sessão com a Apple" do seu ID Apple. Outras formas de excluir estão em "Excluir os seus dados".</li>
+          <li><strong>Prazo de armazenamento:</strong> enquanto a sua conta existir. Excluímos uma conta após 24 meses sem login, renovação da sessão ou sincronização. </li>
+          <li><strong>Sua cópia:</strong> "Exportar marcadores vistos" em "Seu progresso" dá a você os seus marcadores vistos como arquivo a qualquer momento (art. 20 do RGPD). Você também pode nos pedir por e-mail uma cópia de todos os dados da sua conta (arts. 15 e 20 do RGPD).</li>
+        </ul>
+
+        <h4>Registro de sessão e de login</h4>
+        <p>Enquanto você estiver conectado, o Supabase guarda no nosso banco de dados, junto com a sessão, o endereço IP e o user agent do seu dispositivo do seu último login ou da última renovação da sessão. Eles são excluídos quando você sai nesse dispositivo, quando a sua conta é excluída ou após 24 meses sem atividade. O registro de auditoria de login do Supabase guarda os logins nos registros técnicos do Supabase por até 7 dias; ele não é guardado no nosso banco de dados.</p>
+
+        <h4 id="pt-br-delete">Excluir os seus dados</h4>
+        <p>Esta seção explica como excluir os seus dados do app Goodtime State Map.</p>
+        <p><strong>Com uma conta (a partir da versão 0.2.2):</strong> enquanto você estiver conectado, "Excluir conta e dados" em "Configurações", "Seu progresso" exclui imediatamente no servidor a sua conta e os marcadores vistos sincronizados dela. Se você fez login com a Apple e exclui em um iPhone, você confirma mais uma vez com a Apple, e pedimos à Apple que encerre o acesso do app ao seu ID Apple. Os seus marcadores vistos ficam no seu dispositivo.</p>
+        <p><strong>Por e-mail ou pelo formulário web:</strong> excluímos a sua conta e os dados dela, ou quaisquer outros dados, como o nome e o endereço de e-mail de uma denúncia, mensagens enviadas a nós ou relatórios de falhas, no prazo de um mês se você pedir em <a href="mailto:goodtimestatemap@protonmail.com">goodtimestatemap@protonmail.com</a> ou em "Contact" no <a href="../contact/?lang=en#contact">formulário web</a> (art. 12(3) do RGPD). Para uma conta, informe o endereço de e-mail que ela usa; antes, confirmamos o pedido escrevendo para esse endereço (art. 12(6) do RGPD).  Se você fez login com a Apple, a exclusão por e-mail, pelo formulário web ou no app no Android não encerra o acesso do app ao seu ID Apple. Você mesmo pode fazer isso nos ajustes de "Iniciar sessão com a Apple" do seu ID Apple.</p>
+        <p>Dados excluídos podem permanecer por até 7 dias nos registros e backups do Supabase.</p>
+      </section>
     </section>
 
     <section class="lang-section" id="it" lang="it" aria-labelledby="it-title">
       <h2 id="it-title">Informativa sulla privacy</h2>
-      <p class="meta">Ultimo aggiornamento: 7 novembre 2026. Si applica all'app Goodtime State Map a partire dalla versione 0.2.0 e a queste pagine web.</p>
+      <p class="meta">Ultimo aggiornamento: 10 novembre 2026. Si applica all'app Goodtime State Map a partire dalla versione 0.2.0 e a queste pagine web.</p>
       <p class="meta">Traduzione della versione inglese. Fanno fede solo le versioni tedesca e inglese.</p>
 
       <h3>1. Titolare del trattamento</h3>
@@ -790,14 +1000,15 @@
         <li>L'app non contiene pubblicità, tracciamento né strumenti di analisi che osservano come la usi.</li>
         <li>L'app carica la mappa e i suoi contenuti da Supabase, nell'UE.</li>
         <li>L'app invia rapporti sugli arresti anomali e dati di sessione solo se lo consenti.</li>
-        <li>Ciò che segni come visto, i tuoi filtri e le tue impostazioni restano sul tuo dispositivo, a meno che non sia tu a esportare i segnaposto che hai segnato come visti. Supabase vede solo in quale lingua l'app richiede i contenuti.</li>
+        <li>Ciò che segni come visto, i tuoi filtri e le tue impostazioni restano sul tuo dispositivo, a meno che non sia tu a esportare gli indicatori che hai segnato come visti o ad accedere per sincronizzarli. Senza accesso, Supabase vede solo in quale lingua l'app richiede i contenuti.</li>
+        <li>L'accesso con Apple o Google è facoltativo. L'app funziona anche senza.</li>
         <li>Queste pagine web non impostano cookie e non caricano nulla da altri server.</li>
       </ul>
 
       <h3>3. Mappa e contenuti (Supabase)</h3>
-      <p>L'app carica da Supabase i riquadri della mappa (tile), la descrizione della mappa (manifest) e i contenuti dei segnaposto. Supabase è il nostro responsabile del trattamento. I dati si trovano su server a Francoforte sul Meno (UE).</p>
+      <p>L'app carica da Supabase i riquadri della mappa (tile), la descrizione della mappa (manifest) e i contenuti degli indicatori. Supabase è il nostro responsabile del trattamento. I dati si trovano su server a Francoforte sul Meno (UE).</p>
       <p>L'app carica da Supabase anche immagini, come screenshot e miniature dei video. Per queste vale lo stesso che per la mappa.</p>
-      <p>A ogni richiesta, Supabase riceve il tuo indirizzo IP e dati tecnici della richiesta, come l'ora e il file richiesto. L'app non effettua alcun accesso e non invia alcun identificativo del tuo dispositivo. I log tecnici di Supabase (log dell'API e del database) possono conservare il tuo indirizzo IP fino a 7 giorni. Supabase esegue ogni giorno un backup del database e conserva ogni backup per 7 giorni; i dati cancellati possono quindi restare nei backup fino a 7 giorni.</p>
+      <p>A ogni richiesta, Supabase riceve il tuo indirizzo IP e dati tecnici della richiesta, come l'ora e il file richiesto. Per caricare la mappa e i suoi contenuti, l'app non effettua alcun accesso e non invia alcun identificativo del tuo dispositivo, anche quando hai effettuato l'accesso a un account (vedi “Account e sincronizzazione”). I log tecnici di Supabase (log dell'API e del database) possono conservare il tuo indirizzo IP fino a 7 giorni. Supabase esegue ogni giorno un backup del database e conserva ogni backup per 7 giorni; i dati cancellati possono quindi restare nei backup fino a 7 giorni.</p>
       <p>La finalità è mostrarti la mappa e i suoi contenuti. La base giuridica è l'art. 6, par. 1, lett. f), del Regolamento generale sulla protezione dei dati (GDPR). Il nostro legittimo interesse è poter gestire l'app.</p>
       <p>Secondo l'accordo sul trattamento dei dati di Supabase, la nostra controparte contrattuale è Supabase Pte. Ltd., a Singapore. Supabase può utilizzare log, backup e sub-responsabili del trattamento al di fuori dell'UE. I trasferimenti verso paesi terzi sono coperti dalle clausole contrattuali tipo dell'UE (decisione di esecuzione (UE) 2021/914 della Commissione, art. 46, par. 2, lett. c), del GDPR). Su richiesta te ne inviamo una copia.</p>
 
@@ -815,8 +1026,8 @@
       <p>Se hai meno di 16 anni, consenti i rapporti sugli arresti anomali solo con l'autorizzazione di un genitore.</p>
 
       <h3>5. Cosa resta sul tuo dispositivo</h3>
-      <p>L'app conserva solo sul tuo dispositivo ciò che segni come visto, i tuoi filtri, la tua lingua, la tua scelta sui rapporti sugli arresti anomali e il numero di luoghi visti (5, 25 o 75) al quale ti ha chiesto l'ultima volta una valutazione (sezione 9). L'app stessa non invia a nessuno i segnaposto che hai segnato come visti, i tuoi filtri, la tua scelta sui rapporti sugli arresti anomali né questo numero. Per mostrare i testi nella tua lingua, l'app chiede a Supabase i testi in quella lingua e in inglese (sezione 3); Supabase vede quindi quale lingua viene richiesta. Questa memorizzazione è necessaria per le funzioni che usi (§ 25, comma 2, n. 2, TDDDG).</p>
-      <p><strong>Esportazione e importazione (dalla versione 0.2.1).</strong> Puoi esportare in un file i segnaposto che hai segnato come visti e importarli su un altro dispositivo. L'esportazione contiene solo quali segnaposto hai segnato come visti o come non visti e quando, e il momento dell'esportazione, senza alcun ID tuo o del tuo dispositivo. L'app non la invia a nessuno: sei tu a scegliere dove va, ad esempio in un'altra app, nell'app File, in un servizio cloud o in un'e-mail, e si applicano i termini e l'informativa sulla privacy di quel servizio. L'importazione legge solo il file che scegli e conserva il risultato sul tuo dispositivo. Scrivere e leggere questo file è necessario per la funzione che hai richiesto (§ 25, comma 2, n. 2, TDDDG).</p>
+      <p>L'app conserva sul tuo dispositivo ciò che segni come visto, i tuoi filtri, la tua lingua, la tua scelta sui rapporti sugli arresti anomali e il numero di luoghi visti (5, 25 o 75) al quale ti ha chiesto l'ultima volta una valutazione (sezione 9). L'app stessa non invia a nessuno i tuoi filtri, la tua scelta sui rapporti sugli arresti anomali né questo numero, e invia gli indicatori che hai segnato come visti solo all'account con cui è stato effettuato l'accesso sul dispositivo, se accedi (“Account e sincronizzazione”). Per mostrare i testi nella tua lingua, l'app chiede a Supabase i testi in quella lingua e in inglese (sezione 3); Supabase vede quindi quale lingua viene richiesta. Questa memorizzazione è necessaria per le funzioni che usi (§ 25, comma 2, n. 2, TDDDG).</p>
+      <p><strong>Esportazione e importazione (dalla versione 0.2.1).</strong> Puoi esportare in un file gli indicatori che hai segnato come visti e importarli su un altro dispositivo. L'esportazione contiene solo quali indicatori hai segnato come visti o come non visti e quando, e il momento dell'esportazione, senza alcun ID tuo o del tuo dispositivo. L'app non la invia a nessuno: sei tu a scegliere dove va, ad esempio in un'altra app, nell'app File, in un servizio cloud o in un'e-mail, e si applicano i termini e l'informativa sulla privacy di quel servizio. L'importazione legge solo il file che scegli e conserva il risultato sul tuo dispositivo. Scrivere e leggere questo file è necessario per la funzione che hai richiesto (§ 25, comma 2, n. 2, TDDDG).</p>
 
       <h3>6. Queste pagine web (GitHub Pages)</h3>
       <p>Queste pagine web sono ospitate su GitHub Pages, un servizio di GitHub, Inc. (USA). Quando apri una pagina, GitHub riceve il tuo indirizzo IP e dati tecnici della richiesta, come l'ora, la pagina e il tuo browser, e ne ha bisogno per fornire le pagine. GitHub registra inoltre gli indirizzi IP dei visitatori per i propri scopi di sicurezza. Per questi log, GitHub è un titolare autonomo del trattamento. GitHub non offre un accordo sul trattamento dei dati per GitHub Pages. GitHub aderisce al Data Privacy Framework UE-USA e non pubblica alcun periodo di conservazione per questi log. Per maggiori dettagli, consulta l'<a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" hreflang="en">informativa sulla privacy di GitHub</a> (in inglese). La base giuridica è l'art. 6, par. 1, lett. f), del GDPR. Il nostro legittimo interesse è mettere a disposizione queste pagine.</p>
@@ -839,7 +1050,7 @@
       <p>Se ci scrivi a <a href="mailto:goodtimestatemap@protonmail.com">goodtimestatemap@protonmail.com</a>, trattiamo il tuo indirizzo e-mail, il tuo messaggio e il tuo nome, se lo indichi, per risponderti. La casella di posta è ospitata da Proton AG (Svizzera). La Commissione europea ha riconosciuto che la Svizzera garantisce un livello adeguato di protezione dei dati. La base giuridica è l'art. 6, par. 1, lett. f), del GDPR. Il nostro legittimo interesse è rispondere alle richieste. Trattiamo le segnalazioni inviate via e-mail come quelle del modulo web. Cancelliamo le e-mail 6 mesi dopo la chiusura della pratica, salvo che la legge ci obblighi a conservarle più a lungo.</p>
 
       <h3>9. Link ad altri servizi e store di app</h3>
-      <p>Alcuni segnaposto mostrano schede video con link a video su YouTube, TikTok o Instagram, come i trailer. L'app non carica nulla da questi servizi prima che tu tocchi una di queste schede. L'app carica la miniatura da Supabase (sezione 3). Il link si apre fuori dall'app, nell'app del servizio o nel tuo browser. Lì si applica l'informativa sulla privacy del servizio.</p>
+      <p>Alcuni indicatori mostrano schede video con link a video su YouTube, TikTok o Instagram, come i trailer. L'app non carica nulla da questi servizi prima che tu tocchi una di queste schede. L'app carica la miniatura da Supabase (sezione 3). Il link si apre fuori dall'app, nell'app del servizio o nel tuo browser. Lì si applica l'informativa sulla privacy del servizio.</p>
       <p>Ogni scheda video indica la persona che ha pubblicato il video, con il nome o il nome utente che usa sul servizio. La miniatura, se presente, proviene dal servizio, da quella persona o da noi. La base giuridica è l'art. 6, par. 1, lett. f), del GDPR. Il nostro legittimo interesse è citare gli autori e rimandare ai loro video. Se hai realizzato uno di questi video e non vuoi che il tuo nome venga indicato, o non vuoi una scheda per il tuo video, scrivici e rimuoveremo la scheda.</p>
       <p>Ricaviamo nomi, nomi utente e link ai video da ciò che è pubblico su YouTube, TikTok o Instagram, oppure li riceviamo dagli autori stessi. Prima che una scheda venga pubblicata per la prima volta, informiamo l'interessato di questo trattamento. Ciò vale anche quando le informazioni sono pubbliche. Le uniche eccezioni sono i casi previsti dall'art. 14, par. 5, del GDPR, e solo se li abbiamo documentati.</p>
       <p>La scheda e l'indicazione dell'autore restano pubbliche finché non rimuoviamo la scheda. A quel punto cancelliamo anche il nome e il link al video dal registro pubblico; resta solo una nota tecnica affinché l'app rimuova la scheda da tutti i dispositivi.</p>
@@ -863,17 +1074,45 @@
       </ul>
       <p><strong>Diritto di opposizione (art. 21 del GDPR):</strong> puoi opporti in qualsiasi momento, per motivi connessi alla tua situazione particolare, ai trattamenti basati sull'art. 6, par. 1, lett. f), del GDPR. In tal caso interrompiamo quel trattamento, salvo che dimostriamo l'esistenza di motivi legittimi cogenti che prevalgono sui tuoi interessi, diritti e libertà, oppure che il trattamento serva all'accertamento, all'esercizio o alla difesa di un diritto in sede giudiziaria.</p>
       <p>Non adottiamo decisioni individuali automatizzate ai sensi dell'art. 22 del GDPR.</p>
-      <p>Per esercitare questi diritti, scrivici a <a href="mailto:goodtimestatemap@protonmail.com">goodtimestatemap@protonmail.com</a>.</p>
+      <p>Per esercitare questi diritti, scrivici a <a href="mailto:goodtimestatemap@protonmail.com">goodtimestatemap@protonmail.com</a>. Se hai effettuato l'accesso, “Elimina account e dati” nell'app cancella immediatamente il tuo account, e troviamo il tuo account tramite il suo indirizzo e-mail; per confermare una richiesta, possiamo scriverti a quell'indirizzo (art. 12, par. 6, del GDPR).</p>
       <p>Puoi anche proporre reclamo a un'autorità di controllo per la protezione dei dati (art. 77 del GDPR). L'autorità competente per noi è: Bayerisches Landesamt für Datenschutzaufsicht (BayLDA), Postfach 1349, 91504 Ansbach, Germania, <a href="https://www.lda.bayern.de/">www.lda.bayern.de</a>.</p>
 
       <h3>12. Modifiche</h3>
       <p>Quando l'app cambia, aggiorniamo questa informativa sulla privacy.</p>
 
+
+      <section aria-labelledby="it-v023">
+        <h3 id="it-v023">Dalla versione 0.2.2</h3>
+
+        <h4 id="it-account">Account e sincronizzazione</h4>
+        <p>Dalla versione 0.2.2 puoi accedere con Apple o Google in “Impostazioni”, “I tuoi progressi”, così che i tuoi indicatori visti siano gli stessi sui tuoi dispositivi. L'accesso è facoltativo. Inizia solo quando tocchi “Continua con Apple” o “Continua con Google”, e l'app funziona anche senza.</p>
+        <ul>
+          <li><strong>Dati:</strong> l'indirizzo e-mail che Apple o Google ci trasmette (con Apple può essere un indirizzo di inoltro di Apple), un ID dell'account, l'ID della tua identità Apple o Google, i tuoi indicatori visti (per ogni indicatore: il suo ID, se è visto e quando l'hai modificato l'ultima volta), la versione delle nostre condizioni d'uso che hai accettato e quando, e la sessione (paragrafo “Log di sessione e di accesso”). </li>
+          <li><strong>Finalità:</strong> farti accedere e collegare i tuoi indicatori visti al tuo account. L'app non invia e-mail. Guardiamo gli indicatori visti di una persona solo per rispondere a una richiesta di quella persona, e gli altri giocatori non vedono mai né questi indicatori né il tuo indirizzo e-mail.</li>
+          <li><strong>Apple e Google:</strong> Apple o Google mostra il proprio accesso e ne è titolare autonomo del trattamento. Si applicano le loro norme sulla privacy. L'app si collega ad Apple o Google solo dopo che hai toccato il loro pulsante.</li>
+          <li><strong>Destinatari:</strong> Supabase ospita il tuo account in qualità di nostro responsabile del trattamento (sezione 3). Quando elimini nell'app, su un iPhone, un account che usa Apple, Apple riceve la nostra richiesta di revocare l'accesso dell'app al tuo ID Apple. Questa richiesta è ricevuta da Apple Inc., negli USA. Apple non è certificata nel Data Privacy Framework UE-USA, quindi il trasferimento si basa sull'art. 49, par. 1, lett. b), del GDPR: è necessario per eseguire l'eliminazione che hai chiesto.</li>
+          <li><strong>Base giuridica:</strong> art. 6, par. 1, lett. b), del GDPR, le nostre <a href="../terms/#it-account">condizioni d'uso (“Il tuo account”)</a>, che accetti prima di accedere. Limiti contro gli abusi e log di audit degli accessi: art. 6, par. 1, lett. f), del GDPR; il nostro interesse è gestire il servizio in modo sicuro. Memorizzazione della sessione sul tuo dispositivo: § 25, comma 2, n. 2, TDDDG.</li>
+          <li><strong>Cosa viene sincronizzato:</strong> solo i tuoi indicatori visti, e solo mentre l'app è aperta. I tuoi filtri, le tue impostazioni, la tua scelta sui rapporti sugli arresti anomali e il numero legato alla richiesta di valutazione (sezione 5) restano sul tuo dispositivo.</li>
+          <li><strong>Uscire:</strong> il tuo account e i suoi indicatori visti restano presso di noi, e i tuoi indicatori visti restano sul dispositivo. Se in seguito qualcun altro accede su questo dispositivo, gli indicatori visti del dispositivo passano al suo account.</li>
+          <li><strong>Eliminare:</strong> “Elimina account e dati” in “Impostazioni”, “I tuoi progressi” cancella immediatamente sul server il tuo account e i suoi indicatori visti. I tuoi indicatori visti restano sul tuo dispositivo. Se hai effettuato l'accesso con Apple ed elimini nell'app su un iPhone, confermi ancora una volta con Apple, e chiediamo ad Apple di revocare l'accesso dell'app al tuo ID Apple. Se hai effettuato l'accesso con Apple, una cancellazione via e-mail, tramite modulo web o nell'app su Android non revoca l'accesso dell'app al tuo ID Apple. Puoi farlo tu stesso nelle impostazioni “Accedi con Apple” del tuo ID Apple. Gli altri modi per cancellare sono descritti in “Cancellare i tuoi dati”.</li>
+          <li><strong>Periodo di conservazione:</strong> finché il tuo account esiste. Cancelliamo un account dopo 24 mesi senza accesso, rinnovo della sessione o sincronizzazione. </li>
+          <li><strong>La tua copia:</strong> “Esporta indicatori visti” in “I tuoi progressi” ti fornisce in qualsiasi momento i tuoi indicatori visti come file (art. 20 del GDPR). Puoi anche chiederci via e-mail una copia di tutti i dati del tuo account (artt. 15 e 20 del GDPR).</li>
+        </ul>
+
+        <h4>Log di sessione e di accesso</h4>
+        <p>Finché hai effettuato l'accesso, Supabase conserva nel nostro database, insieme alla sessione, l'indirizzo IP e lo user agent del tuo dispositivo relativi al tuo ultimo accesso o all'ultimo rinnovo della sessione. Vengono cancellati quando esci su quel dispositivo, quando il tuo account viene cancellato o dopo 24 mesi senza attività. Il log di audit degli accessi di Supabase conserva gli accessi nei log tecnici di Supabase fino a 7 giorni; non viene conservato nel nostro database.</p>
+
+        <h4 id="it-delete">Cancellare i tuoi dati</h4>
+        <p>Questa sezione spiega come cancellare i tuoi dati dall'app Goodtime State Map.</p>
+        <p><strong>Con un account (dalla versione 0.2.2):</strong> finché hai effettuato l'accesso, “Elimina account e dati” in “Impostazioni”, “I tuoi progressi” cancella immediatamente sul server il tuo account e i suoi indicatori visti sincronizzati. Se hai effettuato l'accesso con Apple ed elimini su un iPhone, confermi ancora una volta con Apple, e chiediamo ad Apple di revocare l'accesso dell'app al tuo ID Apple. I tuoi indicatori visti restano sul tuo dispositivo.</p>
+        <p><strong>Via e-mail o modulo web:</strong> cancelliamo il tuo account e i suoi dati, o qualsiasi altro dato, come il nome e l'indirizzo e-mail di una segnalazione, i messaggi che ci hai inviato o i rapporti sugli arresti anomali, entro un mese se ce lo chiedi a <a href="mailto:goodtimestatemap@protonmail.com">goodtimestatemap@protonmail.com</a> o tramite “Contact” nel <a href="../contact/?lang=en#contact">modulo web</a> (art. 12, par. 3, del GDPR). Per un account, indica l'indirizzo e-mail che usa; prima confermiamo la richiesta scrivendo a quell'indirizzo (art. 12, par. 6, del GDPR).  Se hai effettuato l'accesso con Apple, una cancellazione via e-mail, tramite modulo web o nell'app su Android non revoca l'accesso dell'app al tuo ID Apple. Puoi farlo tu stesso nelle impostazioni “Accedi con Apple” del tuo ID Apple.</p>
+        <p>I dati cancellati possono restare fino a 7 giorni nei log e nei backup di Supabase.</p>
+      </section>
     </section>
 
     <section class="lang-section" id="tr" lang="tr" aria-labelledby="tr-title">
       <h2 id="tr-title">Gizlilik politikası</h2>
-      <p class="meta">Son güncelleme: 7 Kasım 2026. Goodtime State Map uygulaması için 0.2.0 sürümünden itibaren ve bu web sayfaları için geçerlidir.</p>
+      <p class="meta">Son güncelleme: 10 Kasım 2026. Goodtime State Map uygulaması için 0.2.0 sürümünden itibaren ve bu web sayfaları için geçerlidir.</p>
       <p class="meta">İngilizce sürümün çevirisidir. Yalnızca Almanca ve İngilizce sürümler bağlayıcıdır.</p>
 
       <h3>1. Veri sorumlusu</h3>
@@ -892,14 +1131,15 @@
         <li>Uygulamada reklam, izleme ve uygulamayı nasıl kullandığınızı inceleyen analiz araçları yoktur.</li>
         <li>Uygulama, haritayı ve içeriğini AB'deki Supabase'den yükler.</li>
         <li>Uygulama, çökme raporlarını ve oturum verilerini yalnızca siz izin verirseniz gönderir.</li>
-        <li>Görüldü olarak işaretledikleriniz, filtreleriniz ve ayarlarınız cihazınızda kalır. Tek istisna, görüldü işaretlerinizi kendiniz dışa aktarmanızdır. Supabase yalnızca uygulamanın içeriği hangi dilde istediğini görür.</li>
+        <li>Görüldü olarak işaretledikleriniz, filtreleriniz ve ayarlarınız cihazınızda kalır. İstisnalar, görülen işaretçilerinizi kendiniz dışa aktarmanız veya bunları eşitlemek için oturum açmanızdır. Oturum açmadığınızda Supabase yalnızca uygulamanın içeriği hangi dilde istediğini görür.</li>
+        <li>Apple veya Google ile oturum açmak isteğe bağlıdır. Uygulama oturum açmadan da çalışır.</li>
         <li>Bu web sayfaları çerez yerleştirmez ve başka sunuculardan hiçbir şey yüklemez.</li>
       </ul>
 
       <h3>3. Harita ve içerik (Supabase)</h3>
       <p>Uygulama, harita karolarını, harita açıklamasını (manifest) ve işaretçilerin içeriğini Supabase'den yükler. Supabase bizim veri işleyenimizdir. Veriler Frankfurt am Main'deki (AB) sunucularda bulunur.</p>
       <p>Uygulama ayrıca Supabase'den ekran görüntüleri ve video küçük resimleri gibi görseller yükler. Bunlar için de harita için geçerli olanlar geçerlidir.</p>
-      <p>Supabase her istekte IP adresinizi ve isteğe ilişkin zaman ve istenen dosya gibi teknik bilgileri alır. Uygulama bu sırada oturum açmaz ve cihazınıza ait hiçbir tanımlayıcı göndermez. Supabase'in teknik kayıtları (API ve veritabanı kayıtları) IP adresinizi 7 güne kadar tutabilir. Supabase veritabanını her gün yedekler ve her yedeği 7 gün saklar; bu nedenle silinen veriler yedeklerde 7 güne kadar kalabilir.</p>
+      <p>Supabase her istekte IP adresinizi ve isteğe ilişkin zaman ve istenen dosya gibi teknik bilgileri alır. Uygulama, haritayı ve içeriğini yüklemek için oturum açmaz ve cihazınıza ait hiçbir tanımlayıcı göndermez; bir hesapta oturumunuz açık olduğunda da bu böyledir (bkz. “Hesap ve eşitleme”). Supabase'in teknik kayıtları (API ve veritabanı kayıtları) IP adresinizi 7 güne kadar tutabilir. Supabase veritabanını her gün yedekler ve her yedeği 7 gün saklar; bu nedenle silinen veriler yedeklerde 7 güne kadar kalabilir.</p>
       <p>Amaç, size haritayı ve içeriğini göstermektir. Hukuki dayanak: Genel Veri Koruma Tüzüğü (GDPR) m. 6/1-f. Meşru menfaatimiz, uygulamayı işletebilmektir.</p>
       <p>Supabase'in veri işleme sözleşmesine göre sözleşme tarafımız Singapur'daki Supabase Pte. Ltd. şirketidir. Supabase, kayıtları, yedekleri ve alt veri işleyenleri AB dışında da kullanabilir. Üçüncü ülkelere aktarımlar AB standart sözleşme maddelerine (Komisyonun (AB) 2021/914 sayılı Uygulama Kararı, GDPR m. 46/2-c) dayanır. Talep etmeniz hâlinde size bir kopyasını göndeririz.</p>
 
@@ -918,8 +1158,8 @@
 
       <h3>5. Cihazınızda kalanlar</h3>
       <!-- Wording pass 2026-11-04 (docs/records/legal-texts.md): §5's first sentence revised by an agent and back-translated (docs/records/back-translations/2026-11-04-privacy-wording-tr.md) and approved by the developer on 2026-11-04 (docs/records/legal-texts.md). -->
-      <p>Uygulama; görüldü olarak işaretlediklerinizi, filtrelerinizi, dilinizi, çökme raporlarıyla ilgili tercihinizi ve uygulamanın sizden en son değerlendirme istediği andaki görülen yer sayısını (5, 25 veya 75; bölüm 9) yalnızca cihazınızda saklar. Uygulamanın kendisi görüldü işaretlerinizi, filtrelerinizi, çökme raporlarıyla ilgili tercihinizi ve bu sayıyı kimseye göndermez. Metinleri sizin dilinizde göstermek için uygulama Supabase'den metinleri bu dilde ve İngilizce olarak ister (bölüm 3); bu nedenle Supabase hangi dilin istendiğini görür. Bu saklama, kullandığınız işlevler için gereklidir (TDDDG § 25/2 no. 2).</p>
-      <p><strong>Dışa ve içe aktarma (0.2.1 sürümünden itibaren).</strong> Görüldü işaretlerinizi bir dosyaya dışa aktarabilir ve başka bir cihazda içe aktarabilirsiniz. Dışa aktarılan dosya yalnızca hangi işaretçileri ne zaman görüldü veya görülmedi olarak işaretlediğinizi ve dışa aktarmanın zamanını içerir; size veya cihazınıza ait hiçbir tanımlayıcı içermez. Uygulama bunu kimseye göndermez: nereye gideceğine siz karar verirsiniz, örneğin başka bir uygulamaya, Dosyalar'a, bir bulut depolama alanına veya bir e-postaya; bu durumda o hizmetin koşulları ve gizlilik politikası geçerlidir. İçe aktarma yalnızca seçtiğiniz dosyayı okur ve sonucu cihazınızda saklar. Bu dosyanın yazılması ve okunması, istediğiniz işlev için gereklidir (TDDDG § 25/2 no. 2).</p>
+      <p>Uygulama; görüldü olarak işaretlediklerinizi, filtrelerinizi, dilinizi, çökme raporlarıyla ilgili tercihinizi ve uygulamanın sizden en son değerlendirme istediği andaki görülen yer sayısını (5, 25 veya 75; bölüm 9) cihazınızda saklar. Uygulamanın kendisi filtrelerinizi, çökme raporlarıyla ilgili tercihinizi ve bu sayıyı kimseye göndermez; görülen işaretçilerinizi ise yalnızca oturum açarsanız cihazda oturumu açık olan hesaba gönderir (“Hesap ve eşitleme”). Metinleri sizin dilinizde göstermek için uygulama Supabase'den metinleri bu dilde ve İngilizce olarak ister (bölüm 3); bu nedenle Supabase hangi dilin istendiğini görür. Bu saklama, kullandığınız işlevler için gereklidir (TDDDG § 25/2 no. 2).</p>
+      <p><strong>Dışa ve içe aktarma (0.2.1 sürümünden itibaren).</strong> Görülen işaretçilerinizi bir dosyaya dışa aktarabilir ve başka bir cihazda içe aktarabilirsiniz. Dışa aktarılan dosya yalnızca hangi işaretçileri ne zaman görüldü veya görülmedi olarak işaretlediğinizi ve dışa aktarmanın zamanını içerir; size veya cihazınıza ait hiçbir tanımlayıcı içermez. Uygulama bunu kimseye göndermez: nereye gideceğine siz karar verirsiniz, örneğin başka bir uygulamaya, Dosyalar'a, bir bulut depolama alanına veya bir e-postaya; bu durumda o hizmetin koşulları ve gizlilik politikası geçerlidir. İçe aktarma yalnızca seçtiğiniz dosyayı okur ve sonucu cihazınızda saklar. Bu dosyanın yazılması ve okunması, istediğiniz işlev için gereklidir (TDDDG § 25/2 no. 2).</p>
 
       <h3>6. Bu web sayfaları (GitHub Pages)</h3>
       <p>Bu web sayfaları, GitHub, Inc. (ABD) şirketinin bir hizmeti olan GitHub Pages'te barındırılır. Bir sayfayı açtığınızda GitHub, IP adresinizi ve isteğe ilişkin zaman, sayfa ve tarayıcınız gibi teknik bilgileri alır ve sayfaları sunmak için bunlara ihtiyaç duyar. GitHub ayrıca ziyaretçilerin IP adreslerini kendi güvenlik amaçları için kaydeder. Bu kayıtlar bakımından GitHub ayrı bir veri sorumlusudur. GitHub, GitHub Pages için veri işleme sözleşmesi sunmaz. GitHub, AB-ABD Veri Gizliliği Çerçevesi'ne katılmaktadır ve bu kayıtlar için bir saklama süresi yayımlamaz. Ayrıntılar için <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" hreflang="en">GitHub'ın gizlilik bildirimine</a> (İngilizce) bakın. Hukuki dayanak: GDPR m. 6/1-f. Meşru menfaatimiz, bu sayfaları sunmaktır.</p>
@@ -966,17 +1206,45 @@
       </ul>
       <p><strong>İtiraz hakkı (GDPR m. 21):</strong> GDPR m. 6/1-f'ye dayanan işlemelere, özel durumunuzdan kaynaklanan nedenlerle her zaman itiraz edebilirsiniz. Bu durumda, sizin menfaatlerinizin, haklarınızın ve özgürlüklerinizin önüne geçen zorlayıcı meşru gerekçeler ortaya koyamadıkça veya işleme hukuki taleplerin tesisi, kullanılması ya da savunulması amacına hizmet etmedikçe bu işlemeyi durdururuz.</p>
       <p>GDPR m. 22 anlamında otomatik bireysel karar almayız.</p>
-      <p>Bu haklarınızı kullanmak için bize <a href="mailto:goodtimestatemap@protonmail.com">goodtimestatemap@protonmail.com</a> adresine yazın.</p>
+      <p>Bu haklarınızı kullanmak için bize <a href="mailto:goodtimestatemap@protonmail.com">goodtimestatemap@protonmail.com</a> adresine yazın. Oturum açtıysanız uygulamadaki “Hesabı ve verileri sil” hesabınızı hemen siler; biz de hesabınızı e-posta adresi üzerinden buluruz. Bir talebi doğrulamak için size bu adrese yazabiliriz (GDPR m. 12/6).</p>
       <p>Ayrıca bir veri koruma denetim makamına şikâyette bulunabilirsiniz (GDPR m. 77). Bizim için yetkili makam: Bayerisches Landesamt für Datenschutzaufsicht (BayLDA), Postfach 1349, 91504 Ansbach, Almanya, <a href="https://www.lda.bayern.de/">www.lda.bayern.de</a>.</p>
 
       <h3>12. Değişiklikler</h3>
       <p>Uygulama değiştiğinde bu gizlilik politikasını güncelleriz.</p>
 
+
+      <section aria-labelledby="tr-v023">
+        <h3 id="tr-v023">0.2.2 sürümünden itibaren</h3>
+
+        <h4 id="tr-account">Hesap ve eşitleme</h4>
+        <p>0.2.2 sürümünden itibaren, görülen işaretçilerinizin cihazlarınızda aynı olması için “Ayarlar”, “İlerlemeniz” altında Apple veya Google ile oturum açabilirsiniz. Oturum açmak isteğe bağlıdır. Oturum açma ancak “Apple ile devam et” veya “Google ile devam et” seçeneğine dokunduğunuzda başlar ve uygulama oturum açmadan da çalışır.</p>
+        <ul>
+          <li><strong>Veriler:</strong> Apple veya Google'ın bize ilettiği e-posta adresi (Apple'da bu, Apple'ın bir yönlendirme adresi olabilir), bir hesap kimliği, Apple veya Google kimliğinizin tanımlayıcısı, görülen işaretçileriniz (her işaretçi için: kimliği, görülüp görülmediği ve onu en son ne zaman değiştirdiğiniz), kabul ettiğiniz kullanım koşullarımızın sürümü ve kabul zamanı ile oturum (“Oturum ve oturum açma kaydı” bölümü). </li>
+          <li><strong>Amaç:</strong> oturumunuzu açmak ve görülen işaretçilerinizi hesabınızla ilişkilendirmek. Uygulama e-posta göndermez. Bir kişinin görülen işaretçilerine yalnızca o kişinin bir talebini yanıtlamak için bakarız; diğer oyuncular bunları da e-posta adresinizi de hiçbir zaman görmez.</li>
+          <li><strong>Apple ve Google:</strong> Apple veya Google kendi oturum açma ekranını gösterir ve bu işlem için ayrı bir veri sorumlusudur. Onların gizlilik kuralları geçerlidir. Uygulama, Apple veya Google ile ancak onların düğmesine dokunduktan sonra bağlantı kurar.</li>
+          <li><strong>Alıcılar:</strong> Supabase, hesabınızı veri işleyenimiz olarak barındırır (bölüm 3). Apple kullanan bir hesabı uygulamada bir iPhone'da silerseniz Apple, uygulamanın Apple Kimliğinize erişimini sona erdirme talebimizi alır. Bu talebi ABD'deki Apple Inc. alır. Apple, AB-ABD Veri Gizliliği Çerçevesi kapsamında sertifikalı değildir; bu nedenle aktarım GDPR m. 49/1-b'ye dayanır: talep ettiğiniz silme işlemini gerçekleştirmek için gereklidir.</li>
+          <li><strong>Hukuki dayanak:</strong> GDPR m. 6/1-b, oturum açmadan önce kabul ettiğiniz <a href="../terms/#tr-account">kullanım koşullarımız (“Hesabınız”)</a>. Kötüye kullanım sınırları ve oturum açma denetim kaydı: GDPR m. 6/1-f; menfaatimiz, hizmeti güvenli bir şekilde işletmektir. Oturumun cihazınızda saklanması: TDDDG § 25/2 no. 2.</li>
+          <li><strong>Neler eşitlenir:</strong> yalnızca görülen işaretçileriniz ve yalnızca uygulama açıkken. Filtreleriniz, ayarlarınız, çökme raporlarıyla ilgili tercihiniz ve değerlendirme isteğine ilişkin sayı (bölüm 5) cihazınızda kalır.</li>
+          <li><strong>Oturumu kapatma:</strong> hesabınız ve hesabın görülen işaretçileri bizde kalır, görülen işaretçileriniz de cihazda kalır. Daha sonra bu cihazda başka biri oturum açarsa bu cihazın görülen işaretçileri onun hesabına eklenir.</li>
+          <li><strong>Silme:</strong> “Ayarlar”, “İlerlemeniz” altındaki “Hesabı ve verileri sil”, hesabınızı ve hesabın görülen işaretçilerini sunucuda hemen siler. Görülen işaretçileriniz cihazınızda kalır. Apple ile oturum açtıysanız ve uygulamada bir iPhone'da silerseniz Apple'da bir kez daha onaylarsınız ve Apple'dan uygulamanın Apple Kimliğinize erişimini sona erdirmesini isteriz. Apple ile oturum açtıysanız e-posta veya web formu ile ya da Android'deki uygulamada yapılan bir silme işlemi, uygulamanın Apple Kimliğinize erişimini sona erdirmez. Bunu Apple Kimliğinizin “Apple ile Giriş Yap” ayarlarından kendiniz yapabilirsiniz. Diğer silme yolları “Verilerinizi silme” bölümündedir.</li>
+          <li><strong>Saklama süresi:</strong> hesabınız var olduğu sürece. Bir hesabı, 24 ay boyunca oturum açılmadığında, oturum yenilenmediğinde ve eşitleme yapılmadığında sileriz. </li>
+          <li><strong>Kopyanız:</strong> “İlerlemeniz” altındaki “Görülen işaretçileri dışa aktar”, görülen işaretçilerinizi istediğiniz zaman size bir dosya olarak verir (GDPR m. 20). Hesabınızın tüm verilerinin bir kopyasını bizden e-postayla da isteyebilirsiniz (GDPR m. 15 ve 20).</li>
+        </ul>
+
+        <h4>Oturum ve oturum açma kaydı</h4>
+        <p>Oturumunuz açık olduğu sürece Supabase, IP adresinizi ve cihazınızın kullanıcı aracısını (user agent) oturumla birlikte veritabanımızda saklar. İkisi de en son oturum açma veya oturum yenileme işleminizden alınır. Bu bilgiler, o cihazda oturumu kapattığınızda, hesabınız silindiğinde veya 24 ay etkinlik olmadığında silinir. Supabase'in oturum açma denetim kaydı (audit log), oturum açma işlemlerini Supabase'in teknik kayıtlarında 7 güne kadar tutar; bu kayıt bizim veritabanımızda saklanmaz.</p>
+
+        <h4 id="tr-delete">Verilerinizi silme</h4>
+        <p>Bu bölüm, verilerinizi Goodtime State Map uygulamasından nasıl sileceğinizi açıklar.</p>
+        <p><strong>Hesapla (0.2.2 sürümünden itibaren):</strong> Oturumunuz açık olduğu sürece “Ayarlar”, “İlerlemeniz” altındaki “Hesabı ve verileri sil”, hesabınızı ve hesabın eşitlenen görülen işaretçilerini sunucuda hemen siler. Apple ile oturum açtıysanız ve bir iPhone'da silerseniz Apple'da bir kez daha onaylarsınız ve Apple'dan uygulamanın Apple Kimliğinize erişimini sona erdirmesini isteriz. Görülen işaretçileriniz cihazınızda kalır.</p>
+        <p><strong>E-posta veya web formu ile:</strong> Hesabınızı ve verilerini ya da bir bildirimdeki ad ve e-posta adresi, bize gönderilen mesajlar veya çökme raporları gibi diğer verileri, <a href="mailto:goodtimestatemap@protonmail.com">goodtimestatemap@protonmail.com</a> adresine yazarak veya <a href="../contact/?lang=en#contact">web formundaki</a> “Contact” üzerinden talep etmeniz hâlinde bir ay içinde sileriz (GDPR m. 12/3). Bir hesap için hesabın kullandığı e-posta adresini belirtin; talebi önce bu adrese yazarak doğrularız (GDPR m. 12/6).  Apple ile oturum açtıysanız e-posta veya web formu ile ya da Android'deki uygulamada yapılan bir silme işlemi, uygulamanın Apple Kimliğinize erişimini sona erdirmez. Bunu Apple Kimliğinizin “Apple ile Giriş Yap” ayarlarından kendiniz yapabilirsiniz.</p>
+        <p>Silinen veriler Supabase'in kayıtlarında ve yedeklerinde 7 güne kadar kalabilir.</p>
+      </section>
     </section>
 
     <section class="lang-section" id="ja" lang="ja" aria-labelledby="ja-title">
       <h2 id="ja-title">プライバシーポリシー</h2>
-      <p class="meta">最終更新日：2026年11月7日。Goodtime State Mapアプリのバージョン0.2.0以降と、これらのウェブページに適用されます。</p>
+      <p class="meta">最終更新日：2026年11月10日。Goodtime State Mapアプリのバージョン0.2.0以降と、これらのウェブページに適用されます。</p>
       <p class="meta">本ポリシーは英語版を翻訳したものです。拘束力を持つのはドイツ語版と英語版のみです。</p>
 
       <h3>1. 管理者</h3>
@@ -995,14 +1263,15 @@
         <li>本アプリには、広告、トラッキング、アプリの使い方を分析する解析ツールのいずれもありません。</li>
         <li>本アプリは、マップとそのコンテンツをEUのSupabaseから読み込みます。</li>
         <li>本アプリがクラッシュレポートとセッションデータを送信するのは、あなたが許可した場合だけです。</li>
-        <li>確認済みにしたもの、フィルター、設定は、あなたの端末にとどまります。例外は、確認済みのマーカーをあなたが自分でエクスポートした場合だけです。Supabaseにわかるのは、アプリがどの言語でコンテンツを要求しているかだけです。</li>
+        <li>確認済みにしたもの、フィルター、設定は、あなたの端末にとどまります。例外は、確認済みのマーカーをあなたが自分でエクスポートした場合と、同期のためにサインインした場合だけです。サインインしていなければ、Supabaseにわかるのは、アプリがどの言語でコンテンツを要求しているかだけです。</li>
+        <li>AppleまたはGoogleでのサインインは任意です。サインインしなくてもアプリは使えます。</li>
         <li>これらのウェブページはCookieを設定せず、ほかのサーバーから何も読み込みません。</li>
       </ul>
 
       <h3>3. マップとコンテンツ（Supabase）</h3>
       <p>本アプリは、マップタイル、マップの説明（マニフェスト）、マーカーのコンテンツをSupabaseから読み込みます。Supabaseは当方の処理者です。データはフランクフルト・アム・マイン（EU）のサーバーにあります。</p>
       <p>本アプリは、スクリーンショットや動画のサムネイルなどの画像もSupabaseから読み込みます。これらにもマップと同じことが当てはまります。</p>
-      <p>リクエストのたびに、SupabaseはあなたのIPアドレスと、時刻や要求されたファイルなど、リクエストに関する技術情報を受け取ります。その際、本アプリはサインインせず、端末の識別子も送信しません。Supabaseの技術ログ（APIログとデータベースログ）には、あなたのIPアドレスが最大7日間保存されることがあります。Supabaseはデータベースを毎日バックアップし、各バックアップを7日間保管します。そのため、削除したデータがバックアップに最大7日間残ることがあります。</p>
+      <p>リクエストのたびに、SupabaseはあなたのIPアドレスと、時刻や要求されたファイルなど、リクエストに関する技術情報を受け取ります。マップとそのコンテンツを読み込むために本アプリがサインインすることはなく、端末の識別子も送信しません。あなたがアカウントにサインインしている場合も同じです（「アカウントと同期」を参照）。Supabaseの技術ログ（APIログとデータベースログ）には、あなたのIPアドレスが最大7日間保存されることがあります。Supabaseはデータベースを毎日バックアップし、各バックアップを7日間保管します。そのため、削除したデータがバックアップに最大7日間残ることがあります。</p>
       <p>目的は、マップとそのコンテンツをあなたに表示することです。法的根拠はGDPR第6条第1項(f)です。当方の正当な利益は、本アプリを運営できることです。</p>
       <p>Supabaseのデータ処理契約によると、当方の契約当事者はシンガポールのSupabase Pte. Ltd.です。Supabaseは、ログ、バックアップ、再処理者をEU域外で利用することがあります。第三国への移転には、EU標準契約条項（欧州委員会実施決定(EU) 2021/914、GDPR第46条第2項(c)）が適用されます。ご請求があれば写しをお送りします。</p>
 
@@ -1021,7 +1290,7 @@
 
       <h3>5. 端末に残るもの</h3>
       <!-- Wording pass 2026-11-04 (docs/records/legal-texts.md): §5's first sentence and every cross-reference to a section of this policy (第N項 to 第N節) revised by an agent and back-translated (docs/records/back-translations/2026-11-04-privacy-wording-ja.md) and approved by the developer on 2026-11-04 (docs/records/legal-texts.md). -->
-      <p>本アプリは、確認済みにしたもの、フィルター、言語、クラッシュレポートについての選択、そして本アプリが前回あなたに評価をお願いしたときの確認済みの場所の数（5、25、75のいずれか。第9節参照）を、あなたの端末にのみ保存します。本アプリ自体は、確認済みのマーカー、フィルター、クラッシュレポートについての選択、この数を、誰にも送信しません。あなたの言語でテキストを表示するため、本アプリはSupabaseに、その言語と英語のテキストを要求します（第3節）。そのため、Supabaseにはどの言語が要求されたかがわかります。この保存は、あなたが使う機能に必要なものです（TDDDG第25条第2項第2号）。</p>
+      <p>本アプリは、確認済みにしたもの、フィルター、言語、クラッシュレポートについての選択、そして本アプリが前回あなたに評価をお願いしたときの確認済みの場所の数（5、25、75のいずれか。第9節参照）を、あなたの端末に保存します。本アプリ自体は、フィルター、クラッシュレポートについての選択、この数を誰にも送信しません。確認済みのマーカーは、あなたがサインインした場合に、その端末でサインインしているアカウントにだけ送信します（「アカウントと同期」）。あなたの言語でテキストを表示するため、本アプリはSupabaseに、その言語と英語のテキストを要求します（第3節）。そのため、Supabaseにはどの言語が要求されたかがわかります。この保存は、あなたが使う機能に必要なものです（TDDDG第25条第2項第2号）。</p>
       <p><strong>エクスポートとインポート（バージョン0.2.1以降）：</strong>確認済みのマーカーをファイルにエクスポートし、別の端末でインポートできます。エクスポートに含まれるのは、どのマーカーをいつ確認済みまたは未確認にしたかと、エクスポートした日時だけで、あなたを識別するIDや端末のIDは含まれません。本アプリはこれを誰にも送信しません。送り先はあなたが選びます。たとえば別のアプリ、「ファイル」アプリ、クラウドストレージ、メールなどです。送り先のサービスの規約とプライバシーポリシーが適用されます。インポートは、あなたが選んだファイルだけを読み込み、結果をあなたの端末に保存します。このファイルの書き込みと読み込みは、あなたが求めた機能に必要なものです（TDDDG第25条第2項第2号）。</p>
 
       <h3>6. これらのウェブページ（GitHub Pages）</h3>
@@ -1069,19 +1338,47 @@
       </ul>
       <p><strong>異議を申し立てる権利（GDPR第21条）：</strong>GDPR第6条第1項(f)に基づく処理に対しては、あなたの特別な状況に関する理由により、いつでも異議を申し立てることができます。その場合、当方はその処理を中止します。ただし、あなたの利益、権利および自由に優越するやむを得ない正当な理由を当方が示せる場合、または処理が法的請求の立証、行使もしくは防御のためのものである場合を除きます。</p>
       <p>当方は、GDPR第22条の意味における、個人に関する自動化された意思決定を行いません。</p>
-      <p>これらの権利を行使するには、<a href="mailto:goodtimestatemap@protonmail.com">goodtimestatemap@protonmail.com</a>宛てにメールでご連絡ください。</p>
+      <p>これらの権利を行使するには、<a href="mailto:goodtimestatemap@protonmail.com">goodtimestatemap@protonmail.com</a>宛てにメールでご連絡ください。サインインしている場合は、アプリの「アカウントとデータを削除」でアカウントを直ちに削除できます。また、当方はアカウントをそのメールアドレスによって特定します。ご依頼を確認するため、当方からそのアドレス宛てにご連絡することがあります（GDPR第12条第6項）。</p>
       <p>また、データ保護監督機関に苦情を申し立てることもできます（GDPR第77条）。当方を管轄する機関は、Bayerisches Landesamt für Datenschutzaufsicht（BayLDA、バイエルン州データ保護監督庁）、Postfach 1349, 91504 Ansbach、ドイツ、<a href="https://www.lda.bayern.de/">www.lda.bayern.de</a>です。</p>
       <!-- APPI note, ja only, D206: review -->
-      <p><strong>日本の個人情報保護法について：</strong>個人情報の保護に関する法律第28条に関して、外国にある事業者がデータを受け取る場合について説明します。当方（管理者）はドイツに所在します。ドイツを含むEUは、日本と同等の水準にある個人情報保護制度を有するものとして、個人情報保護委員会が認めた地域です。このほか、本ポリシーに記載のとおり、米国ではSentry（米国への移転、第4節）、GitHub, Inc.（第6節）、Discord Inc.（第7節）がデータを受け取ることがあります。Supabaseの契約当事者はシンガポールのSupabase Pte. Ltd.です（第3節）。メールの受信箱はスイスのProton AGが管理しています（第8節）。米国、シンガポール、スイスはこの認定を受けておらず、これらの国の個人情報保護制度は日本の制度と異なります。SupabaseとSentryは当方の処理者として当方との契約に拘束されており、EU域外への移転にはEU標準契約条項が適用されます（Sentryについては補助的に）。GitHubは自らのログについて独立した管理者であり（第6節）、Discordが受け取るのは内部参照番号だけです（第7節）。</p>
+      <p><strong>日本の個人情報保護法について：</strong>個人情報の保護に関する法律第28条に関して、外国にある事業者がデータを受け取る場合について説明します。当方（管理者）はドイツに所在します。ドイツを含むEUは、日本と同等の水準にある個人情報保護制度を有するものとして、個人情報保護委員会が認めた地域です。このほか、本ポリシーに記載のとおり、米国ではSentry（米国への移転、第4節）、GitHub, Inc.（第6節）、Discord Inc.（第7節）がデータを受け取ることがあります。Supabaseの契約当事者はシンガポールのSupabase Pte. Ltd.です（第3節）。メールの受信箱はスイスのProton AGが管理しています（第8節）。バージョン0.2.2以降、あなたがサインインする場合、AppleまたはGoogleは独立した管理者として、サインインの情報をあなたの端末から直接受け取ります（「バージョン0.2.2以降」の「アカウントと同期」）。iPhoneのアプリでAppleを使うアカウントを削除すると、当方は、アプリによるあなたのApple IDへのアクセスを終了するよう求める要請を米国のApple Inc.に送ります。米国、シンガポール、スイスはこの認定を受けておらず、これらの国の個人情報保護制度は日本の制度と異なります。SupabaseとSentryは当方の処理者として当方との契約に拘束されており、EU域外への移転にはEU標準契約条項が適用されます（Sentryについては補助的に）。GitHubは自らのログについて独立した管理者であり（第6節）、Discordが受け取るのは内部参照番号だけです（第7節）。</p>
 
       <h3>12. 変更</h3>
       <p>本アプリが変わった場合は、このプライバシーポリシーを更新します。</p>
 
+
+      <section aria-labelledby="ja-v023">
+        <h3 id="ja-v023">バージョン0.2.2以降</h3>
+
+        <h4 id="ja-account">アカウントと同期</h4>
+        <p>バージョン0.2.2以降、「設定」の「進捗データ」でAppleまたはGoogleを使ってサインインすると、確認済みのマーカーをあなたの複数の端末で同じ状態にできます。サインインは任意です。サインインは「Appleで続ける」または「Googleで続行」をタップしたときにだけ始まり、サインインしなくてもアプリは使えます。</p>
+        <ul>
+          <li><strong>データ：</strong>AppleまたはGoogleから当方に渡されるメールアドレス（Appleの場合、Appleの中継用アドレスのことがあります）、アカウントID、あなたのAppleまたはGoogleのアイデンティティのID、確認済みのマーカー（マーカーごとに、そのID、確認済みかどうか、あなたが最後に変更した日時）、あなたが同意した当方の利用規約のバージョンと同意の日時、およびセッション（「セッションとサインインのログ」を参照）。</li>
+          <li><strong>目的：</strong>あなたをサインインさせ、確認済みのマーカーをあなたのアカウントに関連付けること。本アプリはメールを送信しません。当方がある人の確認済みのマーカーを見るのは、その人からの依頼に答えるときだけです。ほかのプレイヤーが、それらやあなたのメールアドレスを見ることはありません。</li>
+          <li><strong>AppleとGoogle：</strong>AppleまたはGoogleは独自のサインイン画面を表示し、それについて独立した管理者です。それぞれのプライバシーに関する規定が適用されます。本アプリがAppleまたはGoogleに接続するのは、あなたがそのボタンをタップした後だけです。</li>
+          <li><strong>受信者：</strong>Supabaseは当方の処理者としてあなたのアカウントを保管します（第3節）。Appleを使うアカウントをiPhoneのアプリで削除すると、アプリによるあなたのApple IDへのアクセスを終了するよう求める当方の要請がAppleに届きます。 この要請を受け取るのは米国のApple Inc.です。AppleはEU-米国データプライバシーフレームワークの認証を受けていないため、この移転はGDPR第49条第1項(b)に基づきます。あなたが求めた削除を実行するために必要だからです。</li>
+          <li><strong>法的根拠：</strong>GDPR第6条第1項(b)、サインインの前にあなたが同意する当方の<a href="../terms/#ja-account">利用規約（「あなたのアカウント」）</a>。不正利用の制限とサインインの監査ログ：GDPR第6条第1項(f)。当方の利益は、サービスを安全に運営することです。端末へのセッションの保存：TDDDG第25条第2項第2号。</li>
+          <li><strong>同期される内容：</strong>確認済みのマーカーだけで、アプリを開いている間だけです。フィルター、設定、クラッシュレポートについての選択、評価のお願いに関する数（第5節）は、あなたの端末に残ります。</li>
+          <li><strong>サインアウト：</strong>あなたのアカウントとその確認済みのマーカーは当方に残り、あなたの確認済みのマーカーは端末に残ります。その後この端末で別の人がサインインすると、この端末の確認済みのマーカーはその人のアカウントに追加されます。</li>
+          <li><strong>削除：</strong>「設定」の「進捗データ」にある「アカウントとデータを削除」を使うと、サーバー上のあなたのアカウントとその確認済みのマーカーが直ちに削除されます。あなたの確認済みのマーカーは端末に残ります。Appleでサインインしていて、iPhoneのアプリで削除する場合は、Appleでもう一度確認します。当方は、アプリによるあなたのApple IDへのアクセスを終了するようAppleに求めます。Appleでサインインしている場合、メール、ウェブフォーム、またはAndroidのアプリで削除しても、アプリによるあなたのApple IDへのアクセスは終了しません。これは、Apple IDの「Appleでサインイン」の設定であなた自身が行えます。そのほかの削除方法は「データの削除」に記載しています。</li>
+          <li><strong>保存期間：</strong>あなたのアカウントが存在する間。サインイン、セッションの更新、同期のいずれもない状態が24か月続くと、当方はアカウントを削除します。</li>
+          <li><strong>あなたのコピー：</strong>「進捗データ」の「確認済みのマーカーをエクスポート」で、いつでも確認済みのマーカーをファイルとして受け取れます（GDPR第20条）。アカウントのすべてのデータのコピーを、メールで当方に請求することもできます（GDPR第15条および第20条）。</li>
+        </ul>
+
+        <h4>セッションとサインインのログ</h4>
+        <p>あなたがサインインしている間、Supabaseは、あなたの最新のサインインまたはセッションの更新時のIPアドレスと端末のユーザーエージェントを、セッションとともに当方のデータベースに保存します。これらは、その端末でサインアウトしたとき、アカウントが削除されたとき、または活動のない状態が24か月続いたときに削除されます。Supabaseのサインインの監査ログは、サインインをSupabaseの技術ログに最大7日間保管します。このログは当方のデータベースには保存されません。</p>
+
+        <h4 id="ja-delete">データの削除</h4>
+        <p>この節では、Goodtime State Mapアプリからあなたのデータを削除する方法を説明します。</p>
+        <p><strong>アカウントがある場合（バージョン0.2.2以降）：</strong>サインインしている間、「設定」の「進捗データ」にある「アカウントとデータを削除」を使うと、サーバー上のあなたのアカウントと、同期された確認済みのマーカーが直ちに削除されます。Appleでサインインしていて、iPhoneで削除する場合は、Appleでもう一度確認します。当方は、アプリによるあなたのApple IDへのアクセスを終了するようAppleに求めます。あなたの確認済みのマーカーは端末に残ります。</p>
+        <p><strong>メールまたはウェブフォームで：</strong>あなたのアカウントとそのデータ、または通報に含まれる名前とメールアドレス、当方へのメッセージ、クラッシュレポートなどのその他のデータは、<a href="mailto:goodtimestatemap@protonmail.com">goodtimestatemap@protonmail.com</a>宛てのメール、または<a href="../contact/?lang=en#contact">ウェブフォーム</a>の「Contact」からご依頼いただければ、1か月以内に削除します（GDPR第12条第3項）。アカウントについては、そのアカウントで使っているメールアドレスをお知らせください。当方はまずそのアドレス宛てにご連絡して、ご依頼を確認します（GDPR第12条第6項）。Appleでサインインしている場合、メール、ウェブフォーム、またはAndroidのアプリで削除しても、アプリによるあなたのApple IDへのアクセスは終了しません。これは、Apple IDの「Appleでサインイン」の設定であなた自身が行えます。</p>
+        <p>削除したデータは、Supabaseのログとバックアップに最大7日間残ることがあります。</p>
+      </section>
     </section>
 
     <section class="lang-section" id="zh-hant" lang="zh-Hant" aria-labelledby="zh-hant-title">
       <h2 id="zh-hant-title">隱私權政策</h2>
-      <p class="meta">最後更新：2026年11月7日。適用於 Goodtime State Map 應用程式 0.2.0 版起的各版本，以及這些網頁。</p>
+      <p class="meta">最後更新：2026年11月10日。適用於 Goodtime State Map 應用程式 0.2.0 版起的各版本，以及這些網頁。</p>
       <p class="meta">本政策譯自英文版。僅德文版與英文版具有約束力。</p>
 
       <h3>1. 控管者</h3>
@@ -1100,14 +1397,15 @@
         <li>本應用程式沒有廣告、沒有追蹤，也沒有分析您使用方式的分析工具。</li>
         <li>本應用程式從位於歐盟的 Supabase 載入地圖及其內容。</li>
         <li>本應用程式只有在您允許時，才會傳送當機報告與工作階段資料。</li>
-        <li>您標為已看過的項目、篩選條件與設定都會留在您的裝置上。唯一的例外是您自行匯出已看過的標記。Supabase 只會得知本應用程式以哪種語言請求內容。</li>
+        <li>您標記為已確認的項目、篩選條件與設定都會留在您的裝置上。例外的情況是您自行匯出已確認的標記，或為了同步這些標記而登入。若未登入，Supabase 只會得知本應用程式以哪種語言請求內容。</li>
+        <li>使用 Apple 或 Google 登入是自願的。不登入也能使用本應用程式。</li>
         <li>這些網頁不設定 Cookie，也不從其他伺服器載入任何內容。</li>
       </ul>
 
       <h3>3. 地圖與內容（Supabase）</h3>
       <p>本應用程式從 Supabase 載入地圖圖磚、地圖說明（manifest）與標記內容。Supabase 是我們的受託處理者。資料存放於美因河畔法蘭克福（歐盟）的伺服器。</p>
       <p>本應用程式也會從 Supabase 載入圖片，例如截圖與影片縮圖。這些圖片適用與地圖相同的說明。</p>
-      <p>每次請求時，Supabase 都會收到您的 IP 位址及請求的技術資訊，例如時間與所請求的檔案。本應用程式不會登入，也不會傳送任何您裝置的識別碼。Supabase 的技術日誌（API 日誌與資料庫日誌）可能會保存您的 IP 位址最多 7 天。Supabase 每天備份資料庫，每份備份保留 7 天，因此已刪除的資料可能在備份中最多保留 7 天。</p>
+      <p>每次請求時，Supabase 都會收到您的 IP 位址及請求的技術資訊，例如時間與所請求的檔案。為了載入地圖及其內容，本應用程式不會登入，也不會傳送任何您裝置的識別碼；即使您已登入帳號也是如此（見「帳號與同步」）。Supabase 的技術日誌（API 日誌與資料庫日誌）可能會保存您的 IP 位址最多 7 天。Supabase 每天備份資料庫，每份備份保留 7 天，因此已刪除的資料可能在備份中最多保留 7 天。</p>
       <p>目的是向您顯示地圖及其內容。法律依據為一般資料保護規則（GDPR）第 6 條第 1 項第 f 款。我們的正當利益是能夠營運本應用程式。</p>
       <p>根據 Supabase 的資料處理協議，我們的契約相對人是 Supabase Pte. Ltd.，位於新加坡。Supabase 可能在歐盟以外使用日誌、備份與再受託處理者。傳輸至第三國的情形，以歐盟標準契約條款為依據（歐盟執行委員會執行決定 (EU) 2021/914，GDPR 第 46 條第 2 項第 c 款）。如您提出請求，我們會寄送一份副本給您。</p>
 
@@ -1126,8 +1424,8 @@
 
       <h3>5. 留在您裝置上的資料</h3>
       <!-- Wording pass 2026-11-04 (docs/records/legal-texts.md): §5's first sentence revised by an agent and back-translated (docs/records/back-translations/2026-11-04-privacy-wording-zh-hant.md) and approved by the developer on 2026-11-04 (docs/records/legal-texts.md). -->
-      <p>本應用程式會將您標為已看過的標記、篩選條件、語言、您對當機報告的選擇，以及上次請您評分時已看過的地點數（5、25 或 75，見第 9 節）都只儲存在您的裝置上。本應用程式本身不會將您已看過的標記、篩選條件、您對當機報告的選擇及此數字傳送給任何人。為了以您的語言顯示文字，本應用程式會向 Supabase 請求該語言及英文的文字（第 3 節），因此 Supabase 會得知所請求的語言。此儲存是您所使用的功能所必需（TDDDG 第 25 條第 2 項第 2 款）。</p>
-      <p><strong>匯出與匯入（自 0.2.1 版起）：</strong>您可以將已看過的標記匯出成檔案，並在另一部裝置上匯入。匯出的檔案只包含您在何時將哪些標記標為已看過或未看過，以及匯出的時間，不含任何可識別您或您裝置的 ID。本應用程式不會將其傳送給任何人：由您決定要傳送到哪裡，例如另一個應用程式、「檔案」App、雲端硬碟或電子郵件，屆時適用您所選服務的條款與隱私權政策。匯入只會讀取您選擇的檔案，並將結果保存在您的裝置上。寫入與讀取此檔案是您所要求的功能所必需（TDDDG 第 25 條第 2 項第 2 款）。</p>
+      <p>本應用程式會將您已確認的標記、篩選條件、語言、您對當機報告的選擇，以及上次請您評分時已確認的地點數（5、25 或 75，見第 9 節）都儲存在您的裝置上。本應用程式本身不會將篩選條件、您對當機報告的選擇及此數字傳送給任何人；已確認的標記則只有在您登入時，才會傳送至在該裝置上登入的帳號（「帳號與同步」）。為了以您的語言顯示文字，本應用程式會向 Supabase 請求該語言及英文的文字（第 3 節），因此 Supabase 會得知所請求的語言。此儲存是您所使用的功能所必需（TDDDG 第 25 條第 2 項第 2 款）。</p>
+      <p><strong>匯出與匯入（自 0.2.1 版起）：</strong>您可以將已確認的標記匯出成檔案，並在另一部裝置上匯入。匯出的檔案只包含您在何時將哪些標記標為已確認或未確認，以及匯出的時間，不含任何可識別您或您裝置的 ID。本應用程式不會將其傳送給任何人：由您決定要傳送到哪裡，例如另一個應用程式、「檔案」App、雲端硬碟或電子郵件，屆時適用您所選服務的條款與隱私權政策。匯入只會讀取您選擇的檔案，並將結果保存在您的裝置上。寫入與讀取此檔案是您所要求的功能所必需（TDDDG 第 25 條第 2 項第 2 款）。</p>
 
       <h3>6. 這些網頁（GitHub Pages）</h3>
       <p>這些網頁由 GitHub Pages 代管，這是 GitHub, Inc.（美國）的服務。當您開啟網頁時，GitHub 會收到您的 IP 位址及請求的技術資訊，例如時間、網頁及您的瀏覽器，並需要這些資訊才能提供網頁。GitHub 也會為其自身的安全目的記錄訪客的 IP 位址。就這些日誌而言，GitHub 是獨立的控管者。GitHub 未就 GitHub Pages 提供資料處理協議。GitHub 參與歐盟－美國資料隱私框架，且未公布這些日誌的保存期間。詳情請參閱 <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" hreflang="en">GitHub 的隱私權聲明</a>（英文）。法律依據為 GDPR 第 6 條第 1 項第 f 款。我們的正當利益是提供這些網頁。</p>
@@ -1156,7 +1454,7 @@
       <p>卡片與署名會保持公開，直到我們移除該卡片為止。屆時我們也會從公開紀錄中刪除名稱與影片連結；只會留下一則技術註記，讓本應用程式在所有裝置上移除該卡片。</p>
       <p>此外，為了能夠證明我們擁有哪些權利以及如何處理申訴，我們會保存只有我們能存取的紀錄：名稱或帳號代稱、影片連結、任何授權、我們已告知當事人的證明、我們在何時做了什麼，以及相關往來信件。我們會在卡片移除後或我們對其採取最後一次行動後（以較晚者為準）的第三個日曆年年底刪除這些紀錄。我們資料庫的非公開變更紀錄（位於 Supabase，第 3 節）中的每筆項目，會在該次變更後的第三個日曆年年底刪除。法律依據為 GDPR 第 6 條第 1 項第 f 款。</p>
       <p>若有人反對被連結，我們會將平台及其名稱或帳號代稱列入封鎖清單，以免再次連結其影片（GDPR 第 6 條第 1 項第 f 款）。只要我們仍在連結影片且該反對仍然有效，我們就會保留此項目，並每年檢視此清單。</p>
-      <p>本應用程式可能會透過 Google Play 或 App Store 的評分對話框請您評分，且僅在您將 5、25 或 75 個地點標為已看過時才會這樣做。此對話框由您的作業系統顯示，並由作業系統決定是否出現。本應用程式不會自行提出任何詢問。適用 Google 或 Apple 的隱私權條款。</p>
+      <p>本應用程式可能會透過 Google Play 或 App Store 的評分對話框請您評分，且僅在您將 5、25 或 75 個地點標記為已確認時才會這樣做。此對話框由您的作業系統顯示，並由作業系統決定是否出現。本應用程式不會自行提出任何詢問。適用 Google 或 Apple 的隱私權條款。</p>
       <p>當您從 Google Play 或 App Store 下載本應用程式時，Google 或 Apple 會依其自身的隱私權條款處理相關資料。我們只會從他們那裡取得彙總數據，例如安裝次數。</p>
 
       <h3>10. 安全性</h3>
@@ -1174,14 +1472,42 @@
       </ul>
       <p><strong>反對權（GDPR 第 21 條）：</strong>您可以隨時基於與您特殊情況相關的理由，反對依 GDPR 第 6 條第 1 項第 f 款所進行的處理。屆時我們會停止該處理，除非我們能證明有優先於您的利益、權利與自由的重大正當理由，或該處理是為了確立、行使或防禦法律上的請求。</p>
       <p>我們不會作出 GDPR 第 22 條所指的自動化個人決策。</p>
-      <p>如要行使這些權利，請寄電子郵件至 <a href="mailto:goodtimestatemap@protonmail.com">goodtimestatemap@protonmail.com</a>。</p>
+      <p>如要行使這些權利，請寄電子郵件至 <a href="mailto:goodtimestatemap@protonmail.com">goodtimestatemap@protonmail.com</a>。如果您已登入，應用程式中的「刪除帳號和資料」會立即刪除您的帳號；我們會透過帳號的電子郵件地址找到您的帳號，並可能寫信至該地址以確認您的請求（GDPR 第 12 條第 6 項）。</p>
       <p>您也可以向資料保護監督機關提出申訴（GDPR 第 77 條）。對我們有管轄權的機關為：Bayerisches Landesamt für Datenschutzaufsicht（BayLDA，巴伐利亞邦資料保護監督局），Postfach 1349, 91504 Ansbach，德國，<a href="https://www.lda.bayern.de/">www.lda.bayern.de</a>。</p>
       <!-- PDPA/PDPO note, zh-hant only, D220: review -->
-      <p><strong>台灣與香港使用者須知：</strong>依本政策所述，下列接收者會取得資料：控管者位於德國（第 1 節）；Supabase 的伺服器位於歐盟的美因河畔法蘭克福，契約相對人為新加坡的 Supabase Pte. Ltd.（第 3 節）；Sentry 將報告儲存於其歐盟區域，並可能將資料傳輸至美國（第 4 節）；美國的 GitHub, Inc.（第 6 節）；美國的 Discord Inc.，僅收到內部參考編號（第 7 節）；以及代管電子郵件信箱的瑞士 Proton AG（第 8 節）。依台灣個人資料保護法第 3 條，您可以就您的個人資料請求查詢或請求閱覽、請求製給複製本、請求補充或更正、請求停止蒐集、處理或利用，以及請求刪除。這些請求請寄至本政策所列的聯絡地址（第 1 節及第 11 節）。依香港個人資料（私隱）條例提出的查閱資料要求及改正資料要求，請寄至該地址，由第 1 節所列的控管者處理。</p>
+      <p><strong>台灣與香港使用者須知：</strong>依本政策所述，下列接收者會取得資料：控管者位於德國（第 1 節）；Supabase 的伺服器位於歐盟的美因河畔法蘭克福，契約相對人為新加坡的 Supabase Pte. Ltd.（第 3 節）；Sentry 將報告儲存於其歐盟區域，並可能將資料傳輸至美國（第 4 節）；美國的 GitHub, Inc.（第 6 節）；美國的 Discord Inc.，僅收到內部參考編號（第 7 節）；以及代管電子郵件信箱的瑞士 Proton AG（第 8 節）。自 0.2.2 版起，若您登入，Apple 或 Google 會以獨立的控管者身分，直接從您的裝置取得您的登入資料（「0.2.2 版起」的「帳號與同步」）；當您在 iPhone 上的應用程式中刪除使用 Apple 的帳號時，我們會將終止本應用程式存取您 Apple ID 的請求傳送給美國的 Apple Inc.。依台灣個人資料保護法第 3 條，您可以就您的個人資料請求查詢或請求閱覽、請求製給複製本、請求補充或更正、請求停止蒐集、處理或利用，以及請求刪除。這些請求請寄至本政策所列的聯絡地址（第 1 節及第 11 節）。依香港個人資料（私隱）條例提出的查閱資料要求及改正資料要求，請寄至該地址，由第 1 節所列的控管者處理。</p>
 
       <h3>12. 變更</h3>
       <p>本應用程式有所變更時，我們會更新本隱私權政策。</p>
 
+
+      <section aria-labelledby="zh-hant-v023">
+        <h3 id="zh-hant-v023">0.2.2 版起</h3>
+
+        <h4 id="zh-hant-account">帳號與同步</h4>
+        <p>自 0.2.2 版起，您可以在「設定」的「你的進度」中使用 Apple 或 Google 登入，讓您已確認的標記在您的各部裝置上保持一致。登入是自願的。只有在您輕觸「透過 Apple 繼續」或「使用 Google 帳戶繼續」時才會開始登入，不登入也能使用本應用程式。</p>
+        <ul>
+          <li><strong>資料：</strong>Apple 或 Google 提供給我們的電子郵件地址（若使用 Apple，可能是 Apple 的轉寄地址）、帳號 ID、您的 Apple 或 Google 身分的 ID、您已確認的標記（每個標記的 ID、是否已確認，以及您最後一次變更的時間）、您接受的我們使用條款的版本及接受時間，以及工作階段（見「工作階段與登入日誌」）。</li>
+          <li><strong>目的：</strong>讓您登入，並將您已確認的標記保存在您的帳號中。本應用程式不會寄送電子郵件。我們只會為了回覆某人的請求而查看該人已確認的標記，其他玩家絕不會看到這些標記或您的電子郵件地址。</li>
+          <li><strong>Apple 與 Google：</strong>Apple 或 Google 會顯示自己的登入畫面，並就此為獨立的控管者。適用其隱私權條款。只有在您輕觸其按鈕後，本應用程式才會連線至 Apple 或 Google。</li>
+          <li><strong>接收者：</strong>Supabase 作為我們的受託處理者代管您的帳號（第 3 節）。當您在 iPhone 上的應用程式中刪除使用 Apple 的帳號時，Apple 會收到我們終止本應用程式存取您 Apple ID 的請求。 此請求由美國的 Apple Inc. 接收。Apple 未通過歐盟－美國資料隱私框架的認證，因此本傳輸依據 GDPR 第 49 條第 1 項第 b 款：這是執行您所要求之刪除所必需的。</li>
+          <li><strong>法律依據：</strong>GDPR 第 6 條第 1 項第 b 款，即您在登入前接受的我們的<a href="../terms/#zh-hant-account">使用條款（「您的帳號」）</a>。濫用限制及登入稽核日誌：GDPR 第 6 條第 1 項第 f 款；我們的利益是安全地營運服務。將工作階段儲存在您的裝置上：TDDDG 第 25 條第 2 項第 2 款。</li>
+          <li><strong>同步的內容：</strong>只有您已確認的標記，而且只在本應用程式開啟時同步。您的篩選條件、設定、您對當機報告的選擇，以及與評分請求相關的數字（第 5 節）都會留在您的裝置上。</li>
+          <li><strong>登出：</strong>您的帳號及其已確認的標記會留在我們這裡，您已確認的標記也會留在裝置上。如果之後有其他人在此裝置上登入，此裝置的已確認標記會併入對方的帳號。</li>
+          <li><strong>刪除：</strong>「設定」的「你的進度」中的「刪除帳號和資料」會立即刪除伺服器上您的帳號及其已確認的標記。您已確認的標記會留在您的裝置上。如果您使用 Apple 登入，並在 iPhone 上的應用程式中刪除，您需要再向 Apple 確認一次，我們也會請 Apple 終止本應用程式存取您的 Apple ID。如果您使用 Apple 登入，透過電子郵件、網頁表單或在 Android 上的應用程式中刪除，並不會終止本應用程式存取您的 Apple ID。您可以自行在 Apple ID 的「使用 Apple 登入」設定中終止存取。其他刪除方式請見「刪除您的資料」。</li>
+          <li><strong>保存期間：</strong>只要您的帳號存在即保存。帳號在 24 個月內沒有登入、工作階段更新或同步時，我們會將其刪除。</li>
+          <li><strong>您的副本：</strong>「你的進度」中的「匯出已確認的標記」可讓您隨時以檔案形式取得您已確認的標記（GDPR 第 20 條）。您也可以透過電子郵件請我們提供您帳號所有資料的副本（GDPR 第 15 條及第 20 條）。</li>
+        </ul>
+
+        <h4>工作階段與登入日誌</h4>
+        <p>在您登入期間，Supabase 會將您最近一次登入或工作階段更新時的 IP 位址與您裝置的使用者代理程式（user agent），連同工作階段一起保存在我們的資料庫中。這些資料會在您於該裝置上登出、您的帳號被刪除，或 24 個月沒有活動後刪除。Supabase 的登入稽核日誌會將登入紀錄保存在 Supabase 的技術日誌中最多 7 天；此日誌不會儲存在我們的資料庫中。</p>
+
+        <h4 id="zh-hant-delete">刪除您的資料</h4>
+        <p>本節說明如何從 Goodtime State Map 應用程式刪除您的資料。</p>
+        <p><strong>使用帳號時（0.2.2 版起）：</strong>在您登入期間，「設定」的「你的進度」中的「刪除帳號和資料」會立即刪除伺服器上您的帳號及其已同步的已確認標記。如果您使用 Apple 登入並在 iPhone 上刪除，您需要再向 Apple 確認一次，我們也會請 Apple 終止本應用程式存取您的 Apple ID。您已確認的標記會留在您的裝置上。</p>
+        <p><strong>透過電子郵件或網頁表單：</strong>當您寄信至 <a href="mailto:goodtimestatemap@protonmail.com">goodtimestatemap@protonmail.com</a> 或透過<a href="../contact/?lang=en#contact">網頁表單</a>的「Contact」提出要求時，我們會在一個月內刪除您的帳號及其資料，或任何其他資料，例如檢舉中的姓名與電子郵件地址、寄給我們的訊息或當機報告（GDPR 第 12 條第 3 項）。若是帳號，請提供該帳號使用的電子郵件地址；我們會先寫信至該地址以確認您的請求（GDPR 第 12 條第 6 項）。如果您使用 Apple 登入，透過電子郵件、網頁表單或在 Android 上的應用程式中刪除，並不會終止本應用程式存取您的 Apple ID。您可以自行在 Apple ID 的「使用 Apple 登入」設定中終止存取。</p>
+        <p>已刪除的資料可能會在 Supabase 的日誌與備份中保留最多 7 天。</p>
+      </section>
     </section>
   </main>
 
