@@ -6,7 +6,7 @@
   <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self'; font-src 'self'; img-src 'self'; base-uri 'none'; form-action 'none'">
   <meta name="referrer" content="no-referrer">
   <title>Nutzungsbedingungen / Terms of use · Goodtime State Map</title>
-  <meta name="description" content="Nutzungsbedingungen für Konten in der App Goodtime State Map. Terms of use for accounts in the Goodtime State Map app.">
+  <meta name="description" content="Nutzungsbedingungen für Beiträge und Konten in der App Goodtime State Map. Terms of use for contributions and accounts in the Goodtime State Map app.">
   <link rel="icon" href="../icon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="../style.css">
 </head>
@@ -35,330 +35,1294 @@
     <h1>Nutzungsbedingungen <span lang="en">/ Terms of use</span></h1>
 
     <!--
-      Account-only terms for 0.2.2 (account sync, MRK-17; account-sync spec §0.1,
-      "Terms"). Published at /goodtime-state-map/terms/ as that folder's index.html
-      from 0.2.2 until 0.2.5 (docs/web/README.md, "Release markers"). The combined
-      "Terms of use for contributions and accounts" in index.html replaces it with
-      0.2.5; its section 14 "Your account" keeps the #<lang>-account anchor, so the
-      privacy policy's link holds in both versions.
-      The version label must match the server's terms_version setting, which
-      accept_terms records with the account (CRW-03). The developer sets the same
-      string in terms_settings.terms_version and on the meta line in all ten
-      languages.
-      German and English are binding. The FR, ES, PL, RU, PT-BR, IT, TR, JA and
-      ZH-HANT sections are agent translations of the English text, cross-checked
-      with the German, back-translated on 2026-11-08
-      (docs/records/back-translations/2026-11-08-terms-account-<lang>.md); the
-      checker pass and the developer's review (LEG-06) are still to come before
-      publication.
+      Terms of use for the crowd release 0.2.3 (LEG-08). Publish this page only with
+      0.2.3; the crowd-free 0.2.0 publishes no terms (LEG-04, LEG-06). From 0.2.2
+      until 0.2.3, the account-only terms in accounts.html are published as this
+      folder's index.html instead (docs/web/README.md, "Release markers").
+      All eleven sections carry the account changes of account-sync spec §3.17
+      ("Terms of use for contributions and accounts", section 14 "Your account"
+      with the #<lang>-account anchor, version 2026-11-crowd-1); DE and EN are
+      reviewed (2026-11-08), the nine others agent translations with
+      back-translations (docs/records/back-translations/2026-11-08-terms-*).
+      The version identifier must match the server's terms_version setting,
+      which accept_terms records with the contributor ID (CRW-03).
+      The content-rule and moderation headings match the "Rule" column of the
+      statement-of-reasons codes in docs/runbooks/notices-and-orders.md §1.4.
+      Eleven languages (LEG-04, OI-70): German and English are binding; the FR,
+      ES, PL, RU, PT-BR, IT, TR, JA and ZH-HANT sections are agent translations of
+      the English text and need the back-translation check before publication. Any
+      change to the DE or EN text needs the same change in the nine other sections.
+      Section 15 "YouTube videos (from version 0.2.3)" (#<lang>-youtube, D253) is the
+      same text as section 7 of accounts.html, YouTube's developer policies III.A.1
+      (docs/records/legal-texts.md, 2026-11-11). It was drafted for 0.2.3 and ships
+      with these terms in 0.2.3 since D262 (2026-11-12), so the meta line no longer
+      names a later version for it.
     -->
 
     <section class="lang-section" id="de" aria-labelledby="de-title">
-      <h2 id="de-title">Nutzungsbedingungen für Konten</h2>
-      <p class="meta">Version 2026-11-accounts-1. Gilt ab Version 0.2.2 der App. Stand: 10. November 2026.</p>
+      <h2 id="de-title">Nutzungsbedingungen für Beiträge und Konten</h2>
+      <p class="meta">Version 2026-11-crowd-1. Gilt ab Version 0.2.3 der App, der Abschnitt zum Konto ab Version 0.2.2. Stand: 13. November 2026.</p>
       <p class="meta">Diese Bedingungen gibt es auch auf Französisch, Spanisch, Polnisch, Russisch, brasilianischem Portugiesisch, Italienisch, Türkisch, Japanisch und traditionellem Chinesisch. Verbindlich sind die deutsche und die englische Fassung.</p>
 
       <h3>1. Worum es geht</h3>
-      <p>Diese Bedingungen gelten, wenn Sie sich in der App Goodtime State Map bei einem Konto anmelden. Anbieter der App ist Simon Oppowa (<a href="../impressum/#de">Impressum</a>). „Wir“ und „uns“ meint in diesen Bedingungen den Anbieter.</p>
-      <p>Um die Karte zu nutzen, sie zu durchsuchen, Orte als gesehen zu markieren oder Ihre Gesehen-Markierungen zu exportieren, brauchen Sie kein Konto und müssen diese Bedingungen nicht akzeptieren.</p>
-      <p>Vor jeder Anmeldung verlinkt die App auf diese Bedingungen. Sie akzeptieren sie mit einem Häkchen. Welche Version Sie wann akzeptiert haben, speichern wir mit Ihrem Konto.</p>
+      <p>Diese Bedingungen gelten, wenn Sie in der App Goodtime State Map Orte vorschlagen oder über Vorschläge abstimmen und wenn Sie sich in der App bei einem Konto anmelden (Abschnitt 14). Vorschläge und Stimmen nennen wir hier „Beiträge“. Anbieter der App ist Simon Oppowa (<a href="../impressum/#de">Impressum</a>). „Wir“ und „uns“ meint in diesen Bedingungen den Anbieter.</p>
+      <p>Um die Karte anzusehen, zu suchen oder Einträge zu melden, müssen Sie diese Bedingungen nicht akzeptieren.</p>
+      <p>Abschnitt 15 „YouTube-Videos“ ist die Ausnahme: Ab Version 0.2.3 gilt er für alle, die in der App ein YouTube-Video abspielen, mit und ohne Konto.</p>
+      <p>Bevor Sie zum ersten Mal einen Ort vorschlagen oder abstimmen, und vor jeder Anmeldung verlinkt die App auf diese Bedingungen. Sie akzeptieren sie mit einem Häkchen. Welche Version Sie wann akzeptiert haben, speichern wir mit Ihrer pseudonymen ID oder Ihrem Konto (Abschnitt 3).</p>
 
-      <h3>2. Wer sich anmelden darf</h3>
-      <p>Sie dürfen sich anmelden, wenn Sie 18 Jahre oder älter sind oder das Einverständnis Ihrer Eltern oder Ihres Vormunds haben. Vor jeder Anmeldung bestätigen Sie: „Ich bin 18 oder älter oder habe die Zustimmung meiner Eltern oder meines Vormunds.“</p>
+      <h3>2. Wer beitragen darf</h3>
+      <p>Sie dürfen beitragen und sich anmelden, wenn Sie 18 Jahre oder älter sind oder das Einverständnis Ihrer Eltern oder Ihres Vormunds haben. Vor Ihrem ersten Beitrag und vor jeder Anmeldung bestätigen Sie: „Ich bin 18 oder älter oder habe die Zustimmung meiner Eltern oder meines Vormunds.“</p>
 
-      <h3 id="de-account">3. Ihr Konto</h3>
-      <p>Sie können sich mit Apple oder Google anmelden, damit Ihre Gesehen-Markierungen auf Ihren Geräten gleich bleiben. Die Anmeldung ist kostenlos und freiwillig, und die App funktioniert auch ohne sie.</p>
-      <p>Ihr Konto synchronisiert nur Ihre Gesehen-Markierungen. Wenn Sie sich abmelden, endet die Synchronisierung auf diesem Gerät, und Ihr Konto bleibt bestehen.</p>
+      <h3>3. Ihre pseudonyme ID</h3>
+      <p>Mit Ihrem ersten Vorschlag oder Ihrer ersten Stimme legt die App eine pseudonyme ID an. Um Orte vorzuschlagen und abzustimmen, brauchen Sie kein Konto, keinen Namen und keine E-Mail-Adresse. Den Zugang zu dieser ID speichert die App nur auf Ihrem Gerät, außer Sie melden sich an (Abschnitt 14): Dann wird die ID zu Ihrem Konto. Gehen die App-Daten verloren, etwa bei einer Neuinstallation, ist der Zugang weg, außer Sie haben sich angemeldet; eine erneute Anmeldung bringt ihn zurück. Sonst können Sie Ihre alten Beiträge nicht mehr verwalten. Löschen wir die ID nach den Fristen der Datenschutzerklärung, legt Ihr nächster Beitrag eine neue an. Mehr dazu steht in der <a href="../privacy/#de">Datenschutzerklärung</a>.</p>
 
-      <h3>4. Ihr Konto beenden</h3>
-      <p>„Konto und Daten löschen“ unter „Einstellungen“, „Dein Fortschritt“ beendet Ihr Konto: Es löscht das Konto und seine Gesehen-Markierungen auf unserem Server. Ihre Gesehen-Markierungen bleiben auf Ihrem Gerät. Sie können uns auch per E-Mail bitten, Ihr Konto zu löschen (<a href="../privacy/#de-delete">Datenschutzerklärung, „Ihre Daten löschen“</a>).</p>
-      <p>Nach 24 Monaten ohne Anmeldung, Aktualisierung der Sitzung oder Synchronisierung löschen wir ein Konto. Damit enden diese Bedingungen für das Konto.</p>
+      <h3>4. Was Sie beitragen</h3>
+      <p>Ein Vorschlag besteht aus einer Position auf der Karte, einer Kategorie, einem Titel und einer Notiz mit höchstens 280 Zeichen. Bilder können Sie nicht hochladen. Titel und Notiz erscheinen so, wie Sie sie schreiben, und werden nicht übersetzt.</p>
+      <p>Offene Vorschläge sehen andere Nutzerinnen und Nutzer, damit sie abstimmen können. Veröffentlichte Vorschläge sehen alle Nutzerinnen und Nutzer der App.</p>
 
-      <h3>5. Änderungen</h3>
-      <p>Ändern wir diese Bedingungen, veröffentlichen wir die neue Fassung hier mit einer neuen Versionsbezeichnung. Vor Ihrer nächsten Anmeldung bittet die App Sie, die neue Fassung zu akzeptieren.</p>
+      <h3>5. Nutzungsrechte</h3>
+      <p>Soweit Sie Rechte an Titel, Notiz und Position Ihres Beitrags haben, räumen Sie uns ein einfaches, weltweites, unentgeltliches und zeitlich unbegrenztes Recht ein, den Beitrag zu speichern, zu vervielfältigen, zu bearbeiten (auch zu übersetzen), öffentlich zugänglich zu machen und zu verbreiten. Das gilt in der App, auf der Website und in den Datenfeeds der App.</p>
+      <p>Wir dürfen technischen Dienstleistern, etwa für das Hosting, Unterlizenzen an diesen Rechten einräumen. Wir dürfen die Rechte auf einen Nachfolger übertragen, der die App weiterbetreibt.</p>
+      <p>Das Recht endet, wenn der Beitrag gelöscht wird. Ausgenommen sind Kopien, die wir aufgrund einer gesetzlichen Pflicht aufbewahren.</p>
+      <!-- OI-62 = A (accepted 2026-10-27): the plain non-exclusive licence, no CC BY on contributions in Phase 0. -->
 
-      <h3>6. Datenschutz</h3>
-      <p>Welche Daten ein Konto enthält und wie lange wir sie speichern, steht in der <a href="../privacy/#de-account">Datenschutzerklärung</a>.</p>
+      <h3>6. Namensnennung</h3>
+      <p>Wir zeigen Beiträge ohne Ihren Namen. Sie erscheinen nur als „Community“ mit einem pseudonymen Kürzel. Damit sind Sie einverstanden.</p>
+
+      <h3 id="de-inhaltsregeln">7. Inhaltsregeln</h3>
+      <p>Wir dulden keine anstößigen Inhalte und keine Nutzerinnen und Nutzer, die andere missbrauchen. Nicht erlaubt sind:</p>
+      <ul>
+        <li><strong>Leaks:</strong> geleakte, per Datamining gewonnene oder vor der Veröffentlichung des Spiels verbreitete Inhalte und alles, was darauf beruht.</li>
+        <li><strong>Personenbezogene Daten:</strong> zum Beispiel echte Namen, Gamertags, Adressen oder Kontaktdaten.</li>
+        <li><strong>Spoiler:</strong> einzelne Story-Spoiler, etwa zu Zwischensequenzen oder zum Ende.</li>
+        <li><strong>Sexuelle Inhalte und Gewaltdarstellungen:</strong> sexuelle Inhalte, Nacktheit und drastische Gewalt.</li>
+        <li><strong>Hass und Belästigung:</strong> Hass, Belästigung und Drohungen.</li>
+        <li><strong>Rechtswidrige Inhalte:</strong> alles, was gegen Gesetze verstößt, auch gegen Rechte anderer wie Urheber- oder Markenrechte.</li>
+        <li><strong>Terroristische Inhalte:</strong> siehe Abschnitt 9.</li>
+        <li><strong>Spam und Cheats:</strong> Werbung, Links, Spam, Cheats und Glitch-Exploits.</li>
+        <li><strong>Falsche Positionen:</strong> absichtlich falsche Orte.</li>
+      </ul>
+      <p>Bei Verstößen blenden wir Beiträge aus oder entfernen sie. Bei wiederholten oder schweren Verstößen sperren wir die ID.</p>
+
+      <h3 id="de-moderation">8. Moderation</h3>
+
+      <h4>Community-Abstimmung</h4>
+      <p>Neue Vorschläge erscheinen nicht sofort auf der Karte. Andere Nutzerinnen und Nutzer stimmen dafür oder dagegen. Hat ein Vorschlag 3 Stimmen mehr dafür als dagegen (+3), wird er veröffentlicht. Hat er 3 Stimmen mehr dagegen als dafür (−3), wird er ausgeblendet. Jede ID hat eine Stimme pro Vorschlag. Ihre eigene Stimme für Ihren Vorschlag zählt nicht.</p>
+      <p>Das Veröffentlichen und Ausblenden nach Stimmen geschieht automatisch. Wir prüfen den Vorschlag vorher nicht. Stimmen sind endgültig. Die Abstimmung endet, wenn ein Vorschlag veröffentlicht oder ausgeblendet ist: Eine veröffentlichte Community-Markierung blenden Stimmen nicht mehr aus. Dafür gibt es Meldungen und unsere Entscheidungen.</p>
+
+      <h4>Automatische Grenzen und Textfilter</h4>
+      <p>Neben der Abstimmung setzt der Server nur diese automatischen Mittel ein:</p>
+      <ul>
+        <li><strong>Textfilter:</strong> Titel und Notizen mit Links, E-Mail-Adressen, @-Namen, 7 oder mehr Ziffern am Stück oder Wörtern aus einer Liste beleidigender und sexueller Begriffe lehnt er ab, bevor jemand sie sieht.</li>
+        <li>Stimmen von IDs, die jünger als 24 Stunden sind, lehnt er ab.</li>
+        <li>In 24 Stunden, gleitend gerechnet, nimmt er je ID höchstens 30 Stimmen und 20 Vorschläge an.</li>
+        <li>Je IP-Adresse nimmt er höchstens 10 Meldungen und Nachrichten pro Stunde und 100 Schreibzugriffe in 5 Minuten an.</li>
+        <li>Vorschläge und Stimmen gesperrter IDs lehnt er ab.</li>
+      </ul>
+      <p>Lehnt der Server etwas ab, sagt Ihnen die App warum. Lehnt der Textfilter einen Text ab, nennt die App die Regel, sagt, dass die Prüfung automatisch war, und gibt unsere Kontaktadresse an.</p>
+
+      <h4>Unsere Entscheidungen</h4>
+      <p>Wir können jeden Vorschlag unabhängig von den Stimmen veröffentlichen oder ausblenden und jedes Ergebnis einer Abstimmung rückgängig machen. Wir können doppelte Vorschläge mit einer bestehenden Markierung zusammenführen und Community-Markierungen als geprüft kennzeichnen. Das tun wir von uns aus, nach einer Meldung oder nach einem Widerspruch. Diese Entscheidungen trifft ein Mensch.</p>
+
+      <h4>Sperren</h4>
+      <p>Bei wiederholten oder schweren Verstößen gegen diese Bedingungen sperren wir die ID. Eine gesperrte ID kann nichts mehr vorschlagen und nicht mehr abstimmen.</p>
+
+      <h4>Meldungen</h4>
+      <p>Jeder kann Einträge melden: in der App mit „Melden“, über das <a href="../contact/?lang=de#report">Webformular</a> oder per E-Mail. Dafür brauchen Sie keine ID. Ein Mensch prüft jede Meldung und entscheidet innerhalb von 24 Stunden nach Eingang. Meldungen blenden nichts automatisch aus.</p>
+
+      <h4>Begründung</h4>
+      <p>Blenden wir Ihren Vorschlag aus oder entfernen ihn, sehen Sie unter „Meine Vorschläge“ den Grund, die Regel, auf die wir uns stützen, und wie die Entscheidung zustande kam.</p>
+
+      <h4>Widerspruch</h4>
+      <p>Wenn Sie mit einer Entscheidung nicht einverstanden sind, schreiben Sie an <a href="mailto:goodtimestatemap@protonmail.com">goodtimestatemap@protonmail.com</a> und nennen Sie die ID des Beitrags. Ein Mensch prüft den Fall dann erneut. Das gilt auch für Entscheidungen durch die Abstimmung.</p>
+      <p>Wenn Sie meinen, dass wir gegen den DSA verstoßen, können Sie sich beim Koordinator für digitale Dienste des Mitgliedstaats beschweren, in dem Sie sich aufhalten oder niedergelassen sind (Art. 53 DSA). In Deutschland ist das die Bundesnetzagentur: www.dsc.bund.de. Sie können Ihre Rechte auch vor Gericht geltend machen.</p>
+
+      <h3 id="de-tco">9. Terroristische Inhalte</h3>
+      <p>Terroristische Inhalte im Sinne der <a href="https://eur-lex.europa.eu/legal-content/DE/TXT/?uri=CELEX:32021R0784">Verordnung (EU) 2021/784</a> (TCO) sind verboten. So gehen wir damit um:</p>
+      <ul>
+        <li>Wir blenden terroristische Inhalte aus, sobald wir davon erfahren, und sperren die ID.</li>
+        <li>Entfernungsanordnungen einer zuständigen Behörde setzen wir innerhalb einer Stunde nach Eingang um (Art. 3 Abs. 3 TCO).</li>
+        <li>Besteht eine unmittelbare Gefahr für das Leben, informieren wir sofort die zuständigen Behörden (Art. 14 Abs. 5 TCO).</li>
+        <li>Entfernte Inhalte und die zugehörigen Daten bewahren wir 6 Monate auf. Länger nur, wenn eine Behörde oder ein Gericht das verlangt (Art. 6 TCO).</li>
+        <li>Haben wir Ihren Beitrag entfernt, informieren wir Sie darüber, außer eine Behörde untersagt das aus Gründen der öffentlichen Sicherheit (Art. 11 TCO). Sie können sich dagegen an <a href="mailto:goodtimestatemap@protonmail.com">goodtimestatemap@protonmail.com</a> wenden und vor Gericht vorgehen.</li>
+        <li>Sind wir in einem Kalenderjahr gegen terroristische Inhalte vorgegangen, veröffentlichen wir bis zum 1. März des Folgejahres einen Transparenzbericht (Art. 7 Abs. 2 TCO).</li>
+      </ul>
+
+      <h3>10. Kontaktstellen</h3>
+      <p>Eine Kontaktstelle dient Behörden (Art. 11 DSA), Nutzerinnen und Nutzern (Art. 12 DSA) und Entfernungsanordnungen (Art. 15 TCO):</p>
+      <ul>
+        <li>E-Mail: <a href="mailto:goodtimestatemap@protonmail.com">goodtimestatemap@protonmail.com</a></li>
+        <li>Für Nutzerinnen und Nutzer auch das <a href="../contact/?lang=de#contact">Kontaktformular</a></li>
+        <li>Sprachen: Deutsch, Englisch</li>
+      </ul>
+      <p>Bitte senden Sie Entfernungsanordnungen per E-Mail, nicht über das Kontaktformular. Den vollständigen Text finden Sie im <a href="../impressum/#de">Impressum</a>.</p>
+
+      <h3>11. Beiträge löschen</h3>
+      <p>Einzelne Vorschläge löschen Sie unter „Meine Vorschläge“. Mit „Meine Daten löschen“ in den Einstellungen löschen Sie Ihre ID, alle ihre Vorschläge und alle Stimmen, die Sie abgegeben haben. Solange Sie angemeldet sind, tritt „Konto und Daten löschen“ an seine Stelle und löscht zusätzlich Ihr Konto und seine synchronisierten Gesehen-Markierungen (Abschnitt 14). Gelöschte Vorschläge sieht niemand mehr; waren sie auf der Karte, verschwinden sie bei der nächsten Aktualisierung von allen Geräten. Entscheidungen, die schon gefallen sind, bleiben bestehen. Das Nutzungsrecht aus Abschnitt 5 endet dann.</p>
+
+      <h3>12. Änderungen</h3>
+      <p>Ändern wir diese Bedingungen wesentlich, informieren wir Sie vorher in der App. Vor Ihrem nächsten Vorschlag, Ihrer nächsten Stimme oder Ihrer nächsten Anmeldung bittet die App Sie dann, die neue Fassung zu akzeptieren. Jede Fassung trägt eine Versionsbezeichnung. Kleine redaktionelle Änderungen ändern sie nicht.</p>
+
+      <h3>13. Datenschutz</h3>
+      <p>Wie wir Ihre Daten verarbeiten, steht in der <a href="../privacy/#de">Datenschutzerklärung</a>.</p>
+
+      <h3 id="de-account">14. Ihr Konto (ab Version 0.2.2)</h3>
+      <p>Sie können sich mit Apple oder Google anmelden, damit Ihre Gesehen-Markierungen auf Ihren Geräten gleich bleiben. Die Anmeldung ist kostenlos und freiwillig, und die App funktioniert auch ohne sie. Haben Sie eine pseudonyme ID, wird sie mit der Anmeldung zu Ihrem Konto, und Ihre Beiträge bleiben bei ihm.</p>
+      <p>Ihr Konto synchronisiert nur Ihre Gesehen-Markierungen. Wenn Sie sich abmelden, endet die Synchronisierung auf diesem Gerät, und Ihr Konto bleibt bestehen. „Konto und Daten löschen“ beendet Ihr Konto: Es löscht das Konto, seine Gesehen-Markierungen, seine Vorschläge und seine Stimmen. Sie können uns auch per E-Mail bitten, Ihr Konto zu löschen (<a href="../privacy/#de-delete">Datenschutzerklärung, „Ihre Daten löschen“</a>).</p>
+      <p>Nach 24 Monaten ohne Anmeldung, Aktualisierung der Sitzung oder Synchronisierung löschen wir ein Konto. Damit enden diese Bedingungen für das Konto. Ein Konto mit Vorschlägen oder einer aktiven Sperre bleibt bestehen; nach 24 Monaten ohne Aktivität verliert es nur seine Gesehen-Markierungen und Sitzungsdaten.</p>
+
+      <h3 id="de-youtube">15. YouTube-Videos (ab Version 0.2.3)</h3>
+      <p>Dieser Abschnitt gilt mit und ohne Konto. Tippen Sie in der App auf ein YouTube-Video, spielt die App es im eingebetteten Player von YouTube ab und nutzt dafür die YouTube API Services. Wenn Sie in der App ein YouTube-Video abspielen, erklären Sie sich damit einverstanden, an die <a href="https://www.youtube.com/t/terms">Nutzungsbedingungen von YouTube</a> gebunden zu sein. Was Google dabei erhält, steht in der <a href="../privacy/#de-youtube">Datenschutzerklärung</a>.</p>
     </section>
 
     <section class="lang-section" id="en" lang="en" aria-labelledby="en-title">
-      <h2 id="en-title">Terms of use for accounts</h2>
-      <p class="meta">Version 2026-11-accounts-1. Applies from version 0.2.2 of the app. Last updated: 10 November 2026.</p>
+      <h2 id="en-title">Terms of use for contributions and accounts</h2>
+      <p class="meta">Version 2026-11-crowd-1. Applies from version 0.2.3 of the app; the account section from version 0.2.2. Last updated: 13 November 2026.</p>
       <p class="meta">These terms are also available in French, Spanish, Polish, Russian, Brazilian Portuguese, Italian, Turkish, Japanese and Traditional Chinese. The German and English versions are binding.</p>
 
       <h3>1. What these terms cover</h3>
-      <p>These terms apply when you sign in to an account in the Goodtime State Map app. The app is provided by Simon Oppowa (<a href="../impressum/#en">legal notice</a>). In these terms, "we" and "us" mean the provider.</p>
-      <p>You don't need an account, and you don't need to accept these terms, to use the map, search it, mark places as seen or export your seen markers.</p>
-      <p>Before every sign-in, the app links to these terms. You accept them by ticking a box. We store which version you accepted, and when, with your account.</p>
+      <p>These terms apply when you suggest places or vote on suggestions in the Goodtime State Map app, and when you sign in to an account in it (section 14). We call suggestions and votes "contributions". The app is provided by Simon Oppowa (<a href="../impressum/#en">legal notice</a>). In these terms, "we" and "us" mean the provider.</p>
+      <p>You do not need to accept these terms to view the map, search it or report entries.</p>
+      <p>Section 15 "YouTube videos" is the exception: from version 0.2.3, it applies to everyone who plays a YouTube video in the app, with or without an account.</p>
+      <p>Before you suggest a place or vote for the first time, and before every sign-in, the app links to these terms. You accept them by ticking a box. We store which version you accepted, and when, with your pseudonymous ID or your account (section 3).</p>
 
-      <h3>2. Who may sign in</h3>
-      <p>You may sign in if you are 18 or older, or have your parent's or guardian's consent. Before every sign-in, you confirm: "I am 18 or older, or have my parent's or guardian's consent."</p>
+      <h3>2. Who may contribute</h3>
+      <p>You may contribute and sign in if you are 18 or older, or have your parent's or guardian's consent. Before your first contribution and before every sign-in, you confirm: "I am 18 or older, or have my parent's or guardian's consent."</p>
 
-      <h3 id="en-account">3. Your account</h3>
-      <p>You can sign in with Apple or Google to keep your seen markers the same on your devices. Signing in is free and optional, and the app works without it.</p>
-      <p>Your account syncs only your seen markers. Signing out ends the sync on that device and keeps your account.</p>
+      <h3>3. Your pseudonymous ID</h3>
+      <p>With your first suggestion or your first vote, the app creates a pseudonymous ID. To suggest places and vote, you need no account, no name and no email address. The app keeps access to this ID only on your device, unless you sign in (section 14): then the ID becomes your account. If the app data is lost, for example after a reinstall, that access is gone, unless you signed in; signing in again brings it back. Otherwise you can no longer manage your old contributions. If we delete the ID under the periods in the privacy policy, your next contribution creates a new one. The <a href="../privacy/#en">privacy policy</a> has the details.</p>
 
-      <h3>4. Ending your account</h3>
-      <p>"Delete account and data" in "Settings", "Your progress" ends your account: it deletes the account and its seen markers on our server. Your seen markers stay on your device. You can also ask us by email to delete your account (<a href="../privacy/#en-delete">privacy policy, "Deleting your data"</a>).</p>
-      <p>We delete an account after 24 months without a sign-in, session refresh or sync. That ends these terms for the account.</p>
+      <h3>4. What you contribute</h3>
+      <p>A suggestion is a position on the map, a category, a title and a note of at most 280 characters. You cannot upload images. The title and note appear as you write them and are not translated.</p>
+      <p>Other users see pending suggestions, so they can vote on them. All users of the app see published suggestions.</p>
 
-      <h3>5. Changes</h3>
-      <p>If we change these terms, we publish the new version here with a new version label. Before your next sign-in, the app asks you to accept the new version.</p>
+      <h3>5. Licence</h3>
+      <p>To the extent you hold rights in the title, note and position of your contribution, you grant us a non-exclusive, worldwide, royalty-free and time-unlimited licence to store, reproduce, edit (including translate), make available and distribute it. This covers the app, the website and the app's data feeds.</p>
+      <p>We may sublicense these rights to technical service providers, such as hosting. We may transfer them to a successor who runs the app.</p>
+      <p>The licence ends when the contribution is deleted, except for copies we keep because of a legal obligation.</p>
 
-      <h3>6. Privacy</h3>
-      <p>The <a href="../privacy/#en-account">privacy policy</a> explains which data an account holds and how long we keep it.</p>
+      <h3>6. Attribution</h3>
+      <p>We show contributions without your name. They appear only as "Community" with a pseudonymous reference. You agree to this.</p>
+
+      <h3 id="en-content-rules">7. Content rules</h3>
+      <p>We do not tolerate objectionable content or users who abuse others. These are not allowed:</p>
+      <ul>
+        <li><strong>Leaks:</strong> leaked, datamined or pre-release material, and anything based on it.</li>
+        <li><strong>Personal data:</strong> for example real names, gamertags, addresses or contact details.</li>
+        <li><strong>Spoilers:</strong> isolated story spoilers, such as cutscenes or the ending.</li>
+        <li><strong>Sexual content and gore:</strong> sexual content, nudity and gore.</li>
+        <li><strong>Hate and harassment:</strong> hate, harassment and threats.</li>
+        <li><strong>Illegal content:</strong> anything that breaks the law, including other people's rights such as copyright or trademarks.</li>
+        <li><strong>Terrorist content:</strong> see section 9.</li>
+        <li><strong>Spam and cheats:</strong> ads, links, spam, cheats and glitch exploits.</li>
+        <li><strong>False locations:</strong> deliberately wrong places.</li>
+      </ul>
+      <p>If a contribution breaks these rules, we hide or remove it. For repeated or severe breaches, we ban the ID.</p>
+
+      <h3 id="en-moderation">8. Moderation</h3>
+
+      <h4>Community voting</h4>
+      <p>New suggestions do not appear on the map right away. Other users vote for or against them. When a suggestion has 3 more votes for than against (+3), it is published. When it has 3 more votes against than for (−3), it is hidden. Each ID has one vote per suggestion. Your own vote on your suggestion does not count.</p>
+      <p>Publishing and hiding by vote happen automatically. We do not review the suggestion first. Votes are final. Voting ends when a suggestion is published or hidden: votes no longer hide a published community marker. Reports and our decisions handle those.</p>
+
+      <h4>Abuse limits and text filter</h4>
+      <p>Besides voting, the server uses only these automated measures:</p>
+      <ul>
+        <li><strong>Text filter:</strong> it refuses titles and notes with links, email addresses, @handles, 7 or more digits in a row, or words from a list of abusive and sexual terms, before anyone sees them.</li>
+        <li>It refuses votes from IDs younger than 24 hours.</li>
+        <li>In any rolling 24 hours, it accepts at most 30 votes and 20 suggestions per ID.</li>
+        <li>Per IP address, it accepts at most 10 reports and messages per hour and 100 writes in 5 minutes.</li>
+        <li>It refuses suggestions and votes from banned IDs.</li>
+      </ul>
+      <p>When the server refuses something, the app tells you why. When the text filter refuses a text, the app names the rule, says that the check was automatic and gives our contact address.</p>
+
+      <h4>Our decisions</h4>
+      <p>We can publish or hide any suggestion regardless of the votes, and reverse any result of a vote. We can merge a duplicate into an existing marker and mark community markers as verified. We do this on our own initiative, after a report or after a contest. A person makes these decisions.</p>
+
+      <h4>Bans</h4>
+      <p>For repeated or severe breaches of these terms, we ban the ID. A banned ID can no longer suggest or vote.</p>
+
+      <h4>Reports</h4>
+      <p>Anyone can report an entry: in the app with "Report", through the <a href="../contact/?lang=en#report">web form</a> or by email. You need no ID for this. A person reviews every report and decides within 24 hours of receipt. Reports never hide anything automatically.</p>
+
+      <h4>Statement of reasons</h4>
+      <p>If we hide or remove your suggestion, "My submissions" shows you the reason, the rule we relied on and how the decision was made.</p>
+
+      <h4>Contesting a decision</h4>
+      <p>If you disagree with a decision, email <a href="mailto:goodtimestatemap@protonmail.com">goodtimestatemap@protonmail.com</a> and quote the ID of the contribution. A person will review the case again. This also applies to decisions made by community vote.</p>
+      <p>If you believe we breach the DSA, you can complain to the Digital Services Coordinator of the Member State where you are located or established (Art. 53 DSA). In Germany, this is the Bundesnetzagentur: www.dsc.bund.de. You can also take the matter to court.</p>
+
+      <h3 id="en-tco">9. Terrorist content</h3>
+      <p>Terrorist content as defined in <a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R0784">Regulation (EU) 2021/784</a> (TCO) is prohibited. This is how we deal with it:</p>
+      <ul>
+        <li>We hide terrorist content as soon as we learn of it, and we ban the ID.</li>
+        <li>We act on a removal order from a competent authority within one hour of receipt (Art. 3(3) TCO).</li>
+        <li>If there is an imminent threat to life, we inform the competent authorities right away (Art. 14(5) TCO).</li>
+        <li>We keep removed content and the related data for 6 months. Longer only if an authority or court requires it (Art. 6 TCO).</li>
+        <li>If we removed your contribution, we tell you, unless an authority forbids this for reasons of public security (Art. 11 TCO). You can challenge the removal by emailing <a href="mailto:goodtimestatemap@protonmail.com">goodtimestatemap@protonmail.com</a> and before the courts.</li>
+        <li>If we took action against terrorist content in a calendar year, we publish a transparency report by 1 March of the following year (Art. 7(2) TCO).</li>
+      </ul>
+
+      <h3>10. Points of contact</h3>
+      <p>One point of contact serves authorities (Art. 11 DSA), users (Art. 12 DSA) and removal orders (Art. 15 TCO):</p>
+      <ul>
+        <li>Email: <a href="mailto:goodtimestatemap@protonmail.com">goodtimestatemap@protonmail.com</a></li>
+        <li>For users, also the <a href="../contact/?lang=en#contact">contact form</a></li>
+        <li>Languages: German, English</li>
+      </ul>
+      <p>Please send removal orders by email, not through the contact form. The full text is in the <a href="../impressum/#en">legal notice</a>.</p>
+
+      <h3>11. Deleting contributions</h3>
+      <p>You can delete single suggestions in "My submissions". "Delete my data" in Settings deletes your ID, all its suggestions and every vote you cast. While you are signed in, "Delete account and data" takes its place and also deletes your account and its synced seen markers (section 14). No one sees deleted suggestions any more; if they were on the map, they disappear from all devices at their next update. Decisions already taken stand. The licence in section 5 then ends.</p>
+
+      <h3>12. Changes</h3>
+      <p>If we change these terms significantly, we tell you in the app before the change applies. Before your next suggestion, vote or sign-in, the app then asks you to accept the new version. Each version has a version identifier. Small editorial changes do not change it.</p>
+
+      <h3>13. Privacy</h3>
+      <p>How we process your data is described in the <a href="../privacy/#en">privacy policy</a>.</p>
+
+      <h3 id="en-account">14. Your account (from version 0.2.2)</h3>
+      <p>You can sign in with Apple or Google to keep your seen markers the same on your devices. Signing in is free and optional, and the app works without it. If you have a pseudonymous ID, signing in turns it into your account, and your contributions stay with it.</p>
+      <p>Your account syncs only your seen markers. Signing out ends the sync on that device and keeps your account. "Delete account and data" ends your account: it deletes the account, its seen markers, its suggestions and its votes. You can also ask us by email to delete your account (<a href="../privacy/#en-delete">privacy policy, "Deleting your data"</a>).</p>
+      <p>We delete an account after 24 months without a sign-in, session refresh or sync. That ends these terms for the account. An account that holds suggestions or an active ban is kept; after 24 months without activity it loses only its seen markers and session data.</p>
+
+      <h3 id="en-youtube">15. YouTube videos (from version 0.2.3)</h3>
+      <p>This section applies with or without an account. When you tap a YouTube video in the app, it plays in YouTube's embedded player, and the app uses YouTube API Services for it. By playing a YouTube video in the app, you agree to be bound by the <a href="https://www.youtube.com/t/terms">YouTube Terms of Service</a>. The <a href="../privacy/#en-youtube">privacy policy</a> explains what Google receives.</p>
     </section>
 
     <section class="lang-section" id="fr" lang="fr" aria-labelledby="fr-title">
-      <h2 id="fr-title">Conditions d'utilisation pour les comptes</h2>
-      <p class="meta">Version 2026-11-accounts-1. S'applique à partir de la version 0.2.2 de l'application. Dernière mise à jour : 10 novembre 2026.</p>
+      <h2 id="fr-title">Conditions d'utilisation pour les contributions et les comptes</h2>
+      <p class="meta">Version 2026-11-crowd-1. S'applique à partir de la version 0.2.3 de l'application ; la section sur le compte, à partir de la version 0.2.2. Dernière mise à jour : 13 novembre 2026.</p>
       <p class="meta">Traduction de la version anglaise. Seules les versions allemande et anglaise font foi.</p>
 
       <h3>1. Objet</h3>
-      <p>Ces conditions s'appliquent lorsque vous vous connectez à un compte dans l'application Goodtime State Map. L'application est fournie par Simon Oppowa (<a href="../impressum/#en">mentions légales</a>, en anglais). Dans ces conditions, « nous » désigne le fournisseur.</p>
-      <p>Pour utiliser la carte, y faire des recherches, marquer des lieux comme vus ou exporter vos marqueurs vus, vous n'avez pas besoin de compte ni d'accepter ces conditions.</p>
-      <p>Avant chaque connexion, l'application propose un lien vers ces conditions. Vous les acceptez en cochant une case. Nous enregistrons avec votre compte la version que vous avez acceptée et la date.</p>
+      <p>Ces conditions s'appliquent lorsque vous proposez des lieux ou votez sur des propositions dans l'application Goodtime State Map, et lorsque vous vous y connectez à un compte (section 14). Nous appelons les propositions et les votes des « contributions ». L'application est fournie par Simon Oppowa (<a href="../impressum/#en">mentions légales</a>, en anglais). Dans ces conditions, « nous » désigne le fournisseur.</p>
+      <p>Vous n'avez pas besoin d'accepter ces conditions pour consulter la carte, y faire des recherches ou signaler des entrées.</p>
+      <p>La section 15 « Vidéos YouTube » fait exception : à partir de la version 0.2.3, elle s'applique à toute personne qui lit une vidéo YouTube dans l'application, avec ou sans compte.</p>
+      <p>Avant votre première proposition ou votre premier vote, et avant chaque connexion, l'application propose un lien vers ces conditions. Vous les acceptez en cochant une case. Nous enregistrons avec votre identifiant pseudonyme ou votre compte la version que vous avez acceptée et la date (section 3).</p>
 
-      <h3>2. Qui peut se connecter</h3>
-      <p>Vous pouvez vous connecter si vous avez 18 ans ou plus, ou si vous avez l'accord d'un parent ou tuteur. Avant chaque connexion, vous confirmez : « J'ai 18 ans ou plus, ou j'ai l'accord d'un parent ou tuteur ».</p>
+      <h3>2. Qui peut contribuer</h3>
+      <p>Vous pouvez contribuer et vous connecter si vous avez 18 ans ou plus, ou si vous avez l'accord d'un parent ou tuteur. Avant votre première contribution et avant chaque connexion, vous confirmez : « J'ai 18 ans ou plus, ou j'ai l'accord d'un parent ou tuteur ».</p>
 
-      <h3 id="fr-account">3. Votre compte</h3>
-      <p>Vous pouvez vous connecter avec Apple ou Google pour garder les mêmes marqueurs vus sur vos appareils. La connexion est gratuite et facultative, et l'application fonctionne aussi sans elle.</p>
-      <p>Votre compte synchronise uniquement vos marqueurs vus. Si vous vous déconnectez, la synchronisation s'arrête sur cet appareil et votre compte est conservé.</p>
+      <h3>3. Votre identifiant pseudonyme</h3>
+      <p>Avec votre première proposition ou votre premier vote, l'application crée un identifiant pseudonyme. Pour proposer des lieux et voter, vous n'avez besoin ni de compte, ni de nom, ni d'adresse e-mail. L'application conserve l'accès à cet identifiant uniquement sur votre appareil, sauf si vous vous connectez (section 14) : l'identifiant devient alors votre compte. Si les données de l'application sont perdues, par exemple après une réinstallation, cet accès disparaît, sauf si vous vous êtes connecté ; une nouvelle connexion vous le rend. Sinon, vous ne pouvez plus gérer vos anciennes contributions. Si nous supprimons l'identifiant selon les durées de la politique de confidentialité, votre prochaine contribution en crée un nouveau. Les détails figurent dans la <a href="../privacy/#fr">politique de confidentialité</a>.</p>
 
-      <h3>4. Mettre fin à votre compte</h3>
-      <p>« Supprimer le compte et les données », dans « Paramètres », « Votre progression », met fin à votre compte : cette option supprime le compte et ses marqueurs vus sur notre serveur. Vos marqueurs vus restent sur votre appareil. Vous pouvez aussi nous demander par e-mail de supprimer votre compte (<a href="../privacy/#fr-delete">politique de confidentialité, « Supprimer vos données »</a>).</p>
-      <p>Nous supprimons un compte après 24 mois sans connexion, renouvellement de session ni synchronisation. Ces conditions prennent alors fin pour ce compte.</p>
+      <h3>4. Ce que vous apportez</h3>
+      <p>Une proposition se compose d'une position sur la carte, d'une catégorie, d'un titre et d'une note de 280 caractères au plus. Vous ne pouvez pas téléverser d'images. Le titre et la note apparaissent tels que vous les écrivez et ne sont pas traduits.</p>
+      <p>Les autres utilisateurs voient les propositions en attente afin de pouvoir voter. Tous les utilisateurs de l'application voient les propositions publiées.</p>
 
-      <h3>5. Modifications</h3>
-      <p>Si nous modifions ces conditions, nous publions ici la nouvelle version avec un nouveau numéro de version. Avant votre prochaine connexion, l'application vous demande d'accepter la nouvelle version.</p>
+      <h3>5. Licence</h3>
+      <p>Dans la mesure où vous détenez des droits sur le titre, la note et la position de votre contribution, vous nous accordez une licence non exclusive, mondiale, gratuite et sans limite de durée pour la stocker, la reproduire, la modifier (y compris la traduire), la mettre à disposition du public et la distribuer. Cela couvre l'application, le site web et les flux de données de l'application.</p>
+      <p>Nous pouvons accorder des sous-licences sur ces droits à des prestataires techniques, par exemple d'hébergement. Nous pouvons transférer ces droits à un successeur qui continue d'exploiter l'application.</p>
+      <p>La licence prend fin lorsque la contribution est supprimée, à l'exception des copies que nous conservons en raison d'une obligation légale.</p>
 
-      <h3>6. Protection des données</h3>
-      <p>La <a href="../privacy/#fr-account">politique de confidentialité</a> explique quelles données un compte contient et combien de temps nous les conservons.</p>
+      <h3>6. Mention de l'auteur</h3>
+      <p>Nous affichons les contributions sans votre nom. Elles apparaissent uniquement comme « Communauté » avec une référence pseudonyme. Vous l'acceptez.</p>
+
+      <h3 id="fr-content-rules">7. Règles de contenu</h3>
+      <p>Nous ne tolérons ni les contenus choquants ni les utilisateurs qui abusent des autres. Sont interdits :</p>
+      <ul>
+        <li><strong>Fuites :</strong> contenus ayant fuité, obtenus par extraction de données (datamining) ou diffusés avant la sortie du jeu, et tout ce qui en découle.</li>
+        <li><strong>Données personnelles :</strong> par exemple vrais noms, pseudos de joueur (gamertags), adresses ou coordonnées.</li>
+        <li><strong>Spoilers :</strong> révélations isolées sur l'histoire, comme des cinématiques ou la fin.</li>
+        <li><strong>Contenus sexuels et violence explicite :</strong> contenus sexuels, nudité et violence explicite.</li>
+        <li><strong>Haine et harcèlement :</strong> haine, harcèlement et menaces.</li>
+        <li><strong>Contenus illicites :</strong> tout ce qui enfreint la loi, y compris les droits d'autrui comme le droit d'auteur ou le droit des marques.</li>
+        <li><strong>Contenus terroristes :</strong> voir la section 9.</li>
+        <li><strong>Spam et triche :</strong> publicité, liens, spam, triches et exploitation de bugs.</li>
+        <li><strong>Faux emplacements :</strong> lieux délibérément faux.</li>
+      </ul>
+      <p>En cas d'infraction, nous masquons ou retirons les contributions. En cas d'infractions répétées ou graves, nous bloquons l'identifiant.</p>
+
+      <h3 id="fr-moderation">8. Modération</h3>
+
+      <h4>Vote de la communauté</h4>
+      <p>Les nouvelles propositions n'apparaissent pas tout de suite sur la carte. D'autres utilisateurs votent pour ou contre. Lorsqu'une proposition compte 3 votes pour de plus que de votes contre (+3), elle est publiée. Lorsqu'elle compte 3 votes contre de plus que de votes pour (−3), elle est masquée. Chaque identifiant dispose d'une voix par proposition. Votre propre vote sur votre proposition ne compte pas.</p>
+      <p>La publication et le masquage par vote sont automatiques. Nous ne vérifions pas la proposition au préalable. Les votes sont définitifs. Le vote prend fin lorsqu'une proposition est publiée ou masquée : les votes ne masquent plus un repère de la communauté déjà publié. Les signalements et nos décisions s'en chargent.</p>
+
+      <h4>Limites contre les abus et filtre de texte</h4>
+      <p>En dehors du vote, le serveur utilise uniquement les mesures automatiques suivantes :</p>
+      <ul>
+        <li><strong>Filtre de texte :</strong> il refuse, avant que quiconque les voie, les titres et notes contenant des liens, des adresses e-mail, des @pseudos, 7 chiffres ou plus à la suite, ou des mots d'une liste de termes injurieux et sexuels.</li>
+        <li>Il refuse les votes des identifiants créés il y a moins de 24 heures.</li>
+        <li>Sur toute période glissante de 24 heures, il accepte au plus 30 votes et 20 propositions par identifiant.</li>
+        <li>Par adresse IP, il accepte au plus 10 signalements et messages par heure et 100 écritures en 5 minutes.</li>
+        <li>Il refuse les propositions et les votes des identifiants bloqués.</li>
+      </ul>
+      <p>Lorsque le serveur refuse quelque chose, l'application vous en indique la raison. Lorsque le filtre de texte refuse un texte, l'application nomme la règle, précise que la vérification était automatique et donne notre adresse de contact.</p>
+
+      <h4>Nos décisions</h4>
+      <p>Nous pouvons publier ou masquer toute proposition indépendamment des votes et annuler tout résultat d'un vote. Nous pouvons fusionner un doublon avec un repère existant et marquer des repères de la communauté comme vérifiés. Nous le faisons de notre propre initiative, après un signalement ou après une contestation. Ces décisions sont prises par une personne.</p>
+
+      <h4>Blocages</h4>
+      <p>En cas d'infractions répétées ou graves à ces conditions, nous bloquons l'identifiant. Un identifiant bloqué ne peut plus proposer ni voter.</p>
+
+      <h4>Signalements</h4>
+      <p>Tout le monde peut signaler une entrée : dans l'application avec « Signaler », via le <a href="../contact/?lang=en#report">formulaire web</a> (en anglais ou en allemand) ou par e-mail. Aucun identifiant n'est nécessaire. Une personne examine chaque signalement et décide dans les 24 heures suivant sa réception. Les signalements ne masquent jamais rien automatiquement.</p>
+
+      <h4>Motivation</h4>
+      <p>Si nous masquons ou retirons votre proposition, « Mes propositions » vous indique le motif, la règle sur laquelle nous nous fondons et la manière dont la décision a été prise.</p>
+
+      <h4>Contester une décision</h4>
+      <p>Si vous n'êtes pas d'accord avec une décision, écrivez à <a href="mailto:goodtimestatemap@protonmail.com">goodtimestatemap@protonmail.com</a> en indiquant l'identifiant de la contribution. Une personne réexaminera le cas. Cela vaut aussi pour les décisions prises par le vote de la communauté.</p>
+      <p>Si vous estimez que nous enfreignons le DSA (règlement sur les services numériques), vous pouvez saisir le coordinateur pour les services numériques de l'État membre où vous vous trouvez ou êtes établi (article 53 du DSA). En Allemagne, il s'agit de la Bundesnetzagentur : www.dsc.bund.de. Vous pouvez aussi saisir un tribunal.</p>
+
+      <h3 id="fr-tco">9. Contenus terroristes</h3>
+      <p>Les contenus à caractère terroriste au sens du <a href="https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:32021R0784">règlement (UE) 2021/784</a> (TCO) sont interdits. Voici comment nous les traitons :</p>
+      <ul>
+        <li>Nous masquons les contenus terroristes dès que nous en avons connaissance et nous bloquons l'identifiant.</li>
+        <li>Nous exécutons une injonction de retrait d'une autorité compétente dans l'heure qui suit sa réception (article 3, paragraphe 3 du TCO).</li>
+        <li>En cas de menace imminente pour la vie, nous informons immédiatement les autorités compétentes (article 14, paragraphe 5 du TCO).</li>
+        <li>Nous conservons les contenus retirés et les données associées pendant 6 mois. Plus longtemps seulement si une autorité ou un tribunal l'exige (article 6 du TCO).</li>
+        <li>Si nous avons retiré votre contribution, nous vous en informons, sauf si une autorité l'interdit pour des raisons de sécurité publique (article 11 du TCO). Vous pouvez contester le retrait en écrivant à <a href="mailto:goodtimestatemap@protonmail.com">goodtimestatemap@protonmail.com</a> et devant les tribunaux.</li>
+        <li>Si nous avons agi contre des contenus terroristes au cours d'une année civile, nous publions un rapport de transparence au plus tard le 1er mars de l'année suivante (article 7, paragraphe 2 du TCO).</li>
+      </ul>
+
+      <h3>10. Points de contact</h3>
+      <p>Un point de contact unique sert aux autorités (article 11 du DSA), aux utilisateurs (article 12 du DSA) et aux injonctions de retrait (article 15 du TCO) :</p>
+      <ul>
+        <li>E-mail : <a href="mailto:goodtimestatemap@protonmail.com">goodtimestatemap@protonmail.com</a></li>
+        <li>Pour les utilisateurs, aussi le <a href="../contact/?lang=en#contact">formulaire de contact</a></li>
+        <li>Langues : allemand, anglais</li>
+      </ul>
+      <p>Veuillez envoyer les injonctions de retrait par e-mail, pas par le formulaire de contact. Le texte complet figure dans les <a href="../impressum/#en">mentions légales</a> (en anglais).</p>
+
+      <h3>11. Supprimer des contributions</h3>
+      <p>Vous pouvez supprimer des propositions une à une dans « Mes propositions ». « Supprimer mes données » dans les paramètres supprime votre identifiant, toutes ses propositions et tous les votes que vous avez exprimés. Tant que vous êtes connecté, « Supprimer le compte et les données » prend sa place et supprime en plus votre compte et ses marqueurs vus synchronisés (section 14). Plus personne ne voit les propositions supprimées ; si elles figuraient sur la carte, elles disparaissent de tous les appareils à leur prochaine mise à jour. Les décisions déjà prises restent valables. La licence de la section 5 prend alors fin.</p>
+
+      <h3>12. Modifications</h3>
+      <p>Si nous modifions ces conditions de manière significative, nous vous en informons dans l'application avant que la modification ne s'applique. Avant votre prochaine proposition, votre prochain vote ou votre prochaine connexion, l'application vous demande alors d'accepter la nouvelle version. Chaque version porte un numéro de version. Les petites corrections rédactionnelles ne le changent pas.</p>
+
+      <h3>13. Protection des données</h3>
+      <p>La manière dont nous traitons vos données est décrite dans la <a href="../privacy/#fr">politique de confidentialité</a>.</p>
+
+      <h3 id="fr-account">14. Votre compte (à partir de la version 0.2.2)</h3>
+      <p>Vous pouvez vous connecter avec Apple ou Google pour garder les mêmes marqueurs vus sur vos appareils. La connexion est gratuite et facultative, et l'application fonctionne aussi sans elle. Si vous avez un identifiant pseudonyme, la connexion en fait votre compte, et vos contributions y restent rattachées.</p>
+      <p>Votre compte synchronise uniquement vos marqueurs vus. Si vous vous déconnectez, la synchronisation s'arrête sur cet appareil et votre compte est conservé. « Supprimer le compte et les données » met fin à votre compte : cette option supprime le compte, ses marqueurs vus, ses propositions et ses votes. Vous pouvez aussi nous demander par e-mail de supprimer votre compte (<a href="../privacy/#fr-delete">politique de confidentialité, « Supprimer vos données »</a>).</p>
+      <p>Nous supprimons un compte après 24 mois sans connexion, renouvellement de session ni synchronisation. Ces conditions prennent alors fin pour ce compte. Un compte qui a des propositions ou un blocage actif est conservé ; après 24 mois sans activité, il perd seulement ses marqueurs vus et ses données de session.</p>
+
+      <h3 id="fr-youtube">15. Vidéos YouTube (à partir de la version 0.2.3)</h3>
+      <p>Cette section s'applique avec ou sans compte. Lorsque vous appuyez sur une vidéo YouTube dans l'application, elle est lue dans le lecteur intégré de YouTube, et l'application utilise pour cela les YouTube API Services. En lisant une vidéo YouTube dans l'application, vous acceptez d'être lié par les <a href="https://www.youtube.com/t/terms">Conditions d'utilisation de YouTube</a>. La <a href="../privacy/#fr-youtube">politique de confidentialité</a> explique ce que Google reçoit.</p>
     </section>
 
     <section class="lang-section" id="es" lang="es" aria-labelledby="es-title">
-      <h2 id="es-title">Condiciones de uso para cuentas</h2>
-      <p class="meta">Versión 2026-11-accounts-1. Se aplica a partir de la versión 0.2.2 de la app. Última actualización: 10 de noviembre de 2026.</p>
+      <h2 id="es-title">Condiciones de uso para aportaciones y cuentas</h2>
+      <p class="meta">Versión 2026-11-crowd-1. Se aplica a partir de la versión 0.2.3 de la app; la sección sobre la cuenta, a partir de la versión 0.2.2. Última actualización: 13 de noviembre de 2026.</p>
       <p class="meta">Traducción de la versión inglesa. Solo las versiones alemana e inglesa son vinculantes.</p>
 
       <h3>1. De qué tratan estas condiciones</h3>
-      <p>Estas condiciones se aplican cuando inicia sesión en una cuenta en la app Goodtime State Map. El proveedor de la app es Simon Oppowa (<a href="../impressum/#en">aviso legal</a>, en inglés). En estas condiciones, «nosotros» se refiere al proveedor.</p>
-      <p>Para usar el mapa, buscar en él, marcar lugares como vistos o exportar sus marcadores vistos, no necesita una cuenta ni aceptar estas condiciones.</p>
-      <p>Antes de cada inicio de sesión, la app le muestra un enlace a estas condiciones. Las acepta marcando una casilla. Guardamos junto con su cuenta qué versión aceptó y cuándo.</p>
+      <p>Estas condiciones se aplican cuando propone lugares o vota propuestas en la app Goodtime State Map, y cuando inicia sesión en una cuenta en ella (sección 14). A las propuestas y los votos los llamamos «aportaciones». El proveedor de la app es Simon Oppowa (<a href="../impressum/#en">aviso legal</a>, en inglés). En estas condiciones, «nosotros» se refiere al proveedor.</p>
+      <p>No necesita aceptar estas condiciones para ver el mapa, buscar en él o denunciar entradas.</p>
+      <p>La sección 15 «Vídeos de YouTube» es la excepción: a partir de la versión 0.2.3, se aplica a cualquier persona que reproduzca un vídeo de YouTube en la app, con o sin cuenta.</p>
+      <p>Antes de su primera propuesta o de su primer voto, y antes de cada inicio de sesión, la app le muestra un enlace a estas condiciones. Las acepta marcando una casilla. Guardamos junto con su identificador seudónimo o su cuenta qué versión aceptó y cuándo (sección 3).</p>
 
-      <h3>2. Quién puede iniciar sesión</h3>
-      <p>Puede iniciar sesión si tiene 18 años o más, o si cuenta con el consentimiento de sus padres o tutores. Antes de cada inicio de sesión, confirma: «Tengo 18 años o más, o tengo el consentimiento de mis padres o tutores».</p>
+      <h3>2. Quién puede aportar</h3>
+      <p>Puede aportar e iniciar sesión si tiene 18 años o más, o si cuenta con el consentimiento de sus padres o tutores. Antes de su primera aportación y antes de cada inicio de sesión, confirma: «Tengo 18 años o más, o tengo el consentimiento de mis padres o tutores».</p>
 
-      <h3 id="es-account">3. Su cuenta</h3>
-      <p>Puede iniciar sesión con Apple o Google para tener los mismos marcadores vistos en sus dispositivos. Iniciar sesión es gratuito y opcional, y la app también funciona sin hacerlo.</p>
-      <p>Su cuenta sincroniza solo sus marcadores vistos. Si cierra sesión, la sincronización termina en ese dispositivo y su cuenta se conserva.</p>
+      <h3>3. Su identificador seudónimo</h3>
+      <p>Con su primera propuesta o su primer voto, la app crea un identificador seudónimo. Para proponer lugares y votar, no necesita cuenta, ni nombre, ni dirección de correo electrónico. La app guarda el acceso a este identificador solo en su dispositivo, salvo que inicie sesión (sección 14): entonces el identificador pasa a ser su cuenta. Si se pierden los datos de la app, por ejemplo tras una reinstalación, ese acceso desaparece, salvo que haya iniciado sesión; al volver a iniciar sesión, lo recupera. Si no, ya no puede gestionar sus aportaciones anteriores. Si borramos el identificador según los plazos de la política de privacidad, su próxima aportación crea uno nuevo. Encontrará los detalles en la <a href="../privacy/#es">política de privacidad</a>.</p>
 
-      <h3>4. Poner fin a su cuenta</h3>
-      <p>«Borrar cuenta y datos», en «Ajustes», «Tu progreso», pone fin a su cuenta: borra la cuenta y sus marcadores vistos en nuestro servidor. Sus marcadores vistos se quedan en su dispositivo. También puede pedirnos por correo electrónico que borremos su cuenta (<a href="../privacy/#es-delete">política de privacidad, «Borrar sus datos»</a>).</p>
-      <p>Borramos una cuenta tras 24 meses sin inicio de sesión, renovación de la sesión ni sincronización. Con ello terminan estas condiciones para esa cuenta.</p>
+      <h3>4. Lo que aporta</h3>
+      <p>Una propuesta consta de una posición en el mapa, una categoría, un título y una nota de 280 caracteres como máximo. No puede subir imágenes. El título y la nota aparecen tal como los escribe y no se traducen.</p>
+      <p>Otros usuarios ven las propuestas pendientes para poder votarlas. Todos los usuarios de la app ven las propuestas publicadas.</p>
 
-      <h3>5. Cambios</h3>
-      <p>Si cambiamos estas condiciones, publicamos aquí la nueva versión con un nuevo número de versión. Antes de su próximo inicio de sesión, la app le pide que acepte la nueva versión.</p>
+      <h3>5. Licencia</h3>
+      <p>En la medida en que tenga derechos sobre el título, la nota y la posición de su aportación, nos concede una licencia no exclusiva, mundial, gratuita e ilimitada en el tiempo para almacenarla, reproducirla, editarla (incluida su traducción), ponerla a disposición del público y distribuirla. Esto abarca la app, el sitio web y los flujos de datos de la app.</p>
+      <p>Podemos conceder sublicencias de estos derechos a proveedores técnicos, por ejemplo de alojamiento. Podemos transferir estos derechos a un sucesor que siga operando la app.</p>
+      <p>La licencia termina cuando se borra la aportación, salvo las copias que conservemos por una obligación legal.</p>
 
-      <h3>6. Privacidad</h3>
-      <p>La <a href="../privacy/#es-account">política de privacidad</a> explica qué datos contiene una cuenta y cuánto tiempo los conservamos.</p>
+      <h3>6. Atribución</h3>
+      <p>Mostramos las aportaciones sin su nombre. Aparecen solo como «Comunidad» con una referencia seudónima. Usted está de acuerdo con ello.</p>
+
+      <h3 id="es-content-rules">7. Normas de contenido</h3>
+      <p>No toleramos contenido inapropiado ni usuarios que abusen de otros. No está permitido:</p>
+      <ul>
+        <li><strong>Filtraciones:</strong> material filtrado, obtenido mediante minería de datos (datamining) o difundido antes del lanzamiento del juego, y todo lo que se base en él.</li>
+        <li><strong>Datos personales:</strong> por ejemplo nombres reales, nombres de jugador (gamertags), direcciones o datos de contacto.</li>
+        <li><strong>Spoilers:</strong> revelaciones sueltas de la historia, como cinemáticas o el final.</li>
+        <li><strong>Contenido sexual y violencia explícita:</strong> contenido sexual, desnudos y violencia explícita.</li>
+        <li><strong>Odio y acoso:</strong> odio, acoso y amenazas.</li>
+        <li><strong>Contenido ilícito:</strong> todo lo que infrinja la ley, incluidos los derechos de otras personas, como los derechos de autor o de marca.</li>
+        <li><strong>Contenido terrorista:</strong> véase la sección 9.</li>
+        <li><strong>Spam y trucos:</strong> publicidad, enlaces, spam, trampas y aprovechamiento de fallos (glitches).</li>
+        <li><strong>Ubicaciones falsas:</strong> lugares falsos a propósito.</li>
+      </ul>
+      <p>Si una aportación incumple estas normas, la ocultamos o la retiramos. En caso de incumplimientos repetidos o graves, bloqueamos el identificador.</p>
+
+      <h3 id="es-moderation">8. Moderación</h3>
+
+      <h4>Votación de la comunidad</h4>
+      <p>Las propuestas nuevas no aparecen enseguida en el mapa. Otros usuarios votan a favor o en contra. Cuando una propuesta tiene 3 votos a favor más que en contra (+3), se publica. Cuando tiene 3 votos en contra más que a favor (−3), se oculta. Cada identificador tiene un voto por propuesta. Su propio voto sobre su propuesta no cuenta.</p>
+      <p>La publicación y la ocultación por votos son automáticas. No revisamos la propuesta antes. Los votos son definitivos. La votación termina cuando una propuesta se publica o se oculta: los votos ya no ocultan un marcador de la comunidad publicado. De eso se encargan las denuncias y nuestras decisiones.</p>
+
+      <h4>Límites contra abusos y filtro de texto</h4>
+      <p>Además de la votación, el servidor solo usa estas medidas automáticas:</p>
+      <ul>
+        <li><strong>Filtro de texto:</strong> rechaza, antes de que nadie los vea, los títulos y notas con enlaces, direcciones de correo electrónico, @nombres, 7 o más cifras seguidas o palabras de una lista de términos ofensivos y sexuales.</li>
+        <li>Rechaza los votos de identificadores con menos de 24 horas.</li>
+        <li>En cualquier periodo móvil de 24 horas, acepta como máximo 30 votos y 20 propuestas por identificador.</li>
+        <li>Por dirección IP, acepta como máximo 10 denuncias y mensajes por hora y 100 escrituras en 5 minutos.</li>
+        <li>Rechaza las propuestas y los votos de identificadores bloqueados.</li>
+      </ul>
+      <p>Cuando el servidor rechaza algo, la app le dice por qué. Cuando el filtro de texto rechaza un texto, la app indica la norma, dice que la comprobación fue automática y da nuestra dirección de contacto.</p>
+
+      <h4>Nuestras decisiones</h4>
+      <p>Podemos publicar u ocultar cualquier propuesta con independencia de los votos y revertir cualquier resultado de una votación. Podemos fusionar un duplicado con un marcador existente y marcar marcadores de la comunidad como verificados. Lo hacemos por iniciativa propia, tras una denuncia o tras una impugnación. Estas decisiones las toma una persona.</p>
+
+      <h4>Bloqueos</h4>
+      <p>En caso de incumplimientos repetidos o graves de estas condiciones, bloqueamos el identificador. Un identificador bloqueado ya no puede proponer ni votar.</p>
+
+      <h4>Denuncias</h4>
+      <p>Cualquiera puede denunciar una entrada: en la app con «Denunciar», mediante el <a href="../contact/?lang=en#report">formulario web</a> (en inglés o en alemán) o por correo electrónico. Para ello no necesita identificador. Una persona revisa cada denuncia y decide en las 24 horas siguientes a su recepción. Las denuncias nunca ocultan nada automáticamente.</p>
+
+      <h4>Motivación</h4>
+      <p>Si ocultamos o retiramos su propuesta, en «Mis propuestas» verá el motivo, la norma en la que nos basamos y cómo se tomó la decisión.</p>
+
+      <h4>Impugnar una decisión</h4>
+      <p>Si no está de acuerdo con una decisión, escriba a <a href="mailto:goodtimestatemap@protonmail.com">goodtimestatemap@protonmail.com</a> e indique el identificador de la aportación. Una persona volverá a revisar el caso. Esto también se aplica a las decisiones tomadas por votación de la comunidad.</p>
+      <p>Si considera que incumplimos el DSA (Reglamento de Servicios Digitales), puede presentar una reclamación ante el coordinador de servicios digitales del Estado miembro en el que se encuentre o esté establecido (art. 53 del DSA). En Alemania es la Bundesnetzagentur: www.dsc.bund.de. También puede acudir a los tribunales.</p>
+
+      <h3 id="es-tco">9. Contenido terrorista</h3>
+      <p>Está prohibido el contenido terrorista en el sentido del <a href="https://eur-lex.europa.eu/legal-content/ES/TXT/?uri=CELEX:32021R0784">Reglamento (UE) 2021/784</a> (TCO). Así lo tratamos:</p>
+      <ul>
+        <li>Ocultamos el contenido terrorista en cuanto tenemos conocimiento de él y bloqueamos el identificador.</li>
+        <li>Cumplimos una orden de retirada de una autoridad competente en el plazo de una hora desde su recepción (art. 3.3 del TCO).</li>
+        <li>Si existe una amenaza inminente para la vida, informamos de inmediato a las autoridades competentes (art. 14.5 del TCO).</li>
+        <li>Conservamos el contenido retirado y los datos relacionados durante 6 meses. Más tiempo solo si una autoridad o un tribunal lo exige (art. 6 del TCO).</li>
+        <li>Si retiramos su aportación, se lo comunicamos, salvo que una autoridad lo prohíba por motivos de seguridad pública (art. 11 del TCO). Puede impugnar la retirada escribiendo a <a href="mailto:goodtimestatemap@protonmail.com">goodtimestatemap@protonmail.com</a> y ante los tribunales.</li>
+        <li>Si en un año natural actuamos contra contenido terrorista, publicamos un informe de transparencia a más tardar el 1 de marzo del año siguiente (art. 7.2 del TCO).</li>
+      </ul>
+
+      <h3>10. Puntos de contacto</h3>
+      <p>Un único punto de contacto sirve para las autoridades (art. 11 del DSA), los usuarios (art. 12 del DSA) y las órdenes de retirada (art. 15 del TCO):</p>
+      <ul>
+        <li>Correo electrónico: <a href="mailto:goodtimestatemap@protonmail.com">goodtimestatemap@protonmail.com</a></li>
+        <li>Para los usuarios, también el <a href="../contact/?lang=en#contact">formulario de contacto</a></li>
+        <li>Idiomas: alemán, inglés</li>
+      </ul>
+      <p>Envíe las órdenes de retirada por correo electrónico, no mediante el formulario de contacto. El texto completo figura en el <a href="../impressum/#en">aviso legal</a> (en inglés).</p>
+
+      <h3>11. Borrar aportaciones</h3>
+      <p>Puede borrar propuestas sueltas en «Mis propuestas». «Borrar mis datos», en los ajustes, borra su identificador, todas sus propuestas y todos los votos que haya emitido. Mientras tenga la sesión iniciada, «Borrar cuenta y datos» ocupa su lugar y borra además su cuenta y sus marcadores vistos sincronizados (sección 14). Nadie vuelve a ver las propuestas borradas; si estaban en el mapa, desaparecen de todos los dispositivos en su siguiente actualización. Las decisiones ya tomadas se mantienen. La licencia de la sección 5 termina entonces.</p>
+
+      <h3>12. Cambios</h3>
+      <p>Si cambiamos estas condiciones de forma significativa, se lo comunicamos en la app antes de que el cambio se aplique. Antes de su próxima propuesta, de su próximo voto o de su próximo inicio de sesión, la app le pide entonces que acepte la nueva versión. Cada versión tiene un número de versión. Los pequeños cambios de redacción no lo modifican.</p>
+
+      <h3>13. Privacidad</h3>
+      <p>Cómo tratamos sus datos se describe en la <a href="../privacy/#es">política de privacidad</a>.</p>
+
+      <h3 id="es-account">14. Su cuenta (a partir de la versión 0.2.2)</h3>
+      <p>Puede iniciar sesión con Apple o Google para tener los mismos marcadores vistos en sus dispositivos. Iniciar sesión es gratuito y opcional, y la app también funciona sin hacerlo. Si tiene un identificador seudónimo, al iniciar sesión este pasa a ser su cuenta, y sus aportaciones siguen vinculadas a ella.</p>
+      <p>Su cuenta sincroniza solo sus marcadores vistos. Si cierra sesión, la sincronización termina en ese dispositivo y su cuenta se conserva. «Borrar cuenta y datos» pone fin a su cuenta: borra la cuenta, sus marcadores vistos, sus propuestas y sus votos. También puede pedirnos por correo electrónico que borremos su cuenta (<a href="../privacy/#es-delete">política de privacidad, «Borrar sus datos»</a>).</p>
+      <p>Borramos una cuenta tras 24 meses sin inicio de sesión, renovación de la sesión ni sincronización. Con ello terminan estas condiciones para esa cuenta. Una cuenta que tenga propuestas o un bloqueo activo se conserva; tras 24 meses sin actividad, solo pierde sus marcadores vistos y sus datos de sesión.</p>
+
+      <h3 id="es-youtube">15. Vídeos de YouTube (a partir de la versión 0.2.3)</h3>
+      <p>Esta sección se aplica con o sin cuenta. Cuando usted pulsa un vídeo de YouTube en la app, se reproduce en el reproductor integrado de YouTube, y la app usa para ello los YouTube API Services. Al reproducir un vídeo de YouTube en la app, usted acepta quedar vinculado por los <a href="https://www.youtube.com/t/terms">Términos del Servicio de YouTube</a>. La <a href="../privacy/#es-youtube">política de privacidad</a> explica qué recibe Google.</p>
     </section>
 
     <section class="lang-section" id="pl" lang="pl" aria-labelledby="pl-title">
-      <h2 id="pl-title">Warunki korzystania dla kont</h2>
-      <p class="meta">Wersja 2026-11-accounts-1. Obowiązuje od wersji 0.2.2 aplikacji. Ostatnia aktualizacja: 10 listopada 2026.</p>
+      <h2 id="pl-title">Warunki korzystania dla wpisów i kont</h2>
+      <p class="meta">Wersja 2026-11-crowd-1. Obowiązuje od wersji 0.2.3 aplikacji, sekcja o koncie od wersji 0.2.2. Ostatnia aktualizacja: 13 listopada 2026.</p>
       <p class="meta">Tłumaczenie wersji angielskiej. Wiążące są wyłącznie wersja niemiecka i angielska.</p>
 
       <h3>1. Czego dotyczą te warunki</h3>
-      <p>Te warunki obowiązują, gdy logujesz się na konto w aplikacji Goodtime State Map. Dostawcą aplikacji jest Simon Oppowa (<a href="../impressum/#en">nota prawna</a>, po angielsku). W tych warunkach „my” oznacza dostawcę.</p>
-      <p>Aby korzystać z mapy, przeszukiwać ją, oznaczać miejsca jako odwiedzone lub eksportować odwiedzone znaczniki, nie potrzebujesz konta ani nie musisz akceptować tych warunków.</p>
-      <p>Przed każdym logowaniem aplikacja wyświetla link do tych warunków. Akceptujesz je, zaznaczając pole. Razem z Twoim kontem zapisujemy, którą wersję zaakceptowałeś(-aś) i kiedy.</p>
+      <p>Te warunki obowiązują, gdy w aplikacji Goodtime State Map proponujesz miejsca lub głosujesz nad propozycjami oraz gdy logujesz się w niej na konto (sekcja 14). Propozycje i głosy nazywamy tu „wpisami”. Dostawcą aplikacji jest Simon Oppowa (<a href="../impressum/#en">nota prawna</a>, po angielsku). W tych warunkach „my” oznacza dostawcę.</p>
+      <p>Nie musisz akceptować tych warunków, aby przeglądać mapę, przeszukiwać ją lub zgłaszać wpisy.</p>
+      <p>Wyjątkiem jest sekcja 15 „Filmy z YouTube'a”: od wersji 0.2.3 obowiązuje każdego, kto odtwarza film z YouTube'a w aplikacji, z kontem lub bez.</p>
+      <p>Zanim po raz pierwszy zaproponujesz miejsce lub zagłosujesz, a także przed każdym logowaniem aplikacja wyświetla link do tych warunków. Akceptujesz je, zaznaczając pole. Razem z Twoim pseudonimowym identyfikatorem lub Twoim kontem zapisujemy, którą wersję zaakceptowałeś(-aś) i kiedy (sekcja 3).</p>
 
-      <h3>2. Kto może się logować</h3>
-      <p>Możesz się logować, jeśli masz ukończone 18 lat lub zgodę rodzica albo opiekuna. Przed każdym logowaniem potwierdzasz: „Mam ukończone 18 lat lub zgodę rodzica albo opiekuna”.</p>
+      <h3>2. Kto może dodawać wpisy</h3>
+      <p>Możesz dodawać wpisy i logować się, jeśli masz ukończone 18 lat lub zgodę rodzica albo opiekuna. Przed pierwszym wpisem i przed każdym logowaniem potwierdzasz: „Mam ukończone 18 lat lub zgodę rodzica albo opiekuna”.</p>
 
-      <h3 id="pl-account">3. Twoje konto</h3>
-      <p>Możesz zalogować się przez Apple lub Google, aby mieć te same odwiedzone znaczniki na swoich urządzeniach. Logowanie jest bezpłatne i dobrowolne, a aplikacja działa także bez niego.</p>
-      <p>Twoje konto synchronizuje wyłącznie odwiedzone znaczniki. Gdy się wylogujesz, synchronizacja na tym urządzeniu się kończy, a Twoje konto pozostaje.</p>
+      <h3>3. Twój pseudonimowy identyfikator</h3>
+      <p>Przy pierwszej propozycji lub pierwszym głosie aplikacja tworzy pseudonimowy identyfikator. Aby proponować miejsca i głosować, nie potrzebujesz konta, imienia ani adresu e-mail. Dostęp do tego identyfikatora aplikacja przechowuje tylko na Twoim urządzeniu, chyba że się zalogujesz (sekcja 14): wtedy identyfikator staje się Twoim kontem. Jeśli dane aplikacji zostaną utracone, np. po ponownej instalacji, dostęp przepada, chyba że się zalogowałeś(-aś); ponowne zalogowanie go przywraca. W przeciwnym razie nie możesz już zarządzać swoimi dawnymi wpisami. Jeśli usuniemy identyfikator zgodnie z terminami z polityki prywatności, Twój następny wpis utworzy nowy. Szczegóły znajdziesz w <a href="../privacy/#pl">polityce prywatności</a>.</p>
 
-      <h3>4. Zamknięcie konta</h3>
-      <p>Opcja „Usuń konto i dane” w sekcji „Twój postęp” w ustawieniach zamyka Twoje konto: usuwa konto i jego odwiedzone znaczniki z naszego serwera. Twoje odwiedzone znaczniki pozostają na Twoim urządzeniu. Możesz też poprosić nas e-mailem o usunięcie konta (<a href="../privacy/#pl-delete">polityka prywatności, „Usuwanie Twoich danych”</a>).</p>
-      <p>Usuwamy konto po 24 miesiącach bez logowania, odświeżenia sesji lub synchronizacji. Wtedy te warunki przestają obowiązywać dla tego konta.</p>
+      <h3>4. Co dodajesz</h3>
+      <p>Propozycja składa się z pozycji na mapie, kategorii, tytułu i notatki o długości najwyżej 280 znaków. Nie możesz przesyłać obrazów. Tytuł i notatka są wyświetlane tak, jak je napiszesz, i nie są tłumaczone.</p>
+      <p>Inni użytkownicy widzą oczekujące propozycje, aby móc nad nimi głosować. Opublikowane propozycje widzą wszyscy użytkownicy aplikacji.</p>
 
-      <h3>5. Zmiany</h3>
-      <p>Jeśli zmienimy te warunki, opublikujemy tu nową wersję z nowym numerem wersji. Przed Twoim następnym logowaniem aplikacja poprosi Cię o akceptację nowej wersji.</p>
+      <h3>5. Licencja</h3>
+      <p>W zakresie, w jakim przysługują Ci prawa do tytułu, notatki i pozycji Twojego wpisu, udzielasz nam niewyłącznej, światowej, nieodpłatnej i nieograniczonej w czasie licencji na jego przechowywanie, zwielokrotnianie, opracowywanie (w tym tłumaczenie), publiczne udostępnianie i rozpowszechnianie. Obejmuje to aplikację, stronę internetową i kanały danych aplikacji.</p>
+      <p>Możemy udzielać sublicencji na te prawa dostawcom usług technicznych, np. hostingu. Możemy przenieść te prawa na następcę, który będzie dalej prowadził aplikację.</p>
+      <p>Licencja wygasa, gdy wpis zostanie usunięty, z wyjątkiem kopii, które przechowujemy z powodu obowiązku prawnego.</p>
 
-      <h3>6. Ochrona danych</h3>
-      <p><a href="../privacy/#pl-account">Polityka prywatności</a> wyjaśnia, jakie dane zawiera konto i jak długo je przechowujemy.</p>
+      <h3>6. Oznaczenie autorstwa</h3>
+      <p>Wyświetlamy wpisy bez Twojego imienia. Pojawiają się tylko jako „Społeczność” z pseudonimowym oznaczeniem. Zgadzasz się na to.</p>
+
+      <h3 id="pl-content-rules">7. Zasady treści</h3>
+      <p>Nie tolerujemy niestosownych treści ani użytkowników, którzy nadużywają innych. Niedozwolone są:</p>
+      <ul>
+        <li><strong>Przecieki:</strong> treści, które wyciekły, zostały pozyskane przez data mining lub rozpowszechnione przed premierą gry, oraz wszystko, co się na nich opiera.</li>
+        <li><strong>Dane osobowe:</strong> np. prawdziwe imiona i nazwiska, nazwy graczy (gamertagi), adresy lub dane kontaktowe.</li>
+        <li><strong>Spoilery:</strong> pojedyncze spoilery fabuły, np. dotyczące przerywników filmowych lub zakończenia.</li>
+        <li><strong>Treści seksualne i drastyczna przemoc:</strong> treści seksualne, nagość i drastyczna przemoc.</li>
+        <li><strong>Nienawiść i nękanie:</strong> nienawiść, nękanie i groźby.</li>
+        <li><strong>Treści nielegalne:</strong> wszystko, co narusza prawo, w tym prawa innych osób, np. prawa autorskie lub prawa do znaków towarowych.</li>
+        <li><strong>Treści terrorystyczne:</strong> zob. sekcja 9.</li>
+        <li><strong>Spam i oszustwa:</strong> reklama, linki, spam, kody i wykorzystywanie błędów gry (glitchy).</li>
+        <li><strong>Fałszywe miejsca:</strong> celowo nieprawdziwe lokalizacje.</li>
+      </ul>
+      <p>W razie naruszenia ukrywamy lub usuwamy wpisy. Przy powtarzających się lub poważnych naruszeniach blokujemy identyfikator.</p>
+
+      <h3 id="pl-moderation">8. Moderacja</h3>
+
+      <h4>Głosowanie społeczności</h4>
+      <p>Nowe propozycje nie pojawiają się od razu na mapie. Inni użytkownicy głosują za nimi lub przeciw nim. Gdy propozycja ma o 3 głosy za więcej niż przeciw (+3), zostaje opublikowana. Gdy ma o 3 głosy przeciw więcej niż za (−3), zostaje ukryta. Każdy identyfikator ma jeden głos na propozycję. Twój własny głos na Twoją propozycję się nie liczy.</p>
+      <p>Publikowanie i ukrywanie na podstawie głosów odbywa się automatycznie. Nie sprawdzamy wcześniej propozycji. Głosy są ostateczne. Głosowanie kończy się, gdy propozycja zostanie opublikowana lub ukryta: głosy nie ukrywają już opublikowanego znacznika społeczności. Tym zajmują się zgłoszenia i nasze decyzje.</p>
+
+      <h4>Limity przeciw nadużyciom i filtr tekstu</h4>
+      <p>Poza głosowaniem serwer stosuje wyłącznie te automatyczne środki:</p>
+      <ul>
+        <li><strong>Filtr tekstu:</strong> zanim ktokolwiek je zobaczy, odrzuca tytuły i notatki z linkami, adresami e-mail, @nazwami, 7 lub więcej cyframi z rzędu albo słowami z listy obraźliwych i seksualnych wyrażeń.</li>
+        <li>Odrzuca głosy identyfikatorów młodszych niż 24 godziny.</li>
+        <li>W każdych kolejnych 24 godzinach (okno kroczące) przyjmuje najwyżej 30 głosów i 20 propozycji na identyfikator.</li>
+        <li>Z jednego adresu IP przyjmuje najwyżej 10 zgłoszeń i wiadomości na godzinę oraz 100 zapisów w ciągu 5 minut.</li>
+        <li>Odrzuca propozycje i głosy zablokowanych identyfikatorów.</li>
+      </ul>
+      <p>Gdy serwer coś odrzuca, aplikacja mówi Ci dlaczego. Gdy filtr tekstu odrzuca tekst, aplikacja podaje regułę, informuje, że sprawdzenie było automatyczne, i podaje nasz adres kontaktowy.</p>
+
+      <h4>Nasze decyzje</h4>
+      <p>Możemy opublikować lub ukryć każdą propozycję niezależnie od głosów i cofnąć każdy wynik głosowania. Możemy scalić duplikat z istniejącym znacznikiem i oznaczyć znaczniki społeczności jako sprawdzone. Robimy to z własnej inicjatywy, po zgłoszeniu lub po odwołaniu. Te decyzje podejmuje człowiek.</p>
+
+      <h4>Blokady</h4>
+      <p>Przy powtarzających się lub poważnych naruszeniach tych warunków blokujemy identyfikator. Zablokowany identyfikator nie może już proponować ani głosować.</p>
+
+      <h4>Zgłoszenia</h4>
+      <p>Każdy może zgłosić wpis: w aplikacji przyciskiem „Zgłoś”, przez <a href="../contact/?lang=en#report">formularz internetowy</a> (po angielsku lub niemiecku) albo e-mailem. Nie potrzebujesz do tego identyfikatora. Człowiek sprawdza każde zgłoszenie i decyduje w ciągu 24 godzin od jego otrzymania. Zgłoszenia nigdy niczego nie ukrywają automatycznie.</p>
+
+      <h4>Uzasadnienie</h4>
+      <p>Jeśli ukryjemy lub usuniemy Twoją propozycję, w „Moje zgłoszenia” zobaczysz powód, regułę, na której się opieramy, i sposób podjęcia decyzji.</p>
+
+      <h4>Odwołanie od decyzji</h4>
+      <p>Jeśli nie zgadzasz się z decyzją, napisz na <a href="mailto:goodtimestatemap@protonmail.com">goodtimestatemap@protonmail.com</a> i podaj identyfikator wpisu. Człowiek ponownie sprawdzi sprawę. Dotyczy to także decyzji podjętych w głosowaniu społeczności.</p>
+      <p>Jeśli uważasz, że naruszamy DSA (akt o usługach cyfrowych), możesz złożyć skargę do koordynatora do spraw usług cyfrowych państwa członkowskiego, w którym przebywasz lub masz siedzibę (art. 53 DSA). W Niemczech jest to Bundesnetzagentur: www.dsc.bund.de. Możesz też dochodzić swoich praw przed sądem.</p>
+
+      <h3 id="pl-tco">9. Treści terrorystyczne</h3>
+      <p>Treści terrorystyczne w rozumieniu <a href="https://eur-lex.europa.eu/legal-content/PL/TXT/?uri=CELEX:32021R0784">rozporządzenia (UE) 2021/784</a> (TCO) są zakazane. Postępujemy z nimi tak:</p>
+      <ul>
+        <li>Ukrywamy treści terrorystyczne, gdy tylko się o nich dowiemy, i blokujemy identyfikator.</li>
+        <li>Nakaz usunięcia wydany przez właściwy organ wykonujemy w ciągu godziny od jego otrzymania (art. 3 ust. 3 TCO).</li>
+        <li>W razie bezpośredniego zagrożenia życia niezwłocznie informujemy właściwe organy (art. 14 ust. 5 TCO).</li>
+        <li>Usunięte treści i powiązane dane przechowujemy przez 6 miesięcy. Dłużej tylko wtedy, gdy wymaga tego organ lub sąd (art. 6 TCO).</li>
+        <li>Jeśli usunęliśmy Twój wpis, informujemy Cię o tym, chyba że organ zakaże tego ze względu na bezpieczeństwo publiczne (art. 11 TCO). Możesz zakwestionować usunięcie, pisząc na <a href="mailto:goodtimestatemap@protonmail.com">goodtimestatemap@protonmail.com</a>, oraz przed sądem.</li>
+        <li>Jeśli w danym roku kalendarzowym podjęliśmy działania wobec treści terrorystycznych, publikujemy sprawozdanie przejrzystości do 1 marca następnego roku (art. 7 ust. 2 TCO).</li>
+      </ul>
+
+      <h3>10. Punkty kontaktowe</h3>
+      <p>Jeden punkt kontaktowy służy organom (art. 11 DSA), użytkownikom (art. 12 DSA) i nakazom usunięcia (art. 15 TCO):</p>
+      <ul>
+        <li>E-mail: <a href="mailto:goodtimestatemap@protonmail.com">goodtimestatemap@protonmail.com</a></li>
+        <li>Dla użytkowników także <a href="../contact/?lang=en#contact">formularz kontaktowy</a></li>
+        <li>Języki: niemiecki, angielski</li>
+      </ul>
+      <p>Nakazy usunięcia prosimy wysyłać e-mailem, nie przez formularz kontaktowy. Pełny tekst znajdziesz w <a href="../impressum/#en">nocie prawnej</a> (po angielsku).</p>
+
+      <h3>11. Usuwanie wpisów</h3>
+      <p>Pojedyncze propozycje usuniesz w „Moje zgłoszenia”. Opcja „Usuń moje dane” w ustawieniach usuwa Twój identyfikator, wszystkie jego propozycje i wszystkie oddane przez Ciebie głosy. Gdy jesteś zalogowany(-a), jej miejsce zajmuje opcja „Usuń konto i dane”, która dodatkowo usuwa Twoje konto i jego zsynchronizowane odwiedzone znaczniki (sekcja 14). Usuniętych propozycji nikt już nie widzi; jeśli były na mapie, znikają ze wszystkich urządzeń przy ich następnej aktualizacji. Podjęte już decyzje pozostają w mocy. Licencja z sekcji 5 wygasa wtedy.</p>
+
+      <h3>12. Zmiany</h3>
+      <p>Jeśli istotnie zmienimy te warunki, poinformujemy Cię o tym w aplikacji, zanim zmiana zacznie obowiązywać. Przed Twoją następną propozycją, następnym głosem lub następnym logowaniem aplikacja poprosi Cię wtedy o akceptację nowej wersji. Każda wersja ma numer wersji. Drobne zmiany redakcyjne go nie zmieniają.</p>
+
+      <h3>13. Ochrona danych</h3>
+      <p>Jak przetwarzamy Twoje dane, opisuje <a href="../privacy/#pl">polityka prywatności</a>.</p>
+
+      <h3 id="pl-account">14. Twoje konto (od wersji 0.2.2)</h3>
+      <p>Możesz zalogować się przez Apple lub Google, aby mieć te same odwiedzone znaczniki na swoich urządzeniach. Logowanie jest bezpłatne i dobrowolne, a aplikacja działa także bez niego. Jeśli masz pseudonimowy identyfikator, po zalogowaniu staje się on Twoim kontem, a Twoje wpisy pozostają przy nim.</p>
+      <p>Twoje konto synchronizuje wyłącznie odwiedzone znaczniki. Gdy się wylogujesz, synchronizacja na tym urządzeniu się kończy, a Twoje konto pozostaje. Opcja „Usuń konto i dane” zamyka Twoje konto: usuwa konto, jego odwiedzone znaczniki, jego propozycje i jego głosy. Możesz też poprosić nas e-mailem o usunięcie konta (<a href="../privacy/#pl-delete">polityka prywatności, „Usuwanie Twoich danych”</a>).</p>
+      <p>Usuwamy konto po 24 miesiącach bez logowania, odświeżenia sesji lub synchronizacji. Wtedy te warunki przestają obowiązywać dla tego konta. Konto, które ma propozycje lub aktywną blokadę, zostaje zachowane; po 24 miesiącach bez aktywności traci tylko odwiedzone znaczniki i dane sesji.</p>
+
+      <h3 id="pl-youtube">15. Filmy z YouTube'a (od wersji 0.2.3)</h3>
+      <p>Ta sekcja obowiązuje niezależnie od tego, czy masz konto. Gdy dotkniesz filmu z YouTube'a w aplikacji, odtwarza się on w osadzonym odtwarzaczu YouTube, a aplikacja korzysta przy tym z YouTube API Services. Odtwarzając film z YouTube'a w aplikacji, akceptujesz <a href="https://www.youtube.com/t/terms">Warunki korzystania z usługi YouTube</a> i zgadzasz się, że będą Cię one wiązać. <a href="../privacy/#pl-youtube">Polityka prywatności</a> wyjaśnia, co otrzymuje Google.</p>
     </section>
 
     <section class="lang-section" id="ru" lang="ru" aria-labelledby="ru-title">
-      <h2 id="ru-title">Условия использования для аккаунтов</h2>
-      <p class="meta">Версия 2026-11-accounts-1. Действует начиная с версии 0.2.2 приложения. Последнее обновление: 10 ноября 2026 г.</p>
+      <h2 id="ru-title">Условия использования для публикаций и аккаунтов</h2>
+      <p class="meta">Версия 2026-11-crowd-1. Действует начиная с версии 0.2.3 приложения, раздел об аккаунте — начиная с версии 0.2.2. Последнее обновление: 13 ноября 2026 г.</p>
       <p class="meta">Перевод английской версии. Обязательную силу имеют только немецкая и английская версии.</p>
 
       <h3>1. О чём эти условия</h3>
-      <p>Эти условия действуют, когда вы входите в аккаунт в приложении Goodtime State Map. Приложение предоставляет Simon Oppowa (<a href="../impressum/#en">выходные данные</a>, на английском). В этих условиях «мы» означает поставщика.</p>
-      <p>Чтобы пользоваться картой, искать по ней, отмечать места как увиденные или экспортировать свои отметки, аккаунт не нужен и принимать эти условия не нужно.</p>
-      <p>Перед каждым входом приложение показывает ссылку на эти условия. Вы принимаете их, установив флажок. Какую версию вы приняли и когда, мы храним вместе с вашим аккаунтом.</p>
+      <p>Эти условия действуют, когда вы предлагаете места или голосуете за предложения в приложении Goodtime State Map, а также когда входите в нём в аккаунт (раздел 14). Предложения и голоса мы называем «публикациями». Приложение предоставляет Simon Oppowa (<a href="../impressum/#en">выходные данные</a>, на английском). В этих условиях «мы» означает поставщика.</p>
+      <p>Чтобы смотреть карту, искать по ней или жаловаться на записи, принимать эти условия не нужно.</p>
+      <p>Исключение — раздел 15 «Видео YouTube»: начиная с версии 0.2.3 он действует для всех, кто воспроизводит видео YouTube в приложении, с аккаунтом или без него.</p>
+      <p>Перед вашим первым предложением или первым голосом, а также перед каждым входом приложение показывает ссылку на эти условия. Вы принимаете их, установив флажок. Какую версию вы приняли и когда, мы храним вместе с вашим псевдонимным идентификатором или вашим аккаунтом (раздел 3).</p>
 
-      <h3>2. Кто может входить в аккаунт</h3>
-      <p>Вы можете входить в аккаунт, если вам 18 лет или больше или у вас есть согласие родителя или опекуна. Перед каждым входом вы подтверждаете: «Мне 18 лет или больше, или у меня есть согласие родителя или опекуна».</p>
+      <h3>2. Кто может делать публикации</h3>
+      <p>Вы можете делать публикации и входить в аккаунт, если вам 18 лет или больше или у вас есть согласие родителя или опекуна. Перед первой публикацией и перед каждым входом вы подтверждаете: «Мне 18 лет или больше, или у меня есть согласие родителя или опекуна».</p>
 
-      <h3 id="ru-account">3. Ваш аккаунт</h3>
-      <p>Вы можете войти через Apple или Google, чтобы ваши отметки были одинаковыми на ваших устройствах. Вход бесплатный и необязательный, и приложение работает и без него.</p>
-      <p>Ваш аккаунт синхронизирует только ваши отметки. Если вы выйдете, синхронизация на этом устройстве прекратится, а ваш аккаунт сохранится.</p>
+      <h3>3. Ваш псевдонимный идентификатор</h3>
+      <p>При первом предложении или первом голосе приложение создаёт псевдонимный идентификатор. Чтобы предлагать места и голосовать, вам не нужны аккаунт, имя или адрес электронной почты. Доступ к этому идентификатору приложение хранит только на вашем устройстве, если только вы не войдёте в аккаунт (раздел 14): тогда идентификатор становится вашим аккаунтом. Если данные приложения потеряны, например после переустановки, доступ пропадает, если только вы не входили в аккаунт; повторный вход возвращает его. Иначе вы больше не можете управлять своими прежними публикациями. Если мы удалим идентификатор по срокам из политики конфиденциальности, ваша следующая публикация создаст новый. Подробности — в <a href="../privacy/#ru">политике конфиденциальности</a>.</p>
 
-      <h3>4. Закрытие аккаунта</h3>
-      <p>Функция «Удалить аккаунт и данные» в «Настройках», в разделе «Ваш прогресс», закрывает ваш аккаунт: она удаляет аккаунт и его отметки на нашем сервере. Ваши отметки остаются на вашем устройстве. Вы также можете попросить нас по электронной почте удалить ваш аккаунт (<a href="../privacy/#ru-delete">политика конфиденциальности, «Удаление ваших данных»</a>).</p>
-      <p>Мы удаляем аккаунт через 24 месяца без входа, обновления сеанса или синхронизации. После этого эти условия для аккаунта прекращают действовать.</p>
+      <h3>4. Что вы публикуете</h3>
+      <p>Предложение состоит из места на карте, категории, названия и заметки длиной не более 280 символов. Загружать изображения нельзя. Название и заметка отображаются так, как вы их написали, и не переводятся.</p>
+      <p>Другие пользователи видят ожидающие предложения, чтобы голосовать за них. Опубликованные предложения видят все пользователи приложения.</p>
 
-      <h3>5. Изменения</h3>
-      <p>Если мы изменим эти условия, мы опубликуем здесь новую версию с новым номером версии. Перед вашим следующим входом приложение попросит вас принять новую версию.</p>
+      <h3>5. Лицензия</h3>
+      <p>В той мере, в какой вам принадлежат права на название, заметку и место вашей публикации, вы предоставляете нам неисключительную, всемирную, безвозмездную и бессрочную лицензию на её хранение, воспроизведение, переработку (в том числе перевод), доведение до всеобщего сведения и распространение. Это касается приложения, веб-сайта и потоков данных приложения.</p>
+      <p>Мы можем предоставлять сублицензии на эти права техническим поставщикам услуг, например хостинга. Мы можем передать эти права преемнику, который продолжит работу приложения.</p>
+      <p>Лицензия прекращается, когда публикация удалена, за исключением копий, которые мы храним в силу правовой обязанности.</p>
 
-      <h3>6. Защита данных</h3>
-      <p>Какие данные содержит аккаунт и как долго мы их храним, описано в <a href="../privacy/#ru-account">политике конфиденциальности</a>.</p>
+      <h3>6. Указание авторства</h3>
+      <p>Мы показываем публикации без вашего имени. Они отображаются только как «Сообщество» с псевдонимной пометкой. Вы с этим согласны.</p>
+
+      <h3 id="ru-content-rules">7. Правила публикаций</h3>
+      <p>Мы не допускаем недопустимого содержимого и пользователей, которые злоупотребляют другими. Запрещены:</p>
+      <ul>
+        <li><strong>Утечки:</strong> утёкшие материалы, материалы, полученные датамайнингом или распространённые до выхода игры, и всё, что на них основано.</li>
+        <li><strong>Персональные данные:</strong> например настоящие имена, игровые никнеймы (геймертеги), адреса или контактные данные.</li>
+        <li><strong>Спойлеры:</strong> отдельные спойлеры сюжета, например катсцены или концовка.</li>
+        <li><strong>Сексуальное содержимое и жестокость:</strong> сексуальное содержимое, нагота и натуралистичное насилие.</li>
+        <li><strong>Ненависть и травля:</strong> ненависть, травля и угрозы.</li>
+        <li><strong>Незаконное содержимое:</strong> всё, что нарушает закон, в том числе права других лиц, например авторские права или права на товарные знаки.</li>
+        <li><strong>Террористическое содержимое:</strong> см. раздел 9.</li>
+        <li><strong>Спам и читы:</strong> реклама, ссылки, спам, читы и использование багов (глитчей).</li>
+        <li><strong>Ложные места:</strong> заведомо неверные места.</li>
+      </ul>
+      <p>При нарушениях мы скрываем или удаляем публикации. При повторных или серьёзных нарушениях мы блокируем идентификатор.</p>
+
+      <h3 id="ru-moderation">8. Модерация</h3>
+
+      <h4>Голосование сообщества</h4>
+      <p>Новые предложения появляются на карте не сразу. Другие пользователи голосуют за или против них. Когда у предложения на 3 голоса «за» больше, чем «против» (+3), оно публикуется. Когда у него на 3 голоса «против» больше, чем «за» (−3), оно скрывается. У каждого идентификатора один голос на предложение. Ваш собственный голос за ваше предложение не учитывается.</p>
+      <p>Публикация и скрытие по итогам голосования происходят автоматически. Заранее мы предложение не проверяем. Голоса окончательны. Голосование заканчивается, когда предложение опубликовано или скрыто: голоса больше не скрывают опубликованную метку сообщества. Этим занимаются жалобы и наши решения.</p>
+
+      <h4>Ограничения против злоупотреблений и текстовый фильтр</h4>
+      <p>Помимо голосования сервер использует только эти автоматические меры:</p>
+      <ul>
+        <li><strong>Текстовый фильтр:</strong> ещё до того, как их кто-либо увидит, он отклоняет названия и заметки со ссылками, адресами электронной почты, @никами, 7 или более цифрами подряд или словами из списка оскорбительных и сексуальных выражений.</li>
+        <li>Он отклоняет голоса идентификаторов, созданных менее 24 часов назад.</li>
+        <li>За любые скользящие 24 часа он принимает не более 30 голосов и 20 предложений на идентификатор.</li>
+        <li>С одного IP-адреса он принимает не более 10 жалоб и сообщений в час и 100 операций записи за 5 минут.</li>
+        <li>Он отклоняет предложения и голоса заблокированных идентификаторов.</li>
+      </ul>
+      <p>Когда сервер что-то отклоняет, приложение сообщает вам почему. Когда текстовый фильтр отклоняет текст, приложение называет правило, сообщает, что проверка была автоматической, и указывает наш контактный адрес.</p>
+
+      <h4>Наши решения</h4>
+      <p>Мы можем опубликовать или скрыть любое предложение независимо от голосов и отменить любой итог голосования. Мы можем объединить дубликат с существующей меткой и отметить метки сообщества как проверенные. Мы делаем это по собственной инициативе, после жалобы или после возражения. Эти решения принимает человек.</p>
+
+      <h4>Блокировки</h4>
+      <p>При повторных или серьёзных нарушениях этих условий мы блокируем идентификатор. Заблокированный идентификатор больше не может предлагать и голосовать.</p>
+
+      <h4>Жалобы</h4>
+      <p>Любой может пожаловаться на запись: в приложении кнопкой «Пожаловаться», через <a href="../contact/?lang=en#report">веб-форму</a> (на английском или немецком) или по электронной почте. Идентификатор для этого не нужен. Человек проверяет каждую жалобу и принимает решение в течение 24 часов после её получения. Жалобы никогда ничего не скрывают автоматически.</p>
+
+      <h4>Обоснование</h4>
+      <p>Если мы скрываем или удаляем ваше предложение, в разделе «Мои предложения» вы видите причину, правило, на которое мы опираемся, и то, как было принято решение.</p>
+
+      <h4>Обжалование решения</h4>
+      <p>Если вы не согласны с решением, напишите на <a href="mailto:goodtimestatemap@protonmail.com">goodtimestatemap@protonmail.com</a> и укажите идентификатор публикации. Человек рассмотрит дело заново. Это касается и решений, принятых голосованием сообщества.</p>
+      <p>Если вы считаете, что мы нарушаем DSA (Регламент ЕС о цифровых услугах), вы можете подать жалобу координатору цифровых услуг государства — члена ЕС, в котором вы находитесь или зарегистрированы (ст. 53 DSA). В Германии это Bundesnetzagentur: www.dsc.bund.de. Вы также можете обратиться в суд.</p>
+
+      <h3 id="ru-tco">9. Террористическое содержимое</h3>
+      <p>Террористическое содержимое в смысле <a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R0784" hreflang="en">Регламента (ЕС) 2021/784</a> (TCO, текст на английском) запрещено. Вот как мы с ним поступаем:</p>
+      <ul>
+        <li>Мы скрываем террористическое содержимое, как только узнаём о нём, и блокируем идентификатор.</li>
+        <li>Предписание об удалении от компетентного органа мы исполняем в течение часа после его получения (ст. 3(3) TCO).</li>
+        <li>При непосредственной угрозе жизни мы немедленно сообщаем компетентным органам (ст. 14(5) TCO).</li>
+        <li>Удалённое содержимое и связанные с ним данные мы храним 6 месяцев. Дольше — только если этого требует орган власти или суд (ст. 6 TCO).</li>
+        <li>Если мы удалили вашу публикацию, мы сообщаем вам об этом, если только орган власти не запретил это по соображениям общественной безопасности (ст. 11 TCO). Вы можете оспорить удаление, написав на <a href="mailto:goodtimestatemap@protonmail.com">goodtimestatemap@protonmail.com</a>, а также в суде.</li>
+        <li>Если в течение календарного года мы принимали меры против террористического содержимого, мы публикуем отчёт о прозрачности не позднее 1 марта следующего года (ст. 7(2) TCO).</li>
+      </ul>
+
+      <h3>10. Контактные пункты</h3>
+      <p>Единый контактный пункт служит для органов власти (ст. 11 DSA), пользователей (ст. 12 DSA) и предписаний об удалении (ст. 15 TCO):</p>
+      <ul>
+        <li>Эл. почта: <a href="mailto:goodtimestatemap@protonmail.com">goodtimestatemap@protonmail.com</a></li>
+        <li>Для пользователей также <a href="../contact/?lang=en#contact">форма обратной связи</a></li>
+        <li>Языки: немецкий, английский</li>
+      </ul>
+      <p>Пожалуйста, отправляйте предписания об удалении по электронной почте, а не через форму обратной связи. Полный текст — в <a href="../impressum/#en">выходных данных</a> (на английском).</p>
+
+      <h3>11. Удаление публикаций</h3>
+      <p>Отдельные предложения можно удалить в разделе «Мои предложения». «Удалить мои данные» в настройках удаляет ваш идентификатор, все его предложения и все отданные вами голоса. Пока вы вошли в аккаунт, её место занимает функция «Удалить аккаунт и данные», которая дополнительно удаляет ваш аккаунт и его синхронизированные отметки (раздел 14). Удалённые предложения больше никто не видит; если они были на карте, они исчезают со всех устройств при их следующем обновлении. Уже принятые решения остаются в силе. Лицензия из раздела 5 после этого прекращается.</p>
+
+      <h3>12. Изменения</h3>
+      <p>Если мы существенно изменим эти условия, мы заранее сообщим вам об этом в приложении. Перед вашим следующим предложением, следующим голосом или следующим входом приложение попросит вас принять новую версию. У каждой версии есть номер. Мелкие редакционные правки его не меняют.</p>
+
+      <h3>13. Защита данных</h3>
+      <p>Как мы обрабатываем ваши данные, описано в <a href="../privacy/#ru">политике конфиденциальности</a>.</p>
+
+      <h3 id="ru-account">14. Ваш аккаунт (начиная с версии 0.2.2)</h3>
+      <p>Вы можете войти через Apple или Google, чтобы ваши отметки были одинаковыми на ваших устройствах. Вход бесплатный и необязательный, и приложение работает и без него. Если у вас есть псевдонимный идентификатор, при входе он становится вашим аккаунтом, а ваши публикации остаются за ним.</p>
+      <p>Ваш аккаунт синхронизирует только ваши отметки. Если вы выйдете, синхронизация на этом устройстве прекратится, а ваш аккаунт сохранится. «Удалить аккаунт и данные» закрывает ваш аккаунт: эта функция удаляет аккаунт, его отметки, его предложения и его голоса. Вы также можете попросить нас по электронной почте удалить ваш аккаунт (<a href="../privacy/#ru-delete">политика конфиденциальности, «Удаление ваших данных»</a>).</p>
+      <p>Мы удаляем аккаунт через 24 месяца без входа, обновления сеанса или синхронизации. После этого эти условия для аккаунта прекращают действовать. Аккаунт, у которого есть предложения или действующая блокировка, сохраняется; после 24 месяцев без активности он теряет только свои отметки и данные сеанса.</p>
+
+      <h3 id="ru-youtube">15. Видео YouTube (начиная с версии 0.2.3)</h3>
+      <p>Этот раздел действует независимо от того, есть ли у вас аккаунт. Когда вы нажимаете на видео YouTube в приложении, оно воспроизводится во встроенном плеере YouTube, и приложение использует для этого YouTube API Services. Воспроизводя видео YouTube в приложении, вы соглашаетесь с тем, что для вас обязательны <a href="https://www.youtube.com/t/terms">Условия использования YouTube</a>. Что при этом получает Google, описано в <a href="../privacy/#ru-youtube">политике конфиденциальности</a>.</p>
     </section>
 
     <section class="lang-section" id="pt-br" lang="pt-BR" aria-labelledby="pt-br-title">
-      <h2 id="pt-br-title">Termos de uso para contas</h2>
-      <p class="meta">Versão 2026-11-accounts-1. Vale a partir da versão 0.2.2 do app. Última atualização: 10 de novembro de 2026.</p>
+      <h2 id="pt-br-title">Termos de uso para contribuições e contas</h2>
+      <p class="meta">Versão 2026-11-crowd-1. Vale a partir da versão 0.2.3 do app; a seção sobre a conta, a partir da versão 0.2.2. Última atualização: 13 de novembro de 2026.</p>
       <p class="meta">Tradução da versão em inglês. Somente as versões em alemão e em inglês são vinculativas.</p>
 
       <h3>1. Do que tratam estes termos</h3>
-      <p>Estes termos valem quando você entra em uma conta no app Goodtime State Map. O app é fornecido por Simon Oppowa (<a href="../impressum/#en">aviso legal</a>, em inglês). Nestes termos, "nós" significa o fornecedor.</p>
-      <p>Para usar o mapa, pesquisar nele, marcar lugares como vistos ou exportar seus marcadores vistos, você não precisa de conta nem precisa aceitar estes termos.</p>
-      <p>Antes de cada login, o app mostra um link para estes termos. Você os aceita marcando uma caixa. Guardamos junto com a sua conta qual versão você aceitou e quando.</p>
+      <p>Estes termos valem quando você sugere lugares ou vota em sugestões no app Goodtime State Map e quando você entra em uma conta nele (seção 14). Chamamos sugestões e votos de "contribuições". O app é fornecido por Simon Oppowa (<a href="../impressum/#en">aviso legal</a>, em inglês). Nestes termos, "nós" significa o fornecedor.</p>
+      <p>Você não precisa aceitar estes termos para ver o mapa, pesquisar nele ou denunciar entradas.</p>
+      <p>A seção 15 "Vídeos do YouTube" é a exceção: a partir da versão 0.2.3, ela vale para todos que reproduzem um vídeo do YouTube no app, com ou sem conta.</p>
+      <p>Antes da sua primeira sugestão ou do seu primeiro voto, e antes de cada login, o app mostra um link para estes termos. Você os aceita marcando uma caixa. Guardamos junto com o seu ID pseudônimo ou a sua conta qual versão você aceitou e quando (seção 3).</p>
 
-      <h3>2. Quem pode fazer login</h3>
-      <p>Você pode fazer login se tiver 18 anos ou mais, ou se tiver o consentimento dos seus pais ou responsáveis. Antes de cada login, você confirma: "Tenho 18 anos ou mais, ou tenho o consentimento dos meus pais ou responsáveis".</p>
+      <h3>2. Quem pode contribuir</h3>
+      <p>Você pode contribuir e fazer login se tiver 18 anos ou mais, ou se tiver o consentimento dos seus pais ou responsáveis. Antes da sua primeira contribuição e antes de cada login, você confirma: "Tenho 18 anos ou mais, ou tenho o consentimento dos meus pais ou responsáveis".</p>
 
-      <h3 id="pt-br-account">3. Sua conta</h3>
-      <p>Você pode entrar com a Apple ou o Google para manter os mesmos marcadores vistos nos seus dispositivos. O login é gratuito e opcional, e o app funciona sem ele.</p>
-      <p>Sua conta sincroniza somente os seus marcadores vistos. Se você sair, a sincronização termina nesse dispositivo e a sua conta continua existindo.</p>
+      <h3>3. Seu ID pseudônimo</h3>
+      <p>Com a sua primeira sugestão ou o seu primeiro voto, o app cria um ID pseudônimo. Para sugerir lugares e votar, você não precisa de conta, nome nem endereço de e-mail. O app guarda o acesso a esse ID apenas no seu dispositivo, a menos que você faça login (seção 14): aí o ID passa a ser a sua conta. Se os dados do app forem perdidos, por exemplo depois de uma reinstalação, esse acesso se perde, a menos que você tenha feito login; fazer login de novo o traz de volta. Caso contrário, você não consegue mais gerenciar as suas contribuições antigas. Se excluirmos o ID pelos prazos da política de privacidade, a sua próxima contribuição cria um novo. Os detalhes estão na <a href="../privacy/#pt-br">política de privacidade</a>.</p>
 
-      <h3>4. Encerrar sua conta</h3>
-      <p>"Excluir conta e dados", em "Configurações", "Seu progresso", encerra a sua conta: exclui a conta e os marcadores vistos dela no nosso servidor. Seus marcadores vistos ficam no seu dispositivo. Você também pode nos pedir por e-mail para excluir sua conta (<a href="../privacy/#pt-br-delete">política de privacidade, "Excluir os seus dados"</a>).</p>
-      <p>Excluímos uma conta após 24 meses sem login, renovação da sessão ou sincronização. Com isso, estes termos terminam para essa conta.</p>
+      <h3>4. O que você contribui</h3>
+      <p>Uma sugestão é formada por uma posição no mapa, uma categoria, um título e uma nota de no máximo 280 caracteres. Você não pode enviar imagens. O título e a nota aparecem como você os escreve e não são traduzidos.</p>
+      <p>Outros usuários veem as sugestões pendentes para poder votar nelas. Todos os usuários do app veem as sugestões publicadas.</p>
 
-      <h3>5. Alterações</h3>
-      <p>Se alterarmos estes termos, publicamos aqui a nova versão com um novo número de versão. Antes do seu próximo login, o app pede que você aceite a nova versão.</p>
+      <h3>5. Licença</h3>
+      <p>Na medida em que você detenha direitos sobre o título, a nota e a posição da sua contribuição, você nos concede uma licença não exclusiva, mundial, gratuita e sem limite de tempo para armazená-la, reproduzi-la, editá-la (inclusive traduzi-la), disponibilizá-la ao público e distribuí-la. Isso abrange o app, o site e os feeds de dados do app.</p>
+      <p>Podemos conceder sublicenças desses direitos a prestadores de serviços técnicos, como hospedagem. Podemos transferir esses direitos a um sucessor que continue operando o app.</p>
+      <p>A licença termina quando a contribuição é excluída, exceto as cópias que guardamos por obrigação legal.</p>
 
-      <h3>6. Privacidade</h3>
-      <p>A <a href="../privacy/#pt-br-account">política de privacidade</a> explica quais dados uma conta contém e por quanto tempo os guardamos.</p>
+      <h3>6. Atribuição</h3>
+      <p>Mostramos as contribuições sem o seu nome. Elas aparecem apenas como "Comunidade" com uma referência pseudônima. Você concorda com isso.</p>
+
+      <h3 id="pt-br-content-rules">7. Regras de conteúdo</h3>
+      <p>Não toleramos conteúdo impróprio nem usuários que abusem de outros. Não são permitidos:</p>
+      <ul>
+        <li><strong>Vazamentos:</strong> material vazado, obtido por mineração de dados (datamining) ou divulgado antes do lançamento do jogo, e tudo o que se baseie nele.</li>
+        <li><strong>Dados pessoais:</strong> por exemplo nomes reais, nomes de jogador (gamertags), endereços ou dados de contato.</li>
+        <li><strong>Spoilers:</strong> spoilers avulsos da história, como cenas ou o final.</li>
+        <li><strong>Conteúdo sexual e violência explícita:</strong> conteúdo sexual, nudez e violência explícita.</li>
+        <li><strong>Ódio e assédio:</strong> ódio, assédio e ameaças.</li>
+        <li><strong>Conteúdo ilícito:</strong> tudo o que viole a lei, inclusive direitos de outras pessoas, como direitos autorais ou de marca.</li>
+        <li><strong>Conteúdo terrorista:</strong> veja a seção 9.</li>
+        <li><strong>Spam e trapaças:</strong> anúncios, links, spam, trapaças e exploração de bugs (glitches).</li>
+        <li><strong>Locais falsos:</strong> lugares errados de propósito.</li>
+      </ul>
+      <p>Se uma contribuição violar estas regras, nós a ocultamos ou removemos. Em caso de violações repetidas ou graves, bloqueamos o ID.</p>
+
+      <h3 id="pt-br-moderation">8. Moderação</h3>
+
+      <h4>Votação da comunidade</h4>
+      <p>Novas sugestões não aparecem no mapa na hora. Outros usuários votam a favor ou contra. Quando uma sugestão tem 3 votos a favor a mais do que contra (+3), ela é publicada. Quando tem 3 votos contra a mais do que a favor (−3), ela é ocultada. Cada ID tem um voto por sugestão. O seu próprio voto na sua sugestão não conta.</p>
+      <p>A publicação e a ocultação por votos são automáticas. Não revisamos a sugestão antes. Os votos são definitivos. A votação termina quando uma sugestão é publicada ou ocultada: os votos não ocultam mais um marcador da comunidade já publicado. Disso cuidam as denúncias e as nossas decisões.</p>
+
+      <h4>Limites contra abusos e filtro de texto</h4>
+      <p>Além da votação, o servidor usa apenas estas medidas automáticas:</p>
+      <ul>
+        <li><strong>Filtro de texto:</strong> antes que alguém os veja, recusa títulos e notas com links, endereços de e-mail, @nomes, 7 ou mais dígitos seguidos ou palavras de uma lista de termos ofensivos e sexuais.</li>
+        <li>Recusa votos de IDs com menos de 24 horas.</li>
+        <li>Em qualquer período móvel de 24 horas, aceita no máximo 30 votos e 20 sugestões por ID.</li>
+        <li>Por endereço IP, aceita no máximo 10 denúncias e mensagens por hora e 100 gravações em 5 minutos.</li>
+        <li>Recusa sugestões e votos de IDs bloqueados.</li>
+      </ul>
+      <p>Quando o servidor recusa algo, o app diz o motivo. Quando o filtro de texto recusa um texto, o app informa a regra, diz que a verificação foi automática e dá o nosso endereço de contato.</p>
+
+      <h4>Nossas decisões</h4>
+      <p>Podemos publicar ou ocultar qualquer sugestão independentemente dos votos e reverter qualquer resultado de uma votação. Podemos mesclar uma duplicata com um marcador existente e marcar marcadores da comunidade como verificados. Fazemos isso por iniciativa própria, após uma denúncia ou após uma contestação. Essas decisões são tomadas por uma pessoa.</p>
+
+      <h4>Bloqueios</h4>
+      <p>Em caso de violações repetidas ou graves destes termos, bloqueamos o ID. Um ID bloqueado não pode mais sugerir nem votar.</p>
+
+      <h4>Denúncias</h4>
+      <p>Qualquer pessoa pode denunciar uma entrada: no app com "Denunciar", pelo <a href="../contact/?lang=en#report">formulário web</a> (em inglês ou alemão) ou por e-mail. Você não precisa de ID para isso. Uma pessoa analisa cada denúncia e decide em até 24 horas após o recebimento. Denúncias nunca ocultam nada automaticamente.</p>
+
+      <h4>Fundamentação</h4>
+      <p>Se ocultarmos ou removermos a sua sugestão, em "Minhas sugestões" você vê o motivo, a regra em que nos baseamos e como a decisão foi tomada.</p>
+
+      <h4>Contestar uma decisão</h4>
+      <p>Se você não concordar com uma decisão, escreva para <a href="mailto:goodtimestatemap@protonmail.com">goodtimestatemap@protonmail.com</a> e informe o ID da contribuição. Uma pessoa vai analisar o caso de novo. Isso também vale para decisões tomadas pela votação da comunidade.</p>
+      <p>Se você achar que violamos o DSA (Regulamento dos Serviços Digitais da UE), pode reclamar ao coordenador dos serviços digitais do Estado-Membro em que você se encontra ou está estabelecido (art. 53 do DSA). Na Alemanha, é a Bundesnetzagentur: www.dsc.bund.de. Você também pode recorrer à Justiça.</p>
+
+      <h3 id="pt-br-tco">9. Conteúdo terrorista</h3>
+      <p>É proibido o conteúdo terrorista nos termos do <a href="https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32021R0784">Regulamento (UE) 2021/784</a> (TCO). Veja como lidamos com ele:</p>
+      <ul>
+        <li>Ocultamos conteúdo terrorista assim que tomamos conhecimento dele e bloqueamos o ID.</li>
+        <li>Cumprimos uma ordem de remoção de uma autoridade competente em até uma hora após o recebimento (art. 3(3) do TCO).</li>
+        <li>Se houver ameaça iminente à vida, informamos imediatamente as autoridades competentes (art. 14(5) do TCO).</li>
+        <li>Guardamos o conteúdo removido e os dados relacionados por 6 meses. Por mais tempo só se uma autoridade ou um tribunal exigir (art. 6 do TCO).</li>
+        <li>Se removermos a sua contribuição, avisamos você, a menos que uma autoridade proíba isso por razões de segurança pública (art. 11 do TCO). Você pode contestar a remoção escrevendo para <a href="mailto:goodtimestatemap@protonmail.com">goodtimestatemap@protonmail.com</a> e perante os tribunais.</li>
+        <li>Se tivermos agido contra conteúdo terrorista em um ano civil, publicamos um relatório de transparência até 1º de março do ano seguinte (art. 7(2) do TCO).</li>
+      </ul>
+
+      <h3>10. Pontos de contato</h3>
+      <p>Um único ponto de contato atende autoridades (art. 11 do DSA), usuários (art. 12 do DSA) e ordens de remoção (art. 15 do TCO):</p>
+      <ul>
+        <li>E-mail: <a href="mailto:goodtimestatemap@protonmail.com">goodtimestatemap@protonmail.com</a></li>
+        <li>Para usuários, também o <a href="../contact/?lang=en#contact">formulário de contato</a></li>
+        <li>Idiomas: alemão, inglês</li>
+      </ul>
+      <p>Envie ordens de remoção por e-mail, não pelo formulário de contato. O texto completo está no <a href="../impressum/#en">aviso legal</a> (em inglês).</p>
+
+      <h3>11. Excluir contribuições</h3>
+      <p>Você pode excluir sugestões individuais em "Minhas sugestões". "Excluir meus dados", nas configurações, exclui o seu ID, todas as sugestões dele e todos os votos que você deu. Enquanto você estiver conectado, "Excluir conta e dados" toma o lugar dessa opção e também exclui a sua conta e os marcadores vistos sincronizados dela (seção 14). Ninguém vê mais as sugestões excluídas; se estavam no mapa, elas somem de todos os dispositivos na próxima atualização deles. As decisões já tomadas continuam valendo. A licença da seção 5 termina então.</p>
+
+      <h3>12. Alterações</h3>
+      <p>Se alterarmos estes termos de forma significativa, avisamos você no app antes de a alteração valer. Antes da sua próxima sugestão, do seu próximo voto ou do seu próximo login, o app então pede que você aceite a nova versão. Cada versão tem um número de versão. Pequenas alterações de redação não o mudam.</p>
+
+      <h3>13. Privacidade</h3>
+      <p>Como tratamos os seus dados está descrito na <a href="../privacy/#pt-br">política de privacidade</a>.</p>
+
+      <h3 id="pt-br-account">14. Sua conta (a partir da versão 0.2.2)</h3>
+      <p>Você pode entrar com a Apple ou o Google para manter os mesmos marcadores vistos nos seus dispositivos. O login é gratuito e opcional, e o app funciona sem ele. Se você tiver um ID pseudônimo, o login o transforma na sua conta, e as suas contribuições continuam com ela.</p>
+      <p>Sua conta sincroniza somente os seus marcadores vistos. Se você sair, a sincronização termina nesse dispositivo e a sua conta continua existindo. "Excluir conta e dados" encerra a sua conta: exclui a conta, os marcadores vistos, as sugestões e os votos dela. Você também pode nos pedir por e-mail para excluir sua conta (<a href="../privacy/#pt-br-delete">política de privacidade, "Excluir os seus dados"</a>).</p>
+      <p>Excluímos uma conta após 24 meses sem login, renovação da sessão ou sincronização. Com isso, estes termos terminam para essa conta. Uma conta que tenha sugestões ou um bloqueio ativo é mantida; após 24 meses sem atividade, ela perde apenas os marcadores vistos e os dados da sessão.</p>
+
+      <h3 id="pt-br-youtube">15. Vídeos do YouTube (a partir da versão 0.2.3)</h3>
+      <p>Esta seção vale com ou sem conta. Quando você toca em um vídeo do YouTube no app, ele é reproduzido no player incorporado do YouTube, e o app usa para isso os YouTube API Services. Ao reproduzir um vídeo do YouTube no app, você concorda em ficar vinculado aos <a href="https://www.youtube.com/t/terms">Termos de Serviço do YouTube</a>. A <a href="../privacy/#pt-br-youtube">política de privacidade</a> explica o que o Google recebe.</p>
     </section>
 
     <section class="lang-section" id="it" lang="it" aria-labelledby="it-title">
-      <h2 id="it-title">Condizioni d'uso per gli account</h2>
-      <p class="meta">Versione 2026-11-accounts-1. Si applica a partire dalla versione 0.2.2 dell'app. Ultimo aggiornamento: 10 novembre 2026.</p>
+      <h2 id="it-title">Condizioni d'uso per i contributi e gli account</h2>
+      <p class="meta">Versione 2026-11-crowd-1. Si applica a partire dalla versione 0.2.3 dell'app; la sezione sull'account, dalla versione 0.2.2. Ultimo aggiornamento: 13 novembre 2026.</p>
       <p class="meta">Traduzione della versione inglese. Fanno fede solo le versioni tedesca e inglese.</p>
 
       <h3>1. Oggetto</h3>
-      <p>Queste condizioni si applicano quando accedi a un account nell'app Goodtime State Map. L'app è fornita da Simon Oppowa (<a href="../impressum/#en">note legali</a>, in inglese). In queste condizioni, “noi” indica il fornitore.</p>
-      <p>Per usare la mappa, effettuare ricerche, segnare luoghi come visti o esportare i tuoi indicatori visti non ti serve un account e non devi accettare queste condizioni.</p>
-      <p>Prima di ogni accesso, l'app mostra un link a queste condizioni. Le accetti spuntando una casella. Conserviamo insieme al tuo account quale versione hai accettato e quando.</p>
+      <p>Queste condizioni si applicano quando proponi luoghi o voti le proposte nell'app Goodtime State Map e quando accedi a un account nell'app (sezione 14). Chiamiamo proposte e voti “contributi”. L'app è fornita da Simon Oppowa (<a href="../impressum/#en">note legali</a>, in inglese). In queste condizioni, “noi” indica il fornitore.</p>
+      <p>Non devi accettare queste condizioni per consultare la mappa, effettuare ricerche o segnalare voci.</p>
+      <p>La sezione 15 “Video di YouTube” fa eccezione: dalla versione 0.2.3 si applica a chiunque riproduca un video di YouTube nell'app, con o senza account.</p>
+      <p>Prima della tua prima proposta o del tuo primo voto, e prima di ogni accesso, l'app mostra un link a queste condizioni. Le accetti spuntando una casella. Conserviamo insieme al tuo ID pseudonimo o al tuo account quale versione hai accettato e quando (sezione 3).</p>
 
-      <h3>2. Chi può accedere</h3>
-      <p>Puoi accedere se hai almeno 18 anni o hai il consenso di un genitore o tutore. Prima di ogni accesso confermi: “Ho almeno 18 anni o ho il consenso di un genitore o tutore.”</p>
+      <h3>2. Chi può contribuire</h3>
+      <p>Puoi contribuire e accedere se hai almeno 18 anni o hai il consenso di un genitore o tutore. Prima del tuo primo contributo e prima di ogni accesso confermi: “Ho almeno 18 anni o ho il consenso di un genitore o tutore.”</p>
 
-      <h3 id="it-account">3. Il tuo account</h3>
-      <p>Puoi accedere con Apple o Google per avere gli stessi indicatori visti sui tuoi dispositivi. L'accesso è gratuito e facoltativo, e l'app funziona anche senza.</p>
-      <p>Il tuo account sincronizza solo i tuoi indicatori visti. Se esci, la sincronizzazione su quel dispositivo termina e il tuo account resta.</p>
+      <h3>3. Il tuo ID pseudonimo</h3>
+      <p>Con la tua prima proposta o il tuo primo voto, l'app crea un ID pseudonimo. Per proporre luoghi e votare non ti servono né un account, né un nome, né un indirizzo e-mail. L'app conserva l'accesso a questo ID solo sul tuo dispositivo, a meno che tu non acceda a un account (sezione 14): in quel caso l'ID diventa il tuo account. Se i dati dell'app vanno persi, per esempio dopo una reinstallazione, questo accesso si perde, a meno che tu non abbia effettuato l'accesso all'account; accedendo di nuovo lo recuperi. Altrimenti non puoi più gestire i tuoi contributi precedenti. Se cancelliamo l'ID secondo i termini indicati nell'informativa sulla privacy, il tuo prossimo contributo ne crea uno nuovo. I dettagli sono nell'<a href="../privacy/#it">informativa sulla privacy</a>.</p>
 
-      <h3>4. Chiudere il tuo account</h3>
-      <p>“Elimina account e dati” in “Impostazioni”, “I tuoi progressi” chiude il tuo account: elimina l'account e i suoi indicatori visti sul nostro server. I tuoi indicatori visti restano sul tuo dispositivo. Puoi anche chiederci via e-mail di eliminare il tuo account (<a href="../privacy/#it-delete">informativa sulla privacy, “Cancellare i tuoi dati”</a>).</p>
-      <p>Eliminiamo un account dopo 24 mesi senza accesso, rinnovo della sessione o sincronizzazione. In quel momento queste condizioni cessano per quell'account.</p>
+      <h3>4. Cosa contribuisci</h3>
+      <p>Una proposta è composta da una posizione sulla mappa, una categoria, un titolo e una nota di massimo 280 caratteri. Non puoi caricare immagini. Il titolo e la nota compaiono così come li scrivi e non vengono tradotti.</p>
+      <p>Gli altri utenti vedono le proposte in attesa, per poterle votare. Tutti gli utenti dell'app vedono le proposte pubblicate.</p>
 
-      <h3>5. Modifiche</h3>
-      <p>Se modifichiamo queste condizioni, pubblichiamo qui la nuova versione con un nuovo identificativo di versione. Prima del tuo prossimo accesso, l'app ti chiede di accettare la nuova versione.</p>
+      <h3>5. Licenza</h3>
+      <p>Nella misura in cui sei titolare di diritti sul titolo, sulla nota e sulla posizione del tuo contributo, ci concedi una licenza non esclusiva, mondiale, gratuita e illimitata nel tempo per conservarlo, riprodurlo, modificarlo (anche tradurlo), metterlo a disposizione del pubblico e distribuirlo. Ciò comprende l'app, il sito web e i flussi di dati dell'app.</p>
+      <p>Possiamo concedere in sublicenza questi diritti a fornitori di servizi tecnici, come l'hosting. Possiamo trasferirli a un successore che gestisca l'app.</p>
+      <p>La licenza termina quando il contributo viene cancellato, salvo per le copie che conserviamo in virtù di un obbligo di legge.</p>
 
-      <h3>6. Privacy</h3>
-      <p>L'<a href="../privacy/#it-account">informativa sulla privacy</a> spiega quali dati contiene un account e per quanto tempo li conserviamo.</p>
+      <h3>6. Attribuzione</h3>
+      <p>Mostriamo i contributi senza il tuo nome. Compaiono solo come “Community” con un riferimento pseudonimo. Accetti questa modalità.</p>
+
+      <h3 id="it-content-rules">7. Regole sui contenuti</h3>
+      <p>Non tolleriamo contenuti inappropriati né utenti che commettono abusi nei confronti di altri. Non sono ammessi:</p>
+      <ul>
+        <li><strong>Leak:</strong> materiale trapelato, ottenuto tramite datamining o diffuso prima dell'uscita del gioco, e tutto ciò che si basa su di esso.</li>
+        <li><strong>Dati personali:</strong> per esempio nomi reali, gamertag, indirizzi o recapiti.</li>
+        <li><strong>Spoiler:</strong> spoiler isolati sulla trama, come filmati o il finale.</li>
+        <li><strong>Contenuti sessuali e violenza esplicita:</strong> contenuti sessuali, nudità e violenza esplicita.</li>
+        <li><strong>Odio e molestie:</strong> odio, molestie e minacce.</li>
+        <li><strong>Contenuti illegali:</strong> tutto ciò che viola la legge, compresi i diritti altrui come il diritto d'autore o i marchi.</li>
+        <li><strong>Contenuti terroristici:</strong> vedi la sezione 9.</li>
+        <li><strong>Spam e cheat:</strong> pubblicità, link, spam, cheat e sfruttamento di glitch.</li>
+        <li><strong>Posizioni false:</strong> luoghi deliberatamente errati.</li>
+      </ul>
+      <p>Se un contributo viola queste regole, lo nascondiamo o lo rimuoviamo. In caso di violazioni ripetute o gravi, blocchiamo l'ID.</p>
+
+      <h3 id="it-moderation">8. Moderazione</h3>
+
+      <h4>Voto della community</h4>
+      <p>Le nuove proposte non compaiono subito sulla mappa. Gli altri utenti votano a favore o contro. Quando una proposta ha 3 voti a favore in più rispetto a quelli contrari (+3), viene pubblicata. Quando ha 3 voti contrari in più rispetto a quelli a favore (−3), viene nascosta. Ogni ID ha un voto per proposta. Il tuo voto sulla tua proposta non conta.</p>
+      <p>La pubblicazione e l'occultamento tramite voto avvengono automaticamente. Non esaminiamo prima la proposta. I voti sono definitivi. La votazione termina quando una proposta viene pubblicata o nascosta: i voti non nascondono più un indicatore della community già pubblicato. Di questi si occupano le segnalazioni e le nostre decisioni.</p>
+
+      <h4>Limiti contro gli abusi e filtro del testo</h4>
+      <p>Oltre al voto, il server utilizza solo queste misure automatizzate:</p>
+      <ul>
+        <li><strong>Filtro del testo:</strong> prima che chiunque li veda, rifiuta titoli e note con link, indirizzi e-mail, @nomiutente, 7 o più cifre consecutive o parole di un elenco di termini offensivi e sessuali.</li>
+        <li>Rifiuta i voti degli ID creati da meno di 24 ore.</li>
+        <li>In qualsiasi intervallo mobile di 24 ore, accetta al massimo 30 voti e 20 proposte per ID.</li>
+        <li>Per indirizzo IP, accetta al massimo 10 segnalazioni e messaggi all'ora e 100 scritture in 5 minuti.</li>
+        <li>Rifiuta proposte e voti degli ID bloccati.</li>
+      </ul>
+      <p>Quando il server rifiuta qualcosa, l'app ti dice perché. Quando il filtro del testo rifiuta un testo, l'app indica la regola, precisa che il controllo è stato automatico e fornisce il nostro indirizzo di contatto.</p>
+
+      <h4>Le nostre decisioni</h4>
+      <p>Possiamo pubblicare o nascondere qualsiasi proposta indipendentemente dai voti e annullare qualsiasi esito di una votazione. Possiamo unire un duplicato a un indicatore esistente e contrassegnare indicatori della community come verificati. Lo facciamo di nostra iniziativa, dopo una segnalazione o dopo una contestazione. Queste decisioni sono prese da una persona.</p>
+
+      <h4>Blocchi</h4>
+      <p>In caso di violazioni ripetute o gravi di queste condizioni, blocchiamo l'ID. Un ID bloccato non può più proporre né votare.</p>
+
+      <h4>Segnalazioni</h4>
+      <p>Chiunque può segnalare una voce: nell'app con “Segnala”, tramite il <a href="../contact/?lang=en#report">modulo web</a> (in inglese o in tedesco) o via e-mail. Non serve alcun ID. Una persona esamina ogni segnalazione e decide entro 24 ore dalla ricezione. Le segnalazioni non nascondono mai nulla automaticamente.</p>
+
+      <h4>Motivazione</h4>
+      <p>Se nascondiamo o rimuoviamo la tua proposta, “Le mie proposte” ti mostra il motivo, la regola su cui ci siamo basati e come è stata presa la decisione.</p>
+
+      <h4>Contestare una decisione</h4>
+      <p>Se non sei d'accordo con una decisione, scrivi a <a href="mailto:goodtimestatemap@protonmail.com">goodtimestatemap@protonmail.com</a> indicando l'ID del contributo. Una persona riesaminerà il caso. Ciò vale anche per le decisioni prese tramite il voto della community.</p>
+      <p>Se ritieni che violiamo il DSA (regolamento sui servizi digitali), puoi presentare un reclamo al coordinatore dei servizi digitali dello Stato membro in cui ti trovi o hai sede (art. 53 del DSA). In Germania è la Bundesnetzagentur: www.dsc.bund.de. Puoi anche rivolgerti a un tribunale.</p>
+
+      <h3 id="it-tco">9. Contenuti terroristici</h3>
+      <p>I contenuti terroristici ai sensi del <a href="https://eur-lex.europa.eu/legal-content/IT/TXT/?uri=CELEX:32021R0784">regolamento (UE) 2021/784</a> (TCO) sono vietati. Ecco come li gestiamo:</p>
+      <ul>
+        <li>Nascondiamo i contenuti terroristici non appena ne veniamo a conoscenza e blocchiamo l'ID.</li>
+        <li>Eseguiamo un ordine di rimozione di un'autorità competente entro un'ora dalla ricezione (art. 3, par. 3, del TCO).</li>
+        <li>In caso di minaccia imminente per la vita, informiamo immediatamente le autorità competenti (art. 14, par. 5, del TCO).</li>
+        <li>Conserviamo i contenuti rimossi e i relativi dati per 6 mesi. Più a lungo solo se un'autorità o un tribunale lo richiede (art. 6 del TCO).</li>
+        <li>Se abbiamo rimosso il tuo contributo, te lo comunichiamo, a meno che un'autorità non lo vieti per motivi di sicurezza pubblica (art. 11 del TCO). Puoi contestare la rimozione scrivendo a <a href="mailto:goodtimestatemap@protonmail.com">goodtimestatemap@protonmail.com</a> e dinanzi ai tribunali.</li>
+        <li>Se in un anno civile abbiamo preso provvedimenti contro contenuti terroristici, pubblichiamo una relazione di trasparenza entro il 1° marzo dell'anno successivo (art. 7, par. 2, del TCO).</li>
+      </ul>
+
+      <h3>10. Punti di contatto</h3>
+      <p>Un unico punto di contatto è a disposizione delle autorità (art. 11 del DSA), degli utenti (art. 12 del DSA) e per gli ordini di rimozione (art. 15 del TCO):</p>
+      <ul>
+        <li>E-mail: <a href="mailto:goodtimestatemap@protonmail.com">goodtimestatemap@protonmail.com</a></li>
+        <li>Per gli utenti, anche il <a href="../contact/?lang=en#contact">modulo di contatto</a></li>
+        <li>Lingue: tedesco, inglese</li>
+      </ul>
+      <p>Invia gli ordini di rimozione via e-mail, non tramite il modulo di contatto. Il testo completo è nelle <a href="../impressum/#en">note legali</a> (in inglese).</p>
+
+      <h3>11. Cancellare i contributi</h3>
+      <p>Puoi cancellare singole proposte in “Le mie proposte”. “Elimina i miei dati” nelle impostazioni cancella il tuo ID, tutte le sue proposte e ogni voto che hai espresso. Finché hai effettuato l'accesso, al suo posto c'è “Elimina account e dati”, che elimina anche il tuo account e i suoi indicatori visti sincronizzati (sezione 14). Nessuno vede più le proposte cancellate; se erano sulla mappa, scompaiono da tutti i dispositivi al loro prossimo aggiornamento. Le decisioni già prese restano valide. La licenza di cui alla sezione 5 termina in quel momento.</p>
+
+      <h3>12. Modifiche</h3>
+      <p>Se modifichiamo queste condizioni in modo significativo, te lo comunichiamo nell'app prima che la modifica si applichi. Prima della tua prossima proposta, del tuo prossimo voto o del tuo prossimo accesso, l'app ti chiede quindi di accettare la nuova versione. Ogni versione ha un identificativo di versione. Le piccole modifiche redazionali non lo cambiano.</p>
+
+      <h3>13. Privacy</h3>
+      <p>Il modo in cui trattiamo i tuoi dati è descritto nell'<a href="../privacy/#it">informativa sulla privacy</a>.</p>
+
+      <h3 id="it-account">14. Il tuo account (dalla versione 0.2.2)</h3>
+      <p>Puoi accedere con Apple o Google per avere gli stessi indicatori visti sui tuoi dispositivi. L'accesso è gratuito e facoltativo, e l'app funziona anche senza. Se hai un ID pseudonimo, con l'accesso diventa il tuo account e i tuoi contributi restano legati a esso.</p>
+      <p>Il tuo account sincronizza solo i tuoi indicatori visti. Se esci, la sincronizzazione su quel dispositivo termina e il tuo account resta. “Elimina account e dati” chiude il tuo account: elimina l'account, i suoi indicatori visti, le sue proposte e i suoi voti. Puoi anche chiederci via e-mail di eliminare il tuo account (<a href="../privacy/#it-delete">informativa sulla privacy, “Cancellare i tuoi dati”</a>).</p>
+      <p>Eliminiamo un account dopo 24 mesi senza accesso, rinnovo della sessione o sincronizzazione. In quel momento queste condizioni cessano per quell'account. Un account con proposte o con un blocco attivo viene conservato; dopo 24 mesi senza attività perde solo i suoi indicatori visti e i dati di sessione.</p>
+
+      <h3 id="it-youtube">15. Video di YouTube (dalla versione 0.2.3)</h3>
+      <p>Questa sezione si applica con o senza account. Quando tocchi un video di YouTube nell'app, viene riprodotto nel player incorporato di YouTube, e per questo l'app utilizza YouTube API Services. Riproducendo un video di YouTube nell'app, accetti di essere vincolato dai <a href="https://www.youtube.com/t/terms">Termini di servizio di YouTube</a>. L'<a href="../privacy/#it-youtube">informativa sulla privacy</a> spiega che cosa riceve Google.</p>
     </section>
 
     <section class="lang-section" id="tr" lang="tr" aria-labelledby="tr-title">
-      <h2 id="tr-title">Hesaplar için kullanım koşulları</h2>
-      <p class="meta">Sürüm 2026-11-accounts-1. Uygulamanın 0.2.2 sürümünden itibaren geçerlidir. Son güncelleme: 10 Kasım 2026.</p>
+      <h2 id="tr-title">Katkılar ve hesaplar için kullanım koşulları</h2>
+      <p class="meta">Sürüm 2026-11-crowd-1. Uygulamanın 0.2.3 sürümünden itibaren, hesap bölümü ise 0.2.2 sürümünden itibaren geçerlidir. Son güncelleme: 13 Kasım 2026.</p>
       <p class="meta">İngilizce sürümün çevirisidir. Yalnızca Almanca ve İngilizce sürümler bağlayıcıdır.</p>
 
       <h3>1. Bu koşulların kapsamı</h3>
-      <p>Bu koşullar, Goodtime State Map uygulamasında bir hesapla oturum açtığınızda geçerlidir. Uygulamayı Simon Oppowa sunmaktadır (<a href="../impressum/#en">yasal bildirim</a>, İngilizce). Bu koşullarda “biz” sağlayıcıyı ifade eder.</p>
-      <p>Haritayı kullanmak, haritada arama yapmak, yerleri görüldü olarak işaretlemek veya görülen işaretçilerinizi dışa aktarmak için hesaba ihtiyacınız yoktur ve bu koşulları kabul etmeniz gerekmez.</p>
-      <p>Her oturum açmadan önce uygulama bu koşullara bir bağlantı gösterir. Bir kutuyu işaretleyerek bunları kabul edersiniz. Hangi sürümü ne zaman kabul ettiğinizi hesabınızla birlikte saklarız.</p>
+      <p>Bu koşullar, Goodtime State Map uygulamasında yer önerdiğinizde veya öneriler hakkında oy kullandığınızda ve uygulamada bir hesapla oturum açtığınızda (bölüm 14) geçerlidir. Önerileri ve oyları “katkılar” olarak adlandırıyoruz. Uygulamayı Simon Oppowa sunmaktadır (<a href="../impressum/#en">yasal bildirim</a>, İngilizce). Bu koşullarda “biz” sağlayıcıyı ifade eder.</p>
+      <p>Haritayı görüntülemek, haritada arama yapmak veya girdileri bildirmek için bu koşulları kabul etmeniz gerekmez.</p>
+      <p>Bölüm 15 “YouTube videoları” bunun istisnasıdır: 0.2.3 sürümünden itibaren, hesabı olsun ya da olmasın, uygulamada bir YouTube videosu oynatan herkes için geçerlidir.</p>
+      <p>İlk kez bir yer önermeden veya oy kullanmadan önce ve her oturum açmadan önce uygulama bu koşullara bir bağlantı gösterir. Bir kutuyu işaretleyerek bunları kabul edersiniz. Hangi sürümü ne zaman kabul ettiğinizi takma adlı kimliğinizle veya hesabınızla birlikte saklarız (bölüm 3).</p>
 
-      <h3>2. Kimler oturum açabilir</h3>
-      <p>18 yaşında veya daha büyükseniz ya da ebeveyninizin veya vasinizin onayı varsa oturum açabilirsiniz. Her oturum açmadan önce şunu onaylarsınız: “18 yaşında veya daha büyüğüm ya da ebeveynimin veya vasimin onayı var.”</p>
+      <h3>2. Kimler katkıda bulunabilir</h3>
+      <p>18 yaşında veya daha büyükseniz ya da ebeveyninizin veya vasinizin onayı varsa katkıda bulunabilir ve oturum açabilirsiniz. İlk katkınızdan önce ve her oturum açmadan önce şunu onaylarsınız: “18 yaşında veya daha büyüğüm ya da ebeveynimin veya vasimin onayı var.”</p>
 
-      <h3 id="tr-account">3. Hesabınız</h3>
-      <p>Görülen işaretçilerinizin cihazlarınızda aynı kalması için Apple veya Google ile oturum açabilirsiniz. Oturum açmak ücretsiz ve isteğe bağlıdır; uygulama oturum açmadan da çalışır.</p>
-      <p>Hesabınız yalnızca görülen işaretçilerinizi eşitler. Oturumu kapattığınızda o cihazdaki eşitleme sona erer ve hesabınız korunur.</p>
+      <h3>3. Takma adlı kimliğiniz</h3>
+      <p>İlk önerinizle veya ilk oyunuzla uygulama takma adlı bir kimlik oluşturur. Yer önermek ve oy kullanmak için hesaba, ada veya e-posta adresine ihtiyacınız yoktur. Uygulama bu kimliğe erişimi yalnızca cihazınızda tutar; ancak oturum açarsanız (bölüm 14) kimlik hesabınız olur. Uygulama verileri kaybolursa, örneğin yeniden yüklemeden sonra, bu erişim de kaybolur; daha önce oturum açtıysanız yeniden oturum açmak erişimi geri getirir. Aksi takdirde eski katkılarınızı artık yönetemezsiniz. Kimliği gizlilik politikasındaki sürelere göre silersek bir sonraki katkınız yeni bir kimlik oluşturur. Ayrıntılar <a href="../privacy/#tr">gizlilik politikasında</a> yer alır.</p>
 
-      <h3>4. Hesabınızı sonlandırma</h3>
-      <p>“Ayarlar”, “İlerlemeniz” bölümündeki “Hesabı ve verileri sil” hesabınızı sonlandırır: hesabı ve görülen işaretçilerini sunucumuzdan siler. Görülen işaretçileriniz cihazınızda kalır. Hesabınızın silinmesini bizden e-postayla da isteyebilirsiniz (<a href="../privacy/#tr-delete">gizlilik politikası, “Verilerinizi silme”</a>).</p>
-      <p>Bir hesabı, 24 ay boyunca oturum açma, oturum yenileme veya eşitleme olmazsa sileriz. Bu koşullar o hesap için bununla sona erer.</p>
+      <h3>4. Neye katkıda bulunursunuz</h3>
+      <p>Bir öneri; haritada bir konum, bir kategori, bir başlık ve en fazla 280 karakterlik bir nottan oluşur. Görsel yükleyemezsiniz. Başlık ve not yazdığınız gibi görünür ve çevrilmez.</p>
+      <p>Diğer kullanıcılar, oy verebilmeleri için bekleyen önerileri görür. Uygulamanın tüm kullanıcıları yayımlanmış önerileri görür.</p>
 
-      <h3>5. Değişiklikler</h3>
-      <p>Bu koşulları değiştirirsek yeni sürümü burada yeni bir sürüm tanımlayıcısıyla yayımlarız. Bir sonraki oturum açmanızdan önce uygulama sizden yeni sürümü kabul etmenizi ister.</p>
+      <h3>5. Lisans</h3>
+      <p>Katkınızın başlığı, notu ve konumu üzerinde haklara sahip olduğunuz ölçüde, katkınızı saklamamız, çoğaltmamız, düzenlememiz (çevirmek dâhil), erişime sunmamız ve dağıtmamız için bize münhasır olmayan, dünya çapında, bedelsiz ve süresiz bir lisans verirsiniz. Bu lisans; uygulamayı, web sitesini ve uygulamanın veri akışlarını kapsar.</p>
+      <p>Bu haklar için barındırma gibi teknik hizmet sağlayıcılara alt lisans verebiliriz. Bu hakları uygulamayı işleten bir halefe devredebiliriz.</p>
+      <p>Lisans, katkı silindiğinde sona erer; yasal bir yükümlülük nedeniyle sakladığımız kopyalar bunun dışındadır.</p>
 
-      <h3>6. Gizlilik</h3>
-      <p>Bir hesabın hangi verileri içerdiği ve bunları ne kadar süre sakladığımız <a href="../privacy/#tr-account">gizlilik politikasında</a> açıklanmıştır.</p>
+      <h3>6. Atıf</h3>
+      <p>Katkıları adınız olmadan gösteririz. Yalnızca takma adlı bir kısaltmayla “Topluluk” olarak görünürler. Bunu kabul edersiniz.</p>
+
+      <h3 id="tr-content-rules">7. İçerik kuralları</h3>
+      <p>Uygunsuz içeriğe ve başkalarını taciz eden kullanıcılara müsamaha göstermeyiz. Şunlara izin verilmez:</p>
+      <ul>
+        <li><strong>Sızıntılar:</strong> sızdırılmış, veri madenciliğiyle (datamining) elde edilmiş veya oyunun çıkışından önce yayılmış materyal ve buna dayanan her şey.</li>
+        <li><strong>Kişisel veriler:</strong> örneğin gerçek adlar, oyuncu adları (gamertag), adresler veya iletişim bilgileri.</li>
+        <li><strong>Spoiler:</strong> ara sahneler veya oyunun sonu gibi hikâyeye dair tekil spoiler'lar.</li>
+        <li><strong>Cinsel içerik ve aşırı şiddet:</strong> cinsel içerik, çıplaklık ve aşırı şiddet.</li>
+        <li><strong>Nefret ve taciz:</strong> nefret, taciz ve tehditler.</li>
+        <li><strong>Hukuka aykırı içerik:</strong> telif hakkı veya markalar gibi başkalarının hakları dâhil, yasayı ihlal eden her şey.</li>
+        <li><strong>Terör içeriği:</strong> bkz. bölüm 9.</li>
+        <li><strong>Spam ve hileler:</strong> reklam, bağlantılar, spam, hileler ve hata (glitch) istismarları.</li>
+        <li><strong>Yanlış konumlar:</strong> bilerek yanlış girilmiş yerler.</li>
+      </ul>
+      <p>Bir katkı bu kuralları ihlal ederse onu gizler veya kaldırırız. Tekrarlanan veya ağır ihlallerde kimliği engelleriz.</p>
+
+      <h3 id="tr-moderation">8. Moderasyon</h3>
+
+      <h4>Topluluk oylaması</h4>
+      <p>Yeni öneriler haritada hemen görünmez. Diğer kullanıcılar lehte veya aleyhte oy verir. Bir önerinin lehte oyları aleyhte oylarından 3 fazla olduğunda (+3) öneri yayımlanır. Aleyhte oyları lehte oylarından 3 fazla olduğunda (−3) gizlenir. Her kimliğin öneri başına bir oyu vardır. Kendi önerinize verdiğiniz oy sayılmaz.</p>
+      <p>Oylamayla yayımlama ve gizleme otomatik olarak gerçekleşir. Öneriyi önceden incelemeyiz. Oylar kesindir. Bir öneri yayımlandığında veya gizlendiğinde oylama sona erer: oylar, yayımlanmış bir topluluk işaretçisini artık gizlemez. Bunlarla bildirimler ve kararlarımız ilgilenir.</p>
+
+      <h4>Kötüye kullanım sınırları ve metin filtresi</h4>
+      <p>Sunucu, oylamanın yanı sıra yalnızca şu otomatik önlemleri kullanır:</p>
+      <ul>
+        <li><strong>Metin filtresi:</strong> bağlantı, e-posta adresi, @kullanıcı adı, arka arkaya 7 veya daha fazla rakam ya da hakaret içeren ve cinsel terimlerden oluşan bir listedeki kelimeleri içeren başlıkları ve notları, kimse görmeden önce reddeder.</li>
+        <li>24 saatten daha yeni kimliklerin oylarını reddeder.</li>
+        <li>Kayan herhangi bir 24 saatlik süre içinde kimlik başına en fazla 30 oy ve 20 öneri kabul eder.</li>
+        <li>IP adresi başına saatte en fazla 10 bildirim ve mesaj ile 5 dakikada en fazla 100 yazma işlemi kabul eder.</li>
+        <li>Engellenmiş kimliklerin önerilerini ve oylarını reddeder.</li>
+      </ul>
+      <p>Sunucu bir şeyi reddettiğinde uygulama size nedenini söyler. Metin filtresi bir metni reddettiğinde uygulama kuralı belirtir, denetimin otomatik olduğunu söyler ve iletişim adresimizi verir.</p>
+
+      <h4>Kararlarımız</h4>
+      <p>Herhangi bir öneriyi oylardan bağımsız olarak yayımlayabilir veya gizleyebilir ve bir oylamanın herhangi bir sonucunu tersine çevirebiliriz. Bir kopyayı mevcut bir işaretçiyle birleştirebilir ve topluluk işaretçilerini doğrulanmış olarak işaretleyebiliriz. Bunu kendi inisiyatifimizle, bir bildirimden sonra veya bir itirazdan sonra yaparız. Bu kararları bir insan verir.</p>
+
+      <h4>Engellemeler</h4>
+      <p>Bu koşulların tekrarlanan veya ağır ihlallerinde kimliği engelleriz. Engellenmiş bir kimlik artık öneride bulunamaz ve oy kullanamaz.</p>
+
+      <h4>Bildirimler</h4>
+      <p>Herkes bir girdiyi bildirebilir: uygulamada “Bildir” ile, <a href="../contact/?lang=en#report">web formu</a> (İngilizce veya Almanca) aracılığıyla veya e-postayla. Bunun için kimliğe ihtiyacınız yoktur. Her bildirimi bir insan inceler ve bildirim alındıktan sonra 24 saat içinde karar verir. Bildirimler hiçbir şeyi asla otomatik olarak gizlemez.</p>
+
+      <h4>Gerekçe</h4>
+      <p>Önerinizi gizler veya kaldırırsak “Gönderilerim” size nedeni, dayandığımız kuralı ve kararın nasıl verildiğini gösterir.</p>
+
+      <h4>Bir karara itiraz etme</h4>
+      <p>Bir karara katılmıyorsanız <a href="mailto:goodtimestatemap@protonmail.com">goodtimestatemap@protonmail.com</a> adresine yazın ve katkının kimliğini belirtin. Bir insan durumu yeniden inceler. Bu, topluluk oylamasıyla verilen kararlar için de geçerlidir.</p>
+      <p>DSA'yı (Dijital Hizmetler Tüzüğü) ihlal ettiğimizi düşünüyorsanız bulunduğunuz veya yerleşik olduğunuz üye devletin Dijital Hizmetler Koordinatörüne şikâyette bulunabilirsiniz (DSA m. 53). Almanya'da bu makam Bundesnetzagentur'dur: www.dsc.bund.de. Konuyu mahkemeye de taşıyabilirsiniz.</p>
+
+      <h3 id="tr-tco">9. Terör içeriği</h3>
+      <p><a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R0784" hreflang="en">(AB) 2021/784 sayılı Tüzük</a> (TCO, İngilizce metin) anlamında terör içeriği yasaktır. Bu içerikle şöyle ilgileniriz:</p>
+      <ul>
+        <li>Terör içeriğini öğrenir öğrenmez gizler ve kimliği engelleriz.</li>
+        <li>Yetkili bir makamın kaldırma emrini, aldıktan sonraki bir saat içinde yerine getiririz (TCO m. 3/3).</li>
+        <li>Hayata yönelik yakın bir tehdit varsa yetkili makamları derhâl bilgilendiririz (TCO m. 14/5).</li>
+        <li>Kaldırılan içeriği ve ilgili verileri 6 ay saklarız. Daha uzun süre yalnızca bir makam veya mahkeme talep ederse (TCO m. 6).</li>
+        <li>Katkınızı kaldırdıysak, bir makam kamu güvenliği nedenleriyle bunu yasaklamadıkça size bildiririz (TCO m. 11). Kaldırmaya <a href="mailto:goodtimestatemap@protonmail.com">goodtimestatemap@protonmail.com</a> adresine yazarak ve mahkemeler önünde itiraz edebilirsiniz.</li>
+        <li>Bir takvim yılında terör içeriğine karşı işlem yaptıysak, izleyen yılın 1 Mart tarihine kadar bir şeffaflık raporu yayımlarız (TCO m. 7/2).</li>
+      </ul>
+
+      <h3>10. İletişim noktaları</h3>
+      <p>Tek bir iletişim noktası makamlara (DSA m. 11), kullanıcılara (DSA m. 12) ve kaldırma emirlerine (TCO m. 15) hizmet eder:</p>
+      <ul>
+        <li>E-posta: <a href="mailto:goodtimestatemap@protonmail.com">goodtimestatemap@protonmail.com</a></li>
+        <li>Kullanıcılar için ayrıca <a href="../contact/?lang=en#contact">iletişim formu</a></li>
+        <li>Diller: Almanca, İngilizce</li>
+      </ul>
+      <p>Lütfen kaldırma emirlerini iletişim formu üzerinden değil, e-postayla gönderin. Tam metin <a href="../impressum/#en">yasal bildirimde</a> (İngilizce) yer alır.</p>
+
+      <h3>11. Katkıları silme</h3>
+      <p>Tek tek önerileri “Gönderilerim” bölümünden silebilirsiniz. Ayarlar'daki “Verilerimi sil”, kimliğinizi, tüm önerilerini ve verdiğiniz her oyu siler. Oturumunuz açıkken bunun yerine “Hesabı ve verileri sil” yer alır; bu seçenek ayrıca hesabınızı ve hesabın eşitlenen görülen işaretçilerini de siler (bölüm 14). Silinen önerileri artık kimse görmez; haritadaysalar bir sonraki güncellemede tüm cihazlardan kaybolurlar. Önceden alınmış kararlar geçerliliğini korur. Bu durumda bölüm 5'teki lisans sona erer.</p>
+
+      <h3>12. Değişiklikler</h3>
+      <p>Bu koşulları önemli ölçüde değiştirirsek, değişiklik geçerli olmadan önce sizi uygulamada bilgilendiririz. Bir sonraki önerinizden, oyunuzdan veya oturum açmanızdan önce uygulama sizden yeni sürümü kabul etmenizi ister. Her sürümün bir sürüm tanımlayıcısı vardır. Küçük editoryal değişiklikler bu tanımlayıcıyı değiştirmez.</p>
+
+      <h3>13. Gizlilik</h3>
+      <p>Verilerinizi nasıl işlediğimiz <a href="../privacy/#tr">gizlilik politikasında</a> açıklanmıştır.</p>
+
+      <h3 id="tr-account">14. Hesabınız (0.2.2 sürümünden itibaren)</h3>
+      <p>Görülen işaretçilerinizin cihazlarınızda aynı kalması için Apple veya Google ile oturum açabilirsiniz. Oturum açmak ücretsiz ve isteğe bağlıdır; uygulama oturum açmadan da çalışır. Takma adlı bir kimliğiniz varsa oturum açtığınızda bu kimlik hesabınıza dönüşür ve katkılarınız hesapta kalır.</p>
+      <p>Hesabınız yalnızca görülen işaretçilerinizi eşitler. Oturumu kapattığınızda o cihazdaki eşitleme sona erer ve hesabınız korunur. “Hesabı ve verileri sil” hesabınızı sonlandırır: hesabı, görülen işaretçilerini, önerilerini ve oylarını siler. Hesabınızın silinmesini bizden e-postayla da isteyebilirsiniz (<a href="../privacy/#tr-delete">gizlilik politikası, “Verilerinizi silme”</a>).</p>
+      <p>Bir hesabı, 24 ay boyunca oturum açma, oturum yenileme veya eşitleme olmazsa sileriz. Bu koşullar o hesap için bununla sona erer. Önerisi veya etkin bir engellemesi olan hesap korunur; 24 ay boyunca etkinlik olmazsa yalnızca görülen işaretçilerini ve oturum verilerini kaybeder.</p>
+
+      <h3 id="tr-youtube">15. YouTube videoları (0.2.3 sürümünden itibaren)</h3>
+      <p>Bu bölüm hesabınız olsun ya da olmasın geçerlidir. Uygulamada bir YouTube videosuna dokunduğunuzda video, YouTube'un gömülü oynatıcısında oynatılır ve uygulama bunun için YouTube API Services'i kullanır. Uygulamada bir YouTube videosu oynatarak <a href="https://www.youtube.com/t/terms">YouTube Hizmet Şartları</a>'na bağlı olmayı kabul edersiniz. Google'ın bu sırada neleri aldığı <a href="../privacy/#tr-youtube">gizlilik politikasında</a> açıklanmıştır.</p>
     </section>
 
     <section class="lang-section" id="ja" lang="ja" aria-labelledby="ja-title">
-      <h2 id="ja-title">アカウントに関する利用規約</h2>
-      <p class="meta">バージョン2026-11-accounts-1。アプリのバージョン0.2.2から適用されます。最終更新日：2026年11月10日。</p>
+      <h2 id="ja-title">投稿とアカウントに関する利用規約</h2>
+      <p class="meta">バージョン2026-11-crowd-1。アプリのバージョン0.2.3から適用されます（アカウントに関する項はバージョン0.2.2から）。最終更新日：2026年11月13日。</p>
       <p class="meta">本規約は英語版を翻訳したものです。拘束力を持つのはドイツ語版と英語版のみです。</p>
 
       <h3>1. 本規約の対象</h3>
-      <p>本規約は、Goodtime State Mapアプリでアカウントにサインインする場合に適用されます。本アプリの提供者はSimon Oppowaです（<a href="../impressum/#en">運営者情報</a>、英語）。本規約において「当方」とは提供者を指します。</p>
-      <p>マップの利用、検索、場所を確認済みにすること、確認済みのマーカーのエクスポートには、アカウントも本規約への同意も必要ありません。</p>
-      <p>サインインのたびに、その前に本アプリは本規約へのリンクを表示します。チェックボックスにチェックを入れることで、本規約に同意したことになります。どのバージョンにいつ同意したかを、あなたのアカウントとともに保存します。</p>
+      <p>本規約は、Goodtime State Mapアプリで場所を提案する場合、提案に投票する場合、および本アプリでアカウントにサインインする場合（第14項）に適用されます。提案と投票をあわせて「投稿」と呼びます。本アプリの提供者はSimon Oppowaです（<a href="../impressum/#en">運営者情報</a>、英語）。本規約において「当方」とは提供者を指します。</p>
+      <p>マップの閲覧、検索、エントリーの通報には、本規約への同意は必要ありません。</p>
+      <p>ただし、第15項「YouTube動画」は例外で、バージョン0.2.3以降、アカウントの有無にかかわらず、本アプリでYouTube動画を再生するすべての人に適用されます。</p>
+      <p>初めて場所を提案するか投票する前、およびサインインのたびにその前に、本アプリは本規約へのリンクを表示します。チェックボックスにチェックを入れることで、本規約に同意したことになります。どのバージョンにいつ同意したかを、あなたの仮名IDまたはアカウントとともに保存します（第3項）。</p>
 
-      <h3>2. サインインできる人</h3>
-      <p>18歳以上の方、または保護者（親または後見人）の同意を得ている方はサインインできます。サインインのたびに、その前に「18歳以上であるか、保護者の同意を得ています」と確認していただきます。</p>
+      <h3>2. 投稿できる人</h3>
+      <p>18歳以上の方、または保護者（親または後見人）の同意を得ている方は、投稿とサインインができます。初めて投稿する前、およびサインインのたびにその前に、「18歳以上であるか、保護者の同意を得ています」と確認していただきます。</p>
 
-      <h3 id="ja-account">3. あなたのアカウント</h3>
-      <p>AppleまたはGoogleでサインインすると、確認済みのマーカーをお使いの端末間で同じ状態に保てます。サインインは無料かつ任意であり、サインインしなくても本アプリは使えます。</p>
-      <p>アカウントが同期するのは確認済みのマーカーだけです。サインアウトすると、その端末での同期は終了し、アカウントはそのまま残ります。</p>
+      <h3>3. 仮名ID</h3>
+      <p>最初の提案または最初の投票の際に、本アプリは仮名IDを作成します。場所の提案や投票には、アカウント、名前、メールアドレスは必要ありません。本アプリは、このIDへのアクセス手段をあなたの端末にのみ保持します。ただし、サインインした場合（第14項）は、そのIDがあなたのアカウントになります。再インストールなどでアプリのデータが失われると、このアクセス手段も失われます。ただし、サインインしていた場合は、もう一度サインインすれば取り戻せます。それ以外の場合、過去の投稿を管理できなくなります。プライバシーポリシーに定める期間に従って当方がIDを削除した場合、次の投稿で新しいIDが作成されます。詳しくは<a href="../privacy/#ja">プライバシーポリシー</a>をご覧ください。</p>
 
-      <h3>4. アカウントの終了</h3>
-      <p>「設定」の「進捗データ」にある「アカウントとデータを削除」で、アカウントを終了できます。これにより、当方のサーバー上のアカウントとその確認済みのマーカーが削除されます。確認済みのマーカーはあなたの端末に残ります。メールで当方にアカウントの削除を依頼することもできます（<a href="../privacy/#ja-delete">プライバシーポリシーの「データの削除」</a>）。</p>
-      <p>サインイン、セッションの更新、同期のいずれもないまま24か月が経過したアカウントは、当方が削除します。これにより、そのアカウントについて本規約は終了します。</p>
+      <h3>4. 投稿の内容</h3>
+      <p>提案は、マップ上の位置、カテゴリー、タイトル、280文字以内のメモで構成されます。画像はアップロードできません。タイトルとメモは書かれたとおりに表示され、翻訳されません。</p>
+      <p>ほかのユーザーは、投票できるように、保留中の提案を見ることができます。公開された提案は、本アプリのすべてのユーザーが見ることができます。</p>
 
-      <h3>5. 変更</h3>
-      <p>本規約を変更する場合は、新しいバージョン識別子を付けた新しいバージョンをここに公開します。次回サインインする前に、本アプリが新しいバージョンへの同意を求めます。</p>
+      <h3>5. ライセンス</h3>
+      <p>あなたが投稿のタイトル、メモ、位置について権利を有する範囲で、あなたは当方に対し、それを保存、複製、編集（翻訳を含む）、公開および配布するための、非独占的、全世界的、無償かつ期間の定めのないライセンスを付与します。このライセンスは、本アプリ、ウェブサイト、本アプリのデータフィードを対象とします。</p>
+      <p>当方は、これらの権利について、ホスティングなどの技術サービス事業者にサブライセンスを付与することができます。また、本アプリを運営する承継者にこれらの権利を移転することができます。</p>
+      <p>ライセンスは、投稿が削除されたときに終了します。ただし、法的義務により当方が保管する写しは除きます。</p>
 
-      <h3>6. プライバシー</h3>
-      <p>アカウントに含まれるデータと、その保存期間については、<a href="../privacy/#ja-account">プライバシーポリシー</a>で説明しています。</p>
+      <h3>6. 表示</h3>
+      <p>投稿はあなたの名前なしで表示します。投稿は、仮名の略号とともに「コミュニティ」としてのみ表示されます。あなたはこれに同意するものとします。</p>
+
+      <h3 id="ja-content-rules">7. コンテンツのルール</h3>
+      <p>当方は、不適切なコンテンツや、他者に嫌がらせをするユーザーを容認しません。次のものは禁止されています。</p>
+      <ul>
+        <li><strong>リーク：</strong>リークされた素材、データマイニングされた素材、発売前の素材、およびそれらに基づくもの。</li>
+        <li><strong>個人情報：</strong>たとえば実名、ゲーマータグ、住所、連絡先。</li>
+        <li><strong>ネタバレ：</strong>カットシーンやエンディングなど、単体のストーリーのネタバレ。</li>
+        <li><strong>性的コンテンツと残虐表現：</strong>性的コンテンツ、ヌード、残虐表現。</li>
+        <li><strong>ヘイトと嫌がらせ：</strong>ヘイト、嫌がらせ、脅迫。</li>
+        <li><strong>違法なコンテンツ：</strong>著作権や商標など、他者の権利の侵害を含め、法律に違反するもの。</li>
+        <li><strong>テロリストコンテンツ：</strong>第9項を参照してください。</li>
+        <li><strong>スパムとチート：</strong>広告、リンク、スパム、チート、グリッチの悪用。</li>
+        <li><strong>虚偽の場所：</strong>意図的に誤った場所。</li>
+      </ul>
+      <p>投稿がこれらのルールに違反する場合、当方はその投稿を非表示にするか削除します。違反が繰り返された場合や重大な場合は、IDを利用停止にします。</p>
+
+      <h3 id="ja-moderation">8. モデレーション</h3>
+
+      <h4>コミュニティの投票</h4>
+      <p>新しい提案は、すぐにはマップに表示されません。ほかのユーザーが賛成または反対の投票をします。賛成票が反対票より3票多くなると（+3）、提案は公開されます。反対票が賛成票より3票多くなると（−3）、非表示になります。各IDは、1つの提案につき1票を持ちます。自分の提案への自分の投票は集計されません。</p>
+      <p>投票による公開と非表示は自動的に行われます。当方が事前に提案を確認することはありません。投票は最終的なものです。提案が公開または非表示になった時点で、投票は終了します。公開されたコミュニティのマーカーが、投票によって非表示になることはもうありません。それらには、通報と当方の決定で対応します。</p>
+
+      <h4>不正利用の制限とテキストフィルター</h4>
+      <p>投票のほかに、サーバーが使う自動化された措置は次のものだけです。</p>
+      <ul>
+        <li><strong>テキストフィルター：</strong>リンク、メールアドレス、@ハンドル、7桁以上の連続した数字、または攻撃的な語や性的な語のリストにある語を含むタイトルとメモを、誰かの目に触れる前に拒否します。</li>
+        <li>作成から24時間未満のIDによる投票を拒否します。</li>
+        <li>任意の連続する24時間に、1つのIDにつき最大30票と20件の提案を受け付けます。</li>
+        <li>1つのIPアドレスにつき、1時間あたり最大10件の通報とメッセージ、5分あたり最大100件の書き込みを受け付けます。</li>
+        <li>利用停止中のIDによる提案と投票を拒否します。</li>
+      </ul>
+      <p>サーバーが何かを拒否した場合、本アプリはその理由をお知らせします。テキストフィルターがテキストを拒否した場合、本アプリは該当するルールを示し、チェックが自動的に行われたことを伝え、当方の連絡先アドレスを表示します。</p>
+
+      <h4>当方の決定</h4>
+      <p>当方は、投票にかかわらずどの提案も公開または非表示にでき、投票のどの結果も覆すことができます。重複を既存のマーカーに統合したり、コミュニティのマーカーを検証済みにしたりできます。これらは、当方の判断で、通報を受けて、または異議申し立てを受けて行います。これらの決定は人が行います。</p>
+
+      <h4>利用停止</h4>
+      <p>本規約への違反が繰り返された場合や重大な場合は、IDを利用停止にします。利用停止になったIDは、提案も投票もできなくなります。</p>
+
+      <h4>通報</h4>
+      <p>エントリーは誰でも通報できます。アプリの「通報」、<a href="../contact/?lang=en#report">ウェブフォーム</a>（英語またはドイツ語）、またはメールで通報してください。通報にIDは必要ありません。すべての通報は人が確認し、受領から24時間以内に判断します。通報によって何かが自動的に非表示になることはありません。</p>
+
+      <h4>理由の説明</h4>
+      <p>当方があなたの提案を非表示にしたり削除したりした場合、「自分の投稿」に、その理由、当方が依拠したルール、決定がどのように行われたかが表示されます。</p>
+
+      <h4>決定への異議申し立て</h4>
+      <p>決定に同意できない場合は、<a href="mailto:goodtimestatemap@protonmail.com">goodtimestatemap@protonmail.com</a>宛てに、投稿のIDを記載してメールでご連絡ください。人が改めて検討します。これは、コミュニティの投票による決定にも当てはまります。</p>
+      <p>当方がデジタルサービス法（DSA）に違反していると考える場合は、あなたが所在する、または拠点を置く加盟国のデジタルサービス調整官に苦情を申し立てることができます（DSA第53条）。ドイツでは連邦ネットワーク庁（Bundesnetzagentur、www.dsc.bund.de）がこれにあたります。裁判所に訴えることもできます。</p>
+
+      <h3 id="ja-tco">9. テロリストコンテンツ</h3>
+      <p><a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R0784" hreflang="en">規則(EU) 2021/784</a>（TCO規則、英語）に定めるテロリストコンテンツは禁止されています。当方は次のように対応します。</p>
+      <ul>
+        <li>テロリストコンテンツを知った時点で直ちに非表示にし、IDを利用停止にします。</li>
+        <li>権限のある当局からの削除命令には、受領から1時間以内に対応します（TCO規則第3条第3項）。</li>
+        <li>生命に対する差し迫った脅威がある場合は、直ちに権限のある当局に通知します（TCO規則第14条第5項）。</li>
+        <li>削除したコンテンツと関連データは6か月間保管します。それより長く保管するのは、当局または裁判所が求める場合だけです（TCO規則第6条）。</li>
+        <li>あなたの投稿を削除した場合は、公共の安全上の理由で当局がこれを禁じない限り、その旨をお知らせします（TCO規則第11条）。削除に対しては、<a href="mailto:goodtimestatemap@protonmail.com">goodtimestatemap@protonmail.com</a>宛てのメールで、また裁判所で異議を申し立てることができます。</li>
+        <li>ある暦年にテロリストコンテンツに対する措置を講じた場合、翌年の3月1日までに透明性レポートを公表します（TCO規則第7条第2項）。</li>
+      </ul>
+
+      <h3>10. 連絡窓口</h3>
+      <p>1つの連絡窓口が、当局（DSA第11条）、ユーザー（DSA第12条）、削除命令（TCO規則第15条）に対応します。</p>
+      <ul>
+        <li>メール：<a href="mailto:goodtimestatemap@protonmail.com">goodtimestatemap@protonmail.com</a></li>
+        <li>ユーザーの方は<a href="../contact/?lang=en#contact">お問い合わせフォーム</a>も利用できます</li>
+        <li>言語：ドイツ語、英語</li>
+      </ul>
+      <p>削除命令は、お問い合わせフォームではなくメールでお送りください。全文は<a href="../impressum/#en">運営者情報</a>（英語）に記載しています。</p>
+
+      <h3>11. 投稿の削除</h3>
+      <p>個々の提案は「自分の投稿」で削除できます。「設定」の「自分のデータを削除」を使うと、あなたのID、そのIDのすべての提案、あなたが行ったすべての投票が削除されます。サインインしている間は、代わりに「アカウントとデータを削除」が表示され、あなたのアカウントと、その同期された確認済みのマーカーも削除されます（第14項）。削除された提案は誰にも表示されなくなります。マップ上にあった場合は、次回の更新時にすべての端末から消えます。すでに下された決定はそのまま有効です。これにより、第5項のライセンスは終了します。</p>
+
+      <h3>12. 変更</h3>
+      <p>本規約を大きく変更する場合は、変更が適用される前にアプリ内でお知らせします。その後、次に提案、投票またはサインインをする前に、本アプリが新しいバージョンへの同意を求めます。各バージョンにはバージョン識別子があります。軽微な編集上の変更では、識別子は変わりません。</p>
+
+      <h3>13. プライバシー</h3>
+      <p>当方によるデータの処理については、<a href="../privacy/#ja">プライバシーポリシー</a>に記載しています。</p>
+
+      <h3 id="ja-account">14. あなたのアカウント（バージョン0.2.2以降）</h3>
+      <p>AppleまたはGoogleでサインインすると、確認済みのマーカーをお使いの端末間で同じ状態に保てます。サインインは無料かつ任意であり、サインインしなくても本アプリは使えます。仮名IDをお持ちの場合は、サインインするとそのIDがあなたのアカウントになり、あなたの投稿はそのアカウントに残ります。</p>
+      <p>アカウントが同期するのは確認済みのマーカーだけです。サインアウトすると、その端末での同期は終了し、アカウントはそのまま残ります。「アカウントとデータを削除」で、アカウントを終了できます。これにより、アカウントとその確認済みのマーカー、提案、投票が削除されます。メールで当方にアカウントの削除を依頼することもできます（<a href="../privacy/#ja-delete">プライバシーポリシーの「データの削除」</a>）。</p>
+      <p>サインイン、セッションの更新、同期のいずれもないまま24か月が経過したアカウントは、当方が削除します。これにより、そのアカウントについて本規約は終了します。提案または有効な利用停止があるアカウントは保持されます。この場合、活動のないまま24か月が経過しても、失われるのは確認済みのマーカーとセッションデータだけです。</p>
+
+      <h3 id="ja-youtube">15. YouTube動画（バージョン0.2.3以降）</h3>
+      <p>この節は、アカウントの有無にかかわらず適用されます。本アプリでYouTube動画をタップすると、動画はYouTubeの埋め込みプレーヤーで再生され、本アプリはそのためにYouTube API Servicesを使用しています。本アプリでYouTube動画を再生することで、あなたは<a href="https://www.youtube.com/t/terms">YouTube利用規約</a>に拘束されることに同意することになります。その際にGoogleが受け取る情報については、<a href="../privacy/#ja-youtube">プライバシーポリシー</a>で説明しています。</p>
     </section>
 
     <section class="lang-section" id="zh-hant" lang="zh-Hant" aria-labelledby="zh-hant-title">
-      <h2 id="zh-hant-title">帳號使用條款</h2>
-      <p class="meta">版本 2026-11-accounts-1。自本應用程式 0.2.2 版起適用。最後更新：2026年11月10日。</p>
+      <h2 id="zh-hant-title">貢獻內容與帳號使用條款</h2>
+      <p class="meta">版本 2026-11-crowd-1。自本應用程式 0.2.3 版起適用；帳號相關章節自 0.2.2 版起適用。最後更新：2026年11月13日。</p>
       <p class="meta">本條款譯自英文版。僅德文版與英文版具有約束力。</p>
 
       <h3>1. 本條款的適用範圍</h3>
-      <p>當您在 Goodtime State Map 應用程式中登入帳號時，適用本條款。本應用程式由 Simon Oppowa 提供（<a href="../impressum/#en">法律聲明</a>，英文）。本條款中的「我們」指提供者。</p>
-      <p>使用地圖、搜尋地圖、將地點標記為已確認，或匯出您的已確認標記，都不需要帳號，也不需要接受本條款。</p>
-      <p>每次登入之前，本應用程式都會顯示本條款的連結。您勾選核取方塊即表示接受。我們會將您接受了哪個版本及接受時間，與您的帳號一起儲存。</p>
+      <p>當您在 Goodtime State Map 應用程式中建議地點或對建議投票時，以及在本應用程式中登入帳號時（第 14 節），適用本條款。我們將建議與投票稱為「貢獻」。本應用程式由 Simon Oppowa 提供（<a href="../impressum/#en">法律聲明</a>，英文）。本條款中的「我們」指提供者。</p>
+      <p>瀏覽地圖、搜尋地圖或檢舉項目，都不需要接受本條款。</p>
+      <p>第 15 節「YouTube 影片」是例外：自 0.2.3 版起，無論是否有帳號，凡在本應用程式中播放 YouTube 影片者皆適用。</p>
+      <p>在您第一次建議地點或投票之前，以及每次登入之前，本應用程式會顯示本條款的連結。您勾選核取方塊即表示接受。我們會將您接受了哪個版本及接受時間，與您的假名 ID 或您的帳號一起儲存（第 3 節）。</p>
 
-      <h3>2. 誰可以登入</h3>
-      <p>如您年滿 18 歲，或已取得父母或監護人的同意，即可登入。每次登入之前，您需確認：「我已年滿 18 歲，或已取得父母或監護人的同意。」</p>
+      <h3>2. 誰可以貢獻</h3>
+      <p>如您年滿 18 歲，或已取得父母或監護人的同意，即可貢獻及登入。在您第一次貢獻之前及每次登入之前，您需確認：「我已年滿 18 歲，或已取得父母或監護人的同意。」</p>
 
-      <h3 id="zh-hant-account">3. 您的帳號</h3>
-      <p>您可以使用 Apple 或 Google 登入，讓您各部裝置上的已確認標記保持一致。登入是免費且選用的，不登入也能使用本應用程式。</p>
-      <p>您的帳號只會同步您的已確認標記。登出後，該裝置上的同步即停止，您的帳號仍會保留。</p>
+      <h3>3. 您的假名 ID</h3>
+      <p>在您第一次建議或第一次投票時，本應用程式會建立一個假名 ID。建議地點及投票不需要帳號、姓名或電子郵件地址。本應用程式只在您的裝置上保有此 ID 的存取權，除非您登入（第 14 節）：此時該 ID 會成為您的帳號。如果本應用程式的資料遺失，例如重新安裝後，該存取權也會隨之消失，除非您曾經登入；再次登入即可恢復存取權。否則您將無法再管理您過去的貢獻。如果我們依隱私權政策所定的期間刪除了該 ID，您下一次貢獻時會建立新的 ID。詳情請參閱<a href="../privacy/#zh-hant">隱私權政策</a>。</p>
 
-      <h3>4. 終止您的帳號</h3>
-      <p>「設定」中「你的進度」裡的「刪除帳號和資料」會終止您的帳號：它會刪除我們伺服器上的帳號及其已確認標記。您的已確認標記會保留在您的裝置上。您也可以透過電子郵件請我們刪除您的帳號（<a href="../privacy/#zh-hant-delete">隱私權政策的「刪除您的資料」</a>）。</p>
-      <p>若帳號連續 24 個月沒有登入、工作階段更新或同步，我們會將其刪除。本條款即對該帳號終止。</p>
+      <h3>4. 您貢獻的內容</h3>
+      <p>一則建議包含地圖上的位置、類別、標題，以及最多 280 個字元的備註。您無法上傳圖片。標題與備註會依您撰寫的原樣顯示，不會翻譯。</p>
+      <p>其他使用者會看到待審建議，以便對其投票。本應用程式的所有使用者都能看到已發布的建議。</p>
 
-      <h3>5. 變更</h3>
-      <p>如果我們變更本條款，會在此處發布帶有新版本識別碼的新版本。在您下一次登入前，本應用程式會請您接受新版本。</p>
+      <h3>5. 授權</h3>
+      <p>在您對您貢獻的標題、備註與位置享有權利的範圍內，您授予我們非專屬、全球性、免權利金且無期限的授權，以儲存、重製、編輯（包括翻譯）、公開提供及散布該內容。此授權涵蓋本應用程式、網站及本應用程式的資料來源（data feeds）。</p>
+      <p>我們可以將這些權利再授權給技術服務供應商，例如主機代管業者。我們可以將這些權利移轉給營運本應用程式的繼受者。</p>
+      <p>授權在貢獻被刪除時終止，但我們因法律義務而保存的副本除外。</p>
 
-      <h3>6. 隱私</h3>
-      <p>帳號包含哪些資料，以及我們保存這些資料多久，請參閱<a href="../privacy/#zh-hant-account">隱私權政策</a>。</p>
+      <h3>6. 署名</h3>
+      <p>我們顯示貢獻時不會附上您的姓名。貢獻只會以「社群」加上假名代號顯示。您同意此做法。</p>
+
+      <h3 id="zh-hant-content-rules">7. 內容規則</h3>
+      <p>我們不容許令人反感的內容，也不容許騷擾他人的使用者。下列內容不被允許：</p>
+      <ul>
+        <li><strong>外洩內容：</strong>外洩、資料探勘取得或發售前的素材，以及任何以其為基礎的內容。</li>
+        <li><strong>個人資料：</strong>例如真實姓名、玩家代號、地址或聯絡方式。</li>
+        <li><strong>爆雷：</strong>單獨的劇情爆雷，例如過場動畫或結局。</li>
+        <li><strong>色情與血腥內容：</strong>色情內容、裸露及血腥內容。</li>
+        <li><strong>仇恨與騷擾：</strong>仇恨、騷擾及威脅。</li>
+        <li><strong>違法內容：</strong>任何違法的內容，包括侵害他人權利（例如著作權或商標權）的內容。</li>
+        <li><strong>恐怖主義內容：</strong>請參閱第 9 節。</li>
+        <li><strong>垃圾訊息與作弊：</strong>廣告、連結、垃圾訊息、作弊及利用遊戲漏洞（glitch）。</li>
+        <li><strong>虛假地點：</strong>故意標錯的地點。</li>
+      </ul>
+      <p>若某則貢獻違反這些規則，我們會將其隱藏或移除。對於重複或嚴重的違規，我們會將該 ID 停權。</p>
+
+      <h3 id="zh-hant-moderation">8. 內容審核</h3>
+
+      <h4>社群投票</h4>
+      <p>新的建議不會立即出現在地圖上。其他使用者會投票贊成或反對。當一則建議的贊成票比反對票多 3 票（+3）時，即會發布。當反對票比贊成票多 3 票（−3）時，即會隱藏。每個 ID 對每則建議只有一票。您對自己的建議所投的票不予計算。</p>
+      <p>依投票結果發布與隱藏是自動進行的。我們不會事先審查建議。已投出的票即為最終決定。建議一經發布或隱藏，投票即告結束：已發布的社群標記不會再因投票而被隱藏。這類標記由檢舉與我們的決定處理。</p>
+
+      <h4>濫用限制與文字過濾器</h4>
+      <p>除投票外，伺服器只使用下列自動化措施：</p>
+      <ul>
+        <li><strong>文字過濾器：</strong>在任何人看到之前，拒絕含有連結、電子郵件地址、@帳號代稱、連續 7 位以上數字，或含有辱罵與色情詞彙清單中詞語的標題與備註。</li>
+        <li>拒絕建立未滿 24 小時的 ID 所投的票。</li>
+        <li>在任何連續 24 小時內，每個 ID 最多接受 30 票與 20 則建議。</li>
+        <li>每個 IP 位址每小時最多接受 10 則檢舉與訊息，每 5 分鐘最多接受 100 次寫入。</li>
+        <li>拒絕被停權 ID 的建議與投票。</li>
+      </ul>
+      <p>當伺服器拒絕某項操作時，本應用程式會告訴您原因。當文字過濾器拒絕某段文字時，本應用程式會指出相關規則，說明該檢查是自動進行的，並提供我們的聯絡地址。</p>
+
+      <h4>我們的決定</h4>
+      <p>我們可以不論投票結果發布或隱藏任何建議，也可以推翻任何投票結果。我們可以將重複的建議合併至既有的標記，並將社群標記標示為已驗證。我們會主動、在收到檢舉後或在收到異議後這樣做。這些決定由人作出。</p>
+
+      <h4>停權</h4>
+      <p>對於重複或嚴重違反本條款的情形，我們會將該 ID 停權。被停權的 ID 無法再建議或投票。</p>
+
+      <h4>檢舉</h4>
+      <p>任何人都可以檢舉項目：在本應用程式中使用「檢舉」、透過<a href="../contact/?lang=en#report">網頁表單</a>（英文或德文）或以電子郵件檢舉。檢舉不需要 ID。每則檢舉都由人審查，並在收到後 24 小時內作出決定。檢舉絕不會自動隱藏任何內容。</p>
+
+      <h4>決定理由說明</h4>
+      <p>如果我們隱藏或移除您的建議，「我的提交」會向您顯示理由、我們所依據的規則，以及該決定是如何作出的。</p>
+
+      <h4>對決定提出異議</h4>
+      <p>如果您不同意某項決定，請寄電子郵件至 <a href="mailto:goodtimestatemap@protonmail.com">goodtimestatemap@protonmail.com</a>，並註明該貢獻的 ID。會由人重新審查此案。這也適用於經社群投票作出的決定。</p>
+      <p>如果您認為我們違反了數位服務法（DSA），您可以向您所在地或設立地所屬會員國的數位服務協調機構提出申訴（DSA 第 53 條）。在德國，該機構為 Bundesnetzagentur（德國聯邦網路局）：www.dsc.bund.de。您也可以向法院提起訴訟。</p>
+
+      <h3 id="zh-hant-tco">9. 恐怖主義內容</h3>
+      <p><a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R0784" hreflang="en">規則 (EU) 2021/784</a>（TCO 規則，英文）所定義的恐怖主義內容是被禁止的。我們的處理方式如下：</p>
+      <ul>
+        <li>我們一得知恐怖主義內容就會將其隱藏，並將該 ID 停權。</li>
+        <li>我們會在收到主管機關的移除命令後一小時內處理（TCO 規則第 3 條第 3 項）。</li>
+        <li>若有迫在眉睫的生命威脅，我們會立即通知主管機關（TCO 規則第 14 條第 5 項）。</li>
+        <li>我們會將已移除的內容及相關資料保存 6 個月。只有在主管機關或法院要求時才保存更久（TCO 規則第 6 條）。</li>
+        <li>如果我們移除了您的貢獻，我們會通知您，除非主管機關基於公共安全理由禁止這樣做（TCO 規則第 11 條）。您可以寄電子郵件至 <a href="mailto:goodtimestatemap@protonmail.com">goodtimestatemap@protonmail.com</a> 或向法院對移除提出異議。</li>
+        <li>如果我們在某個日曆年內對恐怖主義內容採取了行動，我們會在次年 3 月 1 日前發布透明度報告（TCO 規則第 7 條第 2 項）。</li>
+      </ul>
+
+      <h3>10. 聯絡窗口</h3>
+      <p>單一聯絡窗口同時服務主管機關（DSA 第 11 條）、使用者（DSA 第 12 條）及移除命令（TCO 規則第 15 條）：</p>
+      <ul>
+        <li>電子郵件：<a href="mailto:goodtimestatemap@protonmail.com">goodtimestatemap@protonmail.com</a></li>
+        <li>使用者也可以使用<a href="../contact/?lang=en#contact">聯絡表單</a></li>
+        <li>語言：德文、英文</li>
+      </ul>
+      <p>請以電子郵件寄送移除命令，不要透過聯絡表單。完整內容請見<a href="../impressum/#en">法律聲明</a>（英文）。</p>
+
+      <h3>11. 刪除貢獻</h3>
+      <p>您可以在「我的提交」中刪除個別建議。在「設定」中，「刪除我的資料」會刪除您的 ID、其所有建議以及您投下的每一票。在您登入期間，「刪除帳號和資料」會取代此選項，並另外刪除您的帳號及其已同步的已確認標記（第 14 節）。已刪除的建議不會再有人看到；若這些建議曾出現在地圖上，會在所有裝置下次更新時消失。已作出的決定維持有效。第 5 節的授權隨之終止。</p>
+
+      <h3>12. 變更</h3>
+      <p>如果我們對本條款作出重大變更，我們會在變更生效前於本應用程式中通知您。之後在您下一次建議、投票或登入前，本應用程式會請您接受新版本。每個版本都有版本識別碼。細微的文字編修不會改變識別碼。</p>
+
+      <h3>13. 隱私</h3>
+      <p>我們如何處理您的資料，請參閱<a href="../privacy/#zh-hant">隱私權政策</a>。</p>
+
+      <h3 id="zh-hant-account">14. 您的帳號（自 0.2.2 版起）</h3>
+      <p>您可以使用 Apple 或 Google 登入，讓您各部裝置上的已確認標記保持一致。登入是免費且選用的，不登入也能使用本應用程式。如您已有假名 ID，登入後該 ID 會成為您的帳號，您的貢獻也會保留在該帳號中。</p>
+      <p>您的帳號只會同步您的已確認標記。登出後，該裝置上的同步即停止，您的帳號仍會保留。「刪除帳號和資料」會終止您的帳號：它會刪除該帳號及其已確認標記、建議與投票。您也可以透過電子郵件請我們刪除您的帳號（<a href="../privacy/#zh-hant-delete">隱私權政策的「刪除您的資料」</a>）。</p>
+      <p>若帳號連續 24 個月沒有登入、工作階段更新或同步，我們會將其刪除。本條款即對該帳號終止。有建議或處於停權狀態的帳號會被保留；連續 24 個月沒有活動時，該帳號只會失去其已確認標記與工作階段資料。</p>
+
+      <h3 id="zh-hant-youtube">15. YouTube 影片（自 0.2.3 版起）</h3>
+      <p>無論您是否有帳號，本節皆適用。當您在本應用程式中點按 YouTube 影片時，影片會在 YouTube 的嵌入式播放器中播放，本應用程式為此使用 YouTube API Services。在本應用程式中播放 YouTube 影片，即表示您同意受 <a href="https://www.youtube.com/t/terms">YouTube 服務條款</a>約束。Google 因此取得哪些資料，請參閱<a href="../privacy/#zh-hant-youtube">隱私權政策</a>。</p>
     </section>
   </main>
 

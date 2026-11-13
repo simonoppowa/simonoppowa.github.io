@@ -284,7 +284,7 @@ mark.todo {
 }
 
 .from-02::before {
-  content: "ab 0.2.5 · from 0.2.5";
+  content: "ab 0.2.3 · from 0.2.3";
   background: var(--success-container);
   color: var(--on-success-container);
 }
@@ -295,13 +295,15 @@ mark.todo {
   color: var(--on-tertiary-container);
 }
 
-section.v02 {
+section.v02,
+section.v023 {
   border-left: 4px solid var(--success);
   padding-left: var(--space-4);
   margin-top: var(--space-12);
 }
 
-section.v02 > :first-child {
+section.v02 > :first-child,
+section.v023 > :first-child {
   margin-top: 0;
 }
 
